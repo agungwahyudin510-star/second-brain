@@ -38,3 +38,17 @@ export interface StudyEntry {
   pillar: PillarSlug;
   note: string;
 }
+
+export interface Lesson {
+  id: string;
+  title: string;
+  minutes: number;
+  content: string; // markdown
+}
+
+export interface CurriculumModule {
+  id: string;
+  title: string;
+  summary: string;
+  lessons: Lesson[];
+}

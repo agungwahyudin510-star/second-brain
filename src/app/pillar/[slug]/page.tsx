@@ -8,6 +8,7 @@ import { useNotes } from "@/context/NotesProvider";
 import { Badge, Card, btnCls, inputCls } from "@/components/ui";
 import { cn, formatDate } from "@/lib/utils";
 
+
 export default function PillarPage() {
   const { slug } = useParams<{ slug: string }>();
   const pillar = getPillar(slug);
