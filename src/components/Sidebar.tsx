@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Layers, ClipboardCheck, X, Sparkles } from "lucide-react";
+import { LayoutDashboard, Layers, ClipboardCheck, X, Sparkles, BookOpen, ChartNoAxesColumn, GraduationCap, Library, Brain, Blocks } from "lucide-react";
 import { PILLARS } from "@/lib/pillars";
 import { cn } from "@/lib/utils";
 
@@ -33,7 +33,7 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
           open ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex shrink-0 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-semibold">
             <Sparkles className="h-5 w-5 text-amber-400" />
             Second Brain
@@ -43,12 +43,32 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
           </button>
         </div>
 
-        <nav className="space-y-1">
+        <nav className="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-contain">
           <NavLink href="/" label="Dashboard" Icon={LayoutDashboard} />
           <p className="px-3 pb-1 pt-5 text-xs uppercase tracking-wider text-zinc-600">Circle Competency</p>
           {PILLARS.map((p) => (
             <NavLink key={p.slug} href={`/pillar/${p.slug}`} label={p.title} Icon={p.icon} color={p.accent.text} />
           ))}
+          <p className="px-3 pb-1 pt-5 text-xs uppercase tracking-wider text-zinc-600">Belajar Ekonomi</p>
+          <NavLink href="/pillar/ekonomi/curriculum" label="Kurikulum" Icon={BookOpen} />
+          <NavLink href="/pillar/ekonomi/progress" label="Progres & nilai" Icon={ChartNoAxesColumn} />
+          <NavLink href="/pillar/ekonomi/exam" label="Ujian akhir" Icon={GraduationCap} />
+          <NavLink href="/pillar/ekonomi/glossary" label="Glosarium" Icon={Library} />
+          <p className="px-3 pb-1 pt-5 text-xs uppercase tracking-wider text-zinc-600">Psychology &amp; Behavioral</p>
+          <NavLink href="/pillar/psikologi/curriculum" label="Kurikulum psikologi" Icon={Brain} color="text-violet-400" />
+          <NavLink href="/pillar/psikologi/progress" label="Progres psikologi" Icon={ChartNoAxesColumn} color="text-violet-400" />
+          <NavLink href="/pillar/psikologi/exam" label="Final exam psikologi" Icon={GraduationCap} color="text-violet-400" />
+          <NavLink href="/pillar/psikologi/glossary" label="Glosarium psikologi" Icon={Library} color="text-violet-400" />
+          <p className="px-3 pb-1 pt-5 text-xs uppercase tracking-wider text-zinc-600">English Language Learning</p>
+          <NavLink href="/pillar/inggris/curriculum" label="Kurikulum A1–B2" Icon={BookOpen} color="text-sky-400" />
+          <NavLink href="/pillar/inggris/placement" label="Tes penempatan" Icon={ClipboardCheck} color="text-sky-400" />
+          <NavLink href="/pillar/inggris/progress" label="Progres English" Icon={ChartNoAxesColumn} color="text-sky-400" />
+          <NavLink href="/pillar/inggris/vocabulary" label="Vocabulary review" Icon={Library} color="text-sky-400" />
+          <NavLink href="/pillar/inggris/exam" label="Final assessment A1" Icon={GraduationCap} color="text-sky-400" />
+          <p className="px-3 pb-1 pt-5 text-xs uppercase tracking-wider text-zinc-600">Web3 &amp; Technology</p>
+          <NavLink href="/pillar/web3/curriculum" label="Kurikulum 8 fase" Icon={Blocks} color="text-violet-400" />
+          <NavLink href="/pillar/web3/progress" label="Progres Web3" Icon={ChartNoAxesColumn} color="text-violet-400" />
+          <NavLink href="/pillar/web3/exam" label="Final assessment Fase 1" Icon={GraduationCap} color="text-violet-400" />
           <p className="px-3 pb-1 pt-5 text-xs uppercase tracking-wider text-zinc-600">Interactive Tools</p>
           <NavLink href="/tools/flashcards" label="Flashcards" Icon={Layers} />
           <NavLink href="/tools/mindset-audit" label="Mindset Audit" Icon={ClipboardCheck} />

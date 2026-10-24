@@ -2,7 +2,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
-import { Plus, Search } from "lucide-react";
+import { BookOpen, Plus, Search } from "lucide-react";
 import { getPillar } from "@/lib/pillars";
 import { useNotes } from "@/context/NotesProvider";
 import { Badge, Card, btnCls, inputCls } from "@/components/ui";
@@ -39,11 +39,19 @@ export default function PillarPage() {
           <div>
             <h1 className="text-2xl font-bold">{pillar.title}</h1>
             <p className="text-sm text-zinc-500">{pillar.description}</p>
+            {slug !== "ekonomi" && slug !== "psikologi" && slug !== "inggris" && <p className="mt-1 text-xs text-amber-400">Materi terstruktur untuk bidang ini sedang dikembangkan.</p>}
+            {slug === "inggris" && <p className="mt-1 text-xs text-sky-300">Jalur A1 aktif • A2–B2 masih berupa peta kurikulum.</p>}
+            {slug === "web3" && <p className="mt-1 text-xs text-violet-300">Fase 1 aktif • Fase 2–8 masih berupa roadmap.</p>}
           </div>
         </div>
-        <Link href={`/pillar/${slug}/new`} className={btnCls("primary", "shrink-0")}>
-          <Plus className="h-4 w-4" /> Catatan
-        </Link>
+        <div className="flex shrink-0 gap-2">
+          <Link href={`/pillar/${slug}/curriculum`} className={btnCls("ghost")}>
+            <BookOpen className="h-4 w-4" /> Kurikulum
+          </Link>
+          <Link href={`/pillar/${slug}/new`} className={btnCls("primary")}>
+            <Plus className="h-4 w-4" /> Catatan
+          </Link>
+        </div>
       </div>
 
       <div className="relative">

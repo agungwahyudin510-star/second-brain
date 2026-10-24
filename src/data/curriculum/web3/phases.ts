@@ -1,0 +1,138 @@
+export interface Web3Phase {
+  number: number;
+  title: string;
+  goal: string;
+  project: string;
+  chapters: Array<{ title: string; focus: string }>;
+}
+
+export const WEB3_PHASES: Web3Phase[] = [
+  {
+    number: 1,
+    title: "Computer Science & Programming Foundations",
+    goal: "Memahami cara komputer dan program bekerja, memecahkan masalah dengan JavaScript, dan menggunakan workflow Git.",
+    project: "JavaScript Foundations Project: aplikasi pencatat pengeluaran simulasi dengan validasi, ringkasan, data JSON, dan pengujian manual.",
+    chapters: [
+      { title: "How Computers and Programs Work", focus: "Hardware, software, eksekusi kode, terminal, file, environment, dan jenis error." },
+      { title: "Programming Logic with JavaScript", focus: "Variables, tipe data, operator, kondisi, loop, fungsi, scope dasar, dan debugging." },
+      { title: "Data Structures and Problem Solving", focus: "String, number, boolean, array, object, metode array, pseudocode, dan dekomposisi." },
+      { title: "Advanced JavaScript Foundations", focus: "Higher-order functions, callback, closure, lexical scope, this, prototype, modules, dan error handling." },
+      { title: "Asynchronous JavaScript", focus: "Call stack, event loop, callback, Promise, async/await, fetch, dan error asynchronous." },
+      { title: "Data, JSON, and APIs", focus: "Serialisasi, HTTP, request/response, REST, status codes, autentikasi dasar, dan rate limit." },
+      { title: "Git, GitHub, and Development Workflow", focus: "Repository, commit, branch, merge, pull request, .gitignore, konfigurasi, dan dokumentasi." },
+      { title: "Foundations Project", focus: "Requirement, implementasi, konsumsi API, error handling, test checklist, dan dokumentasi proyek." },
+    ],
+  },
+  {
+    number: 2,
+    title: "Web Development Foundations",
+    goal: "Membangun aplikasi web yang aksesibel, responsif, dan terhubung dengan backend.",
+    project: "Full-stack application lokal: frontend, API, database, autentikasi, validasi request, dan dokumentasi test.",
+    chapters: [
+      { title: "HTML and Semantic Structure", focus: "Elemen HTML, struktur semantik, forms, navigation, dan aksesibilitas." },
+      { title: "CSS and Responsive Design", focus: "Selectors, box model, Flexbox, Grid, layout responsif, tipografi, kontras." },
+      { title: "Browser and Web Platform", focus: "DOM, rendering, events, storage, cookies, same-origin policy, dan CORS." },
+      { title: "Frontend Development with React", focus: "Components, props, state, event handling, rendering kondisional, forms." },
+      { title: "React Hooks and Application Architecture", focus: "Hooks, custom hooks, state, separation of concerns, dan performa." },
+      { title: "TypeScript Foundations", focus: "Inference, interfaces, unions, generics, narrowing, dan API types." },
+      { title: "Backend and Node.js", focus: "Runtime, npm, routing, middleware, validasi, error handling, REST API." },
+      { title: "Database and Authentication", focus: "SQL, relasi, CRUD, migrasi, password hashing, sesi/token, authorization." },
+    ],
+  },
+  {
+    number: 3,
+    title: "Computer Science for Web3 Developers",
+    goal: "Membangun fondasi representasi data, kriptografi, jaringan, integritas, keamanan, serta pengujian.",
+    project: "Systems integration: aplikasi kecil menghitung hash data simulasi dan menguji perubahan/integritasnya.",
+    chapters: [
+      { title: "Data Representation", focus: "Binary, hexadecimal, bits, bytes, integer, encoding, address, dan byte arrays." },
+      { title: "Algorithms and Complexity", focus: "Searching, sorting, Big O, time/space complexity, dan trade-off struktur data." },
+      { title: "Cryptography Foundations", focus: "Hash, signature, symmetric/asymmetric key, nonce, serta encoding vs encryption." },
+      { title: "Networking and Distributed Systems", focus: "IP, DNS, HTTP, TCP, P2P, replication, fault tolerance, consensus, latency." },
+      { title: "Databases and Data Integrity", focus: "ACID, transaction, index, event log, append-only, dan trade-off database/blockchain." },
+      { title: "Security Foundations", focus: "Threat model, least privilege, validation, secrets, dependency, defense in depth." },
+      { title: "Testing and Debugging", focus: "Unit/integration/E2E test, assertion, fixture, debugging, dan regression." },
+      { title: "Systems Integration Project", focus: "Integrasi API, data terstruktur, cryptographic hash, dan pengujian integritas." },
+    ],
+  },
+  {
+    number: 4,
+    title: "Blockchain Fundamentals",
+    goal: "Menjelaskan ledger terdistribusi, transaksi, konsensus, akun Ethereum, token, dan trade-off skalabilitas.",
+    project: "Blockchain transaction analysis: telusuri transaksi contoh secara read-only dan jelaskan lifecycle serta batas finalitasnya.",
+    chapters: [
+      { title: "What Is a Blockchain?", focus: "Distributed ledger, block, transaksi, node, replikasi, dan batas immutability." },
+      { title: "How Transactions Work", focus: "Validasi, fee, mempool, inclusion, confirmation, dan finality." },
+      { title: "Consensus Mechanisms", focus: "Proof of Work, Proof of Stake, validator/miner, insentif, Sybil resistance." },
+      { title: "Public-Key Cryptography in Blockchain", focus: "Key, address, signature, otorisasi, wallet derivation, recovery." },
+      { title: "Ethereum Architecture", focus: "Account, EOA/contract account, gas, execution layer, state, EVM." },
+      { title: "Tokens and Token Standards", focus: "Fungible token, ERC-20, ERC-721, ERC-1155, allowance, approval, batas desain." },
+      { title: "Layer 2 and Scaling", focus: "Rollups, optimistic/ZK, data availability, bridging, asumsi keamanan." },
+      { title: "Blockchain Ecosystem and Trade-offs", focus: "Public/private chain, decentralization, throughput, governance, database trade-offs." },
+    ],
+  },
+  {
+    number: 5,
+    title: "Ethereum Development and Smart Contracts",
+    goal: "Menulis dan menguji smart contract pada lingkungan lokal dengan praktik aman.",
+    project: "Simple on-chain registry lokal dengan unit test, edge cases, deployment script, dan dokumentasi risiko.",
+    chapters: [
+      { title: "Solidity Foundations", focus: "Syntax, state, function, visibility, constructor, events, dan error." },
+      { title: "Contract Storage and Data Structures", focus: "Storage/memory/calldata, array, mapping, struct, enum, gas." },
+      { title: "Contract Interactions", focus: "Interface, inheritance, library, external calls, logs, revert, custom errors." },
+      { title: "EVM and Gas", focus: "Execution, opcodes secara konseptual, gas, fee, storage cost, optimasi." },
+      { title: "Testing Smart Contracts", focus: "Unit/integration test, revert, edge case, fuzz, dan invariant." },
+      { title: "Development Tools", focus: "Pilih satu toolchain setelah audit; compiler, local chain, scripts, traces." },
+      { title: "Contract Deployment", focus: "Local/testnet, address, args, verification, RPC, dan explorer." },
+      { title: "Smart Contract Project", focus: "Contract lokal yang diuji, deployment script, README, dan security notes." },
+    ],
+  },
+  {
+    number: 6,
+    title: "dApp Development and Web3 Integration",
+    goal: "Menghubungkan frontend, wallet, RPC, dan smart contract dengan UX yang aman dan jujur.",
+    project: "dApp responsive pada local chain/testnet dengan wallet connection, read/write, receipt, error handling, dan tests.",
+    chapters: [
+      { title: "Web3 Application Architecture", focus: "Frontend, provider, RPC, contract, network, indexer, on/off-chain." },
+      { title: "Wallet Integration", focus: "Connect, perubahan akun/network, provider, state, disconnect, consent." },
+      { title: "Reading Blockchain Data", focus: "Read calls, ABI, address, RPC, block/transaction, error handling." },
+      { title: "Sending Transactions", focus: "Persiapan, gas estimate, konfirmasi wallet, pending, receipt, failure." },
+      { title: "React and Web3 Libraries", focus: "Satu integrasi konsisten, typed contracts, hooks, network, stale data." },
+      { title: "Events and Off-chain Data", focus: "Events, listeners, indexer, database sync, reorganization." },
+      { title: "dApp UX and Security", focus: "Status transaksi, network mismatch, phishing, approvals, preview." },
+      { title: "Full dApp Project", focus: "Front-end, wallet, read/write, status, error handling, tests, README." },
+    ],
+  },
+  {
+    number: 7,
+    title: "Smart Contract Security and Web3 Risk",
+    goal: "Mengenali risiko desain dan menguji mitigasi dalam contoh edukasi terisolasi.",
+    project: "Review kontrak edukasi lokal: jelaskan prasyarat, perbaiki masalah, dan tambahkan regression tests.",
+    chapters: [
+      { title: "Threat Modeling", focus: "Asset, attack surface, trust boundary, adversary, scenario, assumption." },
+      { title: "Reentrancy", focus: "External call, state, CEI, guard, dan test lokal terkontrol." },
+      { title: "Access Control and Authorization", focus: "Owner/roles, least privilege, function terbuka, escalation, admin keys." },
+      { title: "Arithmetic and Logic Vulnerabilities", focus: "Rounding, precision, assumptions, state machine, business logic." },
+      { title: "Oracle and External Dependency Risks", focus: "Price feed, staleness, external failure, flash loan concept, trust." },
+      { title: "DeFi Security Fundamentals", focus: "Liquidity pool, lending, collateral, liquidation, composability risk." },
+      { title: "Security Testing and Auditing", focus: "Static analysis, fuzz, invariant, manual review, batas scanner." },
+      { title: "Secure Contract Review Project", focus: "Review dan perbaikan kontrak edukasi; tidak menguji sistem live." },
+    ],
+  },
+  {
+    number: 8,
+    title: "AI, Automation, and Advanced Technology",
+    goal: "Mengintegrasikan AI dan automation dengan privasi, validasi, observability, dan human approval.",
+    project: "Educational blockchain monitor: data publik, event, ringkasan bersumber, alert, dan persetujuan manusia.",
+    chapters: [
+      { title: "AI and Machine Learning Foundations", focus: "AI/ML/deep learning, training/inference, data, evaluation, limits." },
+      { title: "Large Language Models", focus: "Tokens, context, embeddings, transformer, prompting, tools, evaluation." },
+      { title: "AI Application Development", focus: "API model, backend, streaming, validation, rate limit, privacy, cost." },
+      { title: "Retrieval-Augmented Generation", focus: "Embeddings, chunking, retrieval, grounded answer, citations, evaluation." },
+      { title: "Automation and Event-Driven Systems", focus: "Webhooks, queues, retry/backoff, idempotency, workflow, failure." },
+      { title: "AI Agents and Tool Use", focus: "Permissions, memory, approval, output validation, observability, prompt injection." },
+      { title: "AI and Web3 Integration", focus: "On-chain data, event monitor, transaction explanation, simulation, human approval." },
+      { title: "Capstone Project", focus: "Monitor blockchain edukasi dengan sumber, alert, privacy, dan simulated workflow." },
+    ],
+  },
+];

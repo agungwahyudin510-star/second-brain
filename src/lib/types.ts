@@ -44,6 +44,22 @@ export interface Lesson {
   title: string;
   minutes: number;
   content: string; // markdown
+  codeLab?: {
+    language: string;
+    code: string;
+    expectedOutput: string;
+    runCommand: string;
+    testCases: string[];
+    hint: string;
+  };
+  visual?: "program-flow" | "data-structures" | "scope" | "event-loop" | "http-flow" | "git-branches";
+  speechText?: string;
+  listening?: {
+    question: string;
+    options: string[];
+    answer: number;
+    explanation: string;
+  };
 }
 
 export interface CurriculumModule {
@@ -51,4 +67,26 @@ export interface CurriculumModule {
   title: string;
   summary: string;
   lessons: Lesson[];
+  phaseNumber?: number;
+  phaseTitle?: string;
+  roadmapOnly?: boolean;
+}
+
+export interface AssessmentQuestion {
+  id: string;
+  concept: string;
+  skill?: string;
+  prompt: string;
+  options: string[];
+  answer: number;
+  explanation: string;
+  chapterId?: string;
+  chapterTitle?: string;
+}
+
+export interface EssayPrompt {
+  id: string;
+  prompt: string;
+  rubric: string;
+  reviewPoints?: string[];
 }

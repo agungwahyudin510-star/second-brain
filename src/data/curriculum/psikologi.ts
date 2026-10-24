@@ -1,116 +1,208 @@
 import type { CurriculumModule } from "@/lib/types";
 
+type Topic = { title: string; content: string; minutes?: number };
+
+function chapter(number: number, title: string, summary: string, topics: Topic[]): CurriculumModule {
+  return {
+    id: `psi-bab-${number}`,
+    title: `Bab ${number} — ${title}`,
+    summary,
+    lessons: topics.map((topic, index) => ({
+      id: `psi-${number}-${index + 1}`,
+      title: topic.title,
+      minutes: topic.minutes ?? 7,
+      content: topic.content,
+    })),
+  };
+}
+
 export const PSIKOLOGI: CurriculumModule[] = [
-  {
-    id: "psi-m1",
-    title: "Modul 1: Cara Otak Mengambil Keputusan",
-    summary: "System 1 vs 2, bias kognitif inti, dan prospect theory.",
-    lessons: [
-      {
-        id: "psi-1-1",
-        title: "System 1 vs System 2",
-        minutes: 15,
-        content: `# System 1 vs System 2
+  chapter(1, "Foundations of Psychology", "Psikologi sebagai ilmu, tingkat penjelasan perilaku, metode penelitian, dan batas kesimpulan.", [
+    {
+      title: "Pengertian Psikologi dan Ruang Lingkupnya",
+      minutes: 9,
+      content: `# Pengertian Psikologi dan Ruang Lingkupnya
 
-**Tujuan:** paham dua "mode" berpikir dan kapan masing-masing menyesatkan.
+**Tujuan belajar:** menjelaskan psikologi sebagai kajian ilmiah tentang perilaku dan proses mental, serta membedakan pertanyaan psikologi dari diagnosis klinis.
 
-Kerangka ini dipopulerkan Daniel Kahneman dalam buku *Thinking, Fast and Slow*.
+Psikologi mempelajari perilaku dan proses mental melalui pengamatan sistematis, teori, dan bukti. Perilaku mencakup tindakan yang dapat diamati; proses mental mencakup perhatian, memori, persepsi, dan penalaran yang disimpulkan dari pola bukti. Psikologi bukan kemampuan membaca pikiran dan bukan sekadar nasihat motivasi.
 
-| | System 1 | System 2 |
-|---|---|---|
-| Sifat | Cepat, otomatis, intuitif | Lambat, sadar, analitis |
-| Usaha | Hampir nol | Butuh energi dan fokus |
-| Contoh | Mengenali wajah marah, 2+2 | Menghitung 17 x 24, membandingkan dua investasi |
-| Risiko | Bias dan jalan pintas keliru | Malas, mudah lelah |
+Bidangnya beragam: psikologi kognitif meneliti perhatian dan ingatan; sosial mempelajari pengaruh orang lain; perkembangan meneliti perubahan sepanjang hidup; psikologi klinis dan konseling menangani kesehatan mental dengan pelatihan serta standar profesional; psikologi industri-organisasi mempelajari pekerjaan. Bidang-bidang ini dapat memakai metode berbeda untuk pertanyaan berbeda.
 
-## Poin Penting
-- Kebanyakan keputusan harian dikendalikan System 1. Itu efisien, tapi rawan bias.
-- System 2 sering hanya **membenarkan** keputusan System 1 (rasionalisasi), bukan mengaudit.
-- Lelah, lapar, terburu-buru, atau emosi tinggi → kita makin bergantung pada System 1.
+**Contoh:** seorang siswa sering menunda belajar. Psikologi dapat menguji hubungan distraksi, beban tugas, tidur, kebiasaan, dan lingkungan. Satu observasi tidak cukup untuk menentukan penyebab atau memberi label klinis.
 
-## Kaitan ke Pasar
-Harga naik tajam memicu FOMO (System 1). Keputusan beli terasa "jelas", padahal belum ada analisis. Memperlambat diri adalah cara memanggil System 2.
+**Batas penting:** materi ini bersifat edukasi. Ia tidak mendiagnosis siapa pun atau menggantikan penilaian profesional. Perilaku dipengaruhi banyak faktor; kesimpulan harus sebanding dengan bukti.
 
-## Cek Pemahaman
-1. Sebutkan dua keputusan terakhirmu: mana yang System 1, mana yang System 2?
-2. Kenapa keputusan finansial sebaiknya tidak diambil saat sangat emosional?
-3. Apa risiko System 2 yang hanya dipakai untuk membenarkan?
+**Refleksi:** pilih satu perilaku yang ingin dipahami. Data apa yang perlu diamati sebelum menjelaskan penyebabnya?`,
+    },
+    {
+      title: "Psikologi sebagai Ilmu Empiris",
+      content: `# Psikologi sebagai Ilmu Empiris
 
-## Aksi
-Mulai aturan **jeda 24 jam** untuk pembelian/investasi non-rutin di atas nominal tertentu, dan catat hasilnya seminggu.`,
-      },
-      {
-        id: "psi-1-2",
-        title: "Empat Bias Kognitif Inti",
-        minutes: 20,
-        content: `# Empat Bias Kognitif Inti
+Ilmu empiris menyusun penjelasan yang dapat diperiksa dengan observasi atau data. Peneliti menetapkan pertanyaan, definisi operasional, metode, dan batas interpretasi sebelum menarik kesimpulan. Teori adalah kerangka penjelasan yang dihubungkan dengan bukti; bukan tebakan bebas atau fakta yang kebal revisi.
 
-**Tujuan:** mengenali empat bias yang paling sering merusak keputusan finansial.
+Misalnya, “fokus meningkat” perlu diterjemahkan menjadi ukuran yang dapat diamati: waktu menyelesaikan tugas, ketepatan, atau laporan perhatian. Masing-masing mengukur aspek berbeda dan memiliki kekurangan. Laporan diri dapat menangkap pengalaman, tetapi dipengaruhi ingatan dan cara pertanyaan disusun.
 
-## 1. Confirmation Bias
-Mencari dan mempercayai informasi yang **mendukung** keyakinan kita, lalu mengabaikan yang bertentangan.
-*Gejala:* hanya mengikuti akun yang bullish pada aset yang sudah kamu beli.
-*Penangkal:* cari argumen terbaik dari pihak lawan dengan sengaja.
+Hasil ilmiah mengandung ketidakpastian. Sampel, pengukuran, konteks budaya, dan keputusan analisis membatasi kesimpulan. Temuan yang dapat direplikasi dengan metode transparan lebih meyakinkan daripada satu studi tunggal, tetapi replikasi pun tidak menghapus semua keterbatasan.
 
-## 2. Anchoring
-Angka pertama yang dilihat menjadi "jangkar" penilaian.
-*Gejala:* "harganya sudah turun dari 100 ke 60, murah!" padahal nilai wajarnya mungkin 30.
-*Penangkal:* nilai berdasarkan fundamental, bukan harga masa lalu.
+**Cek pemahaman:** bagaimana kamu mengukur “kebiasaan belajar membaik” tanpa menyamakan durasi duduk dengan pemahaman?`,
+    },
+    {
+      title: "Pikiran, Emosi, Perilaku, dan Proses Mental",
+      content: `# Pikiran, Emosi, Perilaku, dan Proses Mental
 
-## 3. Availability Heuristic
-Menilai kemungkinan sesuatu dari **seberapa mudah contohnya teringat**.
-*Gejala:* takut berlebihan setelah berita krisis, atau yakin "pasti naik" karena banyak kisah sukses viral.
-*Penangkal:* tanya base rate (data jangka panjang), bukan cerita.
+Pikiran dapat berupa penilaian atau interpretasi; emosi melibatkan pengalaman subjektif dan respons tubuh; perilaku adalah tindakan; proses mental adalah istilah luas untuk perhatian, ingatan, persepsi, dan penalaran. Keempatnya saling memengaruhi tetapi bukan hal yang sama.
 
-## 4. Overconfidence
-Merasa lebih tahu daripada kenyataannya, dan menilai kemampuan prediksi terlalu tinggi.
-*Gejala:* posisi terlalu besar, tanpa rencana kalau salah.
-*Penangkal:* catat prediksi dan skor akurasinya (decision journal).
+Sebelum presentasi, seseorang mungkin berpikir “saya belum siap”, merasa cemas, mengalami jantung berdebar, lalu memilih berlatih atau menghindar. Urutan ini membantu memetakan pengalaman, tetapi bukan hukum sebab-akibat universal. Pikiran tidak otomatis mengendalikan emosi, dan respons tubuh dapat muncul tanpa disadari.
 
-## Cek Pemahaman
-1. Bias mana yang paling sering kamu alami? Beri satu contoh nyata.
-2. Kenapa konten viral "cuan 10x" memicu availability heuristic?
-3. Bagaimana decision journal membantu melawan overconfidence?
+Pisahkan observasi dan tafsir: “ia melihat jam tiga kali” adalah observasi; “ia bosan” adalah hipotesis. Memisahkan kategori membuat penjelasan lebih akurat dan tidak menghakimi.
 
-## Aksi
-Buka **Mindset Audit → Cognitive Bias Check** dan jalankan sebelum keputusan finansial berikutnya.`,
-      },
-      {
-        id: "psi-1-3",
-        title: "Prospect Theory & Loss Aversion",
-        minutes: 20,
-        content: `# Prospect Theory & Loss Aversion
+**Latihan:** gambarkan satu kejadian dengan empat kolom: situasi, pikiran, emosi/sensasi, tindakan. Tambahkan satu kemungkinan penjelasan alternatif.`,
+    },
+    {
+      title: "Nature dan Nurture: Biologi dan Lingkungan",
+      content: `# Nature dan Nurture
 
-**Tujuan:** paham kenapa rugi terasa lebih menyakitkan daripada untung terasa menyenangkan, dan dampaknya ke perilaku.
+“Nature” merujuk pada kontribusi biologis dan warisan genetik; “nurture” pada pengalaman, lingkungan, hubungan, budaya, dan pembelajaran. Dalam banyak perilaku, keduanya berinteraksi. Gen bukan cetak biru yang menentukan hasil tunggal; lingkungan juga tidak bekerja terpisah dari kondisi biologis.
 
-## Ide Inti (Kahneman & Tversky)
-Orang menilai hasil sebagai **untung/rugi terhadap titik acuan**, bukan total kekayaan. Dan rugi terasa kira-kira **sekitar dua kali** lebih kuat daripada untung dengan nominal sama.
+Analogi benih dan lingkungan dapat membantu: potensi tumbuh dipengaruhi kondisi sekitar. Namun analogi ini terbatas—manusia belajar, memilih, dan mengubah lingkungannya. Sifat yang diwariskan dalam populasi tidak otomatis menentukan nasib seorang individu.
 
-## Dampak Perilaku
-- **Disposition effect:** menjual yang untung terlalu cepat, menahan yang rugi terlalu lama.
-- **Risk-seeking saat rugi:** berani ambil risiko besar demi "balik modal".
-- **Sunk cost fallacy:** terus bertahan karena "sudah terlanjur keluar banyak".
-- **Framing effect:** pilihan yang sama terasa beda jika disajikan sebagai "90% selamat" vs "10% meninggal".
+Perbedaan antarindividu dalam satu lingkungan tidak membuktikan faktor genetik; lingkungan setiap orang pun tidak identik. Sebaliknya, perubahan perilaku setelah pelatihan tidak membuktikan biologi tidak berperan.
 
-## Pertanyaan Pemutus
-> "Kalau saya belum punya posisi ini, apakah saya akan membelinya **sekarang** di harga ini?"
+**Contoh:** kemampuan membaca berkembang melalui faktor sensorik dan kognitif, kesempatan memperoleh bahan bacaan, pengajaran, bahasa, dan dukungan. Tidak ada satu faktor yang menjelaskan seluruh variasi.
 
-Kalau jawabannya tidak, kemungkinan kamu bertahan karena loss aversion atau sunk cost, bukan karena analisis.
+**Refleksi:** informasi apa yang masih dibutuhkan sebelum menjelaskan perbedaan kebiasaan antara dua orang?`,
+    },
+    {
+      title: "Pendekatan Utama dalam Psikologi",
+      content: `# Pendekatan dalam Psikologi
 
-## Higiene Keputusan
-1. Tentukan **exit plan** (batas rugi dan target) sebelum masuk.
-2. Lakukan **pre-mortem**: bayangkan keputusan ini gagal, tulis 3 penyebab paling mungkin.
-3. Pakai **checklist** untuk keputusan penting.
-4. Catat di **decision journal**: alasan, keyakinan (%), hasil.
+Perspektif kognitif memeriksa pemrosesan informasi; behavioris memeriksa pembelajaran dan konsekuensi; biologis meneliti sistem saraf dan tubuh; sosial-budaya melihat norma dan hubungan; perkembangan mengamati perubahan sepanjang waktu. Pendekatan adalah lensa untuk membangun pertanyaan, bukan label yang selalu saling meniadakan.
 
-## Cek Pemahaman
-1. Jelaskan disposition effect dan kenapa merugikan.
-2. Apa beda sunk cost dengan biaya relevan untuk keputusan ke depan?
-3. Tulis pre-mortem singkat untuk satu keputusan yang sedang kamu timbang.
+Penundaan tugas dapat dipelajari melalui perkiraan usaha dan imbalan, pola penguatan sebelumnya, kondisi tidur, desain lingkungan, atau ekspektasi sosial. Penjelasan yang baik memilih tingkat analisis sesuai bukti dan tidak menganggap satu lensa menjawab semua hal.
 
-## Aksi
-Catat skor emosi harianmu di **Mindset Audit → Fear & Greed Index Note** selama 7 hari, lalu bandingkan dengan keputusan yang kamu ambil.`,
-      },
-    ],
-  },
+**Batasan:** istilah biologis atau neurologis tidak otomatis membuat klaim lebih kuat. Mekanisme perlu diukur, dan temuan pada satu kelompok atau tugas tidak langsung berlaku pada semua situasi.
+
+**Latihan:** pilih satu perilaku, lalu rumuskan pertanyaan berbeda dari perspektif kognitif dan sosial.`,
+    },
+    {
+      title: "Observasi, Hipotesis, Eksperimen, dan Evaluasi",
+      content: `# Dari Observasi ke Evaluasi
+
+Alur penelitian dapat dimulai dari observasi, pertanyaan, hipotesis yang dapat diuji, rancangan pengukuran, pengumpulan data, analisis, lalu evaluasi. Dalam praktik prosesnya berulang: hasil dapat mengubah hipotesis atau mengungkap pengukuran yang kurang tepat.
+
+Hipotesis menyatakan prediksi yang dapat dibandingkan dengan hasil. Definisi operasional menjelaskan bagaimana variabel diukur. Eksperimen mengubah satu faktor secara terencana dan membandingkan kondisi, idealnya dengan penempatan acak bila etis dan memungkinkan. Kelompok pembanding membantu menilai apakah perubahan terjadi karena intervensi atau faktor lain.
+
+**Contoh:** untuk menguji apakah jeda terjadwal membantu mengingat, bandingkan hasil kuis setelah strategi belajar berbeda dengan materi dan waktu yang sebanding. Satu orang mencoba satu kali tidak cukup untuk klaim umum.
+
+Etika penting: persetujuan, privasi, risiko, dan hak berhenti harus dipertimbangkan. Tidak semua pertanyaan boleh diuji lewat eksperimen langsung.`,
+    },
+    {
+      title: "Korelasi vs. Kausalitas",
+      content: `# Korelasi Tidak Otomatis Berarti Kausalitas
+
+Korelasi berarti dua ukuran berubah bersama. Kausalitas menyatakan perubahan satu faktor menghasilkan perubahan lain dalam kondisi tertentu. Korelasi dapat muncul karena sebab terbalik, faktor ketiga, kebetulan, atau bias pengukuran.
+
+Contoh hipotetis: waktu layar dan tidur yang lebih singkat berkaitan dalam suatu survei. Bisa jadi layar mengganggu tidur, tetapi jadwal kerja atau stres dapat memengaruhi keduanya. Bisa pula kurang tidur membuat seseorang lebih banyak menggunakan layar. Survei korelasional saja tidak menentukan arah sebab.
+
+Eksperimen terkontrol dapat membantu menguji sebab, tetapi tidak selalu etis atau mewakili kehidupan sehari-hari. Desain longitudinal, pengukuran berulang, dan replikasi dapat memperkuat pemahaman tanpa menjadikan satu studi bukti final.
+
+**Cek pemahaman:** sebelum menyimpulkan “A menyebabkan B”, tanyakan faktor apa yang mungkin menjadi penyebab bersama.`,
+    },
+    {
+      title: "Studi Kasus: Respons Berbeda pada Situasi Sama",
+      content: `# Studi Kasus: Mengapa Respons Orang Berbeda?
+
+Dua siswa mendapat umpan balik bahwa tugas mereka perlu direvisi. Satu langsung menyusun rencana; yang lain merasa kecewa dan menunda. Situasinya tampak sama, tetapi pengetahuan sebelumnya, interpretasi, kondisi fisik, pengalaman, tujuan, dan dukungan sosial dapat berbeda.
+
+Kerangka analisis: (1) amati tindakan tanpa label, (2) tanyakan interpretasi dan tujuan masing-masing, (3) identifikasi konteks yang mungkin relevan, (4) cari bukti tambahan, (5) hindari menganggap satu penyebab pasti. Respons berbeda tidak otomatis menunjukkan karakter “kuat” atau “lemah”.
+
+**Contoh tandingan:** jika kedua siswa tampak tenang, pengalaman internal mereka belum tentu sama. Perilaku luar bukan jendela sempurna ke pikiran orang lain.
+
+**Refleksi:** apa yang perlu ditanyakan dengan hormat sebelum menyimpulkan mengapa seseorang bereaksi tertentu?`,
+    },
+  ]),
+  chapter(2, "Cognitive Psychology", "Persepsi, perhatian, memori, lupa, heuristik, dan strategi belajar yang didukung prinsip kognitif.", [
+    { title: "Pengertian Psikologi Kognitif", content: `# Psikologi Kognitif\n\nPsikologi kognitif meneliti bagaimana informasi diperhatikan, ditafsirkan, disimpan, diingat, dan digunakan untuk mengambil keputusan. Proses tersebut tidak terlihat langsung; peneliti menggunakan tugas, laporan, dan pola kesalahan sebagai petunjuk.\n\nAnalogi komputer berguna untuk membayangkan tahap pemrosesan, tetapi terbatas: otak bukan perangkat digital dengan ruang simpan yang rapi. Emosi, tubuh, tujuan, dan konteks memengaruhi kognisi.` },
+    { title: "Sensasi, Persepsi, dan Interpretasi", content: `# Sensasi, Persepsi, Interpretasi\n\nSensasi adalah penerimaan sinyal indera; persepsi mengorganisasi sinyal menjadi pengalaman; interpretasi memberi makna berdasarkan konteks dan pengetahuan. Ketiganya saling terkait tetapi tidak identik.\n\nDua orang dapat melihat pesan singkat yang sama tetapi menafsirkan nada berbeda karena konteks dan harapan. Persepsi bukan rekaman pasif; namun itu juga tidak berarti semua tafsir sama akurat. Periksa bukti dan cari informasi tambahan.` },
+    { title: "Perhatian dan Kapasitas Kognitif", content: `# Perhatian Terbatas\n\nPerhatian memilih sebagian informasi untuk diproses lebih mendalam. Tugas yang menuntut konsentrasi dapat terganggu oleh notifikasi, perpindahan konteks, dan beban mental. Manusia tetap dapat memantau beberapa hal sederhana, tetapi tugas kompleks sering bersaing meminta sumber daya.\n\nMatikan notifikasi yang tidak penting, siapkan satu target, dan gunakan jeda terencana. Simulasi perhatian pada halaman ini hanya ilustrasi, bukan tes kemampuan atau diagnosis.` },
+    { title: "Working Memory dan Long-term Memory", content: `# Memori Kerja dan Memori Jangka Panjang\n\nMemori kerja menjaga dan memanipulasi informasi yang sedang digunakan, misalnya mengingat instruksi sambil menghitung. Kapasitasnya terbatas dan dipengaruhi pengetahuan serta kompleksitas tugas. Memori jangka panjang menyimpan pengetahuan dan pengalaman lebih lama, tetapi aksesnya tidak selalu sempurna.\n\nMengelompokkan informasi bermakna dapat mengurangi beban memori kerja. Namun menghafal potongan tanpa pemahaman bukan pengganti struktur konsep. Kesalahan umum adalah menganggap semua lupa berarti informasi telah hilang permanen.` },
+    { title: "Encoding, Storage, Retrieval, dan Forgetting", content: `# Proses Memori\n\nEncoding mengubah pengalaman menjadi representasi yang dapat diingat; storage mempertahankan informasi; retrieval mengaksesnya. Lupa dapat muncul karena perhatian saat belajar kurang, petunjuk pengambilan berbeda, interferensi, atau waktu. Mengingat kembali juga dapat dipengaruhi konteks.\n\nMembaca ulang memberi rasa familiar, tetapi tidak selalu menunjukkan bahwa informasi dapat diambil tanpa bantuan. Uji diri dengan menutup catatan, lalu periksa jawaban dan koreksi kekeliruan.` },
+    { title: "Retrieval Practice, Spaced Practice, dan Elaboration", content: `# Strategi Belajar\n\nRetrieval practice adalah latihan mengingat tanpa melihat materi; spaced practice menyebarkan belajar dalam beberapa sesi; elaboration menghubungkan gagasan baru dengan pengetahuan dan contoh. Strategi ini membantu menguji dan memperkuat akses, tetapi hasil bergantung materi, waktu, dan kualitas latihan.\n\nContoh rencana: setelah membaca satu konsep, tulis penjelasan dari ingatan, cek sumber, lalu ulangi esok hari dan beberapa hari kemudian. Jangan menggunakan grafik simulasi sebagai bukti eksperimen tertentu; jadwal ideal berbeda antarorang dan tujuan.` },
+    { title: "Heuristik dan Pemrosesan Informasi", content: `# Heuristik\n\nHeuristik adalah jalan pintas penilaian yang mengurangi beban berpikir. Availability membuat contoh yang mudah teringat terasa lebih umum; familiarity membuat informasi berulang terasa lebih benar. Heuristik sering berguna, tetapi dapat menyimpang ketika informasi yang mudah diingat tidak mewakili frekuensi nyata.\n\nPeriksa base rate, cari contoh yang tidak mudah muncul di ingatan, dan bandingkan sumber. Bias adalah kecenderungan dalam kondisi tertentu, bukan bukti bahwa seseorang selalu irasional.` },
+    { title: "Studi Kasus: Membaca Ulang Tanpa Mengingat", content: `# Studi Kasus: Familiar Bukan Berarti Menguasai\n\nDina membaca bab tiga kali dan merasa lancar, tetapi kesulitan menjelaskan tanpa buku. Pengenalan selama membaca memberi petunjuk, sementara ujian menuntut retrieval. Solusinya bukan sekadar membaca lebih cepat, tetapi menguji pemahaman secara aktif.\n\nDina membuat pertanyaan, menjawab dengan kata sendiri, menggambar hubungan, lalu memeriksa kesalahan. Jika gagal, ia memperjelas konsep dan mencoba lagi setelah jeda. Ini juga mengungkap bagian yang belum dipahami.\n\n**Refleksi:** bagaimana membedakan rasa familiar dari kemampuan menerapkan konsep pada contoh baru?` },
+  ]),
+  chapter(3, "Emotion & Emotional Regulation", "Fungsi emosi, hubungan interpretasi dan tindakan, serta strategi regulasi yang kontekstual.", [
+    { title: "Emosi dan Fungsi Adaptif", content: `# Emosi\n\nEmosi adalah respons yang dapat melibatkan pengalaman subjektif, perubahan tubuh, perhatian, ekspresi, dan kecenderungan bertindak. Emosi memberi informasi tentang kebutuhan atau penilaian situasi, tetapi bukan selalu bukti bahwa penilaian itu benar.\n\nRasa takut dapat mendorong kewaspadaan, tetapi intensitas dan konteks menentukan apakah respons membantu. Tidak ada emosi yang memiliki satu penyebab universal; pengalaman individu dan budaya juga berpengaruh.` },
+    { title: "Emosi, Perasaan, dan Suasana Hati", content: `# Membedakan Pengalaman Afektif\n\nEmosi sering merujuk pada respons terhadap sesuatu yang dianggap relevan; perasaan adalah pengalaman sadar yang dirasakan; suasana hati biasanya lebih menyebar dan bertahan lebih lama tanpa pemicu tunggal yang jelas. Istilah ini digunakan berbeda dalam literatur, jadi definisikan konteksnya.\n\nMengenali perbedaan dapat membantu bertanya: “Apa yang terjadi?”, “Apa sensasi yang terasa?”, dan “Apakah suasana hati umum memengaruhi penilaian?” Ini bukan cara mendiagnosis.` },
+    { title: "Pemicu, Interpretasi, Tubuh, dan Tindakan", content: `# Peta Respons Emosi\n\nSituasi dapat memicu interpretasi; interpretasi berhubungan dengan pengalaman emosi dan respons tubuh, yang selanjutnya memengaruhi tindakan. Hubungannya dua arah: tubuh dan perilaku juga dapat mengubah pengalaman. Model ini peta sederhana, bukan urutan wajib untuk setiap orang.\n\nSaat menerima kritik, seseorang mungkin menilai “saya gagal”, merasa malu, lalu menghindar; orang lain melihatnya sebagai informasi revisi. Periksa fakta, asumsi, dan kebutuhan sebelum memilih respons.` },
+    { title: "Emosi dan Pengambilan Keputusan", content: `# Emosi dalam Keputusan\n\nEmosi dapat memusatkan perhatian pada ancaman, peluang, atau nilai yang penting. Menghapus emosi bukan tujuan realistis; keputusan dapat menjadi lebih baik ketika emosi dikenali bersama informasi dan tujuan.\n\nKeputusan saat marah, takut, atau sangat antusias mungkin terasa mendesak. Jeda dapat memberi waktu memeriksa konsekuensi, tetapi tidak semua keputusan perlu ditunda. Gunakan proporsi terhadap dampak dan urgensi.` },
+    { title: "Cognitive Reappraisal", content: `# Penilaian Ulang Kognitif\n\nCognitive reappraisal adalah meninjau kembali makna situasi sebelum respons berkembang lebih jauh. Contoh: “umpan balik ini berarti saya buruk” dapat diuji menjadi “ada bagian tugas yang perlu diperbaiki; ini bukan penilaian seluruh diri.” Tujuannya bukan menyangkal fakta, tetapi membedakan fakta dan interpretasi.\n\nStrategi ini tidak cocok setiap saat dan bukan kewajiban untuk berpikir positif. Dalam situasi berbahaya, tindakan perlindungan dan dukungan lebih penting daripada menafsirkan ulang.` },
+    { title: "Suppression, Avoidance, dan Pilihan Regulasi", content: `# Strategi Regulasi Emosi\n\nSuppression menahan ekspresi emosi; avoidance menghindari situasi atau pengalaman; reappraisal mengubah interpretasi. Masing-masing dapat berguna dalam konteks tertentu dan memiliki trade-off. Menunda ekspresi sesaat di situasi kerja bisa praktis, sedangkan menekan emosi terus-menerus dapat membuat kebutuhan tidak tertangani.\n\nPilih strategi berdasar tujuan, keamanan, dan konteks—bukan aturan bahwa satu teknik selalu benar. Bila distress berat atau mengganggu fungsi, pertimbangkan bantuan profesional.` },
+    { title: "Mengenali Respons Impulsif Tanpa Menghakimi", content: `# Jeda antara Dorongan dan Tindakan\n\nDorongan adalah pengalaman yang muncul, bukan perintah yang harus diikuti. Menamai emosi, memperhatikan sensasi, dan membuat jeda singkat dapat membuka pilihan lain. Hindari mencela diri: penilaian keras sering tidak memberi informasi tentang kebutuhan yang belum terpenuhi.\n\nRencana jika-maka dapat membantu: “Jika saya ingin membalas pesan saat marah, saya akan menunggu sepuluh menit dan membaca ulang sebelum mengirim.” Rencana tidak menjamin berhasil, jadi evaluasi tanpa menghukum diri.` },
+    { title: "Studi Kasus: Kritik dan Konflik", content: `# Studi Kasus: Respons terhadap Kritik\n\nDalam rapat, Bima menerima komentar bahwa presentasinya membingungkan. Ia merasakan tegang dan ingin membela diri. Pilihannya: bereaksi segera, meminta contoh konkret, atau meninjau ulang setelah rapat. Respons yang sesuai bergantung pada konteks dan tujuan, bukan formula universal.\n\nLatihan: pisahkan kata-kata yang terdengar dari interpretasi; identifikasi kebutuhan (kejelasan, rasa dihormati, waktu); pilih pertanyaan yang tidak menyerang. Jika komunikasi tidak aman, cari dukungan atau batas yang tepat.\n\n**Refleksi:** apa yang membantu membedakan kritik terhadap hasil kerja dari penilaian terhadap nilai diri?` },
+  ]),
+  chapter(4, "Learning, Motivation & Habit Formation", "Pembelajaran, konsekuensi, motivasi, kebiasaan, serta desain lingkungan yang mendukung tujuan.", [
+    { title: "Belajar dan Perubahan Perilaku", content: `# Belajar\n\nBelajar adalah perubahan pengetahuan atau perilaku yang relatif bertahan akibat pengalaman; perubahan sesaat karena lelah atau sakit belum tentu menunjukkan pembelajaran. Pengetahuan, keterampilan, dan kebiasaan memerlukan ukuran berbeda.\n\nLatihan dengan umpan balik membantu memperbaiki kesalahan. Namun perubahan perilaku dapat dipengaruhi konteks, akses, dan kesempatan, bukan kemauan saja.` },
+    { title: "Classical Conditioning", content: `# Classical Conditioning\n\nDalam pengondisian klasik, stimulus yang awalnya netral dapat diasosiasikan dengan stimulus lain hingga memunculkan respons terpelajar. Konsep ini membantu menjelaskan asosiasi dan respons otomatis tertentu.\n\nContoh sehari-hari: bunyi notifikasi yang berulang kali mendahului pesan penting dapat menarik perhatian. Asosiasi berbeda antarindividu dan dapat berubah; satu contoh tidak menjelaskan seluruh emosi atau perilaku.` },
+    { title: "Operant Conditioning", content: `# Operant Conditioning\n\nPengondisian operan mempelajari bagaimana konsekuensi setelah tindakan memengaruhi kemungkinan tindakan itu terjadi lagi. Penguatan meningkatkan perilaku yang ditargetkan; hukuman menurunkannya dalam kondisi tertentu.\n\nKonsekuensi yang sama tidak selalu berdampak sama pada semua orang. Perilaku juga dipengaruhi instruksi, kemampuan, hubungan, dan kondisi sebelum tindakan. Jangan menganggap setiap tindakan bisa dibentuk hanya dengan hadiah atau hukuman.` },
+    { title: "Reinforcement dan Punishment", content: `# Penguatan dan Hukuman\n\n“Positif” berarti sesuatu ditambahkan; “negatif” berarti sesuatu dihilangkan. Positive reinforcement menambahkan konsekuensi yang meningkatkan perilaku; negative reinforcement menghilangkan hal tidak menyenangkan dan juga meningkatkan perilaku. Punishment menurunkan perilaku.\n\nJadi “negative reinforcement” bukan hukuman. Contoh: memakai sabuk pengaman menghentikan bunyi pengingat dapat memperkuat kebiasaan memakai sabuk. Hukuman dapat menekan perilaku tanpa mengajarkan alternatif, dan berisiko merusak kepercayaan.` },
+    { title: "Motivasi Intrinsik dan Ekstrinsik", content: `# Motivasi\n\nMotivasi intrinsik terkait minat atau kepuasan dari aktivitas; ekstrinsik terkait hasil terpisah seperti nilai, gaji, atau pengakuan. Keduanya dapat hadir bersamaan dan tidak selalu saling meniadakan.\n\nImbalan dapat membantu memulai tugas tertentu, tetapi desainnya penting. Tekanan, kontrol, dan jenis tugas dapat memengaruhi pengalaman motivasi. Hindari menyimpulkan bahwa motivasi ekstrinsik selalu buruk atau minat saja cukup.` },
+    { title: "Goal Setting, Feedback, dan Self-efficacy", content: `# Tujuan dan Keyakinan Mampu\n\nTujuan yang spesifik membantu mengarahkan tindakan jika realistis, disertai umpan balik, dan memiliki sumber daya. Self-efficacy adalah keyakinan seseorang bahwa ia dapat melakukan tindakan tertentu; bukan harga diri umum dan bukan jaminan sukses.\n\nPecah tujuan menjadi langkah yang dapat diamati, cari umpan balik spesifik, dan sesuaikan kesulitan. Jika hambatan berasal dari akses atau beban berlebih, perubahan lingkungan mungkin lebih tepat daripada menyalahkan motivasi.` },
+    { title: "Habit Loop: Pemicu, Tindakan, Konsekuensi", content: `# Kebiasaan\n\nKebiasaan adalah respons yang menjadi lebih otomatis melalui pengulangan dalam konteks tertentu. Pemicu dapat berupa waktu, lokasi, keadaan internal, atau tindakan sebelumnya; konsekuensi dapat mempertahankan pola.\n\nCatat konteks, tindakan, dan apa yang terjadi sesudahnya. Mengubah satu unsur—misalnya menaruh ponsel di luar meja—dapat mengurangi friksi. Tidak ada jumlah hari universal untuk membentuk kebiasaan; waktu dan konsistensi berbeda.` },
+    { title: "Lingkungan, Friction, dan Fokus", content: `# Desain Lingkungan\n\nFriction adalah usaha yang diperlukan untuk melakukan tindakan. Membuat distraksi lebih sulit diakses dan menyiapkan bahan belajar sebelumnya dapat mengubah pilihan yang paling mudah tanpa mengandalkan kemauan terus-menerus.\n\nContoh: blokir notifikasi selama sesi, letakkan bahan tugas terbuka, dan tentukan lokasi ponsel. Rancangan perlu sesuai kebutuhan aksesibilitas, pekerjaan, dan kondisi rumah. Lingkungan membantu, tetapi tidak mengontrol semua perilaku.` },
+    { title: "Studi Kasus: Media Sosial saat Belajar", content: `# Studi Kasus: Mengurangi Cek Media Sosial\n\nAmati kapan ponsel dibuka, apa pemicunya, dan apa hasil langsungnya. Bisa jadi pemicunya kebingungan pada tugas, bukan sekadar “kurang disiplin”. Buat alternatif kecil: jika buntu, tulis pertanyaan lalu beristirahat terjadwal.\n\nUji perubahan selama beberapa sesi dan catat ukuran sederhana seperti jumlah perpindahan atau bagian tugas selesai. Data pribadi ini bukan eksperimen klinis dan tidak perlu mengumpulkan informasi orang lain. Jika strategi tidak membantu, perbaiki sistem dan hipotesis.` },
+  ]),
+  chapter(5, "Behavioral Economics & Cognitive Biases", "Heuristik, keterbatasan rasionalitas, framing, kerugian, dan perilaku keputusan.", [
+    { title: "Behavioral Science dan Behavioral Economics", content: `# Behavioral Science\n\nBehavioral science menggabungkan pendekatan untuk memahami perilaku; behavioral economics mengkaji bagaimana temuan perilaku berhubungan dengan pilihan ekonomi. Model ekonomi klasik dapat menjadi pembanding, tetapi manusia menghadapi batas informasi, waktu, perhatian, dan kendali diri.\n\nTemuan perilaku bersifat kontekstual. Efek rata-rata kelompok tidak memprediksi tindakan satu individu secara pasti. Evaluasi kebijakan perlu mempertimbangkan etika, transparansi, dan variasi populasi.` },
+    { title: "Bounded Rationality", content: `# Rasionalitas Terbatas\n\nBounded rationality menjelaskan bahwa keputusan dibuat dengan keterbatasan informasi dan kemampuan memproses. Seseorang dapat memilih opsi yang “cukup memadai” alih-alih menghitung semua kemungkinan.\n\nChecklist, batas risiko, dan membandingkan beberapa opsi dapat mengurangi beban. Namun aturan praktis juga punya batas; gunakan konteks, bukan menganggap satu model perilaku menjelaskan semua orang.` },
+    { title: "Confirmation Bias", content: `# Confirmation Bias\n\nConfirmation bias adalah kecenderungan mencari atau menafsirkan informasi dengan cara yang mendukung keyakinan awal. Bias ini dapat membuat orang membaca bukti searah dan mengabaikan alasan tandingan.\n\nPenangkal: tulis apa yang akan membuatmu mengubah pikiran, cari bukti yang menyangkal, dan periksa sumber primer. Mengundang kritik bukan berarti semua sumber memiliki kualitas bukti yang setara.` },
+    { title: "Availability Heuristic", content: `# Availability Heuristic\n\nAvailability heuristic menggunakan kemudahan contoh muncul di ingatan sebagai petunjuk frekuensi atau peluang. Berita dramatis dapat terasa umum karena mudah diingat, meski kita belum memeriksa data dasar.\n\nTanyakan base rate dan cakupan data. Contoh yang mudah diingat dapat mengingatkan adanya risiko, tetapi tidak cukup untuk mengestimasi seberapa sering risiko terjadi.` },
+    { title: "Anchoring Effect", content: `# Anchoring\n\nAnchoring terjadi saat angka atau informasi awal memengaruhi perkiraan selanjutnya, meskipun angka awal tidak relevan. Harga coret dapat memengaruhi penilaian diskon.\n\nSimulasi pada halaman ini menggunakan angka hipotetis. Sebelum melihat pembanding, buat estimasi independen dan jelaskan asumsi. Jangkar adalah pengaruh, bukan kendali mutlak; pengalaman dan pengetahuan juga berperan.` },
+    { title: "Framing Effect", content: `# Framing\n\nFraming adalah perubahan pilihan ketika informasi setara disajikan dengan penekanan berbeda. “90% berhasil” dan “10% tidak berhasil” secara aritmetika setara, tetapi dapat menimbulkan respons berbeda.\n\nTerjemahkan kedua pernyataan ke format yang sama, periksa denominator, periode, dan risiko yang tidak disebut. Framing dapat berinteraksi dengan konteks dan tidak memastikan seseorang memilih satu opsi.` },
+    { title: "Loss Aversion dan Prospect Theory", content: `# Loss Aversion\n\nDalam prospect theory, orang dapat mengevaluasi hasil terhadap titik acuan dan menunjukkan sensitivitas berbeda pada keuntungan dan kerugian. Loss aversion adalah kecenderungan kerugian terasa lebih berat dibanding keuntungan setara pada kondisi tertentu.\n\nJangan menganggap “dua kali lebih kuat” sebagai konstanta universal untuk setiap orang dan keputusan. Titik acuan, konteks, dan metode pengukuran memengaruhi hasil. Tuliskan kriteria keputusan sebelum menghadapi tekanan.` },
+    { title: "Sunk Cost Fallacy", content: `# Sunk Cost\n\nSunk cost adalah sumber daya masa lalu yang tidak dapat dipulihkan. Kekeliruan sunk cost muncul saat biaya itu dijadikan alasan utama untuk terus melanjutkan, meskipun pilihan ke depan sudah tidak sepadan.\n\nTanyakan “jika belum mengeluarkan biaya ini, apakah saya tetap memilih?” Pengalaman masa lalu boleh digunakan sebagai informasi tentang kemungkinan masa depan; biaya tak-terpulihkan itu sendiri bukan manfaat yang akan kembali.` },
+    { title: "Overconfidence dan Present Bias", content: `# Overconfidence dan Present Bias\n\nOverconfidence adalah keyakinan yang melampaui akurasi atau bukti, misalnya memperkirakan rentang terlalu sempit. Present bias merujuk pada bobot berlebih pada manfaat yang dekat dibanding manfaat/biaya masa depan.\n\nCatat prediksi beserta tingkat keyakinan dan bandingkan kemudian. Untuk tujuan jangka panjang, gunakan langkah otomatis yang dapat dibatalkan dan tinjau berkala. Catatan ini alat refleksi, bukan tes psikologis.` },
+    { title: "FOMO, Herd Behavior, dan Keputusan Kelompok", content: `# FOMO dan Pengaruh Kelompok\n\nFear of missing out (FOMO) adalah takut tertinggal pengalaman atau peluang yang tampak dinikmati orang lain. Herd behavior muncul saat tindakan orang lain menjadi petunjuk, terutama ketika informasi pribadi tidak lengkap.\n\nTindakan mayoritas tidak otomatis salah atau benar. Bedakan informasi independen dari pengulangan satu sumber, cek risiko dan tujuan, lalu beri jeda sebelum keputusan berbiaya tinggi.` },
+    { title: "Studi Kasus: Menahan Aset yang Merugi", content: `# Studi Kasus: Tidak Mau Mengakui Kerugian\n\nSeseorang membeli aset hipotetis lalu nilainya turun. Ia menolak menjual karena ingin “balik modal”, meskipun alasan awal berubah. Analisis yang tepat mengabaikan harga beli sebagai satu-satunya alasan, lalu menilai informasi sekarang, alternatif, risiko, biaya, dan tujuan.\n\nHarga masa lalu tetap dapat membantu menghitung hasil, tetapi bukan bukti nilai masa depan. Jangan memberi rekomendasi investasi personal dari latihan ini. Fokusnya adalah mengenali bias dan membuat keputusan konsisten dengan rencana.` },
+  ]),
+  chapter(6, "Social Psychology", "Konformitas, norma, atribusi, identitas sosial, dan pengaruh ruang digital.", [
+    { title: "Pengertian Psikologi Sosial", content: `# Psikologi Sosial\n\nPsikologi sosial mempelajari bagaimana pikiran, perasaan, dan tindakan dipengaruhi kehadiran nyata atau yang dibayangkan dari orang lain. Individu tetap memiliki agensi; pengaruh sosial bukan berarti perilaku sepenuhnya ditentukan kelompok.\n\nSituasi, hubungan, norma, dan budaya dapat mengubah arti tindakan. Pertanyaan yang baik membandingkan beberapa penjelasan dan tidak menyimpulkan sifat seseorang dari satu kejadian.` },
+    { title: "Konformitas dan Tekanan Kelompok", content: `# Konformitas\n\nKonformitas adalah perubahan respons agar selaras dengan norma atau kelompok. Pengaruh dapat berasal dari keinginan diterima (normatif) atau anggapan bahwa kelompok memiliki informasi lebih baik (informasional).\n\nSimulasi keputusan kelompok menggunakan skenario hipotetis dan tidak mengukur kepribadian. Suara mayoritas dapat membantu koordinasi tetapi juga menyembunyikan keraguan. Cara aman: kumpulkan pendapat secara independen sebelum diskusi.` },
+    { title: "Obedience dan Kepatuhan terhadap Otoritas", content: `# Otoritas dan Kepatuhan\n\nKepatuhan terhadap otoritas dipengaruhi legitimasi, norma, risiko, tanggung jawab, dan konteks. Eksperimen klasik tentang kepatuhan memiliki konteks historis dan batas etika; prosedur dan populasi tertentu tidak membuktikan bahwa semua orang akan berperilaku sama.\n\nDalam situasi nyata, tanyakan apakah instruksi legal, aman, dan sesuai tanggung jawab. Sediakan jalur bertanya dan melaporkan masalah; jangan menggunakan eksperimen psikologi untuk memberi label moral pada individu.` },
+    { title: "Norma Sosial dan Social Proof", content: `# Norma dan Social Proof\n\nNorma deskriptif memberi gambaran tentang apa yang biasa dilakukan; norma injunktif menunjukkan apa yang disetujui atau diharapkan. Social proof menggunakan tindakan orang lain sebagai petunjuk, terutama ketika situasi ambigu.\n\nUlasan dan angka pengguna dapat membantu, tetapi rentan seleksi dan manipulasi. Cari sumber yang beragam dan jangan menyamakan popularitas dengan akurasi atau keamanan.` },
+    { title: "Identitas Kelompok dan Ingroup–Outgroup", content: `# Identitas Sosial\n\nIdentitas kelompok adalah bagian konsep diri yang terkait keanggotaan sosial. Perbedaan kelompok dapat memengaruhi rasa memiliki dan penilaian, tetapi tidak berarti setiap anggota berpikir sama.\n\nHindari menganggap kelompok homogen. Tanyakan pengalaman individu, konteks, dan variasi internal. Kolaborasi lintas kelompok lebih baik ketika tujuan, aturan partisipasi, dan penghormatan dijelaskan.` },
+    { title: "Fundamental Attribution Error", content: `# Atribusi Disposisional dan Situasional\n\nFundamental attribution error merujuk pada kecenderungan dalam sebagian konteks untuk terlalu menekankan sifat orang lain dan kurang memperhatikan situasi ketika menjelaskan perilakunya. Istilah dan besarnya efek dapat berbeda menurut konteks budaya dan jenis penilaian.\n\nSeseorang terlambat mungkin kurang disiplin, tetapi juga bisa menghadapi gangguan transportasi. Penjelasan situasional tidak membebaskan tanggung jawab; ia mengingatkan kita mengumpulkan konteks sebelum menyimpulkan.` },
+    { title: "Stereotip dan Bias Sosial", content: `# Stereotip dan Bias\n\nStereotip adalah keyakinan umum tentang kelompok; penerapannya pada individu dapat mengabaikan variasi dan konteks. Bias sosial dapat muncul dalam persepsi, keputusan, atau sistem, meskipun pelakunya tidak berniat merugikan.\n\nGunakan informasi relevan tingkat individu, audit pola keputusan, dan dengarkan dampak pada orang yang terdampak. Jangan menyimpulkan identitas atau kemampuan dari penampilan kelompok.` },
+    { title: "Algoritma, Komunitas, dan Lingkungan Digital", content: `# Pengaruh Digital\n\nPlatform memilih dan mengurutkan konten berdasarkan sistem rekomendasi serta interaksi. Paparan yang berulang dapat membuat suatu pandangan terasa lebih umum, tetapi feed seseorang bukan sampel representatif masyarakat.\n\nCari sumber di luar rekomendasi, periksa tanggal dan asal klaim, dan waspadai metrik popularitas yang dapat dimanipulasi. Perilaku digital juga dipengaruhi desain produk, tujuan pengguna, dan konteks sosial.` },
+    { title: "Studi Kasus: Mengikuti Mayoritas", content: `# Studi Kasus: Suara Mayoritas\n\nTim memilih metode kerja karena “semua orang setuju”, tetapi sebagian anggota belum sempat memberi pendapat. Sebelum menganggap konsensus kuat, kumpulkan pilihan anonim, minta alasan tandingan, dan bedakan pengalaman langsung dari asumsi.\n\nKesimpulan kelompok dapat lebih baik ketika informasi beragam dibagikan; diskusi juga dapat menekan perbedaan. Evaluasi kualitas argumen, bukan sekadar jumlah orang yang mendukung.` },
+  ]),
+  chapter(7, "Personality & Individual Differences", "Kepribadian dan variasi individu dipelajari secara ilmiah tanpa mendiagnosis atau memberi label tetap.", [
+    { title: "Pengertian Kepribadian", content: `# Kepribadian\n\nKepribadian merujuk pada pola relatif konsisten dalam cara berpikir, merasa, dan bertindak. “Relatif konsisten” bukan berarti perilaku tidak pernah berubah; situasi dan peran dapat menghasilkan respons berbeda.\n\nSatu tindakan tidak cukup untuk menyimpulkan sifat. Ukuran kepribadian perlu melihat pola lintas waktu dan konteks serta mempertimbangkan cara data dikumpulkan.` },
+    { title: "Mempelajari Perbedaan Individu", content: `# Perbedaan Individu\n\nPenelitian perbedaan individu menggunakan observasi, laporan diri, tugas, dan data perilaku untuk mempelajari variasi. Setiap metode memiliki bias: laporan diri dipengaruhi kesadaran dan presentasi diri; observasi dapat dipengaruhi situasi pengamatan.\n\nBandingkan bukti dari beberapa metode jika pertanyaan penting. Korelasi antara skor dan hasil tidak membuktikan skor menyebabkan hasil.` },
+    { title: "Big Five: Lima Dimensi", content: `# Big Five\n\nModel Big Five menggambarkan variasi dalam lima dimensi luas: openness (keterbukaan pada pengalaman), conscientiousness (keteraturan/tanggung jawab), extraversion (kecenderungan keterlibatan sosial/energi), agreeableness (orientasi kerja sama), dan neuroticism (kecenderungan mengalami emosi negatif). Istilah dan terjemahan tidak sepenuhnya menangkap seluruh konstruk.\n\nDimensi bukan tipe kotak yang memisahkan orang. Skor bersifat relatif terhadap instrumen dan norma yang digunakan; tidak menentukan kemampuan, moralitas, atau masa depan seseorang.` },
+    { title: "Biologi, Pengalaman, dan Konteks", content: `# Sumber Perbedaan\n\nPerbedaan individu berkembang dari interaksi biologis, pengalaman, pembelajaran, dan lingkungan. Korelasi sifat di waktu berbeda dapat dipengaruhi stabilitas konteks dan pengukuran, bukan hanya satu sebab tunggal.\n\nOrang dapat menunjukkan perilaku berbeda saat bekerja, bersama keluarga, atau dalam situasi baru. Pola yang diamati perlu dijelaskan dalam konteks, bukan dianggap esensi yang selalu sama.` },
+    { title: "Kepribadian dan Perilaku Situasional", content: `# Orang dan Situasi\n\nPerilaku merupakan hasil interaksi karakteristik individu dan situasi. Seseorang yang biasanya tenang dapat berbicara tegas ketika keselamatan dipertaruhkan; seseorang yang ramah mungkin diam saat bahasa yang digunakan belum dikuasai.\n\nKonteks bukan alasan untuk menghapus pola, dan pola bukan alasan mengabaikan konteks. Lihat beberapa kejadian sebelum menafsirkan kecenderungan.` },
+    { title: "Preferensi, Kemampuan, dan Nilai", content: `# Tiga Hal Berbeda\n\nPreferensi adalah apa yang disukai; kemampuan adalah keterampilan atau kapasitas pada tugas tertentu; nilai adalah hal yang dianggap penting. Ketiganya dapat berkaitan tetapi tidak dapat saling menggantikan.\n\nGaya bekerja yang disukai tidak otomatis menunjukkan kemampuan objektif. Gunakan data kinerja yang relevan dan beri kesempatan untuk belajar sebelum membuat keputusan seperti pembagian kerja.` },
+    { title: "Reliabilitas dan Validitas Tes", content: `# Menilai Instrumen\n\nReliabilitas merujuk pada konsistensi pengukuran; validitas pada sejauh mana bukti mendukung interpretasi dan penggunaan skor. Tes dapat reliabel tetapi tidak valid untuk tujuan tertentu.\n\nPeriksa populasi validasi, bahasa, norma, tujuan, dan ketidakpastian skor. Kuis informal di internet bukan asesmen profesional dan tidak layak digunakan untuk diagnosis atau keputusan berisiko tinggi.` },
+    { title: "Risiko Label Kepribadian", content: `# Label dan Generalisasi\n\nLabel dapat membantu ringkasan, tetapi juga membuat orang menafsirkan semua tindakan sebagai bukti sifat yang sama. Label dapat membatasi kesempatan dan mengabaikan perubahan atau kemampuan yang berkembang.\n\nDeskripsikan perilaku spesifik dan konteks (“menyelesaikan tugas tepat waktu pada tiga proyek”) alih-alih memberi cap global. Hindari menyimpulkan kepribadian pengguna dari interaksi singkat.` },
+    { title: "Studi Kasus: Gaya Bekerja dan Komunikasi", content: `# Studi Kasus: Kolaborasi\n\nDalam tim, satu anggota ingin agenda tertulis; anggota lain lebih suka diskusi spontan. Ini dapat mencerminkan preferensi kerja, bukan “tipe kepribadian” yang tetap. Tim dapat menggabungkan agenda singkat dengan waktu diskusi terbuka.\n\nTanyakan kebutuhan dan evaluasi hasil bersama. Perbedaan gaya bukan otomatis konflik atau diagnosis; akomodasi yang baik meningkatkan kejelasan tanpa stereotip.` },
+  ]),
+  chapter(8, "Critical Thinking & Behavior Change", "Mengevaluasi klaim dan bukti, menguji hipotesis, serta merancang perubahan perilaku sederhana dan etis.", [
+    { title: "Fakta, Interpretasi, Asumsi, dan Opini", content: `# Empat Lapisan Pernyataan\n\nFakta adalah klaim yang dapat diperiksa; interpretasi memberi makna; asumsi adalah hal yang diterima tanpa pemeriksaan cukup; opini menyatakan penilaian. Satu kalimat dapat mencampur semuanya.\n\nContoh: “rapat mulai pukul 10” dapat diverifikasi; “mereka tidak menghargai saya” adalah interpretasi yang membutuhkan konteks. Memisahkan lapisan membantu merespons tanpa meniadakan pengalaman.` },
+    { title: "Berpikir Kritis dan Evaluasi Bukti", content: `# Evaluasi Bukti\n\nTanyakan sumber, metode, ukuran sampel bila tersedia, pembanding, konflik kepentingan, tanggal, dan ketidakpastian. Bukti yang kuat menjawab klaim spesifik; banyaknya pengulangan bukan pengganti kualitas.\n\nCari argumen terbaik yang menentang kesimpulan sementara. Berpikir kritis bukan menolak semua hal, melainkan menyesuaikan keyakinan dengan bukti dan memperbaruinya ketika informasi berubah.` },
+    { title: "Hipotesis, Falsifiability, dan Pengujian Klaim", content: `# Hipotesis yang Dapat Diuji\n\nHipotesis yang berguna menghasilkan prediksi yang dapat diamati dan berisiko terbukti salah. Jika setiap hasil dapat dijelaskan ulang agar klaim selalu benar, klaim itu sulit diuji.\n\nTetapkan terlebih dahulu apa yang akan dihitung sebagai dukungan atau bukti yang melemahkan. Ini mengurangi kecenderungan mengubah aturan setelah melihat hasil. Pengujian sehari-hari tetap perlu aman dan etis.` },
+    { title: "Base Rate dan Probabilitas", content: `# Base Rate\n\nBase rate adalah frekuensi dasar suatu kejadian pada kelompok atau konteks yang relevan. Informasi kasus yang menarik dapat mengalihkan perhatian dari base rate, padahal keduanya perlu dipertimbangkan.\n\nGunakan denominator dan periode yang jelas. Jika tidak tersedia data yang relevan, nyatakan ketidakpastian daripada membuat peluang presisi. Probabilitas populasi tidak menentukan nasib individu.` },
+    { title: "Korelasi Palsu dan Kesalahan Penalaran", content: `# Memeriksa Hubungan\n\nDua hal yang terjadi bersama belum tentu terkait sebab-akibat. Pola bisa muncul karena tren waktu, faktor ketiga, pemilihan sampel, atau kebetulan. Grafik tanpa sumbu dan rentang yang jelas dapat menciptakan kesan hubungan kuat.\n\nCari data pembanding, periksa definisi, dan tanyakan mekanisme yang masuk akal. Mekanisme yang menarik pun tetap perlu diuji.` },
+    { title: "Persuasi, Manipulasi, dan Dark Patterns", content: `# Desain Persuasi\n\nPersuasi menyajikan alasan untuk memengaruhi pilihan; manipulasi menyembunyikan informasi atau mengeksploitasi kerentanan. Dark patterns adalah desain antarmuka yang mendorong tindakan yang mungkin tidak dipilih pengguna bila pilihan disajikan jelas.\n\nPeriksa opsi batal, biaya, persetujuan, dan kontrol privasi. Tambahkan jeda sebelum menyetujui transaksi dan gunakan kanal resmi untuk mengubah pengaturan.` },
+    { title: "Keputusan Berdasarkan Tujuan dan Konsekuensi", content: `# Kerangka Keputusan\n\nRumuskan tujuan, pilihan realistis, konsekuensi jangka pendek/panjang, risiko, dan nilai yang relevan. Tidak semua nilai bisa dibandingkan dengan angka; tulis trade-off secara eksplisit.\n\nPeriksa reversibilitas: keputusan mudah dibatalkan dapat diuji kecil; keputusan sulit dibalik memerlukan pemeriksaan lebih teliti. Jangan menganggap satu kerangka menjamin keputusan benar.` },
+    { title: "Merancang Eksperimen Perilaku Sederhana", content: `# Eksperimen Pribadi\n\nTentukan perilaku yang dapat diamati, pemicu yang ingin diuji, tindakan kecil, dan ukuran hasil. Contoh: selama lima sesi, letakkan ponsel di luar jangkauan dan catat jumlah perpindahan perhatian. Bandingkan dengan kondisi biasa secara jujur.\n\nEksperimen ini untuk refleksi pribadi, bukan penelitian klinis. Hindari mengumpulkan data orang lain tanpa izin dan jangan mengubah faktor yang berisiko. Hasil satu orang tidak membuktikan strategi berlaku universal.` },
+    { title: "Evaluasi Perubahan Perilaku", content: `# Tinjau dan Sesuaikan\n\nTinjau apakah strategi dijalankan, apa hambatannya, perubahan apa yang terlihat, dan penjelasan alternatif. Jangan hanya memilih hari yang mendukung harapan. Jika strategi gagal, itu informasi untuk mengubah rancangan, bukan bukti bahwa diri “tidak disiplin”.\n\nPilih ukuran yang masuk akal dan periode yang cukup. Perubahan dapat berfluktuasi karena beban kerja, kesehatan, dan lingkungan.` },
+    { title: "Studi Kasus: Sistem Belajar Minim Distraksi", content: `# Studi Kasus Integratif\n\nArif ingin belajar satu jam tanpa terus berpindah ke media sosial. Ia memetakan pemicu (notifikasi dan kebingungan saat soal sulit), tindakan (membuka aplikasi), dan konsekuensi langsung (menghindari rasa tidak nyaman). Hipotesis awalnya: menghilangkan notifikasi saja akan mengurangi perpindahan.
+
+Ia menyiapkan pertanyaan untuk saat buntu, mematikan notifikasi, dan mencatat sesi yang selesai. Setelah beberapa hari, ia meninjau hasil dan mengubah strategi jika hambatan utama ternyata kelelahan atau tugas terlalu besar. Ini percobaan kecil, bukan diagnosis atau bukti universal.
+
+**Worksheet:** tujuan → perilaku terukur → hipotesis → perubahan kecil → ukuran hasil → kemungkinan faktor lain → tanggal tinjau.`,
+    },
+  ]),
 ];

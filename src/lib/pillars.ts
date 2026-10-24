@@ -22,9 +22,9 @@ export const PILLARS: Pillar[] = [
   {
     slug: "inggris",
     title: "Bahasa Inggris",
-    description: "Active vocabulary, financial reading, expression & grammar.",
+    description: "Kurikulum bahasa Inggris bertahap berbasis level CEFR dan komunikasi nyata.",
     icon: Languages,
-    categories: ["Vocabulary", "Financial Reading", "Expression", "Grammar"],
+    categories: ["Grammar", "Vocabulary", "Reading", "Listening", "Writing", "Speaking"],
     accent: { text: "text-sky-400", bg: "bg-sky-500/10", border: "border-sky-500/30", bar: "bg-sky-500" },
   },
   {

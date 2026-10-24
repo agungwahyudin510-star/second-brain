@@ -5,17 +5,25 @@ import { cn } from "@/lib/utils";
 
 const TARGET = 20; // target jumlah catatan per bidang
 
-export default function PillarCard({ pillar, count }: { pillar: Pillar; count: number }) {
+export default function PillarCard({
+  pillar,
+  count,
+  lessonDone,
+  lessonTotal,
+}: {
+  pillar: Pillar;
+  count: number;
+  lessonDone: number;
+  lessonTotal: number;
+}) {
   const Icon = pillar.icon;
-  const pct = Math.min(100, Math.round((count / TARGET) * 100));
+  const notePct = Math.min(100, Math.round((count / TARGET) * 100));
+  const lessonPct = lessonTotal ? Math.round((lessonDone / lessonTotal) * 100) : 0;
 
   return (
     <Link
       href={`/pillar/${pillar.slug}`}
-      className={cn(
-        "group rounded-xl border bg-zinc-900/60 p-5 transition hover:bg-zinc-900",
-        pillar.accent.border
-      )}
+      className={cn("group rounded-xl border bg-zinc-900/60 p-5 transition hover:bg-zinc-900", pillar.accent.border)}
     >
       <div className="flex items-start justify-between">
         <div className={cn("rounded-lg p-2.5", pillar.accent.bg)}>
@@ -25,13 +33,26 @@ export default function PillarCard({ pillar, count }: { pillar: Pillar; count: n
       </div>
       <h3 className="mt-4 font-semibold">{pillar.title}</h3>
       <p className="mt-1 text-sm text-zinc-500">{pillar.description}</p>
-      <div className="mt-4">
-        <div className="mb-1 flex justify-between text-xs text-zinc-500">
-          <span>{count} catatan</span>
-          <span>target {TARGET}</span>
+      <div className="mt-4 space-y-3">
+        <div>
+          <div className="mb-1 flex justify-between text-xs text-zinc-500">
+            <span>Kurikulum</span>
+            <span>{lessonTotal ? `${lessonDone}/${lessonTotal} pelajaran` : "Segera dikembangkan"}</span>
+          </div>
+          {lessonTotal > 0 && (
+            <div className="h-1.5 overflow-hidden rounded-full bg-zinc-800">
+              <div className={cn("h-full rounded-full transition-all", pillar.accent.bar)} style={{ width: `${lessonPct}%` }} />
+            </div>
+          )}
         </div>
-        <div className="h-1.5 overflow-hidden rounded-full bg-zinc-800">
-          <div className={cn("h-full rounded-full transition-all", pillar.accent.bar)} style={{ width: `${pct}%` }} />
+        <div>
+          <div className="mb-1 flex justify-between text-xs text-zinc-500">
+            <span>{count} catatan</span>
+            <span>target {TARGET}</span>
+          </div>
+          <div className="h-1.5 overflow-hidden rounded-full bg-zinc-800">
+            <div className="h-full rounded-full bg-zinc-600 transition-all" style={{ width: `${notePct}%` }} />
+          </div>
         </div>
       </div>
     </Link>
