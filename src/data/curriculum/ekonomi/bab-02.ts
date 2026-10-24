@@ -11,7 +11,12 @@ export const BAB_02: CurriculumModule = {
       minutes: 40,
       content: `## Tujuan belajar dan peta konsep
 
-Pada akhir bagian ini, kamu dapat (1) mendefinisikan permintaan sebagai hubungan harga-jumlah dalam periode tertentu, (2) membedakan permintaan dari jumlah yang diminta, (3) menjelaskan hukum permintaan dengan substitusi dan daya beli, (4) menganalisis faktor yang menggeser kurva, dan (5) memperkirakan arah perubahan dengan asumsi lain tetap. Peta bab menghubungkan pilihan individu di Bab 1 dengan interaksi pasar: pembeli menyusun rencana pembelian, penjual menyusun rencana produksi, keduanya dibandingkan pada setiap harga, dan ekuilibrium merangkum harga-jumlah yang konsisten. Model permintaan tidak mengasumsikan bahwa semua pembeli sama.
+Pada akhir bagian ini, kamu dapat (1) mendefinisikan permintaan sebagai hubungan harga-jumlah dalam periode tertentu, (2) membedakan permintaan dari jumlah yang diminta, (3) menjelaskan hukum permintaan dengan substitusi dan daya beli, (4) menganalisis faktor yang menggeser kurva, dan (5) memperkirakan arah perubahan dengan asumsi lain tetap. Peta bab menghubungkan pilihan individu di Bab 1 dengan interaksi pasar: pembeli menyusun rencana pembelian, penjual menyusun rencana produksi, keduanya dibandingkan pada setiap harga, dan ekuilibrium merangkum harga-jumlah yang konsisten.
+
+> **Poin kunci**
+> - Permintaan adalah jadwal rencana pembelian pada berbagai harga, bukan satu angka transaksi.
+> - Harga barang itu sendiri mengubah jumlah yang diminta sepanjang kurva.
+> - Pendapatan, preferensi, harga barang terkait, ekspektasi, jumlah pembeli, dan musim dapat menggeser kurva.
 
 ## Definisi formal dan intuisi
 
@@ -31,7 +36,7 @@ Misalkan jadwal awal hipotetis untuk satu minggu: pada harga Rp10.000, 100 unit 
 
 Kurva pasar biasanya dibentuk dengan menjumlahkan jumlah yang diminta oleh banyak pembeli pada setiap harga, bukan dengan menjumlahkan harga mereka. Jika pada harga tertentu Sari ingin membeli dua tiket dan Budi tiga tiket, permintaan pasar pada harga itu lima tiket, dengan asumsi mereka berada di pasar dan periode yang sama. Pergeseran preferensi satu konsumen dapat berdampak kecil bila pasar besar, tetapi menjadi besar jika banyak pembeli berubah serentak. Karena itu data agregat dapat menutupi variasi kelompok: harga yang sama mungkin mengubah keputusan rumah tangga berpendapatan berbeda dengan cara berbeda.
 
-Di Indonesia, permintaan pakaian tertentu dapat naik menjelang hari raya karena musim, preferensi, atau ekspektasi; itu tidak membuktikan bahwa semua harga pada semua pasar akan bergerak sama. Contoh global sederhana ialah permintaan payung yang berubah saat pola cuaca diperkirakan berubah; pengaruh harga payung sendiri tetap dibedakan dari faktor cuaca.
+Di Indonesia, permintaan pakaian tertentu naik menjelang hari raya karena musim, preferensi, atau ekspektasi; itu tidak membuktikan bahwa semua harga pada semua pasar bergerak sama. Contoh global ialah permintaan payung yang berubah saat pola cuaca diperkirakan berubah; pengaruh harga payung sendiri tetap dibedakan dari faktor cuaca.
 
 [[visual:eko-move-vs-shift]]
 
@@ -42,13 +47,26 @@ Di Indonesia, permintaan pakaian tertentu dapat naik menjelang hari raya karena 
 3. Barang inferior bukan berarti barang buruk; istilahnya menjelaskan respons permintaan terhadap pendapatan.
 
 Investor dapat menggunakan pembedaan ini saat menilai perusahaan: harga produk yang berubah tidak sama dengan perubahan preferensi atau ukuran pasar. Pada Web3, kenaikan harga token dapat mengubah jumlah yang ingin dibeli sepanjang kurva, sedangkan perubahan utilitas, aturan, atau kepercayaan dapat menggeser permintaan; keduanya tidak boleh disimpulkan hanya dari grafik harga. Psikologi keputusan seperti herd behavior dapat membuat perubahan perhatian tampak seperti perubahan fundamental, sehingga data dan rentang waktu perlu diperiksa.
+
+## Batas model
+
+Hukum permintaan membandingkan faktor lain tetap dan merangkum banyak pembeli; perubahan mutu, batas pasar, serta perbedaan kelompok dapat memerlukan kurva atau analisis terpisah.
 `,
     },
     {
       id: "eko2-b02-s2",
       title: "Penawaran: keputusan produksi dan jadwal pasar",
       minutes: 40,
-      content: `## Definisi, intuisi, dan mekanisme
+      content: `## Tujuan belajar
+
+Definisikan penawaran, bedakan perubahan jumlah yang ditawarkan dari pergeseran kurva, hitung nilai dari fungsi penawaran linear, dan jelaskan pengaruh biaya, teknologi, waktu, serta jumlah produsen.
+
+> **Poin kunci**
+> - Penawaran menghubungkan harga dengan jumlah yang bersedia dan mampu dijual dalam periode tertentu.
+> - Perubahan harga barang sendiri menggerakkan titik sepanjang kurva; faktor lain menggeser kurva.
+> - Biaya input, teknologi, ekspektasi, kapasitas, dan jumlah produsen membentuk jadwal penawaran.
+
+## Definisi, intuisi, dan mekanisme
 
 Penawaran (supply) adalah hubungan antara berbagai harga dan jumlah barang atau jasa yang bersedia serta mampu dijual produsen selama periode tertentu. Rencana penjual bergantung pada biaya produksi, kapasitas, teknologi, ekspektasi, dan alternatif penggunaan sumber daya. Sebuah produk yang terlihat di toko menunjukkan transaksi atau stok, bukan seluruh jadwal penawaran. Jadwal penawaran memasangkan beberapa harga dengan jumlah yang ingin dijual.
 
@@ -78,26 +96,48 @@ Dalam konteks Indonesia, hujan ekstrem yang menghambat pengiriman hasil kebun da
 2. Teknologi yang lebih baik cenderung menaikkan penawaran pada harga tertentu; kurva tidak “bergerak karena harga” dalam cerita ini.
 3. Stok saat ini berbeda dari aliran produksi per periode. Barang dapat disimpan atau dipindahkan dari periode lain.
 
-Perusahaan dan investor perlu membedakan kenaikan harga sementara dari penurunan biaya yang berkelanjutan sebelum menilai kapasitas laba. Pada Web3, kenaikan biaya gas atau perubahan imbalan validator dapat menggeser insentif pasokan layanan, tetapi output aktual dipengaruhi kapasitas jaringan. Psikologi dapat menimbulkan supply optimism: pelaku menganggap kapasitas akan segera bertambah tanpa memperhitungkan waktu, keterampilan, atau input pelengkap.
+Perusahaan dan investor membedakan kenaikan harga sementara dari penurunan biaya berkelanjutan sebelum menilai kapasitas laba. Pada Web3, kenaikan biaya gas atau perubahan imbalan validator menggeser insentif pasokan layanan, sementara output aktual dipengaruhi kapasitas jaringan. Supply optimism membuat pelaku menganggap kapasitas segera bertambah tanpa menghitung waktu, keterampilan, atau input pelengkap.
+
+## Batas model
+
+Fungsi linear hanya mendekati perilaku penawaran pada rentang yang ditentukan; kapasitas, jeda produksi, kontrak, dan kondisi input membatasi penerapannya.
 `,
     },
     {
       id: "eko2-b02-s3",
       title: "Ekuilibrium pasar dan perubahan harga-jumlah",
       minutes: 45,
-      content: `## Definisi formal dan intuisi
+      content: `## Tujuan belajar
+
+Hitung harga dan kuantitas ekuilibrium dari fungsi linear, tafsirkan surplus atau kekurangan saat harga berbeda, serta prediksi dampak pergeseran satu atau dua kurva.
+
+> **Poin kunci**
+> - Ekuilibrium memenuhi Qd=Qs untuk pasar, periode, dan unit yang sama.
+> - Pergeseran satu kurva mengubah harga dan/atau kuantitas sesuai persamaan baru.
+> - Jika dua kurva bergeser bersama, satu hasil sering ambigu tanpa mengetahui besar pergeseran.
+
+## Definisi formal dan intuisi
 
 Ekuilibrium pasar adalah harga dan kuantitas ketika jumlah yang ingin dibeli sama dengan jumlah yang ingin dijual pada periode dan pasar yang didefinisikan. Harga ekuilibrium P* memenuhi Qd(P*) = Qs(P*); kuantitas ekuilibrium Q* adalah jumlah transaksi yang konsisten dengan kedua rencana itu. Ekuilibrium bukan berarti semua konsumen puas, setiap orang mampu membeli, atau hasilnya adil. Ia adalah titik keseimbangan rencana dalam model pasar tertentu.
 
-Ketika harga berada di atas ekuilibrium, model dasar memprediksi jumlah yang ditawarkan melebihi jumlah yang diminta, sehingga muncul tekanan surplus. Penjual dapat menurunkan harga, menunda produksi, atau menawarkan diskon. Harga lebih rendah meningkatkan jumlah diminta dan mengurangi jumlah yang ditawarkan, ceteris paribus. Ketika harga berada di bawah ekuilibrium, jumlah diminta melebihi jumlah ditawarkan dan muncul kekurangan; sebagian pembeli mungkin tidak memperoleh barang, sementara tekanan kenaikan harga atau antrean dapat terjadi. Penyesuaian harga tidak selalu cepat atau bebas: kontrak, regulasi, daya tawar, pencarian, dan biaya menu dapat memperlambatnya.
+Ketika harga berada di atas ekuilibrium, model dasar memprediksi Qs>Qd dan surplus. Penjual menurunkan harga, menunda produksi, atau menawarkan diskon. Harga lebih rendah menaikkan Qd dan menurunkan Qs, ceteris paribus. Ketika harga berada di bawah ekuilibrium, Qd>Qs dan muncul kekurangan; sebagian pembeli tidak memperoleh barang, sementara tekanan kenaikan harga atau antrean muncul. Penyesuaian tidak selalu cepat: kontrak, regulasi, daya tawar, pencarian, dan biaya menu memperlambatnya.
 
 ## Menyelesaikan ekuilibrium dengan aljabar
 
 Gunakan persamaan contoh ilustratif: Qd = 100 − 5P dan Qs = 20 + 5P. Qd berarti jumlah yang ingin dibeli per periode; Qs jumlah yang ingin dijual; P harga per unit dalam satuan harga model. Kemiringan −5 menyatakan Qd turun lima unit untuk kenaikan P satu unit; +5 menyatakan Qs naik lima unit. Konstanta 100 dan 20 adalah intersep dalam rentang model, bukan statistik.
 
-Langkah hitung: samakan jumlah, 100 − 5P = 20 + 5P. Pindahkan konstanta dan suku P: 100 − 20 = 5P + 5P, sehingga 80 = 10P. Maka P* = 80/10 = 8 satuan harga. Substitusi ke permintaan: Q* = 100 − 5×8 = 100 − 40 = 60 unit. Cek dengan penawaran: Qs = 20 + 5×8 = 20 + 40 = 60 unit. Kedua sisi sama, jadi solusi konsisten.
+| Skenario | Persamaan yang disamakan | P* | Pemeriksaan Q* |
+|---|---|---:|---|
+| Awal: Qd=100−5P, Qs=20+5P | 100−5P=20+5P → 80=10P | 8 | Qd=100−5×8=60; Qs=20+5×8=60 |
+| Permintaan naik: Qd=120−5P | 120−5P=20+5P → 100=10P | 10 | Qd=120−5×10=70; Qs=20+5×10=70 |
+| Penawaran naik: Qs=40+5P | 100−5P=40+5P → 60=10P | 6 | Qd=100−5×6=70; Qs=40+5×6=70 |
 
-Jika permintaan bergeser menjadi Qd = 120 − 5P sementara penawaran tetap, persamaan baru 120 − 5P = 20 + 5P memberi 100 = 10P, P* = 10. Substitusi: Q* = 120 − 5×10 = 70; cek penawaran 20 + 50 = 70. Keseimbangan baru menunjukkan harga dan jumlah sama-sama naik. Jika penawaran yang bergeser ke kanan menjadi Qs = 40 + 5P, maka 100 − 5P = 40 + 5P, 60 = 10P, P*=6 dan Q*=70. Harga turun sementara jumlah naik. Ketika dua kurva bergeser bersamaan, arah harga atau kuantitas bisa ambigu; besarnya pergeseran relatif diperlukan.
+Perhitungan mengikuti langkah yang sama: samakan Qd dan Qs; pindahkan konstanta; kumpulkan suku harga; bagi untuk memperoleh P*; substitusikan harga ke kedua fungsi untuk memastikan kuantitas sama. P adalah harga per unit, Qd jumlah yang ingin dibeli, dan Qs jumlah yang ingin dijual dalam periode model. Angka adalah ilustrasi, bukan statistik.
+
+| Pergeseran permintaan | Penawaran naik | Penawaran turun |
+|---|---|---|
+| Permintaan naik | Harga ambigu; kuantitas naik | Harga naik; kuantitas ambigu |
+| Permintaan turun | Harga turun; kuantitas ambigu | Harga ambigu; kuantitas turun |
 
 Grafik menyajikan solusi yang sama sebagai perpotongan. Harga pada sumbu vertikal, kuantitas di sumbu horizontal. Menyebut “permintaan bertambah” saja tidak cukup untuk menyimpulkan harga bila penawaran juga berubah. Selalu nyatakan kurva yang berubah, arah pergeseran, asumsi yang tetap, lalu hitung atau jelaskan titik potong baru.
 
@@ -105,7 +145,7 @@ Aljabar dan grafik saling memeriksa. Jika Qd dan Qs adalah persamaan linear, sol
 
 Satu pasar juga perlu didefinisikan secara konsisten. “Beras” dapat merujuk pada mutu, lokasi, dan periode berbeda; barang yang tidak mudah dipertukarkan tidak selalu termasuk pasar yang sama. Ketika batas pasar berubah, fungsi permintaan, penawaran, dan parameter model mungkin perlu disusun ulang. Kuantitas dalam ton per bulan tidak boleh dicampur dengan harga per kilogram tanpa konversi yang benar.
 
-Di pasar Indonesia, gangguan pasokan musiman dan perubahan preferensi dapat terjadi bersamaan. Tanpa mengukur keduanya, kita tidak dapat menyatakan besar perubahan harga hanya dari cerita satu faktor. Contoh global berupa pasar jasa transportasi: pada jam puncak permintaan perjalanan meningkat, sementara kapasitas pengemudi dalam jangka pendek terbatas; harga atau waktu tunggu dapat menyesuaikan bergantung aturan platform.
+Di pasar Indonesia, gangguan pasokan musiman dan perubahan preferensi berlangsung bersamaan sehingga model perlu memeriksa kedua pergeseran. Pada Web3, biaya transaksi jaringan naik saat permintaan ruang blok melebihi kapasitas per blok. Contoh global berupa jasa transportasi: pada jam puncak permintaan perjalanan meningkat, sementara kapasitas pengemudi dalam jangka pendek terbatas; harga atau waktu tunggu menyesuaikan menurut aturan platform.
 
 [[visual:eko-supply-demand]]
 
@@ -115,14 +155,27 @@ Di pasar Indonesia, gangguan pasokan musiman dan perubahan preferensi dapat terj
 2. Pergeseran permintaan ke kanan tidak selalu menaikkan jumlah saja; bersama kurva penawaran, harga juga berubah.
 3. Satu persamaan ekuilibrium hanya berlaku untuk definisi pasar, unit, periode, dan asumsi yang dipakai. Jangan menganggap parameter ilustratif sebagai data nyata.
 
-Investor menggunakan ekuilibrium sebagai kerangka, bukan harga target yang pasti: pasokan, substitusi, ekspektasi, serta aturan dapat berubah. Pada Web3, harga token yang menghapus ketidakseimbangan order tidak berarti nilai fundamental telah diketahui; likuiditas dan desain pasar juga berpengaruh. Psikologi dapat membuat kita terpaku pada harga “normal” lama meski kurva telah bergeser; analisis skenario membantu membedakan perubahan sementara dan perubahan struktur.
+Investor menggunakan ekuilibrium sebagai kerangka, bukan harga target: pasokan, substitusi, ekspektasi, serta aturan berubah. Pada Web3, harga token yang menghapus ketidakseimbangan order tidak mengungkap nilai fundamental; likuiditas dan desain pasar juga berpengaruh. Psikologi membuat kita terpaku pada harga “normal” lama meski kurva bergeser; analisis skenario memisahkan perubahan sementara dari perubahan struktur.
+
+## Batas model
+
+Ekuilibrium statis menganggap fungsi dan pasar terdefinisi serta mengabaikan waktu penyesuaian, strategi, dan kendala institusional; hasil aljabar bukan ramalan harga nyata.
 `,
     },
     {
       id: "eko2-b02-s4",
       title: "Surplus, kekurangan, dan penyesuaian pasar",
       minutes: 45,
-      content: `## Membaca ketidakseimbangan
+      content: `## Tujuan belajar
+
+Hitung surplus atau kekurangan dari Qd dan Qs pada harga tertentu, jelaskan mekanisme penyesuaian, dan bedakan kuantitas yang direncanakan dari transaksi yang benar-benar terjadi.
+
+> **Poin kunci**
+> - Qs>Qd berarti surplus sebesar Qs−Qd; Qd>Qs berarti kekurangan sebesar Qd−Qs.
+> - Selisih jumlah menunjukkan tekanan penyesuaian, bukan kecepatan atau hasil yang pasti.
+> - Harga, antrean, kuota, stok, dan aturan dapat menentukan alokasi ketika rencana tidak seimbang.
+
+## Membaca ketidakseimbangan
 
 Surplus pasar (excess supply) terjadi pada harga tertentu ketika jumlah yang ditawarkan melebihi jumlah yang diminta. Kekurangan (shortage atau excess demand) terjadi ketika jumlah yang diminta melebihi jumlah yang ditawarkan. Kuantitas surplus = Qs − Qd jika Qs > Qd; kuantitas kekurangan = Qd − Qs jika Qd > Qs. Perbandingan ini berlaku pada harga, waktu, dan pasar yang sama. Surplus konsumen dan surplus produsen adalah konsep berbeda yang akan dibahas pada bab lanjutan; surplus di sini berarti kelebihan jumlah penawaran.
 
@@ -132,7 +185,13 @@ Model harga fleksibel menerangkan tekanan penyesuaian. Pada harga terlalu tinggi
 
 Gunakan kembali persamaan ilustratif Qd = 100 − 5P dan Qs = 20 + 5P. Variabel P adalah harga per unit model, Qd kuantitas yang ingin dibeli dan Qs kuantitas yang ingin dijual dalam periode sama. Ekuilibrium sebelumnya P*=8 dan Q*=60.
 
-Pada P=6: Qd = 100 − 5×6 = 100 − 30 = 70; Qs = 20 + 5×6 = 20 + 30 = 50. Karena Qd > Qs, kekurangan = 70 − 50 = 20 unit. Pada P=10: Qd = 100 − 50 = 50; Qs = 20 + 50 = 70. Karena Qs > Qd, surplus = 70 − 50 = 20 unit. Pada P=8, keduanya 60 dan selisihnya nol. Periksa satuan: seluruh kuantitas adalah unit per periode yang sama; jangan mengurangkan jumlah bulanan dari jumlah harian.
+| Harga P | Qd=100−5P | Qs=20+5P | Selisih | Status |
+|---:|---:|---:|---:|---|
+| 6 | 100−5×6=70 | 20+5×6=50 | 70−50=20 | Kekurangan 20 unit |
+| 8 | 100−5×8=60 | 20+5×8=60 | 0 | Ekuilibrium |
+| 10 | 100−5×10=50 | 20+5×10=70 | 70−50=20 | Surplus 20 unit |
+
+P adalah harga per unit; Qd dan Qs adalah unit per periode yang sama. Selisih mengurangkan jumlah yang direncanakan pada periode tersebut, bukan transaksi dari periode berbeda.
 
 Dalam praktik, jumlah yang terealisasi dapat berbeda dari jumlah yang diinginkan. Jika harga terkendali di bawah keseimbangan, data penjualan mungkin hanya menunjukkan stok yang tersedia, bukan seluruh permintaan. Antrean, pembelian berulang, mutu, pasar informal, dan mekanisme alokasi ikut memengaruhi siapa memperoleh barang. Analisis kuantitas yang “diminta” berbeda dari jumlah transaksi yang tercatat.
 
@@ -148,15 +207,19 @@ Contoh Indonesia yang bersifat ilustratif: jika harga suatu komoditas ditetapkan
 
 Harga yang terlihat bukan satu-satunya mekanisme penyesuaian. Penjual dapat menambah jam buka, pembeli dapat mengubah waktu pembelian, penyelenggara dapat membatasi kuantitas per orang, dan pemerintah dapat memakai stok atau subsidi. Setiap respons mempunyai biaya dan dampak distribusi. Jika kebijakan mengubah harga atau kuantitas, analisis perlu membedakan tujuan kebijakan dari konsekuensi yang diprediksi model. Bagian mendalam tentang price ceiling, price floor, pajak, dan deadweight loss ada pada Bab 3, bukan diasumsikan selesai di sini.
 
-Ketika kurva bergeser, surplus atau kekurangan awal dapat memicu perubahan harga, tetapi hasil akhir bergantung respons kedua sisi. Penawaran yang sangat tidak elastis dalam jangka pendek, misalnya, membuat produsen sulit menaikkan output segera; permintaan yang sulit berubah juga membatasi penyesuaian pembeli. Jangan membuat ramalan angka tanpa fungsi dan data yang cukup.
+Ketika kurva bergeser, surplus atau kekurangan awal memicu perubahan harga, tetapi hasil akhir ditentukan oleh respons kedua sisi. Penawaran yang sangat tidak elastis dalam jangka pendek membuat produsen sulit menaikkan output segera; permintaan yang sulit berubah juga membatasi penyesuaian pembeli. Ramalan angka memerlukan fungsi dan data yang cukup.
 
 ## Kesalahpahaman umum
 
-1. Kekurangan bukan berarti barang tidak diproduksi sama sekali; artinya Qd lebih besar daripada Qs pada harga yang dianalisis.
+1. Kekurangan bukan berarti barang tidak diproduksi; artinya Qd lebih besar daripada Qs pada harga yang dianalisis.
 2. Surplus jumlah di satu pasar bukan sinonim surplus konsumen/produsen atau anggaran surplus.
 3. Harga naik setelah stok langka tidak membuktikan satu pihak sengaja menciptakan kekurangan; penyebab dan struktur pasar perlu diperiksa.
 
 Dalam investasi, surplus atau kekurangan sementara dapat mendorong volatilitas dan mengundang respons kapasitas, tetapi kenaikan harga bukan jaminan bahwa pasokan akan cepat mengejar. Di Web3, antrean transaksi dan biaya jaringan dapat menjadi tanda kapasitas terbatas relatif terhadap permintaan, namun arsitektur, prioritas transaksi, dan biaya validator juga memengaruhi hasil. Psikologi scarcity effect membuat barang yang sulit diperoleh tampak lebih bernilai; bedakan manfaat nyata dari urgensi yang diciptakan.
+
+## Batas model
+
+Selisih Qd dan Qs memakai harga serta periode yang sama dan menganggap satuan barang sebanding. Harga fleksibel, informasi, serta respons penjual dan pembeli tidak selalu berlaku dalam praktik.
 
 `,
     },

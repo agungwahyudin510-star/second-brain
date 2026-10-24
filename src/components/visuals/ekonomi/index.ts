@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 import EkoComparative from "./eko-comparative";
+import EkoIncentiveDiscount from "./eko-incentive-discount";
 import EkoMarginal from "./eko-marginal";
 import EkoOpportunityCost from "./eko-opportunity-cost";
 import EkoPpf from "./eko-ppf";
@@ -13,6 +14,7 @@ export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-opportunity-cost": EkoOpportunityCost,
   "eko-marginal": EkoMarginal,
   "eko-comparative": EkoComparative,
+  "eko-incentive-discount": EkoIncentiveDiscount,
   "eko-supply-demand": EkoSupplyDemand,
   "eko-move-vs-shift": EkoMoveVsShift,
   "eko-surplus-shortage": EkoShortageSurplus,

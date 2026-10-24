@@ -13,7 +13,7 @@ export default function EconomicsContent({ content }: { content: string }) {
 
   while ((match = visualMarker.exec(content)) !== null) {
     if (match.index > lastIndex) {
-      parts.push(<MarkdownView key={`markdown-${index++}`} content={content.slice(lastIndex, match.index)} />);
+      parts.push(<MarkdownView key={`markdown-${index++}`} content={content.slice(lastIndex, match.index)} responsiveTables />);
     }
 
     const Visual = ECONOMICS_VISUALS[match[1] as keyof typeof ECONOMICS_VISUALS];
@@ -26,7 +26,7 @@ export default function EconomicsContent({ content }: { content: string }) {
   }
 
   if (lastIndex < content.length) {
-    parts.push(<MarkdownView key={`markdown-${index}`} content={content.slice(lastIndex)} />);
+    parts.push(<MarkdownView key={`markdown-${index}`} content={content.slice(lastIndex)} responsiveTables />);
   }
 
   return <>{parts}</>;

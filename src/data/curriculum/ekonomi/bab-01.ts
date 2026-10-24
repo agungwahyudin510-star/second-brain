@@ -1,5 +1,7 @@
 import type { CurriculumModule } from "@/lib/types";
 
+// For later chapters: map every quiz distractor to its wrong option letter, keep price curves at P >= 0 and derive labeled points from data, and give every lesson key points, tabulated calculations, and one model-boundary block.
+
 export const BAB_01: CurriculumModule = {
   id: "eko2-b01",
   title: "Bab 1 — Fondasi Berpikir Ekonomi",
@@ -13,6 +15,11 @@ export const BAB_01: CurriculumModule = {
 
 Setelah bagian ini, kamu dapat (1) menjelaskan kelangkaan tanpa menyamakannya dengan kemiskinan, (2) mengidentifikasi sumber daya dan alternatif penggunaannya, (3) membaca batas kemungkinan produksi (production possibilities frontier/PPF), (4) membedakan titik efisien, tidak efisien, dan belum dapat dicapai, serta (5) menghitung trade-off ketika kapasitas dialihkan. Peta bab ini berawal dari kelangkaan; kelangkaan membuat pilihan perlu dibuat, pilihan menimbulkan trade-off dan biaya peluang, lalu pemikiran marginal, insentif, serta spesialisasi membantu memilih penggunaan sumber daya. Bab ini menjadi fondasi untuk Bab 2: di sana keputusan pembeli dan penjual yang terpisah berinteraksi melalui pasar.
 
+> **Poin kunci**
+> - Kelangkaan membuat individu dan masyarakat memilih di antara penggunaan sumber daya.
+> - Setiap pilihan punya trade-off dan biaya peluang.
+> - PPF membedakan kapasitas efisien, kapasitas menganggur, dan produksi yang belum terjangkau.
+
 ## Definisi, intuisi, dan batas model
 
 Kelangkaan adalah keadaan ketika sumber daya yang tersedia tidak cukup untuk memenuhi semua penggunaan yang diinginkan pada saat bersamaan. Definisi ini berlaku pada waktu, kemampuan, lahan, bahan baku, mesin, perhatian, dan uang. Orang dengan pendapatan tinggi pun menghadapi kelangkaan waktu; organisasi yang memiliki anggaran besar tetap harus memilih proyek, tenaga ahli, dan jadwal. Kelangkaan bukan berarti suatu benda langka secara geologis, juga bukan sinonim kemiskinan. Maknanya bergantung pada perbandingan antara kapasitas dan penggunaan yang mungkin.
@@ -25,28 +32,48 @@ Kemiringan PPF menyatakan biaya peluang: berapa banyak keluaran vertikal yang di
 
 ## Mekanisme dan hitungan lengkap
 
-Misalkan sebuah koperasi memiliki 10 jam mesin dan membuat dua produk ilustratif: paket beras siap kirim (R) dan keranjang sayur (S). Kombinasi A adalah 0 R dan 100 S; kombinasi B adalah 10 R dan 90 S; kombinasi C adalah 20 R dan 70 S; kombinasi D adalah 30 R dan 40 S. Saat produksi beralih dari B ke C, tambahan R = 20 − 10 = 10 paket, sedangkan S berubah 70 − 90 = −20 keranjang. Biaya peluang per satu R tambahan = 20/10 = 2 keranjang S. Dari C ke D, tambahan 10 R mengorbankan 30 S, atau 3 S per R. Biaya peluang meningkat karena sumber daya yang relatif lebih cocok untuk sayur digunakan untuk beras. Seluruh angka ini hanya latihan hitung.
+Misalkan koperasi memakai 10 jam mesin untuk dua produk ilustratif: beras siap kirim (R) dan keranjang sayur (S). Tabel berikut menelusuri biaya peluang tiap perpindahan kombinasi.
+
+| Kombinasi | Beras R | Sayur S | Perubahan dari kombinasi sebelumnya | Biaya peluang per R tambahan |
+|---|---:|---:|---|---:|
+| A | 0 | 100 | — | — |
+| B | 10 | 90 | +10 R, −10 S | 10/10 = 1 S |
+| C | 20 | 70 | +10 R, −20 S | 20/10 = 2 S |
+| D | 30 | 40 | +10 R, −30 S | 30/10 = 3 S |
+
+Langkah B→C: tambahan R = 20−10 = 10; S yang dikorbankan = 90−70 = 20; biaya peluang per R = 20÷10 = 2 keranjang S. Langkah C→D: tambahan R = 30−20 = 10; S yang dikorbankan = 70−40 = 30; biaya peluang per R = 30÷10 = 3 keranjang S. Biaya peluang meningkat karena sumber daya yang makin cocok untuk sayur dialihkan ke beras. Semua angka adalah ilustrasi.
 
 Proses perubahan kapasitas dapat dibaca bertahap. Pertama, tetapkan sumber daya, teknologi, dan periode. Kedua, catat beberapa kombinasi yang mungkin. Ketiga, bandingkan dua titik untuk menghitung tambahan output dan output yang dikorbankan. Keempat, periksa apakah titik tersebut dapat dicapai dan apakah kapasitas dipakai penuh. Kelima, tanyakan apakah ada perubahan teknologi, jumlah tenaga kerja, keterampilan, atau modal yang mengubah batas itu. Perbaikan irigasi atau logistik dapat memperluas kapasitas produksi pertanian; pengangguran alat dan tenaga kerja dapat menempatkan output di bawah kapasitas yang tersedia. Perluasan kapasitas tidak menjamin semua orang menerima manfaat yang sama.
 
-Dalam konteks Indonesia, pilihan penggunaan lahan dan jam kerja pada musim tanam dapat memperlihatkan trade-off antara komoditas, pemeliharaan tanah, dan waktu panen. Ini ilustrasi mekanisme, bukan klaim data produktivitas tertentu. Contoh global yang mudah dipahami ialah rumah sakit yang mengalokasikan ruang operasi, dokter, dan jadwal antara jenis layanan yang berbeda: menambah satu jenis tindakan berarti memakai tenaga dan waktu yang tidak dapat dipakai serentak untuk tindakan lain.
+Dalam konteks Web3, ruang blok per transaksi terbatas; validator atau penambang memilih transaksi mana yang masuk ketika permintaan melebihi kapasitas. Ini kelangkaan ruang komputasi dan trade-off antara transaksi yang diproses. Dalam investasi, modal dan waktu yang dialokasikan ke satu proyek tidak tersedia serentak untuk proyek lain. Psikologi perencanaan sering meremehkan keterbatasan waktu dan perhatian.
 
 [[visual:eko-ppf]]
 
 ## Kesalahpahaman umum
 
-1. Titik di PPF disebut efisien dalam penggunaan kapasitas, tetapi tidak otomatis paling adil, ramah lingkungan, atau sesuai prioritas masyarakat.
+1. Titik di PPF efisien dalam penggunaan kapasitas, tetapi label itu sendiri tidak menilai keadilan, dampak lingkungan, atau prioritas masyarakat.
 2. Titik di dalam kurva tidak selalu berarti pekerja malas; resesi, gangguan bahan baku, atau ketidakcocokan keterampilan dapat membuat kapasitas menganggur.
-3. Pertumbuhan tidak berarti semua keluaran meningkat seketika. Teknologi atau sumber daya baru dapat menggeser batas ke luar, tetapi perlu waktu dan biaya.
+3. Pertumbuhan memperluas kapasitas; teknologi dan sumber daya baru memerlukan waktu serta biaya.
 
-Untuk keputusan investasi, PPF mengingatkan bahwa modal dan waktu untuk satu aset atau proyek mengurangi sumber daya bagi alternatif lain. Dalam Web3, pilihan memakai kapasitas komputasi untuk satu transaksi memiliki opportunity cost terhadap pekerjaan lain. Psikologi keputusan penting karena manusia sering memperlakukan waktu dan perhatian seolah tidak terbatas; menuliskan batas nyata membantu menghindari rencana yang tidak mungkin dijalankan.
+## Batas model
+
+PPF menyederhanakan banyak keluaran menjadi dua, dan menganggap teknologi serta sumber daya tetap saat membandingkan titik. Efisiensi produksi tidak menyatakan hasil itu adil atau berkelanjutan.
 `,
     },
     {
       id: "eko2-b01-s2",
       title: "Biaya peluang: nilai alternatif terbaik yang dilepas",
       minutes: 35,
-      content: `## Definisi dan intuisi
+      content: `## Tujuan belajar
+
+Gunakan biaya peluang untuk mengenali alternatif terbaik yang dilepas, membedakan biaya eksplisit dari implisit, dan menilai keputusan dengan membandingkan manfaat bersih secara konsisten.
+
+> **Poin kunci**
+> - Biaya peluang adalah nilai alternatif terbaik yang dikorbankan.
+> - Biaya eksplisit dibayar langsung; biaya implisit memakai sumber daya sendiri.
+> - Biaya masa lalu yang tidak dapat dipulihkan tidak menentukan keputusan ke depan.
+
+## Definisi dan intuisi
 
 Biaya peluang (opportunity cost) adalah nilai dari alternatif terbaik yang dikorbankan ketika sumber daya digunakan untuk suatu pilihan. Definisi ini selalu bersifat perbandingan: kita menilai keputusan yang diambil terhadap opsi layak yang paling bernilai di antara opsi yang tidak dipilih. Biaya peluang berbeda dari harga akuntansi. Harga Rp100.000 dapat menjadi biaya kas, sementara biaya peluangnya mungkin berupa waktu kerja, istirahat, atau manfaat kegiatan lain yang tidak jadi dilakukan. Keduanya dapat relevan, tetapi jangan menjumlahkan hal yang sama dua kali.
 
@@ -60,11 +87,21 @@ Urutannya: identifikasi sumber daya terbatas; tulis pilihan yang benar-benar dap
 
 ## Contoh hitungan lengkap
 
-Nadia memiliki satu sore empat jam dan memilih menyiapkan katalog toko daringnya. Alternatif yang tersedia: pekerjaan lepas selama empat jam dengan bayaran bersih ilustratif Rp80.000 per jam; kursus gratis yang hanya tersedia sore itu; atau istirahat. Untuk latihan ini, Nadia menilai manfaat katalog sebesar Rp420.000, pekerjaan lepas memberi Rp4 × Rp80.000 = Rp320.000, kursus bernilai Rp250.000 menurut penilaiannya, dan istirahat bernilai Rp180.000. Alternatif terbaik yang dilepas adalah kerja lepas senilai Rp320.000. Manfaat bersih ekonomi katalog = Rp420.000 − Rp320.000 = Rp100.000, sebelum biaya kas. Bila biaya iklan Rp50.000, sisa manfaat bersih ilustratif = Rp100.000 − Rp50.000 = Rp50.000. Jika Nadia menilai kursus bernilai Rp450.000 setelah mendapat informasi baru, alternatif terbaik berubah; biaya peluangnya menjadi Rp450.000 dan manfaat bersih katalog menjadi negatif Rp80.000. Perhitungan berubah karena opsi terbaik berubah, bukan karena biaya katalog berubah.
+Nadia memiliki satu sore empat jam dan memilih menyiapkan katalog toko daringnya. Alternatif yang tersedia: pekerjaan lepas dengan upah ilustratif Rp80.000 per jam, kursus gratis yang hanya tersedia sore itu, atau istirahat. Nadia menilai manfaat katalog Rp420.000, kursus Rp250.000, dan istirahat Rp180.000.
+
+| Langkah | Perhitungan | Hasil |
+|---|---|---:|
+| Pendapatan kerja empat jam | 4 × Rp80.000 | Rp320.000 |
+| Alternatif terbaik yang dilepas | Maks(Rp320.000, Rp250.000, Rp180.000) | Rp320.000 |
+| Manfaat bersih katalog sebelum biaya kas | Rp420.000 − Rp320.000 | Rp100.000 |
+| Manfaat bersih setelah biaya iklan | Rp100.000 − Rp50.000 | Rp50.000 |
+| Jika kursus kemudian dinilai Rp450.000 | Rp420.000 − Rp450.000 − Rp50.000 | −Rp80.000 |
+
+Perhitungan berubah karena nilai alternatif terbaik berubah, bukan karena biaya katalog berubah. Angka manfaat katalog, kursus, dan istirahat adalah penilaian hipotetis, bukan harga pasar.
 
 Angka manfaat katalog dan kursus adalah penilaian hipotetis, bukan nilai pasar yang terverifikasi. Ketidakpastian hasil harus dicatat: katalog mungkin meningkatkan penjualan atau tidak. Analisis sensitivitas dapat menghitung hasil pada skenario rendah, dasar, dan tinggi tanpa menyebut satu proyeksi sebagai kepastian.
 
-Di Indonesia, seorang mahasiswa yang memilih mengambil shift berbayar saat jadwal kelas daring berlangsung menghadapi biaya peluang berupa materi yang mungkin terlewat; sebaliknya, menghadiri kelas dapat mengorbankan penghasilan yang benar-benar tersedia. Tidak ada jawaban universal—tujuan, kebutuhan, dan alternatif masing-masing berbeda. Dalam perusahaan global, jam teknisi yang memperbaiki satu lini mesin tidak dapat sekaligus dipakai untuk merawat lini lain.
+Di Indonesia, seorang mahasiswa yang memilih mengambil shift berbayar saat jadwal kelas daring berlangsung menghadapi biaya peluang berupa materi yang mungkin terlewat; sebaliknya, menghadiri kelas mengorbankan penghasilan yang tersedia. Dalam perusahaan global, jam teknisi yang memperbaiki satu lini mesin tidak dapat sekaligus dipakai untuk merawat lini lain.
 
 [[visual:eko-opportunity-cost]]
 
@@ -74,14 +111,27 @@ Di Indonesia, seorang mahasiswa yang memilih mengambil shift berbayar saat jadwa
 2. Biaya masa lalu yang tidak dapat dikembalikan (sunk cost) bukan biaya peluang keputusan sekarang. Pengalaman masa lalu boleh mengubah informasi, tetapi uang yang tak dapat dipulihkan tidak menjadi alasan tunggal untuk lanjut.
 3. Harga bukan selalu seluruh biaya ekonomi; waktu, risiko, dan sumber daya milik sendiri juga dapat memiliki nilai.
 
-Investor membandingkan proyek yang bersaing atas modal, likuiditas, dan toleransi risikonya; return historis suatu aset tidak menghapus biaya peluang dari pilihan lain. Pada Web3, memilih mengunci aset dalam protokol berarti melepas akses likuid selama periode tertentu dan mungkin menanggung risiko kontrak. Dalam psikologi keputusan, framing dapat membuat opsi yang tidak dipilih terasa “gratis”; menuliskan alternatif terbaik secara eksplisit membuat trade-off lebih terlihat.
+Dalam investasi Web3, mengunci aset melalui staking atau lock-up berarti melepas likuiditas dan imbal hasil alternatif selama periode penguncian; risiko kontrak menambah pertimbangan, bukan mengubah definisi opportunity cost. Secara psikologis, menuliskan alternatif terbaik mencegah pilihan yang dilepas tampak “gratis”.
+
+## Batas model
+
+Nilai nonmoneter dan probabilitas hasil masa depan tidak selalu terukur dalam rupiah. Hitungan membandingkan opsi yang tersedia dan tidak menghitung manfaat yang sama dua kali.
 `,
     },
     {
       id: "eko2-b01-s3",
       title: "Berpikir marginal dan insentif",
       minutes: 35,
-      content: `## Definisi formal dan intuisi
+      content: `## Tujuan belajar
+
+Hitung MB, MC, manfaat bersih per unit, dan manfaat bersih kumulatif; jelaskan bagaimana insentif mengubah perilaku serta mengapa respons dapat memiliki konsekuensi sampingan.
+
+> **Poin kunci**
+> - Keputusan marginal membandingkan manfaat dan biaya dari unit berikutnya.
+> - Tambahkan unit selama MB ≥ MC; berhenti ketika unit berikutnya mengurangi manfaat bersih.
+> - Insentif mengubah konsekuensi pilihan dan dapat mengubah perilaku.
+
+## Definisi formal dan intuisi
 
 Analisis marginal membandingkan manfaat tambahan dengan biaya tambahan dari satu perubahan kecil pada keputusan. “Marginal” berarti tambahan atau perubahan pada unit berikutnya, bukan sekadar sesuatu yang kecil atau tidak penting. Seseorang sebaiknya menambah aktivitas selama manfaat marginal (marginal benefit/MB) sekurang-kurangnya sebesar biaya marginal (marginal cost/MC), dengan tujuan dan kendala yang jelas. Aturan ini tidak menyatakan bahwa semua manfaat harus berupa uang; tambahan waktu bersama keluarga, kualitas, atau risiko dapat ikut dipertimbangkan.
 
@@ -93,7 +143,17 @@ Insentif adalah perubahan manfaat atau biaya yang memengaruhi pilihan. Upah, har
 
 Manfaat marginal unit ke-n = total manfaat setelah unit n − total manfaat setelah unit n−1. Biaya marginal unit ke-n dihitung dengan cara yang sama untuk total biaya. Manfaat bersih marginal = MB − MC. Dalam model diskret, tambahkan unit selama manfaat bersih marginal tidak negatif, kemudian berhenti ketika unit berikutnya memberi MB < MC.
 
-Sebuah kedai mempertimbangkan jam promosi tambahan. Manfaat kotor dari unit layanan tambahan berturut-turut dinilai 100, 85, 70, 55, 40 unit nilai; biaya marginalnya 20, 30, 40, 55, 75. Untuk unit pertama, MB − MC = 100 − 20 = 80. Unit kedua: 85 − 30 = 55. Unit ketiga: 70 − 40 = 30. Unit keempat: 55 − 55 = 0. Unit kelima: 40 − 75 = −35. Manfaat bersih total untuk empat unit pertama = 80 + 55 + 30 + 0 = 165 unit nilai. Unit kelima tidak ditambah dalam model karena menurunkan total manfaat bersih menjadi 130. Maka jumlah yang dipilih adalah empat unit, dengan catatan asumsi nilai dapat dibandingkan dan tidak ada kendala lain yang diabaikan.
+Sebuah kedai mempertimbangkan unit layanan tambahan. Hitung selisih MB−MC dan jumlah manfaat bersih setelah setiap unit.
+
+| Unit | MB | MC | MB−MC | Manfaat bersih kumulatif |
+|---:|---:|---:|---:|---:|
+| 1 | 100 | 20 | 100−20 = 80 | 80 |
+| 2 | 85 | 30 | 85−30 = 55 | 80+55 = 135 |
+| 3 | 70 | 40 | 70−40 = 30 | 135+30 = 165 |
+| 4 | 55 | 55 | 55−55 = 0 | 165+0 = 165 |
+| 5 | 40 | 75 | 40−75 = −35 | 165−35 = 130 |
+
+Empat unit pertama menghasilkan manfaat bersih total 165 unit nilai. Unit kelima mengurangi total menjadi 130, jadi pilihan optimum dalam contoh adalah empat unit.
 
 ### Mengapa kurva marginal berubah
 
@@ -109,14 +169,27 @@ Di Indonesia, promo tarif pengantaran yang berlaku hanya di jam sepi dapat mengu
 2. Menilai margin bukan berarti mengabaikan biaya total yang sudah relevan, kendala, atau konsekuensi distribusi.
 3. Insentif yang dimaksudkan baik tidak selalu menghasilkan perilaku yang dikehendaki; ukuran kinerja dapat dimanipulasi atau membuat kualitas diabaikan.
 
-Dalam investasi, keputusan tambah atau kurangi posisi sebaiknya mempertimbangkan manfaat dan risiko marginal ke depan, bukan hanya harga beli. Kontrak Web3 yang memberi reward tambahan juga dapat mendorong perilaku yang menimbulkan risiko baru ketika emisi reward berkurang atau biaya transaksi naik. Psikologi keputusan memengaruhi estimasi MB dan MC: euforia dapat membesar-besarkan manfaat, sementara loss aversion dapat membuat biaya terlihat terlalu besar. Tuliskan asumsi dan bukti untuk setiap estimasi.
+Untuk investor, keputusan menambah posisi membandingkan return dan risiko marginal ke depan, bukan harga beli masa lalu. Dalam Web3, reward tambahan pada kontrak dapat mendorong penggunaan lebih banyak dan menaikkan paparan risiko kontrak. Euforia dapat membesarkan estimasi MB, sedangkan loss aversion dapat membesarkan persepsi MC.
+
+## Batas model
+
+MB dan MC merangkum nilai serta biaya tambahan yang dibandingkan; dampak pihak ketiga dan kendala kapasitas memerlukan analisis tersendiri. Titik MB=MC berlaku untuk solusi interior, bukan semua pilihan.
 `,
     },
     {
       id: "eko2-b01-s4",
       title: "Spesialisasi dan keunggulan komparatif",
       minutes: 40,
-      content: `## Definisi, intuisi, dan mekanisme
+      content: `## Tujuan belajar
+
+Hitung biaya peluang dua produsen, tentukan keunggulan komparatif, dan bandingkan output sebelum serta sesudah spesialisasi.
+
+> **Poin kunci**
+> - Keunggulan absolut membandingkan produktivitas; keunggulan komparatif membandingkan biaya peluang.
+> - Pihak dengan keunggulan absolut pada semua barang tetap punya biaya peluang relatif berbeda.
+> - Spesialisasi dapat menambah output total, tetapi tidak menentukan distribusi hasil.
+
+## Definisi, intuisi, dan mekanisme
 
 Keunggulan absolut (absolute advantage) berarti suatu pihak dapat menghasilkan lebih banyak output dengan sumber daya yang sama, atau output yang sama dengan lebih sedikit sumber daya. Keunggulan komparatif (comparative advantage) berarti pihak tersebut memiliki biaya peluang lebih rendah untuk menghasilkan suatu barang. Perdagangan sukarela dapat memberi ruang bagi spesialisasi menurut keunggulan komparatif, sekalipun satu pihak memiliki keunggulan absolut di semua barang. Kunci manfaat pertukaran bukan “siapa paling produktif dalam semua hal”, melainkan apa yang harus dikorbankan untuk menambah satu output.
 
@@ -124,36 +197,90 @@ Mekanismenya: hitung berapa unit barang B yang dilepas untuk menghasilkan lebih 
 
 ### Rumus dan hitungan lengkap
 
-Biaya peluang 1 unit A = unit B yang dikorbankan ÷ unit A tambahan. Misalkan dalam satu jam produsen fiktif Ari dapat membuat 12 paket beras atau 6 paket kopi; Bima dapat membuat 8 paket beras atau 8 paket kopi. Untuk Ari, 1 beras mengorbankan 6/12 = 0,5 kopi; 1 kopi mengorbankan 12/6 = 2 beras. Untuk Bima, 1 beras mengorbankan 8/8 = 1 kopi; 1 kopi mengorbankan 8/8 = 1 beras. Jadi Ari memiliki biaya peluang beras lebih rendah (0,5 < 1) dan Bima biaya peluang kopi lebih rendah (1 < 2). Ari berspesialisasi pada beras, Bima pada kopi.
+Biaya peluang 1 unit A = unit B yang dikorbankan ÷ unit A tambahan. Ari menghasilkan 12 beras atau 6 kopi per jam; Bima menghasilkan 8 beras atau 8 kopi per jam.
 
-Hitung output sebelum dan sesudah, dengan setiap pihak membagi satu jam menjadi setengah jam untuk tiap produk. Sebelum: Ari menghasilkan 6 beras dan 3 kopi; Bima 4 beras dan 4 kopi; total 10 beras dan 7 kopi. Setelah keduanya memakai satu jam penuh pada keunggulan komparatif: total menjadi 12 beras dan 8 kopi. Total kedua barang bertambah tanpa menambah waktu. Perdagangan 1 beras dengan 0,75 kopi berada di antara biaya peluang Ari 0,5 dan Bima 1. Ari menerima 0,75 kopi, lebih dari 0,5 yang dapat dihasilkan sendiri dengan sumber daya yang dialihkan; Bima membayar 0,75 kopi untuk mendapatkan 1 beras, kurang dari 1 kopi yang harus dikorbankan jika memproduksi beras sendiri. Contoh ini mengandaikan produksi dan pertukaran tanpa biaya, asumsi yang sering tidak berlaku sepenuhnya.
+| Produsen | 1 beras mengorbankan | 1 kopi mengorbankan | Keunggulan komparatif |
+|---|---:|---:|---|
+| Ari | 6/12 = 0,5 kopi | 12/6 = 2 beras | Beras |
+| Bima | 8/8 = 1 kopi | 8/8 = 1 beras | Kopi |
+
+Untuk output sebelum spesialisasi, tiap pihak membagi satu jam menjadi dua setengah jam.
+
+| Produsen / total | Beras sebelum | Kopi sebelum | Beras sesudah | Kopi sesudah |
+|---|---:|---:|---:|---:|
+| Ari | 12×0,5 = 6 | 6×0,5 = 3 | 12 | 0 |
+| Bima | 8×0,5 = 4 | 8×0,5 = 4 | 0 | 8 |
+| **Total** | **6+4 = 10** | **3+4 = 7** | **12** | **8** |
+
+Perdagangan 1 beras dengan 0,75 kopi berada di antara biaya peluang Ari (0,5) dan Bima (1). Ari menerima lebih dari 0,5 kopi yang dikorbankan untuk membuat beras; Bima membayar kurang dari 1 kopi yang harus dikorbankan jika membuat beras sendiri.
+
+## Ketika satu pihak unggul di semua barang
+
+Citra menghasilkan 20 beras atau 10 kopi per jam; Dedi menghasilkan 6 beras atau 6 kopi. Citra memiliki keunggulan absolut pada keduanya. Biaya peluang menunjukkan pola relatif yang berbeda.
+
+| Produsen | 1 beras mengorbankan | 1 kopi mengorbankan | Keunggulan komparatif |
+|---|---:|---:|---|
+| Citra | 10/20 = 0,5 kopi | 20/10 = 2 beras | Beras |
+| Dedi | 6/6 = 1 kopi | 6/6 = 1 beras | Kopi |
+
+| Produsen / total | Beras sebelum | Kopi sebelum | Beras sesudah | Kopi sesudah |
+|---|---:|---:|---:|---:|
+| Citra | 20×0,5 = 10 | 10×0,5 = 5 | 20×0,8 = 16 | 10×0,2 = 2 |
+| Dedi | 6×0,5 = 3 | 6×0,5 = 3 | 0 | 6 |
+| **Total** | **10+3 = 13** | **5+3 = 8** | **16** | **2+6 = 8** |
+
+Sesudah perubahan alokasi, beras bertambah 16−13=3 unit dan kopi tetap 8 unit, tanpa menambah satu jam kerja masing-masing. Citra tidak berspesialisasi penuh: ia paling efisien membuat kopi secara absolut, tetapi biaya peluangnya untuk kopi (2 beras) lebih tinggi daripada Dedi (1 beras). Citra memakai 0,2 jam untuk kopi; Dedi memakai satu jam penuh untuk kopi.
 
 Keuntungan total potensial tidak berarti distribusi otomatis adil. Perbedaan daya tawar, biaya pengiriman, standar mutu, akses pasar, dan dampak pada pekerjaan dapat menentukan siapa menikmati manfaat. Spesialisasi berlebihan juga menciptakan ketergantungan pada mitra dan gangguan pasokan.
 
-Contoh Indonesia yang bersifat mekanisme: petani, pengolah, dan pedagang dapat mengkhususkan diri pada tahapan yang sesuai keterampilan serta akses alat, lalu saling bertukar hasil; biaya transportasi dan posisi tawar menentukan hasil bersih. Contoh global: negara dan perusahaan memperdagangkan barang atau jasa yang biaya peluang relatifnya berbeda, tetapi perdagangan nyata melibatkan kebijakan, rantai pasok, dan biaya penyesuaian.
+Contoh mekanisme di Indonesia: petani, pengolah, dan pedagang mengkhususkan diri pada tahapan sesuai keterampilan dan alat, lalu bertukar hasil. Di perdagangan internasional, biaya peluang relatif membantu menjelaskan spesialisasi, sementara rantai pasok dan kebijakan memengaruhi manfaat aktual.
 
 [[visual:eko-comparative]]
 
 ## Kesalahpahaman umum
 
-1. Pihak yang paling cepat memproduksi suatu barang belum tentu memiliki keunggulan komparatif pada barang itu; bandingkan biaya peluang.
-2. Spesialisasi tidak menjamin setiap pekerja atau daerah memperoleh keuntungan yang sama, dan perubahan pekerjaan dapat menimbulkan biaya transisi.
-3. Perdagangan tidak menciptakan manfaat tanpa batas. Biaya logistik, kontrak, kualitas, risiko pasokan, dan eksternalitas dapat mengurangi surplus.
+1. Produsen tercepat belum tentu memiliki keunggulan komparatif; bandingkan biaya peluang.
+2. Keunggulan absolut di semua barang tidak menghapus keuntungan dari spesialisasi relatif.
+3. Tambahan output total tidak menjamin setiap pekerja atau daerah memperoleh manfaat yang sama.
 
-Investor dapat melihat spesialisasi sebagai sumber produktivitas sekaligus risiko konsentrasi; rantai pasok yang efisien tetap rentan jika terlalu bergantung pada satu pemasok. Proyek Web3 dapat mengandalkan pihak khusus seperti validator atau penyedia infrastruktur, tetapi ketergantungan menimbulkan risiko operasional. Psikologi kelompok dapat salah mengartikan keunggulan absolut sebagai bukti satu pihak harus melakukan semuanya; menghitung biaya peluang memperjelas ruang kerja sama.
+Rantai pasok investasi yang terkonsentrasi pada satu pemasok memberi produktivitas sekaligus risiko gangguan. Proyek Web3 yang memakai validator atau penyedia infrastruktur khusus memperoleh spesialisasi tetapi juga ketergantungan operasional. Menghitung biaya peluang mencegah bias psikologis “yang paling cepat harus mengerjakan semuanya”.
+
+## Batas model
+
+Perhitungan menganggap kapasitas dan mutu tetap serta pertukaran tanpa biaya. Biaya logistik, daya tawar, dampak pekerjaan, risiko pasokan, dan distribusi surplus perlu dinilai terpisah.
 `,
     },
     {
       id: "eko2-b01-s5",
       title: "Menyusun keputusan ekonomi yang dapat diuji",
       minutes: 35,
-      content: `## Kerangka keputusan dan insentif
+      content: `## Tujuan belajar
+
+Evaluasi insentif diskon dengan menghitung total sebelum diskon, pembayaran setelah diskon, perubahan pembayaran, serta manfaat bersih barang tambahan.
+
+> **Poin kunci**
+> - Ambang diskon dinilai dari total sebelum potongan.
+> - Bandingkan perubahan pembayaran dengan nilai barang tambahan bagi pembeli.
+> - Diskon tidak menghapus biaya peluang atau menjamin penghematan.
+
+## Kerangka keputusan dan insentif
 
 Model ekonomi berguna ketika pertanyaan dan asumsi dibuat jelas. Untuk keputusan pribadi maupun organisasi, tulis tujuan, kendala sumber daya, pilihan yang layak, konsekuensi marginal, biaya peluang, serta siapa yang menerima manfaat atau menanggung biaya. Bedakan fakta dari perkiraan dan preferensi. Kerangka sederhana tidak menghapus ketidakpastian, tetapi membuat alasan keputusan dapat diperiksa dan diperbarui.
 
 Insentif bekerja melalui perubahan payoff atau kendala. Misalnya, toko memberi potongan Rp20.000 bagi pembelian di atas Rp200.000. Jika keranjang awal Rp190.000 dan pelanggan membeli barang tambahan Rp25.000 hanya untuk mendapatkan potongan, total pengeluaran menjadi Rp215.000 − Rp20.000 = Rp195.000. Secara kas, pembeli membayar Rp5.000 lebih banyak daripada keranjang awal dan memperoleh barang tambahan. Apakah itu bermanfaat tergantung nilai barang tambahan bagi pembeli; diskon bukan penghematan jika produk tambahan tidak bernilai setidaknya biaya tambahannya.
 
-Contoh hitungan keputusan: pembeli mempertimbangkan barang tambahan Rp25.000 untuk memperoleh diskon Rp20.000. Perubahan pembayaran bersih = Rp25.000 − Rp20.000 = Rp5.000. Jika manfaat barang tambahan dinilai Rp8.000, manfaat bersih = Rp8.000 − Rp5.000 = Rp3.000. Jika manfaatnya hanya Rp2.000, manfaat bersih = Rp2.000 − Rp5.000 = −Rp3.000. Nilai kepuasan ini ilustratif. Perhitungan juga mengandaikan barang awal tetap akan dibeli dan diskon benar-benar berlaku pada seluruh transaksi sesuai syarat.
+Contoh hitungan keputusan: pembeli mempertimbangkan barang tambahan Rp25.000 untuk memperoleh diskon Rp20.000. Nilai manfaat barang tambahan diuji pada dua penilaian hipotetis.
+
+| Langkah | Perhitungan | Hasil |
+|---|---|---:|
+| Total sebelum diskon | Rp190.000 + Rp25.000 | Rp215.000 |
+| Cek syarat diskon | Rp215.000 > Rp200.000 | Berlaku |
+| Total bayar | Rp215.000 − Rp20.000 | Rp195.000 |
+| Perubahan pembayaran | Rp195.000 − Rp190.000 | +Rp5.000 |
+| Manfaat bersih jika nilai barang Rp8.000 | Rp8.000 − Rp5.000 | +Rp3.000 |
+| Manfaat bersih jika nilai barang Rp2.000 | Rp2.000 − Rp5.000 | −Rp3.000 |
+
+Diskon mengurangi total bayar dibanding total sebelum potongan, tetapi pembeli membayar Rp5.000 lebih banyak daripada keranjang awal. Nilai barang adalah penilaian ilustratif.
 
 Insentif dapat mendorong akibat tak terduga. Target “jumlah layanan per jam” bisa membuat kualitas diabaikan; target “hemat biaya” bisa menunda perawatan yang penting; hadiah untuk pendaftaran dapat menarik pengguna yang tidak cocok. Karena itu periksa siapa yang merancang insentif, siapa yang merespons, informasi apa yang mereka miliki, serta perilaku apa yang mudah diukur tetapi bukan tujuan sebenarnya. Kebijakan juga bisa memindahkan biaya ke pihak yang tidak ikut membuat keputusan.
 
@@ -167,15 +294,19 @@ Langkah praktis:
 
 Untuk contoh Indonesia, penerima promo belanja dapat membandingkan harga setelah diskon, biaya kirim, serta apakah tambahan barang memang dibutuhkan; klaim “hemat” tidak otomatis sama dengan belanja lebih baik. Contoh global serupa terlihat pada program loyalitas yang mengubah waktu pembelian, namun efeknya berbeda menurut akses konsumen dan syarat program.
 
-[[visual:eko-opportunity-cost]]
+[[visual:eko-incentive-discount]]
 
 ## Kesalahpahaman umum
 
 1. Model adalah peta, bukan seluruh wilayah. Asumsi ceteris paribus (faktor lain tetap) membantu mengisolasi sebab, tetapi dunia nyata dapat mengubah banyak faktor serentak.
 2. “Rasional” tidak berarti egois atau selalu memilih uang terbesar; tujuan, norma, kepedulian, dan informasi juga membentuk pilihan.
-3. Biaya yang sulit diukur tidak sama dengan biaya nol. Catat secara kualitatif jika nilai rupiahnya tidak dapat diestimasi dengan andal.
+3. Biaya yang sulit diukur bukan biaya nol; catat secara kualitatif.
 
-Dalam investasi, kerangka ini membantu menguji klaim return dengan memasukkan biaya, risiko, likuiditas, serta alternatif. Dalam Web3, periksa siapa menerima token reward dan siapa menanggung biaya keamanan atau volatilitas; insentif token dapat berubah nilainya. Dalam psikologi keputusan, gunakan jeda untuk mengurangi pengaruh FOMO, framing diskon, dan sunk cost. Keputusan yang baik bukan yang selalu menghasilkan hasil terbaik secara kebetulan, melainkan yang memakai informasi layak dan dapat dikoreksi saat bukti baru datang.
+Pembeli menghadapi insentif promo: bandingkan harga setelah potongan dengan keranjang yang memang direncanakan, bukan hanya besarnya diskon yang diiklankan. Dalam investasi, promosi return harus dibandingkan dengan biaya, risiko, dan kebutuhan likuiditas. Jeda membantu mengurangi keputusan impulsif akibat framing diskon.
+
+## Batas model
+
+Hitungan menganggap keranjang awal tetap dibeli, diskon berlaku pada keseluruhan transaksi, dan pembeli dapat menilai manfaat barang tambahan. Syarat promo, biaya lain, serta manfaat nonmoneter dapat mengubah keputusan.
 
 `,
     },
@@ -220,6 +351,10 @@ Dalam investasi, kerangka ini membantu menguji klaim return dengan memasukkan bi
       {
         prompt: "X dapat membuat 10 roti atau 5 jus per jam; Y dapat membuat 6 roti atau 6 jus. Siapa memiliki comparative advantage pada roti?",
         solution: "1. Opportunity cost 1 roti bagi X = 5/10 = 0,5 jus. 2. Bagi Y = 6/6 = 1 jus. 3. X memiliki biaya peluang roti lebih rendah. Y memiliki keunggulan komparatif jus karena biaya peluangnya 1 roti dibanding 2 roti bagi X. Pertukaran menguntungkan jika rasio di antara biaya peluang dan biaya transaksi tidak menghapus surplus.",
+      },
+      {
+        prompt: "Mira dapat membuat 18 roti atau 12 jus per jam; Niko dapat membuat 9 roti atau 9 jus. Mereka semula membagi satu jam sama rata untuk dua barang. Bandingkan output total sebelum spesialisasi dengan alokasi ketika Mira memakai 0,75 jam untuk roti dan 0,25 jam untuk jus, sementara Niko memakai satu jam penuh untuk jus.",
+        solution: "1. Biaya peluang satu roti: Mira 12/18=2/3 jus; Niko 9/9=1 jus. Jadi Mira memiliki comparative advantage roti. 2. Biaya peluang satu jus: Mira 18/12=1,5 roti; Niko 9/9=1 roti. Jadi Niko memiliki comparative advantage jus. 3. Sebelum: Mira 9 roti + 6 jus; Niko 4,5 roti + 4,5 jus; total 13,5 roti + 10,5 jus. 4. Sesudah alokasi: Mira membuat 18×0,75=13,5 roti dan 12×0,25=3 jus; Niko membuat 9 jus. Total 13,5 roti + 12 jus. Roti tetap, jus bertambah 1,5 unit tanpa tambahan waktu. Mira unggul absolut di kedua barang, tetapi membagi waktunya karena Niko memiliki biaya peluang lebih rendah untuk jus.",
       },
     ],
     furtherReading: [

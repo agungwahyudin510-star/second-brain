@@ -197,8 +197,8 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "(10, 50)",
     ], 1, "120−5P=20+5P memberi P=10; substitusi memberi Q=120−50=70.", [
       "Pasangan ini adalah ekuilibrium lama sebelum pergeseran permintaan.",
-      "Ini hasil persamaan baru dan konsisten dengan penawaran: 20+5×10=70.",
       "P=12 memberi Qd=60 dan Qs=80, bukan jumlah yang sama.",
+      "P=10 benar, tetapi Q=50 salah: Qd=120−5×10=70 dan Qs=20+5×10=70.",
     ]),
     q("eko2-b02-q08", "Kasus • Substitusi", "Harga kopi naik sementara faktor lain tetap. Jika teh adalah substitusi bagi sebagian pembeli, prediksi yang paling sesuai ialah...", [
       "Permintaan teh dapat bergeser ke kanan",
@@ -242,7 +242,7 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
   ],
   "eko2-b02": [
     { id: "eko2-b02-e01", prompt: "Analisis pasar hipotetis yang mengalami kenaikan pendapatan pembeli dan gangguan biaya input secara bersamaan. Tentukan kurva yang bergeser dan jelaskan bagian arah perubahan ekuilibrium yang dapat atau tidak dapat dipastikan.", rubric, reviewPoints: ["Mengidentifikasi barang normal/inferior sebagai asumsi", "Mengidentifikasi kurva permintaan dan penawaran", "Menjelaskan dampak masing-masing pergeseran", "Mengenali hasil harga/kuantitas yang mungkin ambigu"] },
-    { id: "eko2-b02-e02", prompt: "Gunakan fungsi Qd = 120 − 4P dan Qs = 24 + 4P. Hitung ekuilibrium, lalu hitung surplus atau kekurangan ketika harga ditetapkan 10 satuan di bawah harga ekuilibrium. Tunjukkan semua langkah dan satuannya.", rubric, reviewPoints: ["Persamaan disamakan dengan benar", "P* dan Q* disubstitusikan untuk cek", "Qd dan Qs dihitung di harga yang diberikan", "Arah selisih serta satuan dijelaskan"] },
+    { id: "eko2-b02-e02", prompt: "Gunakan fungsi Qd = 120 − 4P dan Qs = 24 + 4P. Hitung ekuilibrium (jawaban: P*=12, Q*=72), lalu hitung surplus atau kekurangan ketika harga ditetapkan pada P=2, yaitu 10 satuan di bawah P*. Tunjukkan semua langkah dan satuannya.", rubric, reviewPoints: ["Samakan Qd=Qs: 120−4P=24+4P, sehingga P*=12; substitusi menghasilkan Q*=72", "Pastikan P=2 adalah 10 satuan di bawah P*=12", "Hitung Qd=120−4×2=112 dan Qs=24+4×2=32", "Simpulkan kekurangan 112−32=80 unit per periode"] },
   ],
 };
 

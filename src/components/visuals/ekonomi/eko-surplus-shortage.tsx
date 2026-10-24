@@ -9,16 +9,16 @@ export default function EkoShortageSurplus() {
   const quantitySupplied = 20 + 5 * price;
   const difference = quantityDemanded - quantitySupplied;
   const demandPoints = Array.from({ length: 7 }, (_, index) => {
-    const p = 2 + index * 2;
-    return `${30 + (100 - 5 * p) * 1.6},${112 - p * 6}`;
+    const p = index * 20 / 6;
+    return `${30 + (100 - 5 * p) * 1.6},${112 - p * 5}`;
   }).join(" ");
   const supplyPoints = Array.from({ length: 7 }, (_, index) => {
-    const p = 2 + index * 2;
-    return `${30 + (20 + 5 * p) * 1.6},${112 - p * 6}`;
+    const p = index * 20 / 6;
+    return `${30 + (20 + 5 * p) * 1.6},${112 - p * 5}`;
   }).join(" ");
   const lowerQuantity = Math.min(quantityDemanded, quantitySupplied);
   const upperQuantity = Math.max(quantityDemanded, quantitySupplied);
-  const priceY = 112 - price * 6;
+  const priceY = 112 - price * 5;
 
   return (
     <VisualCard

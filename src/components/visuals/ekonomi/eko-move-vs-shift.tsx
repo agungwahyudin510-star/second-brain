@@ -11,8 +11,11 @@ export default function EkoMoveVsShift() {
   const [factor, setFactor] = useState(0);
   const qd = 100 + factor - 5 * price;
   const x = (q: number) => 28 + q * 1.4;
-  const y = (p: number) => 115 - p * 7;
-  const demandLine = (shift: number) => `M ${x(0)} ${y((100 + shift) / 5)} L ${x(100 + shift)} ${y(0)}`;
+  const y = (p: number) => 120 - p * 7;
+  const demandLine = (shift: number) => {
+    const intercept = Math.max(0, 100 + shift);
+    return `M ${x(0)} ${y(intercept / 5)} L ${x(intercept)} ${y(0)}`;
+  };
 
   return (
     <VisualCard
@@ -36,7 +39,7 @@ export default function EkoMoveVsShift() {
         <text x="3" y="18" fill="#a1a1aa" fontSize="8">Harga P</text><text x="180" y="138" fill="#a1a1aa" fontSize="8">Kuantitas Q</text>
         {mode === "price" ? <>
           <path d={demandLine(0)} fill="none" stroke="#38bdf8" strokeWidth="3" />
-          <circle cx={x(qd)} cy={y(price)} r="4" fill="#fbbf24" />
+          <circle cx={x(Math.max(0, qd))} cy={y(price)} r="4" fill="#fbbf24" />
           <text x="188" y="28" fill="#7dd3fc" fontSize="8">D tetap</text>
         </> : <>
           <path d={demandLine(0)} fill="none" stroke="#71717a" strokeDasharray="4 3" strokeWidth="2" />
