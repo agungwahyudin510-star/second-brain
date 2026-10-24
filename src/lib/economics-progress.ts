@@ -21,7 +21,7 @@ export interface CourseProgress {
 export type EconomicsProgress = CourseProgress;
 export type ChapterStatus = "Terkunci" | "Belum dimulai" | "Sedang dipelajari" | "Menunggu kuis" | "Lulus" | "Perlu remedial";
 
-export const ECONOMICS_PROGRESS_KEY = "sb-economics-progress-v1";
+export const ECONOMICS_PROGRESS_KEY = "sb-economics-progress-v2";
 export const PSYCHOLOGY_PROGRESS_KEY = "sb-psychology-progress-v1";
 export const ENGLISH_PROGRESS_KEY = "sb-english-progress-v1";
 export const WEB3_PROGRESS_KEY = "sb-web3-progress-v1";

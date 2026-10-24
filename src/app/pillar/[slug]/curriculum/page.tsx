@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { ENGLISH_A1_QUIZZES } from "@/data/curriculum/english/assessments";
 import { WEB3_QUIZZES } from "@/data/curriculum/web3/assessments";
 import { WEB3_PHASES } from "@/data/curriculum/web3/phases";
+import { FINAL_EXAM_QUESTIONS } from "@/data/curriculum/economics-assessments";
 
 export default function CurriculumPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -81,7 +82,7 @@ export default function CurriculumPage() {
             : isWeb3
               ? <Link href={`${courseBase}/progress`} className={btnCls("ghost")}>Progres Web3</Link>
             : <Link href={`${courseBase}/glossary`} className={btnCls("ghost")}>Glosarium</Link>}
-          {allChaptersPassed
+          {allChaptersPassed && (slug !== "ekonomi" || FINAL_EXAM_QUESTIONS.length > 0)
             ? <Link href={`${courseBase}/exam`} className={btnCls("primary")}>{isEnglish ? "Final assessment A1" : "Ujian akhir"}</Link>
             : <span aria-disabled="true" className={cn(btnCls("ghost"), "cursor-not-allowed opacity-50")}>{isEnglish ? "Final assessment A1 (terkunci)" : isWeb3 ? "Final assessment Fase 1 (terkunci)" : "Ujian akhir (terkunci)"}</span>}
         </div>
@@ -93,7 +94,7 @@ export default function CurriculumPage() {
         <div className="h-2 overflow-hidden rounded-full bg-zinc-800" role="progressbar" aria-label="Progres pelajaran" aria-valuenow={percentage} aria-valuemin={0} aria-valuemax={100}>
           <div className="h-full rounded-full bg-sky-500 transition-all" style={{ width: `${percentage}%` }} />
         </div>
-        <p className="mt-2 text-xs text-zinc-500">{isEnglish ? "Bab A1 berikutnya terbuka setelah nilai kuis sebelumnya minimal 70%. A2–B2 saat ini adalah peta belajar, bukan materi lengkap. Hasil belajar merupakan estimasi, bukan sertifikasi CEFR." : isWeb3 ? "Bab Fase 1 berikutnya terbuka setelah kuis sebelumnya lulus dengan minimal 70%. Fase 2–8 saat ini berupa roadmap dan belum memiliki materi/kuis lengkap. Gunakan local chain/testnet; jangan gunakan private key atau dana sungguhan." : "Bab berikutnya terbuka setelah nilai kuis bab sebelumnya minimal 70%. Ujian akhir terbuka setelah semua bab lulus."} Durasi merupakan perkiraan.</p>
+        <p className="mt-2 text-xs text-zinc-500">{isEnglish ? "Bab A1 berikutnya terbuka setelah nilai kuis sebelumnya minimal 70%. A2–B2 saat ini adalah peta belajar, bukan materi lengkap. Hasil belajar merupakan estimasi, bukan sertifikasi CEFR." : isWeb3 ? "Bab Fase 1 berikutnya terbuka setelah kuis sebelumnya lulus dengan minimal 70%. Fase 2–8 saat ini berupa roadmap dan belum memiliki materi/kuis lengkap. Gunakan local chain/testnet; jangan gunakan private key atau dana sungguhan." : slug === "ekonomi" && FINAL_EXAM_QUESTIONS.length === 0 ? "Bab berikutnya terbuka setelah nilai kuis bab sebelumnya minimal 70%. Ujian akhir 30 soal lintas bab disiapkan pada tahap akhir kurikulum." : "Bab berikutnya terbuka setelah nilai kuis bab sebelumnya minimal 70%. Ujian akhir terbuka setelah semua bab lulus."} Durasi merupakan perkiraan.</p>
       </Card>
 
       {courseError && <Card className="border-amber-500/30 text-sm text-amber-200">{courseError} Data lama tidak ditimpa.</Card>}

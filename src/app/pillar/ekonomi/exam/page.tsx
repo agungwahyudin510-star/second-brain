@@ -12,18 +12,17 @@ export default function EconomicsExamPage() {
   const modules = getModules("ekonomi");
   const { progress } = useEconomicsProgress();
   const ready = modules.every((module) => hasPassedAttempt(progress.attempts, module.id));
-  const examQuestions = FINAL_EXAM_QUESTIONS.map((question, index) => ({
-    ...question,
-    chapterId: modules[index].id,
-    chapterTitle: modules[index].title,
-  }));
 
-  if (!ready) {
+  if (!ready || FINAL_EXAM_QUESTIONS.length === 0) {
     const passed = modules.filter((module) => hasPassedAttempt(progress.attempts, module.id)).length;
     return (
       <Card className="space-y-4">
         <h1 className="text-xl font-semibold">Ujian akhir masih terkunci</h1>
-        <p className="text-sm text-zinc-400">Luluskan semua delapan kuis bab dengan skor minimal 70. Progres saat ini: {passed}/{modules.length} bab lulus.</p>
+        <p className="text-sm text-zinc-400">
+          {!ready
+            ? `Luluskan semua ${modules.length} kuis bab yang tersedia dengan skor minimal 70. Progres saat ini: ${passed}/${modules.length} bab lulus.`
+            : "Ujian akhir 30 soal lintas bab akan tersedia setelah seluruh kurikulum selesai."}
+        </p>
         <Link href="/pillar/ekonomi/curriculum" className={btnCls("ghost")}>Lihat kurikulum</Link>
       </Card>
     );
@@ -33,7 +32,7 @@ export default function EconomicsExamPage() {
     <AssessmentRunner
       moduleId="ekonomi-final"
       title="Ujian Akhir Ekonomi & Literasi Keuangan"
-      questions={examQuestions}
+      questions={FINAL_EXAM_QUESTIONS}
       essays={FINAL_EXAM_ESSAYS}
       returnHref="/pillar/ekonomi/progress"
       isExam

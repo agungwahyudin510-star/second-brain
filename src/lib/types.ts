@@ -67,6 +67,12 @@ export interface CurriculumModule {
   title: string;
   summary: string;
   lessons: Lesson[];
+  chapterResources?: {
+    summary: string[];
+    glossary: { term: string; english: string; definition: string }[];
+    exercises: { prompt: string; solution: string }[];
+    furtherReading: { title: string; authors: string }[];
+  };
   phaseNumber?: number;
   phaseTitle?: string;
   roadmapOnly?: boolean;

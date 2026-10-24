@@ -1,136 +1,250 @@
 import type { AssessmentQuestion, EssayPrompt } from "@/lib/types";
 
-const q = (
+function q(
   id: string,
   concept: string,
   prompt: string,
   options: string[],
   answer: number,
-  explanation: string
-): AssessmentQuestion => ({ id, concept, prompt, options, answer, explanation });
+  correctReason: string,
+  distractorReasons: string[]
+): AssessmentQuestion {
+  let distractorIndex = 0;
+  const wrong = options
+    .map((_, index) => index === answer
+      ? null
+      : `${String.fromCharCode(65 + index)}. ${distractorReasons[distractorIndex++]}`)
+    .filter(Boolean)
+    .join(" ");
+  return {
+    id,
+    concept,
+    prompt,
+    options,
+    answer,
+    explanation: `Jawaban benar: ${options[answer]}. ${correctReason} Pengecoh: ${wrong}`,
+  };
+}
 
 export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
-  "eko-bab-1": [
-    q("b1q1", "Kelangkaan", "Mengapa pilihan tetap diperlukan meskipun seseorang memiliki pendapatan tinggi?", ["Semua barang selalu langka secara fisik", "Waktu dan sumber daya lain tetap terbatas", "Harga selalu naik", "Pendapatan tinggi menghapus kebutuhan"], 1, "Waktu, tenaga, dan perhatian tetap terbatas meskipun uang banyak."),
-    q("b1q2", "Mikro dan makro", "Kenaikan harga cabai akibat gagal panen di satu daerah terutama dianalisis sebagai...", ["Ekonomi makro", "Akuntansi nasional", "Ekonomi mikro", "Kebijakan fiskal"], 2, "Perubahan pada satu pasar lokal adalah pertanyaan mikro."),
-    q("b1q3", "Kebutuhan dan keinginan", "Fungsi utama membedakan kebutuhan dan keinginan dalam anggaran adalah...", ["Memberi label moral pada pembeli", "Membuat semua keinginan dilarang", "Membantu menentukan prioritas saat dana terbatas", "Menghitung pajak"], 2, "Kategorisasi membantu memilih prioritas, bukan menghakimi."),
-    q("b1q4", "Biaya peluang", "Kamu memakai dua jam untuk bekerja freelance Rp120.000 per jam, bukan menonton film. Biaya peluang waktu menonton adalah...", ["Rp120.000", "Rp240.000 pendapatan yang dilepas, jika pekerjaan tersedia", "Harga tiket film saja", "Semua pendapatan masa depan"], 1, "Alternatif terbaik yang dilepas adalah pendapatan dua jam yang realistis."),
-    q("b1q5", "Insentif", "Toko memberi ongkir gratis jika belanja minimal Rp300.000. Insentif ini terutama dirancang agar pembeli...", ["Membeli lebih sedikit", "Menambah isi keranjang hingga ambang", "Berhenti membandingkan harga", "Membayar pajak"], 1, "Ambang gratis ongkir mendorong peningkatan nilai belanja."),
-    q("b1q6", "Biaya relevan", "Biaya Rp200.000 yang sudah dibayar dan tidak dapat dikembalikan seharusnya diperlakukan sebagai...", ["Biaya masa depan yang selalu harus ditebus", "Sunk cost; evaluasi pilihan berdasarkan biaya dan manfaat ke depan", "Biaya peluang setiap pilihan", "Pendapatan"], 1, "Sunk cost tidak berubah berdasarkan pilihan sekarang."),
-    q("b1q7", "Analisis keputusan", "Langkah terbaik sebelum membeli kursus mahal adalah...", ["Menganggap hasil kerja pasti naik", "Membandingkan tujuan, biaya penuh, alternatif, dan risiko", "Memilih yang paling sering diiklankan", "Mengabaikan waktu belajar"], 1, "Analisis keputusan mempertimbangkan manfaat, biaya, alternatif, dan ketidakpastian."),
-    q("b1q8", "Aplikasi", "Seseorang tetap berlangganan layanan yang jarang dipakai karena “sudah bayar setahun”. Pertanyaan yang paling membantu adalah...", ["Berapa lama sudah berlangganan?", "Apakah biaya masa lalu bisa dikembalikan?", "Jika belum berlangganan, apakah saya akan memilih layanan ini sekarang?", "Apakah teman juga berlangganan?"], 2, "Pertanyaan ini memisahkan keputusan ke depan dari sunk cost."),
+  "eko2-b01": [
+    q("eko2-b01-q01", "Konsep • Kelangkaan", "Mengapa kelangkaan tetap menjadi masalah ekonomi bagi seseorang yang memiliki banyak uang?", [
+      "Karena seluruh barang pasti langka secara fisik",
+      "Karena waktu, perhatian, keterampilan, dan kapasitas tetap terbatas",
+      "Karena semua harga selalu naik",
+      "Karena pendapatan tinggi membuat kebutuhan tidak terbatas",
+    ], 1, "Uang adalah satu sumber daya; waktu dan kapasitas penggunaan tidak dapat dipakai untuk semua tujuan sekaligus.", [
+      "Kelangkaan ekonomi tidak mensyaratkan barang langka secara fisik; yang dibandingkan adalah sumber daya dengan alternatif penggunaannya.",
+      "Pilihan ini keliru karena inflasi bukan alasan universal bagi kelangkaan sumber daya.",
+      "Pendapatan tinggi tidak menghapus kendala waktu atau pilihan penggunaan sumber daya.",
+    ]),
+    q("eko2-b01-q02", "Konsep • PPF", "Titik yang berada di dalam PPF, dengan teknologi dan sumber daya yang sama, paling tepat menunjukkan...", [
+      "Kombinasi yang mustahil dicapai",
+      "Kombinasi paling adil bagi masyarakat",
+      "Kapasitas produksi belum digunakan sepenuhnya atau dialokasikan tidak efisien",
+      "Pertumbuhan ekonomi yang sudah terjadi",
+    ], 2, "Titik di dalam batas dapat dicapai tetapi masih menyisakan kapasitas menurut model.", [
+      "Titik di luar PPF, bukan di dalamnya, belum dapat dicapai dengan kapasitas yang ditetapkan.",
+      "PPF menunjukkan kemungkinan produksi, bukan distribusi atau keadilan hasil.",
+      "Pertumbuhan biasanya menggeser batas produksi, bukan ditunjukkan oleh titik di dalam batas lama.",
+    ]),
+    q("eko2-b01-q03", "Konsep • Marginal", "Aturan keputusan marginal sederhana menyarankan menambah satu unit selama...", [
+      "Manfaat marginal lebih besar atau sama dengan biaya marginal",
+      "Manfaat total sudah positif",
+      "Biaya masa lalu dapat diperoleh kembali",
+      "Harga barang selalu sama dengan manfaat total",
+    ], 0, "Perbandingan MB dengan MC menilai perubahan pada unit berikutnya.", [
+      "Manfaat total positif belum menjamin unit tambahan layak; biaya tambahan juga harus dibandingkan.",
+      "Sunk cost yang tak dapat dipulihkan tidak menentukan apakah unit berikutnya menguntungkan.",
+      "Harga dan manfaat total adalah konsep berbeda; aturan marginal membandingkan tambahan manfaat dan tambahan biaya.",
+    ]),
+    q("eko2-b01-q04", "Konsep • Keunggulan komparatif", "Apa yang menentukan keunggulan komparatif suatu pihak dalam menghasilkan barang?", [
+      "Output absolut terbesar pada semua produk",
+      "Harga jual paling tinggi",
+      "Biaya peluang yang lebih rendah daripada pihak pembanding",
+      "Jumlah pekerja paling banyak",
+    ], 2, "Keunggulan komparatif ditentukan oleh biaya peluang relatif.", [
+      "Output absolut berkaitan dengan keunggulan absolut, bukan dengan biaya relatif yang dikorbankan.",
+      "Harga jual dapat berubah dan tidak mengukur sumber daya alternatif yang dilepas.",
+      "Jumlah pekerja sendiri tidak menunjukkan biaya peluang per unit output.",
+    ]),
+    q("eko2-b01-q05", "Hitungan • Biaya peluang", "Satu jam kerja dapat menghasilkan 12 unit A atau 6 unit B. Jika satu unit A tambahan dibuat dengan mengalihkan kapasitas dari B, berapa biaya peluang 1 unit A?", [
+      "0,5 unit B",
+      "2 unit B",
+      "6 unit B",
+      "12 unit B",
+    ], 0, "Biaya peluang A = 6 unit B ÷ 12 unit A = 0,5 unit B per A.", [
+      "2 adalah rasio kebalikan, yaitu biaya peluang 1 B dalam unit A.",
+      "6 unit B adalah total output B per jam, bukan biaya untuk satu unit A.",
+      "12 adalah output A per jam, bukan jumlah B yang dikorbankan per A.",
+    ]),
+    q("eko2-b01-q06", "Hitungan • Manfaat marginal", "Manfaat marginal tiga unit berturut-turut adalah 30, 24, dan 15. Biaya marginalnya 10, 18, dan 20. Berapa unit dipilih menurut aturan MB ≥ MC?", [
+      "1 unit",
+      "2 unit",
+      "3 unit",
+      "0 unit",
+    ], 1, "Unit pertama memberi MB−MC=20 dan unit kedua 6; unit ketiga memberi 15−20=−5. Pilih dua unit.", [
+      "Berhenti setelah unit pertama mengabaikan bahwa unit kedua masih memberi manfaat marginal lebih besar dari biayanya.",
+      "Unit ketiga menurunkan manfaat bersih karena biaya marginal melebihi manfaatnya.",
+      "Unit pertama memiliki manfaat marginal 30 yang lebih besar daripada biaya 10, sehingga tidak memilih apa pun mengabaikan manfaat positif.",
+    ]),
+    q("eko2-b01-q07", "Hitungan • Pilihan alternatif", "Kamu memilih belajar satu sore. Alternatif realistis terbaik yang dilepas adalah kerja 4 jam dengan upah bersih Rp50.000 per jam. Berapa nilai pendapatan yang menjadi biaya peluang?", [
+      "Rp50.000",
+      "Rp100.000",
+      "Rp200.000",
+      "Rp250.000",
+    ], 2, "Empat jam × Rp50.000 per jam = Rp200.000 pendapatan yang dilepas.", [
+      "Ini hanya nilai satu jam, padahal alternatif berlangsung empat jam.",
+      "Ini menghitung dua jam, bukan empat jam yang tersedia.",
+      "Perkalian upah dan jam kerja adalah Rp200.000; angka lain tidak mengikuti data.",
+    ]),
+    q("eko2-b01-q08", "Kasus • Insentif", "Sebuah toko memberi diskon setelah keranjang melewati ambang tertentu. Pembeli menambah barang yang tidak dibutuhkan hanya agar memperoleh diskon. Analisis paling tepat adalah...", [
+      "Diskon pasti menghemat uang karena persentase harga turun",
+      "Perlu membandingkan nilai barang tambahan dengan biaya bersih setelah diskon",
+      "Diskon menghapus biaya peluang",
+      "Pembelian menunjukkan hukum permintaan tidak berlaku",
+    ], 1, "Keputusan ditentukan oleh biaya tambahan dan manfaat barang tambahan, bukan label promosi saja.", [
+      "Total belanja dapat naik; potongan harga tidak menjamin penghematan dibanding keranjang awal.",
+      "Biaya peluang tetap ada karena uang dapat digunakan untuk alternatif lain.",
+      "Satu keputusan pembeli tidak menyangkal hukum permintaan; perubahan jumlah bisa dipengaruhi insentif lain.",
+    ]),
+    q("eko2-b01-q09", "Kasus • Sunk cost", "Kamu membayar tiket yang tak dapat dikembalikan, lalu jatuh sakit sebelum acara. Pertanyaan ekonomi yang paling relevan untuk keputusan sekarang ialah...", [
+      "Bagaimana cara memastikan harga tiket kembali?",
+      "Apakah saya harus hadir agar biaya masa lalu tidak sia-sia?",
+      "Manfaat dan risiko tambahan apa yang timbul jika saya hadir dibanding beristirahat?",
+      "Berapa banyak orang lain tetap datang?",
+    ], 2, "Biaya masa lalu tidak berubah; pilihan sekarang membandingkan konsekuensi ke depan.", [
+      "Premis menyebut tiket tidak dapat dikembalikan, jadi pemulihan biaya bukan alternatif yang tersedia.",
+      "Hadir tidak mengembalikan uang dan dapat menambah biaya atau risiko kesehatan.",
+      "Perilaku orang lain dapat memberi konteks, tetapi tidak menggantikan perbandingan manfaat dan biaya bagi pengambil keputusan.",
+    ]),
+    q("eko2-b01-q10", "Kasus • PPF dan pertumbuhan", "Sebuah koperasi melatih pekerja dan memperbaiki peralatan. Dalam diagram PPF, perubahan kapasitas jangka panjang ini paling tepat digambarkan sebagai...", [
+      "Pergerakan sepanjang kurva lama akibat perubahan harga saja",
+      "Pergeseran batas kemungkinan produksi ke luar, jika produktivitas benar-benar meningkat",
+      "Titik produksi menjadi tidak efisien",
+      "Biaya peluang menjadi nol untuk semua produk",
+    ], 1, "Produktivitas dan kapasitas yang membaik memungkinkan kombinasi output yang sebelumnya di luar batas lama.", [
+      "Perubahan kapasitas bukan sekadar gerak sepanjang PPF yang tetap.",
+      "Peningkatan produktivitas tidak dengan sendirinya membuat penggunaan kapasitas tidak efisien.",
+      "Sumber daya tetap terbatas sehingga biaya peluang umumnya tidak otomatis menjadi nol.",
+    ]),
   ],
-  "eko-bab-2": [
-    q("b2q1", "Permintaan", "Dengan faktor lain tetap, harga suatu barang naik. Hukum permintaan memprediksi...", ["Kurva permintaan bergeser ke kanan", "Jumlah yang diminta turun sepanjang kurva", "Penawaran turun", "Pendapatan pembeli naik"], 1, "Perubahan harga barang sendiri mengubah jumlah diminta, bukan menggeser kurvanya."),
-    q("b2q2", "Pergeseran permintaan", "Pendapatan konsumen meningkat dan kopi adalah barang normal. Kemungkinan yang terjadi...", ["Permintaan kopi bergeser ke kanan", "Penawaran kopi bergeser ke kiri", "Jumlah diminta turun karena harga", "Kurva tidak dapat berubah"], 0, "Pendapatan yang meningkat dapat meningkatkan permintaan barang normal."),
-    q("b2q3", "Penawaran", "Teknologi produksi yang lebih efisien biasanya...", ["Menggeser penawaran ke kanan", "Menggeser permintaan ke kiri", "Mengurangi jumlah penjual otomatis", "Menaikkan biaya marginal setiap unit"], 0, "Efisiensi menurunkan biaya atau meningkatkan kapasitas penawaran."),
-    q("b2q4", "Keseimbangan", "Harga berada jauh di bawah harga keseimbangan dan harga dapat menyesuaikan. Model dasar memprediksi...", ["Surplus", "Kekurangan", "Permintaan nol", "Penawaran tidak berubah"], 1, "Pada harga rendah, jumlah diminta melebihi jumlah ditawarkan."),
-    q("b2q5", "Elastisitas", "Jika perubahan harga 10% menyebabkan jumlah diminta turun 20%, permintaan secara absolut adalah...", ["Inelastis", "Elastis", "Unit elastis", "Tidak dapat dihitung"], 1, "Elastisitas absolut kira-kira 20%/10%=2, di atas satu."),
-    q("b2q6", "Struktur pasar", "Satu penjual dominan dan hambatan masuk tinggi paling dekat dengan model...", ["Persaingan sempurna", "Monopoli", "Persaingan monopolistik", "Pasar tenaga kerja"], 1, "Monopoli dicirikan satu penjual tanpa substitusi dekat dan hambatan masuk."),
-    q("b2q7", "Eksternalitas", "Pabrik menimbulkan polusi yang merugikan warga sekitar tanpa biaya itu masuk harga produk. Ini contoh...", ["Barang normal", "Eksternalitas negatif", "Surplus konsumen", "Biaya tetap"], 1, "Sebagian biaya transaksi ditanggung pihak ketiga."),
-    q("b2q8", "Aplikasi", "Gagal panen mengurangi pasokan beras sementara permintaan tetap. Prediksi arah dasar...", ["Harga turun, kuantitas naik", "Harga naik, kuantitas turun", "Harga dan kuantitas naik", "Harga dan kuantitas tetap"], 1, "Pergeseran penawaran ke kiri cenderung menaikkan harga dan menurunkan kuantitas."),
-  ],
-  "eko-bab-3": [
-    q("b3q1", "Pendapatan", "Untuk anggaran belanja rumah tangga, ukuran pendapatan yang paling langsung tersedia adalah...", ["Pendapatan kotor sebelum potongan", "Pendapatan bersih yang diterima", "Nilai aset rumah", "Limit kartu kredit"], 1, "Anggaran kas menggunakan pendapatan yang tersedia setelah potongan."),
-    q("b3q2", "Arus kas", "Seseorang memiliki aset tetapi tagihan jatuh tempo sebelum gaji masuk. Masalah yang mungkin terjadi adalah...", ["Kekayaan bersih negatif pasti", "Likuiditas/arus kas", "Inflasi", "Elastisitas"], 1, "Aset tidak selalu segera tersedia untuk membayar kewajiban."),
-    q("b3q3", "Anggaran", "Anggaran yang baik sebaiknya...", ["Tidak pernah berubah", "Menggunakan pendapatan realistis dan ditinjau dengan transaksi aktual", "Mengabaikan biaya berkala", "Memastikan semua orang memakai rasio sama"], 1, "Anggaran adalah rencana yang diperbarui menggunakan data nyata."),
-    q("b3q4", "Dana darurat", "Tujuan utama dana darurat adalah...", ["Mengejar return tertinggi", "Menghadapi pengeluaran/kehilangan pendapatan tak terduga", "Membeli barang diskon", "Menghindari semua pajak"], 1, "Dana darurat memprioritaskan ketahanan dan akses."),
-    q("b3q5", "Kekayaan bersih", "Rumus kekayaan bersih adalah...", ["Pendapatan − pajak", "Aset − kewajiban", "Aset + pengeluaran", "Tabungan × bunga"], 1, "Kekayaan bersih membandingkan total aset dan kewajiban."),
-    q("b3q6", "Tujuan keuangan", "Dana yang diperlukan dalam beberapa bulan ke depan sebaiknya mempertimbangkan terutama...", ["Likuiditas dan risiko penurunan nilai", "Hanya imbal hasil historis", "Aset paling volatil", "Proyeksi maksimal"], 0, "Horizon pendek membuat akses dan kestabilan nilai penting."),
-    q("b3q7", "Evaluasi", "Mengapa surplus kas saja belum cukup untuk menilai kesehatan keuangan?", ["Surplus tidak pernah berguna", "Utang, likuiditas, perlindungan, dan tujuan juga berpengaruh", "Hanya harga saham yang penting", "Pendapatan bersih tidak bisa dihitung"], 1, "Kondisi keuangan memiliki beberapa dimensi."),
-    q("b3q8", "Aplikasi", "Pendapatan bersih Rp4 juta, pengeluaran Rp3,5 juta. Surplus saat ini adalah...", ["Rp500.000", "Rp1.500.000", "Rp3.500.000", "Rp7.500.000"], 0, "Rp4.000.000 − Rp3.500.000 = Rp500.000."),
-  ],
-  "eko-bab-4": [
-    q("b4q1", "Pokok dan bunga", "Jumlah awal yang dipinjam disebut...", ["Premi", "Pokok pinjaman", "Tenor", "Denda"], 1, "Pokok adalah jumlah pinjaman sebelum bunga dan biaya."),
-    q("b4q2", "Satuan bunga", "Mengapa bunga 2% tidak cukup untuk membandingkan dua pinjaman?", ["Karena persentase tidak boleh dibandingkan", "Periode, metode, dan biaya lain perlu diketahui", "Bunga selalu berubah", "Pokok tidak relevan"], 1, "Angka harus memiliki periode dan basis perhitungan yang sama."),
-    q("b4q3", "Bunga majemuk", "Dalam bunga majemuk, bunga periode berikutnya dapat dihitung atas...", ["Pokok awal saja", "Saldo pokok ditambah bunga sebelumnya", "Biaya administrasi saja", "Jumlah cicilan yang sudah dibayar"], 1, "Bunga yang ditambahkan ke saldo ikut menghasilkan bunga."),
-    q("b4q4", "Tenor", "Memperpanjang tenor sering menurunkan cicilan bulanan tetapi dapat...", ["Menghapus seluruh bunga", "Menaikkan total pembayaran", "Menghapus pokok", "Menjamin pinjaman lebih aman"], 1, "Pembayaran bunga berlangsung lebih lama, bergantung kontrak."),
-    q("b4q5", "Biaya kredit", "Perbandingan pinjaman seharusnya memasukkan...", ["Cicilan bulanan saja", "Dana bersih diterima, seluruh biaya, tenor, dan total pembayaran", "Warna aplikasi", "Hanya iklan bunga"], 1, "Total biaya bergantung pada semua arus pembayaran dan biaya wajib."),
-    q("b4q6", "Rasio utang", "Rasio beban utang yang rendah berarti...", ["Pinjaman baru pasti aman", "Perlu tetap menilai kestabilan pendapatan dan kebutuhan", "Tidak ada risiko", "Bunga tidak perlu dibaca"], 1, "Rasio adalah indikator, bukan persetujuan otomatis."),
-    q("b4q7", "Pelunasan", "Metode avalanche biasanya memprioritaskan...", ["Saldo terkecil", "Utang berbunga tertinggi sambil membayar minimum lainnya", "Utang terbaru", "Utang tanpa kontrak"], 1, "Prioritas bunga tinggi dapat mengurangi biaya total."),
-    q("b4q8", "Keamanan", "Pemberi pinjaman meminta OTP untuk “memastikan persetujuan”. Tindakan paling aman...", ["Kirim segera", "Jangan bagikan OTP dan verifikasi melalui kanal resmi", "Kirim PIN saja", "Minta teman meneruskan"], 1, "OTP dan kode rahasia tidak boleh dibagikan."),
-  ],
-  "eko-bab-5": [
-    q("b5q1", "Inflasi", "Inflasi merujuk pada...", ["Kenaikan harga satu barang saja", "Kenaikan tingkat harga umum secara berkelanjutan", "Penurunan semua harga", "Kenaikan pendapatan"], 1, "Inflasi adalah perubahan tingkat harga agregat, bukan satu barang."),
-    q("b5q2", "IHK", "IHK digunakan untuk mengukur...", ["Perubahan biaya keranjang barang/jasa representatif", "Pendapatan setiap keluarga", "Nilai satu saham", "Pengangguran saja"], 0, "IHK mengikuti harga keranjang berbobot."),
-    q("b5q3", "Daya beli", "Jika harga keranjang pribadi naik lebih cepat daripada pendapatan nominal, daya beli keranjang itu cenderung...", ["Naik", "Turun", "Tidak terpengaruh", "Menjadi nol"], 1, "Kenaikan harga yang lebih cepat mengurangi barang yang dapat dibeli."),
-    q("b5q4", "Kebijakan moneter", "Dampak perubahan suku bunga kebijakan biasanya...", ["Langsung dan sama bagi semua", "Merambat melalui beberapa kanal dengan jeda", "Tidak memengaruhi pinjaman", "Hanya mengubah pajak"], 1, "Transmisi kebijakan melibatkan biaya pendanaan, kredit, ekspektasi, dan waktu."),
-    q("b5q5", "Nilai tukar", "Mata uang domestik melemah dapat...", ["Selalu menguntungkan semua rumah tangga", "Menaikkan biaya sebagian barang impor", "Menghapus inflasi", "Tidak berdampak pada eksportir"], 1, "Biaya impor dapat meningkat; dampak keseluruhan beragam."),
-    q("b5q6", "PDB", "PDB terutama mengukur...", ["Kesejahteraan lengkap setiap warga", "Nilai produksi barang dan jasa akhir dalam suatu wilayah/periode", "Kekayaan bersih rumah tangga", "Harga semua aset"], 1, "PDB adalah ukuran produksi agregat, bukan ukuran kesejahteraan lengkap."),
-    q("b5q7", "Fiskal", "Kebijakan fiskal menggunakan...", ["Belanja dan pajak pemerintah", "Suku bunga kartu kredit saja", "Harga saham", "Nilai tukar tetap"], 0, "Instrumen fiskal utama adalah penerimaan dan pengeluaran pemerintah."),
-    q("b5q8", "Data", "Saat membaca data inflasi, hal penting yang perlu dicatat adalah...", ["Periode, cakupan, dan sumber", "Warna grafik", "Jumlah komentar di media sosial", "Prediksi tanpa asumsi"], 0, "Definisi dan periode diperlukan untuk interpretasi yang benar."),
-  ],
-  "eko-bab-6": [
-    q("b6q1", "Risiko", "Mengapa peluang kejadian tidak selalu dapat dinyatakan dengan angka presisi?", ["Semua risiko sama", "Data mungkin tidak cukup untuk mengestimasi probabilitas", "Risiko tidak pernah terjadi", "Semua orang memiliki informasi lengkap"], 1, "Ketidakpastian sering membatasi estimasi probabilitas yang andal."),
-    q("b6q2", "Likuiditas", "Likuiditas berarti...", ["Tingkat bunga pinjaman", "Kemudahan mengakses uang tanpa kehilangan nilai besar", "Jumlah utang", "Nilai pajak"], 1, "Aset likuid dapat digunakan relatif cepat dengan biaya rendah."),
-    q("b6q3", "Asuransi", "Asuransi terutama berfungsi untuk...", ["Menjamin semua kerugian dibayar", "Mengalihkan sebagian risiko sesuai syarat kontrak", "Menghasilkan return pasti", "Menghapus kebutuhan dana darurat"], 1, "Perlindungan terbatas pada risiko dan ketentuan polis."),
-    q("b6q4", "Polis", "Komponen yang harus dibaca selain premi adalah...", ["Pengecualian, batas manfaat, masa tunggu, dan klaim", "Logo pemasaran", "Jumlah pengikut agen", "Testimoni saja"], 0, "Syarat polis menentukan perlindungan yang benar-benar berlaku."),
-    q("b6q5", "Penipuan", "Janji keuntungan tinggi pasti dan tekanan transfer sekarang adalah...", ["Bukti produk aman", "Tanda bahaya untuk berhenti dan memverifikasi", "Alasan mengirim OTP", "Jaminan regulator"], 1, "Jaminan return dan tekanan mendesak adalah sinyal risiko."),
-    q("b6q6", "Perlindungan data", "Orang tak dikenal meminta seed phrase untuk memulihkan aset. Kamu sebaiknya...", ["Mengirim sebagian", "Tidak membagikannya; seed phrase memberi akses penuh", "Mengirim lewat telepon", "Meminta diskon"], 1, "Seed phrase rahasia memberi kendali aset."),
-    q("b6q7", "Kontingensi", "Rencana darurat yang berguna mencakup...", ["Kontak, dokumen, kewajiban, dan tindakan awal", "Prediksi pasti masa depan", "Kata sandi dibagikan ke grup", "Hanya target investasi"], 0, "Rencana praktis mempersiapkan tindakan ketika gangguan terjadi."),
-    q("b6q8", "Diversifikasi", "Diversifikasi pendapatan dapat mengurangi ketergantungan, tetapi...", ["Tidak memerlukan waktu", "Memiliki biaya, kompleksitas, dan risiko sendiri", "Menjamin laba", "Selalu cocok untuk semua orang"], 1, "Diversifikasi bukan tanpa biaya atau jaminan."),
-  ],
-  "eko-bab-7": [
-    q("b7q1", "Investasi", "Perbedaan utama menabung dan investasi adalah...", ["Menabung berisiko nol", "Investasi memiliki risiko perubahan nilai demi kemungkinan pertumbuhan", "Menabung selalu merugi", "Investasi menjamin return"], 1, "Investasi dapat berfluktuasi dan hasilnya tidak pasti."),
-    q("b7q2", "Risiko-return", "Pernyataan yang tepat mengenai return historis adalah...", ["Menjamin return masa depan", "Memberi konteks masa lalu tetapi bukan jaminan", "Tidak pernah berguna", "Menghilangkan risiko"], 1, "Kinerja historis tidak memastikan hasil mendatang."),
-    q("b7q3", "Majemuk", "Bunga majemuk terjadi ketika...", ["Bunga tidak dibayar", "Hasil yang diinvestasikan kembali ikut menghasilkan hasil", "Pajak dihapus", "Nilai selalu naik"], 1, "Hasil yang ditambahkan dapat menjadi basis pertumbuhan periode berikutnya."),
-    q("b7q4", "Saham", "Membeli saham berarti memiliki...", ["Kewajiban perusahaan tanpa hak", "Bagian kepemilikan sesuai hak saham", "Deposito tanpa risiko", "Kupon tetap"], 1, "Saham merepresentasikan kepemilikan dengan hak tertentu."),
-    q("b7q5", "Obligasi", "Risiko obligasi dapat mencakup...", ["Hanya risiko cuaca", "Gagal bayar, perubahan suku bunga, inflasi, dan likuiditas", "Tidak ada risiko", "Hanya biaya broker"], 1, "Obligasi menghadapi risiko penerbit dan pasar."),
-    q("b7q6", "Diversifikasi", "Diversifikasi...", ["Menghapus semua risiko", "Dapat menyebar eksposur tetapi tidak menjamin hasil", "Membuat aset selalu naik", "Mengganti kebutuhan memahami produk"], 1, "Diversifikasi mengurangi sebagian risiko konsentrasi, bukan semua risiko."),
-    q("b7q7", "Alokasi aset", "Alokasi aset sebaiknya mempertimbangkan...", ["Hanya tren media sosial", "Tujuan, horizon, likuiditas, dan kemampuan menanggung risiko", "Return tertinggi tahun lalu", "Jumlah iklan"], 1, "Kesesuaian bergantung pada kondisi dan tujuan investor."),
-    q("b7q8", "Biaya", "Return bersih sebaiknya mempertimbangkan...", ["Biaya, pajak, dan inflasi yang relevan", "Hanya angka sebelum biaya", "Jumlah likes", "Harga beli saja"], 0, "Biaya dan pajak memengaruhi hasil yang diterima."),
-  ],
-  "eko-bab-8": [
-    q("b8q1", "Bias", "Confirmation bias membuat seseorang cenderung...", ["Mencari bukti yang menyangkal keyakinannya", "Memilih informasi yang mendukung keyakinan awal", "Menghitung bunga", "Mengukur inflasi"], 1, "Bias ini menyaring informasi sesuai kepercayaan yang ada."),
-    q("b8q2", "Loss aversion", "Loss aversion dapat membuat investor...", ["Merasa rugi dan untung setara selalu", "Menahan aset rugi terlalu lama agar tidak mengakui kerugian", "Mengabaikan harga beli", "Selalu mengambil risiko lebih rendah"], 1, "Keengganan merealisasikan kerugian dapat menghambat evaluasi rasional."),
-    q("b8q3", "FOMO", "Tindakan yang membantu menghadapi FOMO adalah...", ["Transfer sebelum kesempatan hilang", "Jeda, cek bukti, dan bandingkan dengan rencana", "Ikuti keputusan grup", "Pinjam dana agar ikut"], 1, "Jeda mengurangi tekanan dan mengembalikan keputusan ke tujuan."),
-    q("b8q4", "Tekanan sosial", "Testimoni teman tentang keuntungan investasi...", ["Menjamin hasil sama", "Merupakan anekdot yang tetap perlu diverifikasi", "Menggantikan prospektus", "Menghapus risiko"], 1, "Pengalaman pribadi bukan jaminan hasil orang lain."),
-    q("b8q5", "Belanja impulsif", "Cara sederhana menambah friksi untuk belanja impulsif adalah...", ["Simpan kartu pada semua aplikasi", "Terapkan jeda dan daftar belanja", "Belanja saat emosi tinggi", "Abaikan anggaran"], 1, "Jeda memberi waktu untuk menilai kembali kebutuhan."),
-    q("b8q6", "Evaluasi klaim", "Informasi apa yang penting untuk mengevaluasi klaim return?", ["Sumber, periode, biaya, risiko, dan insentif", "Warna logo", "Jumlah emoji", "Jumlah orang yang membagikan"], 0, "Konteks dan sumber dapat mengungkap batas klaim."),
-    q("b8q7", "Keamanan", "Tawaran meminta OTP agar dana investasi cair. Respons aman...", ["Kirim OTP", "Jangan bagikan kode dan verifikasi melalui kanal resmi", "Kirim screenshot rekening", "Bayar biaya lewat tautan"], 1, "OTP memberi akses dan tidak boleh dibagikan."),
-    q("b8q8", "Rencana", "Rencana keuangan yang sehat sebaiknya...", ["Menganggap proyeksi sebagai kepastian", "Memiliki tujuan, asumsi, risiko, dan jadwal tinjau", "Tidak pernah berubah", "Hanya berdasarkan tren"], 1, "Rencana harus transparan terhadap asumsi dan diperbarui."),
+  "eko2-b02": [
+    q("eko2-b02-q01", "Konsep • Permintaan", "Definisi permintaan yang paling tepat adalah...", [
+      "Keinginan memiliki barang tanpa mempertimbangkan kemampuan membayar",
+      "Hubungan harga dengan jumlah yang bersedia dan mampu dibeli dalam periode tertentu",
+      "Jumlah barang yang saat ini tersimpan di toko",
+      "Jumlah transaksi yang pernah terjadi sepanjang waktu",
+    ], 1, "Permintaan menghubungkan harga dengan jumlah yang bersedia dan mampu dibeli pada periode yang ditentukan.", [
+      "Keinginan tanpa kemampuan membeli belum tentu menjadi permintaan efektif.",
+      "Stok adalah persediaan, bukan jadwal hubungan harga-jumlah yang diinginkan pembeli.",
+      "Riwayat transaksi tidak menggambarkan seluruh pasangan harga-kuantitas pada periode tertentu.",
+    ]),
+    q("eko2-b02-q02", "Konsep • Gerak sepanjang kurva", "Harga barang itu sendiri turun, dengan faktor lain tetap. Istilah yang tepat adalah...", [
+      "Permintaan bergeser ke kanan",
+      "Penawaran bergeser ke kiri",
+      "Jumlah yang diminta meningkat melalui gerak sepanjang kurva permintaan",
+      "Jumlah yang ditawarkan meningkat",
+    ], 2, "Perubahan harga barang itu sendiri mengubah kuantitas yang diminta pada kurva yang sama.", [
+      "Pergeseran permintaan berasal dari faktor selain harga barang itu sendiri.",
+      "Tidak ada informasi bahwa kondisi biaya atau penawaran berubah.",
+      "Perubahan harga dapat mengubah jumlah diminta, bukan otomatis jumlah yang ditawarkan.",
+    ]),
+    q("eko2-b02-q03", "Konsep • Penawaran", "Teknologi produksi yang menurunkan biaya per unit biasanya menyebabkan...", [
+      "Kurva penawaran bergeser ke kanan",
+      "Kurva permintaan bergeser ke kiri",
+      "Gerak sepanjang kurva penawaran akibat harga barang naik",
+      "Jumlah penjual pasti menjadi satu",
+    ], 0, "Biaya lebih rendah memungkinkan produsen menawarkan lebih banyak pada berbagai harga.", [
+      "Teknologi produksi memengaruhi keputusan penjual, bukan secara langsung preferensi pembeli.",
+      "Tidak disebutkan harga barang naik; perubahan teknologi menggeser jadwal penawaran.",
+      "Efisiensi produksi tidak menyiratkan jumlah penjual turun menjadi satu.",
+    ]),
+    q("eko2-b02-q04", "Konsep • Ekuilibrium", "Pada harga pasar tertentu, Qs lebih besar daripada Qd. Kondisi ini disebut...", [
+      "Kekurangan",
+      "Ekuilibrium",
+      "Surplus penawaran",
+      "Pergeseran permintaan",
+    ], 2, "Jika jumlah yang ditawarkan melampaui jumlah yang diminta, terdapat surplus penawaran pada harga tersebut.", [
+      "Kekurangan terjadi saat Qd lebih besar daripada Qs.",
+      "Ekuilibrium mensyaratkan Qs sama dengan Qd.",
+      "Pergeseran permintaan adalah perubahan seluruh jadwal, bukan nama ketidakseimbangan kuantitas.",
+    ]),
+    q("eko2-b02-q05", "Hitungan • Ekuilibrium", "Jika Qd = 100 − 5P dan Qs = 20 + 5P, berapakah harga ekuilibrium P*?", [
+      "4",
+      "6",
+      "8",
+      "10",
+    ], 2, "Samakan 100−5P=20+5P; 80=10P, sehingga P*=8.", [
+      "P=4 tidak menyamakan jumlah diminta dan ditawarkan.",
+      "P=6 menghasilkan Qd=70 dan Qs=50, bukan jumlah sama.",
+      "P=10 menghasilkan Qd=50 dan Qs=70, sehingga terjadi surplus, bukan ekuilibrium.",
+    ]),
+    q("eko2-b02-q06", "Hitungan • Kekurangan", "Dengan Qd = 90 − 3P dan Qs = 18 + 3P, pada P=10 terjadi...", [
+      "Surplus 12 unit",
+      "Kekurangan 12 unit",
+      "Ekuilibrium pada 54 unit",
+      "Kekurangan 30 unit",
+    ], 1, "Qd=90−30=60 dan Qs=18+30=48; kekurangan=60−48=12 unit.", [
+      "Qd lebih besar, jadi arah selisihnya kekurangan, bukan surplus.",
+      "Jumlah ekuilibrium 54 berlaku pada P=12, bukan P=10.",
+      "Selisih jumlah adalah 60−48=12, bukan 30.",
+    ]),
+    q("eko2-b02-q07", "Hitungan • Pergeseran permintaan", "Semula Qd = 100 − 5P dan Qs = 20 + 5P. Jika permintaan bergeser menjadi Qd = 120 − 5P, berapa ekuilibrium baru (P*, Q*)?", [
+      "(8, 60)",
+      "(10, 70)",
+      "(12, 60)",
+      "(10, 50)",
+    ], 1, "120−5P=20+5P memberi P=10; substitusi memberi Q=120−50=70.", [
+      "Pasangan ini adalah ekuilibrium lama sebelum pergeseran permintaan.",
+      "Ini hasil persamaan baru dan konsisten dengan penawaran: 20+5×10=70.",
+      "P=12 memberi Qd=60 dan Qs=80, bukan jumlah yang sama.",
+    ]),
+    q("eko2-b02-q08", "Kasus • Substitusi", "Harga kopi naik sementara faktor lain tetap. Jika teh adalah substitusi bagi sebagian pembeli, prediksi yang paling sesuai ialah...", [
+      "Permintaan teh dapat bergeser ke kanan",
+      "Jumlah teh yang diminta pasti turun",
+      "Penawaran teh bergeser ke kiri",
+      "Ekuilibrium teh tidak mungkin berubah",
+    ], 0, "Sebagian pembeli dapat beralih dari kopi ke teh, sehingga pada setiap harga teh permintaan berpotensi meningkat.", [
+      "Kenaikan harga kopi dapat membuat pembeli beralih ke teh, bukan selalu mengurangi pembelian teh.",
+      "Tidak ada informasi biaya produsen teh berubah.",
+      "Pergeseran permintaan teh dapat mengubah ekuilibrium pasar teh.",
+    ]),
+    q("eko2-b02-q09", "Kasus • Gangguan penawaran", "Gangguan logistik mengurangi barang yang sampai di pasar, sedangkan permintaan tetap. Model dasar memprediksi...", [
+      "Penawaran bergeser ke kanan; harga turun dan kuantitas naik",
+      "Penawaran bergeser ke kiri; harga cenderung naik dan kuantitas turun",
+      "Permintaan bergeser ke kiri; harga pasti tetap",
+      "Gerak sepanjang kurva penawaran tanpa perubahan faktor lain",
+    ], 1, "Gangguan mengurangi penawaran pada harga tertentu; dengan permintaan tetap, ekuilibrium baru cenderung memiliki harga lebih tinggi dan kuantitas lebih rendah.", [
+      "Arah pergeseran dan perubahan ekuilibrium terbalik dari dampak gangguan pasokan.",
+      "Kejadian awal mengubah kapasitas penjual; harga tidak dijamin tetap.",
+      "Logistik adalah faktor selain harga barang itu sendiri sehingga menggeser kurva penawaran.",
+    ]),
+    q("eko2-b02-q10", "Kasus • Harga di bawah ekuilibrium", "Harga tiket ditahan di bawah harga yang menyamakan Qd dan Qs. Kursi terbatas dan antrean muncul. Interpretasi yang paling tepat adalah...", [
+      "Permintaan hilang karena tiket murah",
+      "Qd dapat melebihi Qs sehingga terjadi kekurangan; alokasi nonharga mungkin menentukan siapa mendapat tiket",
+      "Surplus penawaran karena banyak orang mengantre",
+      "Kurva penawaran pasti bergeser ke kanan",
+    ], 1, "Harga rendah relatif terhadap ekuilibrium dapat menimbulkan Qd>Qs; antrean adalah salah satu cara nonharga mengalokasikan jumlah terbatas.", [
+      "Harga rendah tidak menghapus keinginan atau kemampuan membeli.",
+      "Antrean mencerminkan banyak pembeli bersaing atas pasokan terbatas, bukan kelebihan pasokan.",
+      "Tidak ada informasi kapasitas penjual bertambah; antrean tidak membuktikan pergeseran penawaran.",
+    ]),
   ],
 };
 
-const sharedRubric = "Nilai 0–5 untuk tiap kriteria: 0 = tidak dijawab/tidak relevan; 1 = sangat lemah; 2 = sebagian benar; 3 = cukup akurat; 4 = kuat dengan alasan dan penerapan; 5 = akurat, lengkap, dan jelas. Skor dua uraian masing-masing maksimal 20 poin.";
+const rubric = "Nilai 0–5 pada ketepatan konsep, kualitas alasan, penerapan pada kasus, dan kejelasan. Tiap kriteria bernilai 0 (tidak ada/relevansi tidak tampak) hingga 5 (tepat, lengkap, dan dijelaskan).";
 
 export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
-  "eko-bab-1": [
-    { id: "b1e1", prompt: "Pilih satu keputusan finansial nyata atau hipotetis. Jelaskan kelangkaan, alternatif terbaik yang dikorbankan, biaya dan manfaat ke depan, serta risiko yang belum pasti.", rubric: sharedRubric },
-    { id: "b1e2", prompt: "Berikan contoh sunk cost. Jelaskan mengapa biaya masa lalu tidak menentukan pilihan ke depan dan informasi baru apa yang tetap relevan.", rubric: sharedRubric },
+  "eko2-b01": [
+    { id: "eko2-b01-e01", prompt: "Gunakan PPF untuk menganalisis pilihan sebuah koperasi antara dua jenis output. Jelaskan kelangkaan, efisiensi, biaya peluang, dan bagaimana peningkatan keterampilan dapat mengubah batas produksi.", rubric, reviewPoints: ["Menetapkan sumber daya dan periode", "Membedakan titik efisien dan tidak efisien", "Menghitung biaya peluang dengan satuan konsisten", "Membedakan gerak pada PPF dari pergeseran kapasitas"] },
+    { id: "eko2-b01-e02", prompt: "Pilih satu keputusan nyata atau hipotetis. Bandingkan manfaat marginal dan biaya marginal, alternatif terbaik yang dilepas, insentif yang memengaruhi pilihan, serta informasi yang dapat membuat keputusan ditinjau ulang.", rubric, reviewPoints: ["Alternatif layak dinyatakan", "MB dan MC berorientasi ke depan", "Insentif dan kemungkinan konsekuensi sampingan dibahas", "Ketidakpastian tidak diperlakukan sebagai kepastian"] },
   ],
-  "eko-bab-2": [
-    { id: "b2e1", prompt: "Analisis dampak hipotetis gagal panen dan kenaikan pendapatan konsumen pada pasar beras. Jelaskan kurva yang bergeser dan apa yang belum dapat dipastikan.", rubric: sharedRubric },
-    { id: "b2e2", prompt: "Jelaskan satu eksternalitas dalam kehidupan sehari-hari dan evaluasi satu kebijakan yang mungkin mengatasinya beserta trade-off.", rubric: sharedRubric },
-  ],
-  "eko-bab-3": [
-    { id: "b3e1", prompt: "Buat kerangka anggaran bulanan berdasarkan pendapatan bersih hipotetis. Jelaskan prioritas, dana darurat, dan bagaimana kamu menyesuaikan rencana jika pendapatan turun.", rubric: sharedRubric },
-    { id: "b3e2", prompt: "Jelaskan perbedaan arus kas, likuiditas, dan kekayaan bersih dengan satu contoh rumah tangga.", rubric: sharedRubric },
-  ],
-  "eko-bab-4": [
-    { id: "b4e1", prompt: "Bandingkan dua pinjaman hipotetis dengan cicilan dan tenor berbeda. Sebutkan data yang harus diminta agar biaya total dapat dibandingkan dengan adil.", rubric: sharedRubric },
-    { id: "b4e2", prompt: "Jelaskan strategi melunasi beberapa utang dan kapan metode avalanche atau snowball mungkin lebih cocok.", rubric: sharedRubric },
-  ],
-  "eko-bab-5": [
-    { id: "b5e1", prompt: "Jelaskan bagaimana kenaikan inflasi dapat memengaruhi daya beli rumah tangga yang pendapatannya tidak berubah. Sebutkan batas penggunaan indeks umum.", rubric: sharedRubric },
-    { id: "b5e2", prompt: "Uraikan satu jalur transmisi perubahan suku bunga kebijakan ke keputusan rumah tangga dan jelaskan mengapa dampaknya tidak seketika.", rubric: sharedRubric },
-  ],
-  "eko-bab-6": [
-    { id: "b6e1", prompt: "Susun langkah awal menghadapi gangguan pendapatan rumah tangga. Jelaskan peran likuiditas, perlindungan, dan prioritas pembayaran.", rubric: sharedRubric },
-    { id: "b6e2", prompt: "Evaluasi tawaran investasi hipotetis dengan keuntungan tinggi yang dijamin dan tekanan transfer cepat. Sebutkan langkah verifikasi yang aman.", rubric: sharedRubric },
-  ],
-  "eko-bab-7": [
-    { id: "b7e1", prompt: "Jelaskan bagaimana tujuan, horizon waktu, likuiditas, dan kemampuan menanggung risiko memengaruhi alokasi aset hipotetis.", rubric: sharedRubric },
-    { id: "b7e2", prompt: "Jelaskan mengapa diversifikasi tidak menjamin keuntungan dan biaya apa saja yang perlu dipertimbangkan saat mengevaluasi return.", rubric: sharedRubric },
-  ],
-  "eko-bab-8": [
-    { id: "b8e1", prompt: "Analisis bagaimana FOMO dan confirmation bias dapat memengaruhi keputusan investasi. Susun langkah untuk mengevaluasi klaim secara lebih objektif.", rubric: sharedRubric },
-    { id: "b8e2", prompt: "Rancang aturan pribadi yang realistis untuk mengurangi belanja impulsif atau keputusan finansial saat emosi tinggi.", rubric: sharedRubric },
+  "eko2-b02": [
+    { id: "eko2-b02-e01", prompt: "Analisis pasar hipotetis yang mengalami kenaikan pendapatan pembeli dan gangguan biaya input secara bersamaan. Tentukan kurva yang bergeser dan jelaskan bagian arah perubahan ekuilibrium yang dapat atau tidak dapat dipastikan.", rubric, reviewPoints: ["Mengidentifikasi barang normal/inferior sebagai asumsi", "Mengidentifikasi kurva permintaan dan penawaran", "Menjelaskan dampak masing-masing pergeseran", "Mengenali hasil harga/kuantitas yang mungkin ambigu"] },
+    { id: "eko2-b02-e02", prompt: "Gunakan fungsi Qd = 120 − 4P dan Qs = 24 + 4P. Hitung ekuilibrium, lalu hitung surplus atau kekurangan ketika harga ditetapkan 10 satuan di bawah harga ekuilibrium. Tunjukkan semua langkah dan satuannya.", rubric, reviewPoints: ["Persamaan disamakan dengan benar", "P* dan Q* disubstitusikan untuk cek", "Qd dan Qs dihitung di harga yang diberikan", "Arah selisih serta satuan dijelaskan"] },
   ],
 };
 
-export const FINAL_EXAM_QUESTIONS = Object.values(ECONOMICS_QUIZZES).map((questions) => questions[0]);
-export const FINAL_EXAM_ESSAYS: EssayPrompt[] = [
-  { id: "finale1", prompt: "Gunakan konsep dari sedikitnya tiga bab untuk menganalisis keputusan hipotetis rumah tangga menghadapi penurunan pendapatan dan tawaran pinjaman.", rubric: sharedRubric },
-  { id: "finale2", prompt: "Evaluasi klaim investasi hipotetis dengan mempertimbangkan risiko, biaya, horizon, bias, dan cara verifikasi.", rubric: sharedRubric },
-];
+export const FINAL_EXAM_QUESTIONS: AssessmentQuestion[] = [];
+export const FINAL_EXAM_ESSAYS: EssayPrompt[] = [];

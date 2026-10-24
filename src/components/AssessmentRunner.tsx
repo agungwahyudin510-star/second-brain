@@ -78,7 +78,7 @@ export default function AssessmentRunner({
     <div className="space-y-6">
       <Link href={returnHref} className="text-sm text-zinc-400 hover:text-white">← Kembali ke kurikulum</Link>
       <div>
-        <p className="text-sm text-zinc-500">{isExam ? "Ujian akhir • penilaian pembelajaran" : "Kuis bab • 8 pilihan ganda + 2 uraian"}</p>
+        <p className="text-sm text-zinc-500">{isExam ? "Ujian akhir • penilaian pembelajaran" : `Kuis bab • ${questions.length} pilihan ganda + ${essays.length} uraian`}</p>
         <h1 className="mt-1 text-2xl font-bold">{title}</h1>
         <p className="mt-2 text-sm text-zinc-400">
           Pilihan ganda bernilai total 60 poin. Nilai uraian adalah penilaian mandiri dengan rubrik (total 40 poin); tidak ada penilaian AI.

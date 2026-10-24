@@ -9,7 +9,8 @@ import { useEconomicsProgress } from "@/hooks/useEconomicsProgress";
 import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { isChapterUnlocked } from "@/lib/economics-progress";
 import { ENGLISH_PROGRESS_KEY, PSYCHOLOGY_PROGRESS_KEY, WEB3_PROGRESS_KEY } from "@/lib/economics-progress";
-import EconomicsVisual from "@/components/EconomicsVisual";
+import EconomicsContent from "@/components/visuals/ekonomi/EconomicsContent";
+import EconomicsChapterResources from "@/components/visuals/ekonomi/EconomicsChapterResources";
 import PsychologyVisual from "@/components/PsychologyVisual";
 import EnglishSpeechPractice from "@/components/EnglishSpeechPractice";
 import Web3LearningVisual from "@/components/Web3LearningVisual";
@@ -31,6 +32,7 @@ export default function LessonPage() {
   const { lesson, prev, next } = found;
   const modules = getModules(slug);
   const moduleIndex = modules.findIndex((module) => module.id === lesson.moduleId);
+  const lessonModule = modules[moduleIndex];
   const courseAttempts = slug === "psikologi"
     ? psychologyCourse.progress.attempts
     : slug === "inggris"
@@ -72,12 +74,16 @@ export default function LessonPage() {
       </div>
 
       <h1 className="text-2xl font-bold">{lesson.title}</h1>
-      <MarkdownView content={lessonContent} />
+      {slug === "ekonomi"
+        ? <EconomicsContent content={lessonContent} />
+        : <MarkdownView content={lessonContent} />}
 
-      {slug === "ekonomi" && <EconomicsVisual moduleId={lesson.moduleId} />}
       {slug === "psikologi" && <PsychologyVisual moduleId={lesson.moduleId} />}
       {slug === "inggris" && lesson.speechText && <EnglishSpeechPractice text={lesson.speechText} listening={lesson.listening} />}
       {slug === "web3" && <Web3LearningVisual lesson={lesson} />}
+      {slug === "ekonomi" && lesson.id === lessonModule?.lessons.at(-1)?.id && (
+        <EconomicsChapterResources module={lessonModule} />
+      )}
 
       <div className="flex flex-wrap gap-2 border-t border-zinc-800 pt-5">
         <Button variant={isDone ? "ghost" : "primary"} onClick={toggleDone}>
