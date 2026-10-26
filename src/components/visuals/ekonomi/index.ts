@@ -8,6 +8,11 @@ import EkoMoveVsShift from "./eko-move-vs-shift";
 import EkoScheduleToCurve from "./eko-schedule-to-curve";
 import EkoShortageSurplus from "./eko-surplus-shortage";
 import EkoSupplyDemand from "./eko-supply-demand";
+import EkoElasticity from "./eko-elasticity";
+import EkoElasticityTypes from "./eko-elasticity-types";
+import EkoConsumerProducerSurplus from "./eko-consumer-producer-surplus";
+import EkoPriceControls from "./eko-price-controls";
+import EkoTaxIncidence from "./eko-tax-incidence";
 
 export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-ppf": EkoPpf,
@@ -19,4 +24,9 @@ export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-move-vs-shift": EkoMoveVsShift,
   "eko-surplus-shortage": EkoShortageSurplus,
   "eko-schedule-to-curve": EkoScheduleToCurve,
+  "eko-elasticity": EkoElasticity,
+  "eko-elasticity-types": EkoElasticityTypes,
+  "eko-consumer-producer-surplus": EkoConsumerProducerSurplus,
+  "eko-price-controls": EkoPriceControls,
+  "eko-tax-incidence": EkoTaxIncidence,
 };

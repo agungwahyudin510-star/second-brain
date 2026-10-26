@@ -231,6 +231,108 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Tidak ada informasi kapasitas penjual bertambah; antrean tidak membuktikan pergeseran penawaran.",
     ]),
   ],
+  "eko2-b03": [
+    q("eko2-b03-q01", "Konsep • Elastisitas", "Apa yang diukur elastisitas harga permintaan?", [
+      "Perubahan unit jumlah dibagi perubahan unit harga",
+      "Perubahan total penerimaan dibagi perubahan pendapatan",
+      "Persentase perubahan jumlah diminta dibagi persentase perubahan harga",
+      "Harga maksimum yang bersedia dibayar konsumen",
+    ], 2, "Elastisitas harga membandingkan respons persentase jumlah dengan perubahan persentase harga.", [
+      "Itu adalah kemiringan dalam unit, bukan rasio perubahan persentase.",
+      "TR dan pendapatan bukan definisi elastisitas harga permintaan.",
+      "Itu adalah willingness to pay, bukan ukuran respons jumlah terhadap harga.",
+    ]),
+    q("eko2-b03-q02", "Konsep • Elastisitas pendapatan", "Pendapatan naik dan jumlah barang yang diminta turun. Klasifikasi yang paling tepat adalah...", [
+      "Barang inferior, karena elastisitas pendapatan bertanda negatif",
+      "Barang mewah, karena setiap barang yang turun adalah barang mewah",
+      "Barang substitusi, karena jumlah barang tersebut turun",
+      "Barang komplementer, karena pendapatan berubah",
+    ], 0, "Elastisitas pendapatan negatif menunjukkan kuantitas turun saat pendapatan meningkat, sehingga barang itu inferior dalam klasifikasi respons.", [
+      "Barang mewah memiliki elastisitas pendapatan positif yang lebih besar dari satu.",
+      "Substitusi ditentukan oleh respons terhadap harga barang lain, bukan pendapatan.",
+      "Komplementer ditentukan oleh elastisitas silang negatif, bukan perubahan pendapatan.",
+    ]),
+    q("eko2-b03-q03", "Konsep • Surplus", "Surplus konsumen untuk suatu unit paling tepat didefinisikan sebagai...", [
+      "Harga yang diterima penjual dikurangi biaya tetap",
+      "Penerimaan pajak dikurangi belanja pemerintah",
+      "Biaya minimum penjual dikurangi harga pasar",
+      "Willingness to pay konsumen dikurangi harga yang dibayar",
+    ], 3, "Konsumen memperoleh surplus sebesar nilai maksimum yang bersedia dibayar dikurangi pembayaran aktual.", [
+      "Itu bukan definisi manfaat pembeli; biaya tetap dan penerimaan penjual berbeda.",
+      "Perhitungan ini bukan surplus konsumen.",
+      "Arah pengurangan terbalik dan besaran itu bukan surplus konsumen.",
+    ]),
+    q("eko2-b03-q04", "Konsep • Batas harga", "Price floor menjadi mengikat dalam model persaingan ketika...", [
+      "Ditetapkan di bawah harga ekuilibrium",
+      "Ditetapkan di atas harga ekuilibrium",
+      "Ditetapkan tepat sama dengan harga minimum produsen",
+      "Jumlah yang diminta sama dengan jumlah ditawarkan pada setiap harga",
+    ], 1, "Floor yang berada di atas P* membatasi harga agar tidak turun ke ekuilibrium.", [
+      "Floor di bawah P* tidak membatasi harga ekuilibrium.",
+      "Harga minimum produsen bukan pembanding untuk menentukan apakah aturan mengikat.",
+      "Kesamaan jumlah pada setiap harga bukan definisi floor yang mengikat.",
+    ]),
+    q("eko2-b03-q05", "Hitungan • Midpoint dan TR", "Harga naik dari 10 ke 12 dan jumlah turun dari 100 ke 80. Hasil midpoint dan TR akhir yang benar adalah...", [
+      "Elastisitas 1,22; TR turun dari 1.000 ke 960",
+      "Elastisitas 0,28; TR naik dari 1.000 ke 1.140",
+      "Elastisitas 2,00; TR tetap 1.000",
+      "Elastisitas 0,82; TR turun dari 1.000 ke 960",
+    ], 0, "Persentase midpoint jumlah −22,22% dibagi persentase midpoint harga 18,18% menghasilkan 1,22; TR sesudahnya 12×80=960.", [
+      "Nilai 0,28 dan TR 1.140 cocok dengan contoh penurunan kuantitas yang lebih kecil, bukan data soal ini.",
+      "Perubahan kuantitas tidak turun 20% pada midpoint dan TR tidak tetap.",
+      "Rasio 22,22/18,18 sekitar 1,22, bukan 0,82.",
+    ]),
+    q("eko2-b03-q06", "Hitungan • Ceiling", "Dengan Qd=100−5P dan Qs=−20+5P, ceiling P=8 menghasilkan kekurangan 40. Dengan alokasi ke pembeli bernilai tertinggi, berapa SK, SP, dan DWL?", [
+      "SK=160, SP=160, DWL=0",
+      "SK=200, SP=80, DWL=40",
+      "SK=40, SP=200, DWL=80",
+      "SK=200, SP=40, DWL=80",
+    ], 3, "Q transaksi=20; SK=½×(12+8)×20=200; SP=½×20×(8−4)=40; total 240 dan DWL=320−240=80.", [
+      "Angka ini adalah surplus pada ekuilibrium tanpa ceiling, bukan saat kebijakan mengikat.",
+      "SP=½×20×4=40, bukan 80; akibatnya total dan DWL pada opsi ini keliru.",
+      "Ini membalik luas surplus konsumen dan produsen serta memakai angka yang tidak sesuai harga ceiling.",
+    ]),
+    q("eko2-b03-q07", "Hitungan • Pajak", "Pajak penjual t=4 diterapkan pada kurva dasar. Pasangan harga pembeli dan penjual, penerimaan pajak, serta DWL yang benar adalah...", [
+      "P_b=12, P_s=8, penerimaan=160, DWL=0",
+      "P_b=14, P_s=10, penerimaan=120, DWL=20",
+      "P_b=10, P_s=14, penerimaan=120, DWL=20",
+      "P_b=16, P_s=12, penerimaan=80, DWL=40",
+    ], 1, "Keseimbangan baru memberi Q=30, P_b=14 dan P_s=10; penerimaan 4×30=120 dan DWL=½×4×10=20.", [
+      "Harga-harga ini tidak menyelesaikan ekuilibrium setelah pajak dan mempertahankan kuantitas lama.",
+      "Urutan harga salah: wedge pajak membuat pembeli membayar lebih daripada harga yang diterima penjual.",
+      "Q=20 tidak mengikuti penyelesaian dua fungsi linear yang diberikan.",
+    ]),
+    q("eko2-b03-q08", "Kasus • Alokasi ceiling", "Harga sewa maksimum berada di bawah harga pasar tanpa kebijakan. Unit hunian yang tersedia dibagikan melalui undian. Pernyataan yang tepat adalah...", [
+      "Ceiling tidak mengikat karena undian menetapkan harga",
+      "Semua calon penyewa memperoleh surplus konsumen yang sama",
+      "Kekurangan dapat muncul; undian acak dapat memberi hunian kepada penyewa dengan willingness to pay lebih rendah sehingga SK lebih rendah daripada alokasi pembeli bernilai tertinggi",
+      "Undian menghilangkan DWL karena harga sewa tidak berubah",
+    ], 2, "Harga di bawah ekuilibrium menimbulkan Qd>Qs; cara alokasi menentukan siapa memperoleh unit dan mengubah surplus.", [
+      "Harga maksimum di bawah ekuilibrium mengikat walaupun unit dialokasikan tanpa harga.",
+      "Undian tidak membuat willingness to pay atau manfaat semua calon penyewa sama.",
+      "Harga tetap tidak menghilangkan transaksi yang hilang atau biaya alokasi.",
+    ]),
+    q("eko2-b03-q09", "Kasus • Insiden pajak", "Di sebuah pasar, permintaan lebih elastis daripada penawaran. Setelah pajak per unit, sisi mana yang biasanya menanggung bagian beban ekonomi lebih besar?", [
+      "Pembeli, karena permintaan lebih elastis berarti pembeli lebih sulit beralih",
+      "Pembeli dan penjual selalu menanggung setengah, tanpa melihat elastisitas",
+      "Pemerintah menanggung seluruh beban karena menerima pajak",
+      "Penjual, karena penawaran yang lebih tidak elastis memberi ruang respons lebih kecil",
+    ], 3, "Sisi yang lebih tidak elastis biasanya menanggung bagian beban lebih besar; penawaran pada kasus ini lebih tidak elastis.", [
+      "Permintaan yang lebih elastis berarti pembeli lebih mudah mengurangi atau mengganti pembelian.",
+      "Pembagian sama tidak berlaku untuk setiap kombinasi elastisitas.",
+      "Penerimaan pajak adalah transfer; itu tidak berarti pemerintah menanggung beban pasar.",
+    ]),
+    q("eko2-b03-q10", "Kasus • Subsidi", "Pemerintah memberi subsidi per unit kepada layanan transportasi dengan tujuan menurunkan biaya penumpang. Interpretasi ekonomi yang paling lengkap adalah...", [
+      "Subsidi membentuk wedge berlawanan arah: harga pembeli turun dan penerimaan bersih penyedia naik, tetapi biaya fiskal dan perubahan kuantitas tetap dinilai",
+      "Subsidi selalu menghilangkan deadweight loss dan tidak memakai anggaran",
+      "Subsidi sama dengan price ceiling dan tidak mengubah insentif penawaran",
+      "Penerima legal subsidi pasti menanggung seluruh manfaat ekonominya",
+    ], 0, "Subsidi per unit membuat selisih antara harga pembeli dan penerimaan penjual; evaluasi memasukkan respons pasar serta belanja publik.", [
+      "Subsidi memerlukan pembiayaan dan tidak otomatis menghapus DWL.",
+      "Subsidi memberi insentif harga kepada penyedia, tidak sama dengan larangan harga maksimum.",
+      "Manfaat ekonomi dapat terbagi antara pembeli dan penjual menurut elastisitas.",
+    ]),
+  ],
 };
 
 const rubric = "Nilai 0–5 pada ketepatan konsep, kualitas alasan, penerapan pada kasus, dan kejelasan. Tiap kriteria bernilai 0 (tidak ada/relevansi tidak tampak) hingga 5 (tepat, lengkap, dan dijelaskan).";
@@ -243,6 +345,10 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
   "eko2-b02": [
     { id: "eko2-b02-e01", prompt: "Analisis pasar hipotetis yang mengalami kenaikan pendapatan pembeli dan gangguan biaya input secara bersamaan. Tentukan kurva yang bergeser dan jelaskan bagian arah perubahan ekuilibrium yang dapat atau tidak dapat dipastikan.", rubric, reviewPoints: ["Mengidentifikasi barang normal/inferior sebagai asumsi", "Mengidentifikasi kurva permintaan dan penawaran", "Menjelaskan dampak masing-masing pergeseran", "Mengenali hasil harga/kuantitas yang mungkin ambigu"] },
     { id: "eko2-b02-e02", prompt: "Gunakan fungsi Qd = 120 − 4P dan Qs = 24 + 4P. Hitung ekuilibrium (jawaban: P*=12, Q*=72), lalu hitung surplus atau kekurangan ketika harga ditetapkan pada P=2, yaitu 10 satuan di bawah P*. Tunjukkan semua langkah dan satuannya.", rubric, reviewPoints: ["Samakan Qd=Qs: 120−4P=24+4P, sehingga P*=12; substitusi menghasilkan Q*=72", "Pastikan P=2 adalah 10 satuan di bawah P*=12", "Hitung Qd=120−4×2=112 dan Qs=24+4×2=32", "Simpulkan kekurangan 112−32=80 unit per periode"] },
+  ],
+  "eko2-b03": [
+    { id: "eko2-b03-e01", prompt: "Gunakan kurva Qd=100−5P dan Qs=−20+5P untuk membandingkan ekuilibrium, price ceiling P=8, dan price floor P=16. Hitung kekurangan/surplus, transaksi, SK, SP, total surplus, dan DWL; jelaskan asumsi alokasi serta distribusi manfaat.", rubric, reviewPoints: ["Menghitung ekuilibrium P*=12 dan Q*=40", "Menunjukkan Q transaksi sisi pendek pasar", "Menghitung surplus dengan luas yang tepat dan membedakan transfer dari DWL", "Membahas asumsi alokasi ceiling serta distribusi", "Membedakan prediksi positif dari penilaian normatif"] },
+    { id: "eko2-b03-e02", prompt: "Analisis pajak per unit t=4 pada Qd=100−5P dan Qs=−20+5P. Hitung harga pembeli, harga penjual, insiden, penerimaan, surplus baru, dan DWL. Lalu jelaskan bagaimana hasil berubah bila salah satu sisi lebih elastis dan bagaimana subsidi membalik wedge.", rubric, reviewPoints: ["Membentuk fungsi penawaran setelah pajak dengan P penjual=P pembeli−t", "Menghitung P pembeli=14, P penjual=10, dan Q=30", "Memisahkan beban pembeli/penjual, penerimaan 120, dan DWL 20", "Menghubungkan insiden dengan elastisitas relatif", "Menjelaskan subsidi bersama biaya fiskal dan konsekuensi alokasi"] },
   ],
 };
 
