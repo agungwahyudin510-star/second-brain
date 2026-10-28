@@ -333,6 +333,108 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Manfaat ekonomi dapat terbagi antara pembeli dan penjual menurut elastisitas.",
     ]),
   ],
+  "eko2-b04": [
+    q("eko2-b04-q01", "Konsep • Biaya", "Biaya tetap adalah biaya yang...", [
+      "Berubah seiring kuantitas output yang diproduksi",
+      "Tidak berubah ketika output berubah dalam jangka pendek",
+      "Selalu sama dengan biaya marjinal",
+      "Hanya ada ketika perusahaan memperoleh laba",
+    ], 1, "Biaya tetap tidak berubah saat output berubah dalam jangka pendek; yang berubah adalah biaya variabel dan total.", [
+      "Biaya variabel, bukan biaya tetap, berubah dengan output.",
+      "MC adalah perubahan biaya total untuk satu unit tambahan, bukan definisi biaya tetap.",
+      "Laba bukan syarat adanya biaya tetap; biaya tetap dapat hadir bahkan saat rugi.",
+    ]),
+    q("eko2-b04-q02", "Konsep • Biaya rata-rata", "Kurva MC memotong kurva AVC dan ATC di titik minimum karena...", [
+      "MC selalu sama dengan rata-rata",
+      "Saat MC di bawah rata-rata, rata-rata turun; saat MC di atas rata-rata, rata-rata naik",
+      "ATC selalu turun bila MC naik",
+      "AVC dan ATC selalu tidak terpengaruh oleh hasil yang menurun",
+    ], 1, "Ketika biaya tambahan di bawah rata-rata, rata-rata bergerak turun; ketika di atas rata-rata, rata-rata bergerak naik.", [
+      "MC hanya sama dengan rata-rata pada satu titik tertentu, bukan selalu.",
+      "MC naik dapat menaikkan ATC bila berada di atas ATC, bukan selalu menurunkannya.",
+      "Hasil yang menurun tetap memengaruhi bentuk MC dan kemudian AVC/ATC.",
+    ]),
+    q("eko2-b04-q03", "Hitungan • Shutdown", "Diketahui FC=20, VC pada Q=3 adalah 24, dan P=7. Keputusan paling tepat adalah...", [
+      "Tetap berproduksi karena potensi laba tidak jauh dari nol",
+      "Menutup usaha karena P < AVC minimum 8",
+      "Mengurangi output hingga Q=2 karena MC turun",
+      "Memperbesar output hingga Q=4 karena biaya tetap terkendali",
+    ], 1, "Pada Q=3, AVC=8 dan P=7 di bawah AVC minimum, jadi perusahaan paling baik tutup di jangka pendek.", [
+      "P < AVC berarti biaya variabel tidak tertutup, dan menahan produksi menambah kerugian.",
+      "MC turun bukan alasan operasi ketika harga di bawah AVC.",
+      "Biaya tetap tidak bisa dikurangi dengan menambah output karena P belum menutup biaya variabel.",
+    ]),
+    q("eko2-b04-q04", "Konsep • Persaingan sempurna", "Dalam pasar persaingan sempurna, perusahaan dikatakan price taker karena...", [
+      "Ia bisa membatasi output agar harga naik",
+      "Ia menghadapi kurva permintaan horizontal pada harga pasar",
+      "Ia memproduksi satu-satunya produk di pasar",
+      "Ia selalu memilih harga yang sama dengan biaya tetap",
+    ], 1, "Beberapa perusahaan dan produk homogen membuat setiap perusahaan menerima harga pasar yang ditetapkan pasar; ia tidak dapat memengaruhi harga secara individual.", [
+      "Membatasi output dapat menaikkan harga hanya jika perusahaan mempunyai kekuatan pasar; tidak terjadi dalam pasar sempurna.",
+      "Monopoli, bukan persaingan sempurna, memiliki satu penjual.",
+      "Biaya tetap tidak menentukan harga pasar.",
+    ]),
+    q("eko2-b04-q05", "Hitungan • Profit di pasar kompetitif", "Diketahui P=15 dan fungsi biaya total dari tabel: TC Q=0..6 = 20, 30, 38, 44, 53, 67, 85. Laba maksimum terjadi pada...", [
+      "Q=3 dengan laba 1",
+      "Q=4 dengan laba 7",
+      "Q=5 dengan laba 8",
+      "Q=6 dengan laba 5",
+    ], 2, "Laba = P×Q − TC; pada Q=5, 15×5 − 67 = 8, lebih besar daripada output lain.", [
+      "Q=3 hanya memberi 45−44=1, bukan maksimum.",
+      "Q=4 memberi 60−53=7, lebih rendah daripada Q=5.",
+      "Q=6 memberi 90−85=5, lebih rendah daripada Q=5.",
+    ]),
+    q("eko2-b04-q06", "Konsep • Monopoli", "Pernyataan yang paling tepat tentang monopoli adalah...", [
+      "Monopoli memilih P = MC",
+      "Monopoli menjual output pada harga yang diatur oleh kurva permintaan pasar dan memiliki MR < P",
+      "Monopoli selalu mendapat laba nol dalam jangka panjang",
+      "Monopoli beroperasi tanpa memikirkan biaya marjinal",
+    ], 1, "Monopoli menghadapi permintaan pasar menurun, sehingga untuk menjual lebih banyak ia harus menurunkan harga semua unit; MR < P.", [
+      "P = MC adalah kondisi pasar persaingan sempurna, bukan monopoli.",
+      "Tidak semua monopoli laba nol; ada laba atau kerugian sesuai biaya dan permintaan.",
+      "Biaya marjinal tetap inti dalam keputusan output." ,
+    ]),
+    q("eko2-b04-q07", "Hitungan • Monopoli", "Dengan permintaan P=50−Q dan MC=10, output optimal monopoli adalah...", [
+      "Q=10",
+      "Q=20",
+      "Q=30",
+      "Q=40",
+    ], 1, "MR = 50 − 2Q = 10, sehingga Q=20; harga yang dibayar adalah P=30.", [
+      "Q=10 hanya memberi MR=30 > MC, masih belum optimal.",
+      "Q=30 memberi MR=−10 < MC, terlalu tinggi.",
+      "Q=40 adalah output kompetitif, bukan monopoli.",
+    ]),
+    q("eko2-b04-q08", "Konsep • HHI", "Pangsa pasar 40, 30, 20, 10. HHI yang benar adalah...", [
+      "2.500",
+      "3.000",
+      "1.000",
+      "10.000",
+    ], 1, "HHI = 40² + 30² + 20² + 10² = 1.600 + 900 + 400 + 100 = 3.000.", [
+      "2.500 adalah HHI untuk empat perusahaan sama 25, 25, 25, 25.",
+      "1.000 adalah HHI untuk sepuluh perusahaan sama 10 masing-masing.",
+      "10.000 adalah monopoli satu perusahaan 100%.",
+    ]),
+    q("eko2-b04-q09", "Konsep • Dilema tahanan", "Dalam dilema tahanan, ekuilibrium Nash cenderung terjadi pada...", [
+      "(Tinggi, Tinggi) karena kerja sama terbaik",
+      "(Rendah, Rendah) karena strategi dominan masing-masing",
+      "(Rendah, Tinggi) karena satu pihak unggul",
+      "(Tinggi, Rendah) karena informasi asimetris",
+    ], 1, "Kedua pemain memiliki strategi dominan Rendah, sehingga ekuilibrium Nash adalah (Rendah, Rendah) meski kerja sama bersama lebih baik.", [
+      "(Tinggi, Tinggi) adalah hasil kolusif yang lebih baik bagi keduanya, bukan ekuilibrium Nash dalam model dasar.",
+      "Kedua pemain tidak punya dominan pada pilihan campuran; inilah makna strategi dominan.",
+      "Asimetri informasi bukan elemen utama dalam matriks dilemma dasar.",
+    ]),
+    q("eko2-b04-q10", "Kasus • Kegagalan pasar", "Pajak Pigouvian paling tepat digunakan ketika...", [
+      "Semua pasar selalu efisien tanpa intervensi",
+      "Terdapat eksternalitas negatif yang tidak masuk ke keputusan privat",
+      "Perusahaan menghadapi kuantitas yang terlalu rendah secara permanen",
+      "Semua barang publik harus didanai pemerintah",
+    ], 1, "Pajak Pigouvian menyesuaikan insentif agar biaya sosial ikut diperhitungkan ketika ada eksternalitas negatif.", [
+      "Pasar tidak selalu efisien jika eksternalitas hadir.",
+      "Eksternalitas negatif bukan berarti kuantitas terlalu rendah; sering justru terlalu tinggi.",
+      "Barang publik tidak otomatis harus dibiayai pemerintah, meski sering membutuhkan penyediaan kolektif.",
+    ]),
+  ],
 };
 
 const rubric = "Nilai 0–5 pada ketepatan konsep, kualitas alasan, penerapan pada kasus, dan kejelasan. Tiap kriteria bernilai 0 (tidak ada/relevansi tidak tampak) hingga 5 (tepat, lengkap, dan dijelaskan).";
@@ -349,6 +451,11 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
   "eko2-b03": [
     { id: "eko2-b03-e01", prompt: "Gunakan kurva Qd=100−5P dan Qs=−20+5P untuk membandingkan ekuilibrium, price ceiling P=8, dan price floor P=16. Hitung kekurangan/surplus, transaksi, SK, SP, total surplus, dan DWL; jelaskan asumsi alokasi serta distribusi manfaat.", rubric, reviewPoints: ["Menghitung ekuilibrium P*=12 dan Q*=40", "Menunjukkan Q transaksi sisi pendek pasar", "Menghitung surplus dengan luas yang tepat dan membedakan transfer dari DWL", "Membahas asumsi alokasi ceiling serta distribusi", "Membedakan prediksi positif dari penilaian normatif"] },
     { id: "eko2-b03-e02", prompt: "Analisis pajak per unit t=4 pada Qd=100−5P dan Qs=−20+5P. Hitung harga pembeli, harga penjual, insiden, penerimaan, surplus baru, dan DWL. Lalu jelaskan bagaimana hasil berubah bila salah satu sisi lebih elastis dan bagaimana subsidi membalik wedge.", rubric, reviewPoints: ["Membentuk fungsi penawaran setelah pajak dengan P penjual=P pembeli−t", "Menghitung P pembeli=14, P penjual=10, dan Q=30", "Memisahkan beban pembeli/penjual, penerimaan 120, dan DWL 20", "Menghubungkan insiden dengan elastisitas relatif", "Menjelaskan subsidi bersama biaya fiskal dan konsekuensi alokasi"] },
+  ],
+  "eko2-b04": [
+    { id: "eko2-b04-e01", prompt: "Bandingkan perusahaan dalam pasar persaingan sempurna dan monopoli dengan fungsi biaya yang sama. Jelaskan aturan produksi, laba, dan deadweight loss; kaitkan hasilnya dengan keputusan masuk-keluar pasar dan efisiensi sosial.", rubric, reviewPoints: ["Membedakan P = MC dan MR = MC", "Menghitung dan menjelaskan laba serta DWL", "Mengaitkan insentif masuk-keluar pasar dengan laba ekonomi", "Membahas efisiensi sosial secara jelas"] },
+    { id: "eko2-b04-e02", prompt: "Analisis pasar oligopoli dan persaingan monopolistik. Gunakan HHI atau CR2, salah satu matriks permainan sederhana, dan perbedaan produk untuk menjelaskan mengapa hasil pasar mungkin tidak efisien dan mengapa kolusi mudah pecah.", rubric, reviewPoints: ["Memasukkan konsentrasi pasar dan pengukuran yang relevan", "Menggunakan matriks permainan atau strategi dominan dengan benar", "Membedakan oligopoli dari persaingan monopolistik", "Menjelaskan godaan curang dan efek pada kesejahteraan"] },
+    { id: "eko2-b04-e03", prompt: "Jelaskan eksternalitas negatif dan positif, analisis optimum sosial, serta kebijakan yang sesuai seperti pajak Pigouvian, subsidi, atau pengaturan sumber daya bersama. Gunakan contoh protokol open-source, ruang blok, atau token proyek untuk memperkuat argumen.", rubric, reviewPoints: ["Menjelaskan biaya sosial versus biaya privat", "Mengidentifikasi titik optimum sosial dan konsekuensi over/underproduction", "Menghubungkan kebijakan dengan insentif", "Menggunakan contoh Web3 yang konkret dan netral"] },
   ],
 };
 

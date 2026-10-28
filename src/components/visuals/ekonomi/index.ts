@@ -13,6 +13,8 @@ import EkoElasticityTypes from "./eko-elasticity-types";
 import EkoConsumerProducerSurplus from "./eko-consumer-producer-surplus";
 import EkoPriceControls from "./eko-price-controls";
 import EkoTaxIncidence from "./eko-tax-incidence";
+import EkoCostCurves from "./eko-cost-curves";
+import EkoMarketStructures from "./eko-market-structures";
 
 export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-ppf": EkoPpf,
@@ -29,4 +31,6 @@ export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-consumer-producer-surplus": EkoConsumerProducerSurplus,
   "eko-price-controls": EkoPriceControls,
   "eko-tax-incidence": EkoTaxIncidence,
+  "eko-cost-curves": EkoCostCurves,
+  "eko-market-structures": EkoMarketStructures,
 };

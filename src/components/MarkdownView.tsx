@@ -14,7 +14,7 @@ export default function MarkdownView({ content, responsiveTables = false }: { co
 
   return (
     <div className={`prose prose-invert prose-zinc max-w-none prose-a:text-sky-400 prose-blockquote:border-amber-500/50 prose-code:rounded prose-code:bg-zinc-800 prose-code:px-1 prose-code:before:content-none prose-code:after:content-none ${responsiveTables ? "w-full min-w-0" : ""}`}>
-      <ReactMarkdown components={components} remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <ReactMarkdown components={components} remarkPlugins={[remarkGfm]} skipHtml>{content}</ReactMarkdown>
     </div>
   );
 }

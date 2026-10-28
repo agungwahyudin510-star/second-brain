@@ -75,3 +75,64 @@ export function taxOutcome(tax: number, demandSlope = 5) {
     deadweightLoss: noTaxSurplus - consumer - producer - revenue,
   };
 }
+
+export function costSchedule() {
+  return [
+    { q: 0, vc: 0, tc: 20, mc: 0, avc: 0, atc: 20, afc: 0 },
+    { q: 1, vc: 10, tc: 30, mc: 10, avc: 10, atc: 30, afc: 20 },
+    { q: 2, vc: 18, tc: 38, mc: 8, avc: 9, atc: 19, afc: 10 },
+    { q: 3, vc: 24, tc: 44, mc: 6, avc: 8, atc: 14.67, afc: 6.67 },
+    { q: 4, vc: 33, tc: 53, mc: 9, avc: 8.25, atc: 13.25, afc: 5 },
+    { q: 5, vc: 47, tc: 67, mc: 14, avc: 9.4, atc: 13.4, afc: 4 },
+    { q: 6, vc: 65, tc: 85, mc: 18, avc: 10.83, atc: 14.17, afc: 3.33 },
+  ];
+}
+
+export function profitAtPrice(price: number, quantity: number) {
+  const row = costSchedule().find((entry) => entry.q === quantity);
+  if (!row) {
+    return { quantity, profit: -20, totalCost: 20 };
+  }
+  return { quantity, profit: price * quantity - row.tc, totalCost: row.tc };
+}
+
+export function monopolyOutcomes() {
+  const demand = (quantity: number) => 50 - quantity;
+  const marginalRevenue = (quantity: number) => 50 - 2 * quantity;
+  const marginalCost = 10;
+  const quantity = 20;
+  const price = demand(quantity);
+  const consumerSurplus = 0.5 * quantity * (50 - price);
+  const profit = (price - marginalCost) * quantity;
+  const deadweightLoss = 0.5 * (40 - quantity) * (price - marginalCost);
+  return {
+    demand,
+    marginalRevenue,
+    marginalCost,
+    quantity,
+    price,
+    consumerSurplus,
+    profit,
+    deadweightLoss,
+  };
+}
+
+export function marketConcentration(shares: number[]) {
+  const hhi = shares.reduce((sum, share) => sum + share * share, 0);
+  const cr2 = shares.slice().sort((a, b) => b - a).slice(0, 2).reduce((sum, share) => sum + share, 0);
+  return { hhi, cr2 };
+}
+
+export function prisonersDilemmaPayoffs() {
+  return {
+    payoffs: [
+      { label: "A Tinggi / B Tinggi", values: [50, 50] },
+      { label: "A Tinggi / B Rendah", values: [20, 70] },
+      { label: "A Rendah / B Tinggi", values: [70, 20] },
+      { label: "A Rendah / B Rendah", values: [30, 30] },
+    ],
+    dominantStrategy: "Rendah",
+    nash: [30, 30],
+    cooperation: [50, 50],
+  };
+}
