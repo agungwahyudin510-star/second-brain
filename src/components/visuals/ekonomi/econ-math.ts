@@ -136,3 +136,48 @@ export function prisonersDilemmaPayoffs() {
     cooperation: [50, 50],
   };
 }
+
+export type FirmStatus = "laba" | "rugi-operasi" | "impas-tutup" | "tutup";
+
+export function competitiveDecision(price: number) {
+  const rows = costSchedule().map((row) => ({ q: row.q, profit: price * row.q - row.tc }));
+  const best = rows.reduce((b, r) => (r.profit > b.profit ? r : b), rows[0]);
+  const bestPositive = rows.slice(1).reduce((b, r) => (r.profit > b.profit ? r : b), rows[1]);
+  let status: FirmStatus;
+  if (best.profit > 0) status = "laba";
+  else if (bestPositive.profit > -20) status = "rugi-operasi";
+  else if (bestPositive.profit === -20) status = "impas-tutup";
+  else status = "tutup";
+  return { rows, best, status };
+}
+
+export type MonopolyMode = "monopoli" | "persaingan" | "diskriminasi";
+
+export function monopolyAt(mc: number, mode: MonopolyMode) {
+  const choke = 50;
+  let q: number;
+  if (mode === "monopoli") q = Math.max(0, (choke - mc) / 2);
+  else q = Math.max(0, choke - mc);
+  const p = mode === "diskriminasi" ? mc : choke - q;
+  const full = Math.max(0, choke - mc);
+  const price = mode === "diskriminasi" ? mc : p;
+  const consumerSurplus = mode === "diskriminasi" ? 0 : 0.5 * q * (choke - p);
+  const profit = mode === "persaingan" ? 0 : mode === "diskriminasi" ? 0.5 * q * (choke - mc) : (p - mc) * q;
+  const total = consumerSurplus + profit;
+  const efficientTotal = 0.5 * full * (choke - mc);
+  return { q, price, consumerSurplus, profit, total, deadweightLoss: efficientTotal - total, efficientQ: full };
+}
+
+export function externalityOutcome(tax: number) {
+  const q = 40 - 2.5 * tax;
+  const buyerPrice = 20 - q / 5;
+  const sellerPrice = buyerPrice - tax;
+  return { q, buyerPrice, sellerPrice, revenue: tax * q, deadweightLoss: (q - 30) ** 2 / 5 };
+}
+
+export function prisonersPayoff(a: "Tinggi" | "Rendah", b: "Tinggi" | "Rendah"): [number, number] {
+  if (a === "Tinggi" && b === "Tinggi") return [50, 50];
+  if (a === "Tinggi" && b === "Rendah") return [20, 70];
+  if (a === "Rendah" && b === "Tinggi") return [70, 20];
+  return [30, 30];
+}

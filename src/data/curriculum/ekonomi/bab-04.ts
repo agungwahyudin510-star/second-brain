@@ -109,7 +109,7 @@ Interpretasi: perusahaan tetap beroperasi saat P=10 karena penerimaan 40 menutup
 
 Dalam peta pasar, kurva penawaran perusahaan adalah **bagian dari MC yang berada di atas AVC minimum**. Di bawah titik shutdown, perusahaan tidak menawarkan output. Di atasnya, jumlah yang ditawarkan berubah mengikuti MC yang relevan dengan syarat operasional. Karena semua perusahaan menghadapi biaya marginal yang sama dalam model sederhana, agregasi penawaran pasar adalah jumlah output setiap perusahaan pada setiap harga.
 
-[[visual:eko-market-structures]]
+[[visual:eko-perfect-competition]]
 
 ## Kesalahpahaman umum
 
@@ -145,11 +145,11 @@ Setelah output optimal ditentukan, harga ditarik dari kurva permintaan pada kuan
 
 ## Rumus dan contoh hitungan
 
-Gunakan permintaan pasar linear **P = 50 − Q** dan biaya marjinal konstant **MC = 10**. Pendapatan total **TR = P×Q = (50−Q)Q = 50Q − Q²**. Maka **MR = dTR/dQ = 50 − 2Q**. Menyamakan MR dengan MC:
+Gunakan permintaan pasar linear **P = 50 − Q** dan biaya marjinal konstan **MC = 10**. Penerimaan total **TR = P×Q = (50−Q)Q = 50Q − Q²**. Maka **MR = dTR/dQ = 50 − 2Q**. Menyamakan MR dengan MC:
 
 **50 − 2Q = 10 → Q = 20; P = 50 − 20 = 30.**
 
-Comparasi dengan persaingan sempurna di mana **P = MC = 10** menghasilkan **Q = 40**. Dalam tabel:
+Dibandingkan dengan persaingan sempurna di mana **P = MC = 10** menghasilkan **Q = 40**. Dalam tabel:
 
 | Ukuran | Persaingan sempurna (P=MC) | Monopoli (MR=MC) |
 |---|---:|---:|
@@ -164,7 +164,9 @@ Monopoli menghasilkan laba 400, tetapi total surplus turun 200 dibanding kompeti
 
 Diskriminasi harga sempurna adalah batas teoretis ketika monopolist dapat mengenakan setiap konsumen sesuai willingness to pay. Pada kasus ini, Q=40, laba = ½×40×40=800, surplus konsumen = 0, DWL=0. Ini sangat efisien secara alokasi, tetapi seluruh surplus berpindah ke produsen. Diskriminasi harga sempurna jarang terjadi karena membutuhkan informasi, kemampuan mengukur permintaan, dan pencegahan arbitrase.
 
-Monopoli alamiah terjadi ketika satu perusahaan memiliki biaya produksi yang lebih rendah karena skala ekonomi, sehingga dua atau lebih perusahaan justru lebih mahal. Misal FC=300, MC=10, kurva permintaan sama. Monopoli tanpa regulasi tetap memilih Q=20, P=30, laba = 400 − 300 = 100. Jika pemerintah menetapkan **harga = MC**, output mencapai Q=40, P=10, tetapi perusahaan rugi 300 karena penerimaan 400 tidak menutup biaya tetap 300 + biaya variabel 400. Jika pemerintah menetapkan **harga = biaya rata-rata** (ATC), maka P = 300/Q + 10 dan kuantitas yang ditentukan dengan soal sama dapat menghasilkan Q=30, P=20, laba 0. Regulasi sering menyeimbangkan efisiensi, akses, dan kelangsungan operasi.
+Monopoli alamiah terjadi ketika satu perusahaan memiliki biaya produksi yang lebih rendah karena skala ekonomi, sehingga dua atau lebih perusahaan justru lebih mahal. Misal FC=300, MC=10, kurva permintaan sama. Monopoli tanpa regulasi tetap memilih Q=20, P=30, laba = 400 − 300 = 100. Jika pemerintah menetapkan **harga = MC**, output mencapai Q=40, P=10, tetapi perusahaan rugi 300 karena penerimaan 400 tidak menutup biaya tetap 300 + biaya variabel 400. Jika pemerintah menetapkan **harga = biaya rata-rata** (ATC), maka harga harus sama dengan biaya rata-rata: 50 − Q = 300/Q + 10. Susun ulang menjadi Q² − 40Q + 300 = 0, yang akarnya Q=10 dan Q=30. Pilih Q=30 (output lebih besar, lebih baik bagi konsumen): P = 50 − 30 = 20, dan cek ATC = 300/30 + 10 = 20. Laba = 0, perusahaan bertahan dan output (30) lebih besar daripada monopoli bebas (20). Regulasi sering menyeimbangkan efisiensi, akses, dan kelangsungan operasi.
+
+[[visual:eko-monopoly]]
 
 ## Kesalahpahaman umum
 
@@ -207,7 +209,7 @@ Strategi dominan untuk A dan B adalah **Rendah**. Jika B memilih Tinggi, A lebih
 
 Persaingan monopolistik muncul ketika banyak perusahaan menjual produk yang terdiferensiasi, bukan homogen. Produk bisa dibedakan oleh merek, fitur, lokasi, atau kualitas. Masuk ke pasar relatif mudah, sehingga dalam jangka panjang laba ekonomi cenderung mendekati nol. Kurva permintaan perusahaan turun karena ada substitusi dekat, tetapi differensiasi memungkinkan perusahaan bertahan meski P > MC. Bagi konsumen, solusi ini memberi variasi produk, tapi juga bisa mendorong biaya pemasaran, iklan, dan daya tarik merek yang lebih besar dari yang dibutuhkan secara sosial.
 
-[[visual:eko-market-structures]]
+[[visual:eko-prisoners-dilemma]]
 
 ## Kesalahpahaman umum
 
@@ -247,11 +249,11 @@ Untuk eksternalitas positif, subsidi dapat digunakan untuk mendorong aktivitas y
 
 Barang publik tidak dapat dibatasi secara efektif dan konsumsi satu orang tidak mengurangi konsumsi orang lain. Lampu jalan adalah contoh sederhana. Tiga warga masing-masing menilai lampu jalan 30; biaya pembangunan 60. Sendiri tidak ada yang mau membeli karena 30 < 60. Tetapi total manfaat 90 > 60, surplus sosial 30. Patungan 20 per orang memberi manfaat bersih 10 per orang. Problem free rider muncul karena setiap orang berharap pihak lain membayar, sehingga investasi publik bisa kurang dari tingkat optimal.
 
-Sumber daya bersama (common resources) adalah barang yang rival but can be difficult to exclude, seperti perikanan atau lahan umum. Overuse dapat terjadi karena setiap pengguna menerima manfaat privat dari tambahan unit eksploitasi, sementara biaya dampak umum dibagi seluruh komunitas. Dalam contoh sederhana, total tangkapan per jumlah perahu 1..6 adalah 10, 18, 24, 28, 30, 30; biaya per perahu =5; rata-rata per perahu =10, 9, 8, 7, 6, 5; serta tangkapan marjinal =10, 8, 6, 4, 2, 0. Banyak kapal masuk sampai hasil rata-rata turun ke biaya per perahu, menjelaskan overfishing atau overgrazing: individu tidak menanggung seluruh biaya sosial dari tambahan penggunaan.
+Sumber daya bersama (common resources) adalah barang yang bersifat rival tetapi sulit dibatasi aksesnya, seperti perikanan atau lahan umum. Overuse dapat terjadi karena setiap pengguna menerima manfaat privat dari tambahan unit eksploitasi, sementara biaya dampak umum dibagi seluruh komunitas. Dalam contoh sederhana, total tangkapan per jumlah perahu 1..6 adalah 10, 18, 24, 28, 30, 30; biaya per perahu =5; rata-rata per perahu =10, 9, 8, 7, 6, 5; serta tangkapan marjinal =10, 8, 6, 4, 2, 0. Optimum sosial adalah 3 perahu: tangkapan marjinal perahu ke-3 adalah 6 ≥ biaya 5, sedangkan perahu ke-4 hanya menambah 4 < 5. Hasil bersih = 24 − 3×5 = 9. Tanpa aturan (akses terbuka), perahu terus masuk selama rata-rata per perahu masih di atas 5, yaitu sampai 6 perahu: hasil bersih = 30 − 6×5 = 0. Seluruh keuntungan masyarakat habis, karena setiap pendatang baru menikmati rata-rata tetapi menimbulkan biaya bagi semua orang (tangkapan marjinalnya jauh lebih kecil dari rata-ratanya).
 
-Asimetri informasi muncul ketika satu pihak tahu lebih banyak daripada pihak lain. **Adverse selection** terjadi sebelum transaksi, seperti pasar mobil bekas yang mengandung “lemons” karena pembeli tidak tahu kualitas yang benar-benar dimiliki mobil. **Moral hazard** terjadi setelah transaksi, ketika pihak yang terlindungi dari konsekuensi berubah perilaku. Dalam proyek token atau protokol Web3, informasi asimetris muncul ketika pengguna lemah memahami risiko, tokenomics, atau celah audit; audit independen, transparansi, dan desain smart contract yang terbaca membantu mengurangi masalah ini.
+Asimetri informasi muncul ketika satu pihak tahu lebih banyak daripada pihak lain. **Adverse selection** terjadi sebelum transaksi. Contoh pasar mobil bekas (“lemons”): mobil bagus bernilai 100 bagi pembeli dan 80 bagi penjual, mobil buruk bernilai 50 bagi pembeli dan 40 bagi penjual; separuh mobil bagus dan separuh buruk, dan pembeli tidak bisa membedakannya. Pembeli netral risiko hanya mau membayar 0,5×100 + 0,5×50 = 75. Karena 75 < 80, pemilik mobil bagus menolak menjual, pasar menyusut ke mobil buruk, dan transaksi yang sebenarnya menguntungkan (100 > 80) hilang. **Moral hazard** terjadi setelah transaksi, ketika pihak yang terlindungi dari konsekuensi berubah perilaku. Dalam proyek token atau protokol Web3, informasi asimetris muncul ketika pengguna lemah memahami risiko, tokenomics, atau celah audit; audit independen, transparansi, dan desain smart contract yang terbaca membantu mengurangi masalah ini.
 
-[[visual:eko-market-structures]]
+[[visual:eko-externality]]
 
 ## Kesalahpahaman umum
 
@@ -279,16 +281,36 @@ Model dasar menganggap eksternalitas dan asimetri informasi dapat diukur dengan 
       { term: "Biaya tetap", english: "Fixed cost", definition: "Biaya yang tidak berubah dalam jangka pendek walau output berubah." },
       { term: "Biaya variabel", english: "Variable cost", definition: "Biaya yang berubah seiring jumlah output yang diproduksi." },
       { term: "Biaya marjinal", english: "Marginal cost", definition: "Tambahan biaya untuk memproduksi satu unit tambahan." },
-      { term: "Shutdown", english: "Shutdown", definition: "Keputusan menghentikan produksi sementara bila harga tidak menutup AVC." },
-      { term: "MR = MC", english: "Marginal revenue equals marginal cost", definition: "Kondisi laba maksimum untuk perusahaan dengan kendali pasar yang signifikan." },
-      { term: "HHI", english: "Herfindahl-Hirschman Index", definition: "Ukuran konsentrasi pasar yang menjumlah kuadrat pangsa pasar semua perusahaan." },
-      { term: "Eksternalitas", english: "Externality", definition: "Dampak biaya atau manfaat dari keputusan satu pihak terhadap pihak lain yang tidak ikut menilai keputusan itu." },
-      { term: "Barang publik", english: "Public good", definition: "Barang yang tidak mudah dibatasi dan konsumsi satu orang tidak mengurangi konsumsi orang lain." },
+      { term: "Biaya total rata-rata", english: "Average total cost", definition: "Biaya total dibagi jumlah output (ATC = TC/Q)." },
+      { term: "Hasil yang menurun", english: "Diminishing marginal returns", definition: "Tambahan output dari input variabel tambahan makin kecil, sehingga MC mulai naik." },
+      { term: "Penerima harga", english: "Price taker", definition: "Perusahaan yang tidak bisa memengaruhi harga pasar dan menghadapi permintaan horizontal." },
+      { term: "Shutdown", english: "Shutdown", definition: "Keputusan menghentikan produksi sementara bila harga di bawah AVC." },
+      { term: "Titik impas", english: "Break-even", definition: "Kondisi harga sama dengan biaya total rata-rata sehingga laba ekonomi nol." },
+      { term: "Laba ekonomi", english: "Economic profit", definition: "Penerimaan dikurangi seluruh biaya, termasuk biaya peluang." },
+      { term: "Monopoli", english: "Monopoly", definition: "Pasar dengan satu penjual tanpa pengganti dekat." },
+      { term: "Pendapatan marjinal", english: "Marginal revenue", definition: "Tambahan penerimaan dari menjual satu unit lagi." },
+      { term: "Daya pasar", english: "Market power", definition: "Kemampuan perusahaan memengaruhi harga pasar." },
+      { term: "Monopoli alamiah", english: "Natural monopoly", definition: "Pasar di mana satu perusahaan melayani seluruh permintaan dengan biaya terendah karena skala ekonomi." },
+      { term: "Diskriminasi harga", english: "Price discrimination", definition: "Menjual unit yang sama dengan harga berbeda kepada pembeli berbeda." },
+      { term: "Oligopoli", english: "Oligopoly", definition: "Pasar dengan sedikit penjual yang saling memengaruhi keputusan." },
+      { term: "Ekuilibrium Nash", english: "Nash equilibrium", definition: "Kombinasi strategi di mana tak seorang pun untung bila berpindah sendirian." },
+      { term: "Strategi dominan", english: "Dominant strategy", definition: "Strategi yang terbaik apa pun pilihan lawan." },
+      { term: "Kartel", english: "Cartel", definition: "Kelompok penjual yang bersepakat membatasi output atau menaikkan harga." },
+      { term: "Rasio konsentrasi", english: "Concentration ratio", definition: "Jumlah pangsa pasar beberapa perusahaan terbesar (CR2, CR4)." },
+      { term: "HHI", english: "Herfindahl-Hirschman Index", definition: "Jumlah kuadrat pangsa pasar semua perusahaan; maksimum 10.000." },
+      { term: "Eksternalitas", english: "Externality", definition: "Dampak keputusan satu pihak pada pihak lain di luar transaksi." },
+      { term: "Pajak Pigouvian", english: "Pigouvian tax", definition: "Pajak per unit sebesar eksternalitas marjinal." },
+      { term: "Barang publik", english: "Public good", definition: "Barang yang tidak bisa dibatasi dan tidak rival dalam konsumsi." },
+      { term: "Penumpang gratis", english: "Free rider", definition: "Pihak yang menikmati barang tanpa ikut membayar." },
+      { term: "Sumber daya bersama", english: "Common resource", definition: "Barang rival yang sulit dibatasi aksesnya." },
+      { term: "Tragedi sumber daya bersama", english: "Tragedy of the commons", definition: "Pemakaian berlebihan karena tiap pengguna tidak menanggung biaya penuh." },
+      { term: "Informasi asimetris", english: "Asymmetric information", definition: "Situasi di mana satu pihak memiliki informasi lebih banyak daripada pihak lain." },
     ],
     exercises: [
-      { prompt: "Hitung AVC, ATC, dan MC dari data biaya tetap 20 dan VC 0, 10, 18, 24, 33, 47, 65. Identifikasi titik minimum AVC dan ATC.", solution: "AVC: 10, 9, 8, 8,25, 9,4, 10,83; ATC: 30, 19, 14,67, 13,25, 13,4, 14,17; MC: 10, 8, 6, 9, 14, 18. Minimum AVC = 8 pada Q=3; minimum ATC = 13,25 pada Q=4." },
-      { prompt: "Dengan P = 50 − Q dan MC = 10, hitung output monopoli, harga, dan DWL dibanding persaingan sempurna.", solution: "Monopoli: Q=20, P=30, laba=(30−10)×20=400, DWL=200. Persaingan sempurna: Q=40, P=10, DWL=0." },
-      { prompt: "Jelaskan bagaimana pajak Pigouvian t=4 mengubah kuantitas dan harga bila eksternalitas negatif sama dengan 4 per unit.", solution: "Pajak membuat biaya sosial memasuki keputusan penjual. Dengan t=4, Q turun dari 40 ke 30, buyer price 14, seller price 10, dan DWL eksternalitas hilang." },
+      { prompt: "Dari tabel biaya (FC=20; VC pada Q=0..6: 0, 10, 18, 24, 33, 47, 65), hitung AFC, AVC, dan ATC pada Q=5, lalu tentukan titik minimum AVC dan ATC.", solution: "Langkah 1: TC(5) = 20 + 47 = 67. Langkah 2: AFC = 20/5 = 4; AVC = 47/5 = 9,4; ATC = 67/5 = 13,4 (cek: 4 + 9,4). Langkah 3: AVC minimum = 8 pada Q=3; ATC minimum = 13,25 pada Q=4." },
+      { prompt: "Pada harga pasar P=15, berapa output yang memaksimalkan laba perusahaan di soal 1 dan berapa labanya?", solution: "Langkah 1: laba = 15×Q − TC. Langkah 2: Q=0..6 memberi −20, −15, −8, 1, 7, 8, 5. Langkah 3: maksimum di Q=5 dengan laba 8. Cek: (15 − 13,4)×5 = 8." },
+      { prompt: "Sumber daya bersama: total tangkapan untuk 1..6 perahu adalah 10, 18, 24, 28, 30, 30 dan biaya per perahu 5. Hitung jumlah perahu optimum dan jumlah perahu pada akses terbuka, beserta hasil bersihnya.", solution: "Langkah 1: tangkapan marjinal = 10, 8, 6, 4, 2, 0. Langkah 2: optimum saat tangkapan marjinal masih ≥ 5, yaitu 3 perahu; hasil bersih = 24 − 15 = 9. Langkah 3: akses terbuka, perahu masuk selama rata-rata (10, 9, 8, 7, 6, 5) masih di atas 5 sehingga berhenti di 6 perahu; hasil bersih = 30 − 30 = 0." },
+      { prompt: "Monopoli alamiah dengan permintaan P = 50 − Q, MC = 10, dan biaya tetap 300. Tentukan Q dan P bila regulator menetapkan harga sama dengan biaya rata-rata.", solution: "Langkah 1: ATC = 300/Q + 10. Langkah 2: samakan 50 − Q = 300/Q + 10, kalikan Q: Q² − 40Q + 300 = 0. Langkah 3: akarnya Q=10 dan Q=30; pilih Q=30. Langkah 4: P = 20; cek ATC = 300/30 + 10 = 20, laba 0." },
     ],
     furtherReading: [
       { title: "Microeconomics", authors: "Pindyck & Rubinfeld" },

@@ -4,66 +4,58 @@ import { useState } from "react";
 import VisualCard from "./VisualCard";
 import { costSchedule } from "./econ-math";
 
-const x = (quantity: number) => 30 + quantity * 22;
-const y = (value: number) => 140 - value * 5;
+const X0 = 30;
+const X1 = 190;
+const Y0 = 130;
+const maxQ = 6;
+const maxV = 32;
+const x = (q: number) => X0 + (q / maxQ) * (X1 - X0 - 10);
+const y = (v: number) => Y0 - (v / maxV) * (Y0 - 15);
 
 export default function EkoCostCurves() {
-  const [price, setPrice] = useState(10);
+  const [q, setQ] = useState(4);
   const rows = costSchedule();
-  const bestOutcome = rows.reduce((best, row) => {
-    const profit = price * row.q - row.tc;
-    return profit > best.profit ? { q: row.q, profit, price, totalCost: row.tc } : best;
-  }, { q: 0, profit: -20, price, totalCost: 20 });
-
-  const avcPoints = rows
-    .slice(1)
-    .map((row) => `${x(row.q)},${y(row.avc)}`)
-    .join(" ");
-  const atcPoints = rows
-    .slice(1)
-    .map((row) => `${x(row.q)},${y(row.atc)}`)
-    .join(" ");
-  const mcPoints = rows
-    .slice(1)
-    .map((row) => `${x(row.q)},${y(row.mc)}`)
-    .join(" ");
-
-  let decision = "Netral";
-  if (price < 8) {
-    decision = "Shutdown";
-  } else if (price >= 8) {
-    decision = "Beroperasi";
-  }
+  const sel = rows.find((r) => r.q === q) ?? rows[4];
+  const curve = (key: "mc" | "avc" | "atc") => rows.slice(1).map((r) => `${x(r.q)},${y(r[key])}`).join(" ");
+  const atcDirection = sel.mc < sel.atc ? "ATC sedang turun (MC < ATC)" : "ATC sedang naik (MC > ATC)";
+  const minAvc = rows.slice(1).reduce((b, r) => (r.avc < b.avc ? r : b));
+  const minAtc = rows.slice(1).reduce((b, r) => (r.atc < b.atc ? r : b));
 
   return (
     <VisualCard
-      title="Biaya tetap, rata-rata, dan marjinal"
-      caption="Contoh biaya fiktif dengan FC=20, VC=0, 10, 18, 24, 33, 47, 65. Harga pasar berubah pada slider untuk melihat keputusan produksi dan shutdown."
-      howToRead="MC memotong AVC dan ATC di titik minimum. Ketika P < AVC, keputusan terbaik jangka pendek adalah tutup; ketika P >= AVC, perusahaan tetap beroperasi sampai P = MC."
+      title="Kurva biaya: MC, AVC, dan ATC"
+      caption="Perusahaan fiktif dengan biaya tetap 20. Geser Q untuk membaca biaya pada tiap tingkat output."
+      howToRead="MC turun lalu naik. Selama MC berada di bawah rata-rata, rata-rata turun; begitu MC naik melewati rata-rata, rata-rata ikut naik. Karena itu MC memotong AVC dan ATC tepat di titik terendah keduanya."
     >
       <label className="block text-sm text-zinc-300">
-        Harga output: {price}
-        <input aria-label="Harga output untuk simulasi biaya" type="range" min="4" max="20" value={price} onChange={(event) => setPrice(Number(event.target.value))} className="mt-2 block min-h-8 w-full touch-pan-x accent-amber-400" />
+        Output Q: {q}
+        <input aria-label="Output Q untuk membaca biaya" type="range" min="1" max="6" step="1" value={q} onChange={(e) => setQ(Number(e.target.value))} className="mt-2 block min-h-8 w-full touch-pan-x accent-amber-400" />
       </label>
-      <svg viewBox="0 0 210 160" role="img" aria-label={`Biaya produksi pada harga ${price}. Titik optimal Q=${bestOutcome.q} dengan laba ${bestOutcome.profit}.`} className="h-52 w-full rounded-lg bg-zinc-950 p-2">
-        <path d="M20 10V130H190" fill="none" stroke="#71717a" />
-        <path d="M20 130H190" fill="none" stroke="#71717a" />
-        <text x="8" y="16" fill="#A1A1AA" fontSize="8">Biaya</text>
-        <text x="160" y="150" fill="#A1A1AA" fontSize="8">Q</text>
-        <polyline points={avcPoints} fill="none" stroke="#38BDF8" strokeWidth="2" />
-        <polyline points={atcPoints} fill="none" stroke="#34D399" strokeWidth="2" />
-        <polyline points={mcPoints} fill="none" stroke="#FBBF24" strokeWidth="2" />
-        <line x1="20" x2="190" y1={y(price)} y2={y(price)} stroke="#F472B6" strokeDasharray="4 4" />
-        <circle cx={x(bestOutcome.q)} cy={y(price)} r="4" fill="#F472B6" />
-        <text x="26" y="30" fill="#38BDF8" fontSize="8">AVC</text>
-        <text x="26" y="42" fill="#34D399" fontSize="8">ATC</text>
-        <text x="26" y="54" fill="#FBBF24" fontSize="8">MC</text>
+      <svg viewBox="0 0 210 150" role="img" aria-label={`Kurva MC, AVC, ATC. Pada Q=${sel.q}: MC ${sel.mc}, AVC ${sel.avc}, ATC ${sel.atc}.`} className="h-56 w-full rounded-lg bg-zinc-950 p-2">
+        <path d={`M${X0} 10V${Y0}H${X1}`} fill="none" stroke="#71717a" />
+        <text x="4" y="14" fill="#A1A1AA" fontSize="8">Biaya</text>
+        <text x={X1 - 10} y="144" fill="#A1A1AA" fontSize="8">Q</text>
+        {rows.slice(1).map((r) => (
+          <text key={r.q} x={x(r.q) - 2} y="141" fill="#71717a" fontSize="7">{r.q}</text>
+        ))}
+        <polyline points={curve("avc")} fill="none" stroke="#38BDF8" strokeWidth="2" />
+        <polyline points={curve("atc")} fill="none" stroke="#34D399" strokeWidth="2" />
+        <polyline points={curve("mc")} fill="none" stroke="#FBBF24" strokeWidth="2" />
+        <circle cx={x(minAvc.q)} cy={y(minAvc.avc)} r="3.5" fill="none" stroke="#38BDF8" />
+        <circle cx={x(minAtc.q)} cy={y(minAtc.atc)} r="3.5" fill="none" stroke="#34D399" />
+        <line x1={x(sel.q)} x2={x(sel.q)} y1="15" y2={Y0} stroke="#F472B6" strokeDasharray="3 3" />
+        <circle cx={x(sel.q)} cy={y(sel.mc)} r="3" fill="#FBBF24" />
+        <circle cx={x(sel.q)} cy={y(sel.avc)} r="3" fill="#38BDF8" />
+        <circle cx={x(sel.q)} cy={y(sel.atc)} r="3" fill="#34D399" />
+        <text x="36" y="24" fill="#38BDF8" fontSize="7">AVC</text>
+        <text x="56" y="24" fill="#34D399" fontSize="7">ATC</text>
+        <text x="76" y="24" fill="#FBBF24" fontSize="7">MC</text>
       </svg>
       <div className="grid gap-2 text-sm text-zinc-200 sm:grid-cols-2">
-        <p className="rounded bg-zinc-950 p-3">Q optimal: <strong>{bestOutcome.q}</strong>; laba = <strong>{bestOutcome.profit}</strong>.</p>
-        <p className="rounded bg-zinc-950 p-3">Keputusan: {decision}.</p>
-        <p className="rounded bg-zinc-950 p-3">Minimum AVC = 8 pada Q=3.</p>
-        <p className="rounded bg-zinc-950 p-3">Minimum ATC = 13,25 pada Q=4.</p>
+        <p className="rounded bg-zinc-950 p-3">TC = {sel.tc}; AFC = {sel.afc}; AVC = {sel.avc}; ATC = {sel.atc}; MC = {sel.mc}</p>
+        <p className="rounded bg-zinc-950 p-3">{atcDirection}.</p>
+        <p className="rounded bg-zinc-950 p-3">AVC minimum = {minAvc.avc} pada Q = {minAvc.q}.</p>
+        <p className="rounded bg-zinc-950 p-3">ATC minimum = {minAtc.atc} pada Q = {minAtc.q}.</p>
       </div>
     </VisualCard>
   );

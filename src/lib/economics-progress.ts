@@ -26,6 +26,8 @@ export const PSYCHOLOGY_PROGRESS_KEY = "sb-psychology-progress-v1";
 export const ENGLISH_PROGRESS_KEY = "sb-english-progress-v1";
 export const WEB3_PROGRESS_KEY = "sb-web3-progress-v1";
 
+const UNLOCK_ALL_CHAPTERS_FOR_DEVELOPMENT = true;
+
 export const EMPTY_COURSE_PROGRESS: CourseProgress = {
   version: 1,
   attempts: [],
@@ -95,6 +97,7 @@ export function hasPassedAttempt(attempts: QuizAttempt[], moduleId: string) {
 }
 
 export function isChapterUnlocked(modules: CurriculumModule[], index: number, attempts: QuizAttempt[]) {
+  if (UNLOCK_ALL_CHAPTERS_FOR_DEVELOPMENT) return true;
   if (index <= 0) return true;
   return hasPassedAttempt(attempts, modules[index - 1].id);
 }

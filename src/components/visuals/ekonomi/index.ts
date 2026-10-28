@@ -14,7 +14,11 @@ import EkoConsumerProducerSurplus from "./eko-consumer-producer-surplus";
 import EkoPriceControls from "./eko-price-controls";
 import EkoTaxIncidence from "./eko-tax-incidence";
 import EkoCostCurves from "./eko-cost-curves";
-import EkoMarketStructures from "./eko-market-structures";
+import EkoPerfectCompetition from "./eko-perfect-competition";
+import EkoMonopoly from "./eko-monopoly";
+import EkoPrisonersDilemma from "./eko-prisoners-dilemma";
+import EkoExternality from "./eko-externality";
+import EkoMarketStructures from "./eko-market-structures";    
 
 export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-ppf": EkoPpf,
@@ -32,5 +36,8 @@ export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-price-controls": EkoPriceControls,
   "eko-tax-incidence": EkoTaxIncidence,
   "eko-cost-curves": EkoCostCurves,
-  "eko-market-structures": EkoMarketStructures,
+    "eko-perfect-competition": EkoPerfectCompetition,
+  "eko-monopoly": EkoMonopoly,
+  "eko-prisoners-dilemma": EkoPrisonersDilemma,
+  "eko-externality": EkoExternality,
 };
