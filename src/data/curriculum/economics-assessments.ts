@@ -702,7 +702,7 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
     ]),
     q("eko2-b07-q07", "Hitungan • Akuntansi pertumbuhan", "Jika α=0,4, gK=5%, gL=1%, dan gA=1%, berapakah pertumbuhan keluaran menurut akuntansi pertumbuhan?", [
       "3,6%, dari 1%+0,4×5%+0,6×1% sesuai bobot faktor",
-      "6,0%, dari menjumlahkan pertumbuhan modal, tenaga kerja, dan teknologi",
+      "7,0%, dari menjumlahkan pertumbuhan modal, tenaga kerja, dan teknologi",
       "2,6%, dari pertumbuhan keluaran dikurangi pertumbuhan tenaga kerja",
       "1,0%, dari residu produktivitas saja",
     ], 0, "gY=gA+αgK+(1−α)gL=1+0,4×5+0,6×1=3,6%.", [
@@ -710,25 +710,25 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "2,6% adalah pertumbuhan per pekerja, bukan pertumbuhan keluaran total.",
       "Satu persen hanya kontribusi produktivitas, bukan jumlah semua sumber.",
     ]),
-    q("eko2-b07-q08", "Kasus • Keluaran per kapita", "PDB riil tumbuh 4% dan jumlah penduduk tumbuh 1%. Apa perkiraan pertumbuhan PDB riil per kapita?", [
-      "5,00%, karena pertumbuhan keluaran dan penduduk dijumlahkan",
-      "4,00%, karena pertumbuhan penduduk tidak memengaruhi ukuran per kapita",
-      "1,00%, karena pertumbuhan penduduk menjadi ukuran keluaran rata-rata",
-      "2,97%, dari pertumbuhan relatif 1,04/1,01 dikurangi satu lalu dikali seratus",
-    ], 3, "Pertumbuhan per kapita=(1,04/1,01−1)×100≈2,97%.", [
-      "Pertumbuhan per kapita membagi faktor keluaran dengan pertumbuhan penduduk, bukan menjumlahkan.",
-      "Penduduk memengaruhi penyebut ukuran keluaran per kapita.",
-      "Satu persen adalah laju penduduk, bukan perubahan keluaran per kapita.",
+    q("eko2-b07-q08", "Kasus • Tabungan dan konsumsi", "Dengan δ=0,1 dan y=√k, tabungan naik dari s=0,2 ke s=0,3. Keadaan mapan bergeser dari (k*=4, y*=2, c*=1,6) ke (k*=9, y*=3, c*=2,1). Kesimpulan yang tepat?", [
+      "Konsumsi mapan turun karena tabungan lebih besar mengurangi bagian konsumsi",
+      "Keluaran mapan tidak berubah karena tabungan hanya menggeser pemakaian",
+      "Konsumsi langsung naik pada periode pertama dan tetap sesudahnya",
+      "Konsumsi mapan naik ke 2,1, tetapi turun sementara selama masa transisi",
+    ], 3, "Pada keadaan mapan c*=(1−0,3)×3=2,1, lebih tinggi dari 1,6. Pada awal transisi y masih 2, jadi c=(1−0,3)×2=1,4, di bawah 1,6.", [
+      "Bagian konsumsi memang mengecil, tetapi keluaran mapan naik lebih besar, sehingga c* naik dari 1,6 menjadi 2,1.",
+      "Keluaran mapan naik dari 2 menjadi 3 karena modal per pekerja mapan naik dari 4 menjadi 9.",
+      "Pada awal transisi konsumsi turun ke 1,4, karena modal belum bertambah sementara bagian tabungan sudah naik.",
     ]),
-    q("eko2-b07-q09", "Kasus • Kesenjangan output", "PDB aktual 950 dan PDB potensial 1.000. Berapa kesenjangan output dan apa artinya?", [
-      "−5%, karena PDB aktual 950 berada di bawah PDB potensial 1.000",
-      "−50%, karena selisih 50 dibagi PDB aktual",
-      "+5%, karena keluaran potensial lebih besar daripada aktual",
-      "+50%, karena selisih 50 menjadi tambahan terhadap potensi",
-    ], 0, "Kesenjangan=(950−1.000)/1.000×100=−5%; keluaran aktual berada di bawah estimasi potensi.", [
-      "Penyebut rumus adalah PDB potensial dan hasilnya −5%, bukan −50%.",
-      "Tanda positif terbalik; aktual yang lebih rendah menghasilkan kesenjangan negatif.",
-      "Selisih 50 bukan kenaikan keluaran dan tidak menghasilkan 50%.",
+    q("eko2-b07-q09", "Kasus • Kaidah emas", "Dengan δ=0,1 dan y=√k, tabungan s=0,5 memberi konsumsi mapan 2,5. Berapa konsumsi mapan pada s=0,7 dan apa artinya?", [
+      "2,1, lebih rendah dari 2,5, sehingga s=0,7 melampaui kaidah emas",
+      "7,0, lebih tinggi karena keluaran mapan lebih besar pada s=0,7",
+      "2,5, sama saja karena kaidah emas berlaku pada semua tingkat tabungan",
+      "0, karena hampir seluruh keluaran dialokasikan untuk tabungan",
+    ], 0, "Pada s=0,7: k*=49, y*=7, c*=(1−0,7)×7=2,1, lebih kecil dari 2,5 pada s=0,5. Modal berlebih menurunkan konsumsi mapan.", [
+      "7,0 adalah keluaran mapan y*, bukan konsumsi; konsumsi hanya 30% dari keluaran, yaitu 2,1.",
+      "Kaidah emas hanya terjadi pada satu tingkat tabungan (s=0,5 di sini), bukan semua tingkat.",
+      "Pada s=0,7 hanya 70% keluaran ditabung, jadi konsumsi 30% dari 7 = 2,1, bukan 0.",
     ]),
     q("eko2-b07-q10", "Kasus • Konvergensi", "Negara kaya memiliki s=0,2 dan δ=0,1. Negara miskin memiliki s=0,1 dengan δ sama. Menurut k*=(s/δ)², kesimpulan mana yang tepat?", [
       "Keduanya menuju k*=4 karena tingkat penyusutan sama",
