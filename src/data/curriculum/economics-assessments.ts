@@ -580,13 +580,13 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
     ]),
     q("eko2-b06-q05", "Hitungan • IHK", "Keranjang tetap berbiaya 900 pada 2024 dan 950 pada 2025. Berapakah IHK 2025 dengan tahun dasar 2024?", [
       "94,74, dari 900 dibagi 950 lalu dikali seratus",
-      "50,00, dari selisih biaya keranjang dibagi biaya tahun dasar",
+      "5,56, dari selisih biaya keranjang dibagi biaya tahun dasar",
       "105,56, dari 950 dibagi 900 lalu dikali seratus",
-      "5,56, dari biaya tahun berjalan dikurangi biaya tahun dasar",
+      "50,00, dari biaya tahun berjalan dikurangi biaya tahun dasar",
     ], 2, "IHK 2025=950/900×100=105,56 dengan IHK tahun dasar sama dengan 100.", [
       "Rasio terbalik memberi indeks di bawah 100 dan bukan rumus IHK 2025.",
-      "Selisih biaya bukan indeks; hasilnya adalah proporsi kenaikan sebelum dikali 100.",
-      "Selisih 950−900=50 adalah kenaikan biaya, bukan angka indeks.",
+      "5,56 adalah tingkat inflasi (kenaikan biaya dalam persen), bukan angka indeks; indeks = 100 + 5,56.",
+      "50 hanyalah selisih biaya, bukan angka indeks.",
     ]),
     q("eko2-b06-q06", "Hitungan • Suku bunga riil", "Bunga nominal 8% dan inflasi 5%. Berapakah bunga riil eksak menurut persamaan Fisher?", [
       "3,00%, dari selisih bunga nominal dan inflasi",
@@ -639,6 +639,108 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Inflasi sama dengan ekspektasi hanya saat u=u*, bukan saat u=3%.",
     ]),
   ],
+  "eko2-b07": [
+    q("eko2-b07-q01", "Konsep • Pertumbuhan majemuk", "Mengapa selisih kecil dalam laju pertumbuhan tahunan bisa menghasilkan perbedaan besar setelah beberapa dasawarsa?", [
+      "Karena pertumbuhan selalu menambahkan jumlah tetap dari nilai awal",
+      "Karena laju pertumbuhan menghapus perubahan jumlah penduduk",
+      "Karena pertumbuhan tiap tahun diterapkan pada nilai yang telah bertambah",
+      "Karena pertumbuhan riil mengukur perubahan harga barang konsumsi",
+    ], 2, "Dalam pertumbuhan majemuk, kenaikan setiap periode menjadi bagian dari basis periode berikutnya sehingga selisih laju terakumulasi.", [
+      "Penambahan tetap menggambarkan pertumbuhan linear, bukan pertumbuhan majemuk.",
+      "Pertumbuhan total tidak otomatis menghapus dampak perubahan jumlah penduduk.",
+      "Perubahan harga konsumsi bukan definisi pertumbuhan keluaran riil.",
+    ]),
+    q("eko2-b07-q02", "Konsep • Fungsi produksi", "Dalam fungsi Y=A×√K×√L, apa yang terjadi jika modal dan tenaga kerja sama-sama digandakan, sementara A tetap?", [
+      "Keluaran menjadi dua kali lipat karena fungsi memiliki skala konstan",
+      "Keluaran tetap karena tambahan faktor saling meniadakan",
+      "Keluaran naik empat kali lipat karena kedua faktor digandakan",
+      "Keluaran naik setengah kali karena pangkat tiap faktor bernilai setengah",
+    ], 0, "Pangkat K dan L berjumlah satu, sehingga menggandakan kedua faktor sekaligus menggandakan keluaran.", [
+      "Kenaikan kedua faktor bersama mengubah skala produksi; hasilnya bukan tetap.",
+      "Menggandakan K dan L tidak mengalikan keluaran empat kali dalam bentuk pangkat ini.",
+      "Pangkat 0,5 berlaku masing-masing faktor; kenaikan serentak menghasilkan pengali dua.",
+    ]),
+    q("eko2-b07-q03", "Konsep • Model Solow", "Apa makna keadaan mapan pada model Solow sederhana tanpa pertumbuhan penduduk?", [
+      "Seluruh tabungan menjadi konsumsi pada setiap periode",
+      "Investasi baru sama dengan modal yang aus dalam periode itu",
+      "Modal per pekerja bertambah dengan laju yang selalu meningkat",
+      "Keluaran per pekerja menjadi nol ketika modal tidak berubah",
+    ], 1, "Pada keadaan mapan, investasi per pekerja tepat mengganti penyusutan sehingga stok modal per pekerja tetap.", [
+      "Tabungan membiayai investasi, bukan seluruhnya dikonsumsi pada periode yang sama.",
+      "Investasi menutup penyusutan; modal tidak terus bertambah tanpa batas di keadaan mapan.",
+      "Modal tetap menghasilkan keluaran positif pada fungsi produksi y=√k.",
+    ]),
+    q("eko2-b07-q04", "Konsep • Konvergensi bersyarat", "Pernyataan mana yang tepat mengenai konvergensi dalam model Solow?", [
+      "Negara miskin selalu menyusul negara kaya karena modalnya lebih sedikit",
+      "Konvergensi terjadi hanya jika kedua negara memiliki penduduk sama banyak",
+      "Tingkat pendapatan awal menentukan seluruh pertumbuhan jangka panjang",
+      "Negara menyusul tingkat mapan serupa bila parameter dasarnya cukup sebanding",
+    ], 3, "Konvergensi bersyarat memerlukan keadaan mapan yang sebanding; perbedaan parameter dapat mempertahankan kesenjangan.", [
+      "Modal awal rendah saja tidak menjamin negara miskin menyusul negara kaya.",
+      "Jumlah penduduk yang sama bukan syarat yang menentukan keadaan mapan dalam model per pekerja.",
+      "Tabungan, penyusutan, produktivitas, dan kondisi lain ikut menentukan pertumbuhan jangka panjang.",
+    ]),
+    q("eko2-b07-q05", "Hitungan • Pertumbuhan majemuk", "Nilai awal 1.000 tumbuh 4% per tahun selama 30 tahun. Berapa nilai akhirnya menurut pertumbuhan majemuk?", [
+      "2.200,00, dari penambahan linear 4% setiap tahun atas nilai awal",
+      "3.243,40, dari 1.000 dikalikan 1,04 pangkat 30 tahun",
+      "1.811,36, dari penerapan laju 2% setiap tahun selama 30 tahun",
+      "4.000,00, dari nilai awal dikalikan empat untuk laju 4%",
+    ], 1, "1.000×1,04³⁰=3.243,40.", [
+      "Penjumlahan linear 30×40 menghasilkan 2.200, bukan pertumbuhan majemuk.",
+      "1.811,36 adalah hasil laju 2%, bukan 4%, selama 30 tahun.",
+      "Mengalikan nilai awal langsung dengan 4 tidak menerapkan pertumbuhan tahunan.",
+    ]),
+    q("eko2-b07-q06", "Hitungan • Fungsi produksi", "Dengan Y=A×√K×√L, berapakah keluaran jika A=1, K=200, dan L=100?", [
+      "100,00, dari akar modal saja tanpa tenaga kerja",
+      "200,00, dari menjumlahkan modal dengan tenaga kerja",
+      "141,42, dari akar 200 dikali akar 100",
+      "300,00, dari menjumlahkan seluruh faktor produksi",
+    ], 2, "Y=1×√200×√100=14,142×10≈141,42.", [
+      "Rumus melibatkan akar modal dan tenaga kerja, bukan akar modal saja.",
+      "Fungsi produksi mengalikan input berakar, bukan menjumlahkannya.",
+      "Menjumlahkan input tidak sesuai dengan bentuk fungsi yang diberikan.",
+    ]),
+    q("eko2-b07-q07", "Hitungan • Akuntansi pertumbuhan", "Jika α=0,4, gK=5%, gL=1%, dan gA=1%, berapakah pertumbuhan keluaran menurut akuntansi pertumbuhan?", [
+      "3,6%, dari 1%+0,4×5%+0,6×1% sesuai bobot faktor",
+      "6,0%, dari menjumlahkan pertumbuhan modal, tenaga kerja, dan teknologi",
+      "2,6%, dari pertumbuhan keluaran dikurangi pertumbuhan tenaga kerja",
+      "1,0%, dari residu produktivitas saja",
+    ], 0, "gY=gA+αgK+(1−α)gL=1+0,4×5+0,6×1=3,6%.", [
+      "Modal dan tenaga kerja memiliki bobot pangsa, sehingga tidak dijumlahkan tanpa bobot.",
+      "2,6% adalah pertumbuhan per pekerja, bukan pertumbuhan keluaran total.",
+      "Satu persen hanya kontribusi produktivitas, bukan jumlah semua sumber.",
+    ]),
+    q("eko2-b07-q08", "Kasus • Keluaran per kapita", "PDB riil tumbuh 4% dan jumlah penduduk tumbuh 1%. Apa perkiraan pertumbuhan PDB riil per kapita?", [
+      "5,00%, karena pertumbuhan keluaran dan penduduk dijumlahkan",
+      "4,00%, karena pertumbuhan penduduk tidak memengaruhi ukuran per kapita",
+      "1,00%, karena pertumbuhan penduduk menjadi ukuran keluaran rata-rata",
+      "2,97%, dari pertumbuhan relatif 1,04/1,01 dikurangi satu lalu dikali seratus",
+    ], 3, "Pertumbuhan per kapita=(1,04/1,01−1)×100≈2,97%.", [
+      "Pertumbuhan per kapita membagi faktor keluaran dengan pertumbuhan penduduk, bukan menjumlahkan.",
+      "Penduduk memengaruhi penyebut ukuran keluaran per kapita.",
+      "Satu persen adalah laju penduduk, bukan perubahan keluaran per kapita.",
+    ]),
+    q("eko2-b07-q09", "Kasus • Kesenjangan output", "PDB aktual 950 dan PDB potensial 1.000. Berapa kesenjangan output dan apa artinya?", [
+      "−5%, karena PDB aktual 950 berada di bawah PDB potensial 1.000",
+      "−50%, karena selisih 50 dibagi PDB aktual",
+      "+5%, karena keluaran potensial lebih besar daripada aktual",
+      "+50%, karena selisih 50 menjadi tambahan terhadap potensi",
+    ], 0, "Kesenjangan=(950−1.000)/1.000×100=−5%; keluaran aktual berada di bawah estimasi potensi.", [
+      "Penyebut rumus adalah PDB potensial dan hasilnya −5%, bukan −50%.",
+      "Tanda positif terbalik; aktual yang lebih rendah menghasilkan kesenjangan negatif.",
+      "Selisih 50 bukan kenaikan keluaran dan tidak menghasilkan 50%.",
+    ]),
+    q("eko2-b07-q10", "Kasus • Konvergensi", "Negara kaya memiliki s=0,2 dan δ=0,1. Negara miskin memiliki s=0,1 dengan δ sama. Menurut k*=(s/δ)², kesimpulan mana yang tepat?", [
+      "Keduanya menuju k*=4 karena tingkat penyusutan sama",
+      "Negara miskin menuju k*=1, lebih rendah daripada k*=4 negara kaya",
+      "Negara miskin menuju k*=2 karena tabungannya setengah",
+      "Negara miskin pasti menyusul karena modal awalnya lebih rendah",
+    ], 1, "Negara kaya memiliki k*=(0,2/0,1)²=4; negara miskin memiliki k*=(0,1/0,1)²=1 sehingga menuju tingkat mapan lebih rendah.", [
+      "Tabungan berbeda mengubah keadaan mapan meskipun penyusutan sama.",
+      "Rasio tabungan terhadap penyusutan dikuadratkan, menghasilkan k*=1.",
+      "Modal awal rendah tidak menjamin negara miskin menyusul dengan parameter berbeda.",
+    ]),
+  ],
 };
 
 const rubric = "Nilai 0–5 pada ketepatan konsep, kualitas alasan, penerapan pada kasus, dan kejelasan. Tiap kriteria bernilai 0 (tidak ada/relevansi tidak tampak) hingga 5 (tepat, lengkap, dan dijelaskan).";
@@ -668,6 +770,10 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
   "eko2-b06": [
     { id: "eko2-b06-e01", prompt: "Hitung IHK dan inflasi dari keranjang tetap pada Bab 6 bagian 1, jelaskan bias pengukuran melalui substitusi, lalu bandingkan bunga riil pendekatan dan eksak untuk i=8%, π=5%.", rubric, reviewPoints: ["Menghitung biaya keranjang 2024=900 dan 2025=950", "Menghitung IHK=105,56 dan inflasi=5,56%", "Menjelaskan substitusi, mutu, atau barang baru sebagai keterbatasan pengukuran", "Menghitung bunga riil pendekatan 3% dan eksak 2,86%"] },
     { id: "eko2-b06-e02", prompt: "Jelaskan pengangguran friksional, struktural, dan siklis; hitung hukum Okun saat u=7%, u*=5%, dan PDB potensial 1.000; lalu gunakan model Phillips untuk membahas ekspektasi inflasi saat u=3% dan πe meningkat dari 3% menjadi 4% dan 5%.", rubric, reviewPoints: ["Membedakan tiga jenis pengangguran", "Menghitung kesenjangan output −4% dan PDB aktual 960", "Menghitung inflasi Phillips 4%, 5%, dan 6%", "Menjelaskan penyesuaian ekspektasi serta sifat ilustratif model"] },
+  ],
+  "eko2-b07": [
+    { id: "eko2-b07-e01", prompt: "Gunakan contoh pertumbuhan 2% dan 4% selama 30 tahun, fungsi produksi, serta akuntansi pertumbuhan pada Bab 7 untuk menghitung keluaran dan menjelaskan sumber perbedaan produktivitas. Bahas bagaimana modal, tenaga kerja, teknologi, dan modal manusia berkontribusi tanpa menganggap residu sebagai teknologi murni.", rubric, reviewPoints: ["Menghitung hasil majemuk 1.811,36 dan 3.243,40", "Menerapkan fungsi produksi dan produk marjinal modal dengan benar", "Menghitung kontribusi modal 2,0, tenaga kerja 0,6, dan produktivitas 1,0 poin", "Menjelaskan residu Solow serta keterbatasan pengukuran"] },
+    { id: "eko2-b07-e02", prompt: "Bandingkan lintasan dua perekonomian dalam model Solow pada Bab 7 bagian 3 dan 5. Hitung keadaan mapan untuk tingkat tabungan yang diberikan, jelaskan kaidah emas dan konvergensi bersyarat, lalu evaluasi peran institusi, insentif, serta pertukaran konsumsi sekarang dengan kapasitas masa depan.", rubric, reviewPoints: ["Menghitung k*=(s/δ)² dan keluaran mapan", "Membandingkan konsumsi mapan serta kaidah emas", "Menjelaskan bahwa konvergensi memerlukan parameter dasar sebanding", "Membahas institusi atau kebijakan sebagai pembentuk insentif, bukan resep tunggal"] },
   ],
 };
 

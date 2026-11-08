@@ -28,6 +28,11 @@ import EkoRealInterest from "./eko-real-interest";
 import EkoUnemployment from "./eko-unemployment";
 import EkoOkun from "./eko-okun";
 import EkoPhillips from "./eko-phillips";
+import EkoCompoundGrowth from "./eko-compound-growth";
+import EkoProductionFunction from "./eko-production-function";
+import EkoSolow from "./eko-solow";
+import EkoGrowthAccounting from "./eko-growth-accounting";
+import EkoConvergence from "./eko-convergence";
 
 export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-ppf": EkoPpf,
@@ -59,4 +64,9 @@ export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-unemployment": EkoUnemployment,
   "eko-okun": EkoOkun,
   "eko-phillips": EkoPhillips,
+  "eko-compound-growth": EkoCompoundGrowth,
+  "eko-production-function": EkoProductionFunction,
+  "eko-solow": EkoSolow,
+  "eko-growth-accounting": EkoGrowthAccounting,
+  "eko-convergence": EkoConvergence,
 };

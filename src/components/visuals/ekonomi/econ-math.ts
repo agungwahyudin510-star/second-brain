@@ -418,3 +418,102 @@ export function phillipsInflation(unemploymentRate: number, expectedInflation: n
     curve,
   };
 }
+
+export function compoundGrowth(
+  initialValue: number,
+  firstRatePercent: number,
+  secondRatePercent: number,
+  years: number
+) {
+  const firstRate = firstRatePercent / 100;
+  const secondRate = secondRatePercent / 100;
+  const firstValue = initialValue * (1 + firstRate) ** years;
+  const secondValue = initialValue * (1 + secondRate) ** years;
+  return {
+    firstValue,
+    secondValue,
+    ratio: firstValue === 0 ? null : secondValue / firstValue,
+    firstDoublingApprox: firstRatePercent > 0 ? 70 / firstRatePercent : null,
+    secondDoublingApprox: secondRatePercent > 0 ? 70 / secondRatePercent : null,
+    firstDoublingExact: firstRate > 0 ? Math.log(2) / Math.log(1 + firstRate) : null,
+    secondDoublingExact: secondRate > 0 ? Math.log(2) / Math.log(1 + secondRate) : null,
+    path: Array.from({ length: years + 1 }, (_, year) => ({
+      year,
+      firstValue: initialValue * (1 + firstRate) ** year,
+      secondValue: initialValue * (1 + secondRate) ** year,
+    })),
+  };
+}
+
+export function productionFunction(productivity: number, capital: number, labor: number) {
+  const output = productivity * Math.sqrt(capital) * Math.sqrt(labor);
+  const nextCapitalOutput = productivity * Math.sqrt(capital + 1) * Math.sqrt(labor);
+  const curve = Array.from({ length: 16 }, (_, index) => {
+    const quantity = 50 + index * 10;
+    return {
+      capital: quantity,
+      output: productivity * Math.sqrt(quantity) * Math.sqrt(labor),
+    };
+  });
+  return {
+    productivity,
+    capital,
+    labor,
+    output,
+    outputPerWorker: output / labor,
+    marginalProductCapital: nextCapitalOutput - output,
+    nextCapitalOutput,
+    curve,
+  };
+}
+
+export function solowSteadyState(savingRate: number, depreciationRate: number) {
+  const capital = (savingRate / depreciationRate) ** 2;
+  const output = Math.sqrt(capital);
+  const goldenCapital = (1 / (2 * depreciationRate)) ** 2;
+  const goldenSavingRate = 0.5;
+  return {
+    savingRate,
+    depreciationRate,
+    capital,
+    output,
+    consumption: (1 - savingRate) * output,
+    goldenCapital,
+    goldenSavingRate,
+    aboveGoldenSaving: savingRate > goldenSavingRate,
+  };
+}
+
+export function solowPath(initialCapital: number, savingRate: number, depreciationRate: number, periods: number) {
+  const path = [{ period: 0, capital: initialCapital, output: Math.sqrt(initialCapital) }];
+  for (let period = 1; period <= periods; period += 1) {
+    const previousCapital = path[period - 1].capital;
+    const capital = previousCapital + savingRate * Math.sqrt(previousCapital)
+      - depreciationRate * previousCapital;
+    path.push({ period, capital, output: Math.sqrt(capital) });
+  }
+  return path;
+}
+
+export function growthAccounting(
+  capitalShare: number,
+  capitalGrowth: number,
+  laborGrowth: number,
+  technologyGrowth: number
+) {
+  const capitalContribution = capitalShare * capitalGrowth;
+  const laborContribution = (1 - capitalShare) * laborGrowth;
+  const outputGrowth = technologyGrowth + capitalContribution + laborContribution;
+  return {
+    capitalShare,
+    capitalGrowth,
+    laborGrowth,
+    technologyGrowth,
+    capitalContribution,
+    laborContribution,
+    technologyContribution: technologyGrowth,
+    outputGrowth,
+    outputPerWorkerGrowth: outputGrowth - laborGrowth,
+    solowResidual: outputGrowth - capitalContribution - laborContribution,
+  };
+}
