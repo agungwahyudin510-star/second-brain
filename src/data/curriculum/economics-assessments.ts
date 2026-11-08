@@ -790,7 +790,7 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
     ], 2, "Pengganda sederhana=1/r=1/0,1=10; total simpanan model=1.000×10=10.000.", [
       "Pilihan ini hanya menghitung setoran awal dan mengabaikan rangkaian simpanan berikutnya.",
       "1.000×0,9=900, yaitu kredit putaran berikutnya, bukan total simpanan.",
-      "Pengganda 10 memberi 10.000, bukan 100.000 untuk simpanan awal 1.000.",
+      "100 hanyalah cadangan wajib awal (10% dari 1.000), bukan total simpanan akhir.",
     ]),
     q("eko2-b08-q06", "Hitungan • Pengganda dengan kebocoran", "Dengan rasio cadangan r=0,1 dan rasio uang tunai c=0,2, berapa pengganda uang menurut (1+c)/(c+r)?", [
       "4,0, dari 1,2 dibagi 0,3",
