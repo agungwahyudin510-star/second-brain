@@ -33,6 +33,11 @@ import EkoProductionFunction from "./eko-production-function";
 import EkoSolow from "./eko-solow";
 import EkoGrowthAccounting from "./eko-growth-accounting";
 import EkoConvergence from "./eko-convergence";
+import EkoBarterMoney from "./eko-barter-money";
+import EkoBankBalance from "./eko-bank-balance";
+import EkoMoneyMultiplier from "./eko-money-multiplier";
+import EkoQuantityTheory from "./eko-quantity-theory";
+import EkoTaylorRule from "./eko-taylor-rule";
 
 export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-ppf": EkoPpf,
@@ -69,4 +74,9 @@ export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-solow": EkoSolow,
   "eko-growth-accounting": EkoGrowthAccounting,
   "eko-convergence": EkoConvergence,
+  "eko-barter-money": EkoBarterMoney,
+  "eko-bank-balance": EkoBankBalance,
+  "eko-money-multiplier": EkoMoneyMultiplier,
+  "eko-quantity-theory": EkoQuantityTheory,
+  "eko-taylor-rule": EkoTaylorRule,
 };

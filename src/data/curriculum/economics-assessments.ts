@@ -741,6 +741,108 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Modal awal rendah tidak menjamin negara miskin menyusul dengan parameter berbeda.",
     ]),
   ],
+  "eko2-b08": [
+    q("eko2-b08-q01", "Konsep • Fungsi uang", "Bagaimana uang mengatasi kebetulan keinginan ganda dan fungsi apa yang dijalankannya?", [
+      "Uang mengharuskan kedua pihak bertukar barang langsung dengan nilai sama",
+      "Uang menjadi alat tukar, satuan hitung, dan penyimpan nilai dalam transaksi",
+      "Uang menghapus seluruh risiko perubahan daya beli dalam setiap transaksi",
+      "Uang hanya menjadi penyimpan nilai dan tidak membantu penentuan harga",
+    ], 1, "Uang memisahkan penjualan dari pembelian serta berfungsi sebagai alat tukar, satuan hitung, dan penyimpan nilai.", [
+      "Pertukaran langsung adalah barter dan tetap memerlukan kecocokan kebutuhan kedua pihak.",
+      "Uang memudahkan transaksi tetapi daya belinya tetap dapat berubah.",
+      "Satuan hitung membantu menyatakan dan membandingkan harga.",
+    ]),
+    q("eko2-b08-q02", "Konsep • Neraca bank", "Pernyataan mana yang tepat membedakan masalah likuiditas dan solvabilitas bank?", [
+      "Likuiditas berarti aset lebih besar dari kewajiban; solvabilitas berarti kas cukup hari ini",
+      "Likuiditas dan solvabilitas sama-sama hanya mengukur jumlah cadangan tunai bank",
+      "Likuiditas adalah modal positif; solvabilitas adalah kemampuan menjual aset segera",
+      "Likuiditas menyangkut pembayaran tepat waktu; solvabilitas menyangkut kecukupan aset terhadap kewajiban",
+    ], 3, "Likuiditas mengukur kemampuan memenuhi pembayaran yang jatuh tempo; solvabilitas mengukur kecukupan nilai aset untuk menutup kewajiban.", [
+      "Definisi ini menukar konsep: nilai bersih berkaitan dengan solvabilitas, bukan likuiditas.",
+      "Cadangan penting bagi pembayaran, tetapi tidak mengukur kedua konsep sekaligus.",
+      "Modal positif berkaitan dengan solvabilitas; kemampuan menjual segera berkaitan dengan likuiditas.",
+    ]),
+    q("eko2-b08-q03", "Konsep • Penciptaan uang bank", "Dalam sistem cadangan sebagian, bagaimana kredit bank dapat menambah simpanan dalam sistem perbankan?", [
+      "Bank mencatat kredit sebagai aset dan simpanan penerima sebagai liabilitas",
+      "Bank memindahkan seluruh uang tunai bank sentral langsung kepada peminjam",
+      "Bank mengubah modalnya menjadi uang tunai tanpa membuat kewajiban baru",
+      "Bank menggandakan simpanan lama tanpa mencatat pinjaman atau pembayaran",
+    ], 0, "Ketika bank memberi kredit, neraca mencatat pinjaman sebagai aset dan saldo simpanan sebagai liabilitas; pembayaran kemudian dapat menjadi simpanan di bank lain.", [
+      "Cadangan bank sentral bukan uang tunai yang otomatis dipindahkan langsung kepada setiap peminjam.",
+      "Kredit dan simpanan menambah sisi aset dan liabilitas, bukan mengubah modal menjadi uang tunai saja.",
+      "Penciptaan simpanan melalui kredit tetap dicatat di neraca bank.",
+    ]),
+    q("eko2-b08-q04", "Konsep • Operasi pasar terbuka", "Apa dampak langsung pembelian obligasi oleh bank sentral dalam mekanisme sederhana?", [
+      "Uang primer berkurang karena obligasi dipindahkan ke bank sentral",
+      "Simpanan rumah tangga langsung dihapus dari seluruh bank komersial",
+      "Cadangan bank dan uang primer bertambah karena bank sentral membayar obligasi",
+      "Rasio cadangan wajib naik otomatis sebesar nilai obligasi yang dibeli",
+    ], 2, "Pembayaran pembelian obligasi menambah saldo cadangan bank dan uang primer dalam model sederhana.", [
+      "Pembelian dibayar dengan penambahan cadangan, bukan pengurangan uang primer.",
+      "Transaksi tidak menghapus simpanan rumah tangga.",
+      "Pembelian obligasi tidak otomatis mengubah rasio cadangan wajib.",
+    ]),
+    q("eko2-b08-q05", "Hitungan • Pengganda sederhana", "Simpanan awal 1.000 masuk ke sistem dengan rasio cadangan r=10%. Dalam model pengganda sederhana, berapa total simpanan akhir?", [
+      "1.000, karena simpanan awal tidak mendukung pinjaman lanjutan",
+      "900, dari satu penyaluran sebesar 90% simpanan awal",
+      "10.000, dari simpanan awal dikalikan pengganda 1/0,1",
+      "100, dari simpanan awal dikalikan rasio cadangan 10%",
+    ], 2, "Pengganda sederhana=1/r=1/0,1=10; total simpanan model=1.000×10=10.000.", [
+      "Pilihan ini hanya menghitung setoran awal dan mengabaikan rangkaian simpanan berikutnya.",
+      "1.000×0,9=900, yaitu kredit putaran berikutnya, bukan total simpanan.",
+      "Pengganda 10 memberi 10.000, bukan 100.000 untuk simpanan awal 1.000.",
+    ]),
+    q("eko2-b08-q06", "Hitungan • Pengganda dengan kebocoran", "Dengan rasio cadangan r=0,1 dan rasio uang tunai c=0,2, berapa pengganda uang menurut (1+c)/(c+r)?", [
+      "4,0, dari 1,2 dibagi 0,3",
+      "3,0, dari jumlah 0,2 dan 0,1 yang dikalikan 10",
+      "10,0, dari satu dibagi rasio cadangan 0,1",
+      "0,3, dari jumlah rasio uang tunai dan cadangan",
+    ], 0, "Pengganda=(1+0,2)/(0,2+0,1)=1,2/0,3=4,0.", [
+      "Mengalikan jumlah rasio 0,3 dengan 10 menghasilkan 3,0, bukan membagi 1,2 dengan 0,3.",
+      "1/r=10 adalah pengganda sederhana tanpa kebocoran uang tunai.",
+      "0,3 adalah penyebut formula, bukan nilai pengganda.",
+    ]),
+    q("eko2-b08-q07", "Hitungan • Teori kuantitas", "Menurut MV=PY, berapa P jika M=440, V=5, dan Y=1.000?", [
+      "0,088, dari M dibagi hasil kali V dan Y",
+      "2,0, dari tingkat harga kondisi dasar sebelum M berubah",
+      "0,44, dari 440 dibagi 1.000 tanpa memasukkan kecepatan",
+      "2,2, dari 440×5 dibagi 1.000",
+    ], 3, "P=MV/Y=440×5/1.000=2,2.", [
+      "M dibagi V×Y membalik persamaan dan tidak menghasilkan tingkat harga.",
+      "Harga dasar 2,0 berlaku untuk M=400, bukan M=440 ketika V dan Y tetap.",
+      "Mengabaikan V menghitung M/Y=0,44, bukan P=2,2.",
+    ]),
+    q("eko2-b08-q08", "Kasus • Aturan Taylor", "Dengan π=4%, kesenjangan output −2%, π*=2%, dan r*=2%, berapa rekomendasi suku bunga aturan Taylor?", [
+      "5,0%, dari π+r* dikurangi satu poin respons output",
+      "6,0%, dari 4+2+0,5(4−2)+0,5(−2)",
+      "7,0%, dari π+r* ditambah respons inflasi tanpa respons output",
+      "3,0%, dari r* ditambah respons inflasi tanpa komponen lainnya",
+    ], 1, "i=4+2+0,5(4−2)+0,5(−2)=4+2+1−1=6,0%.", [
+      "Pilihan ini hanya mengurangi satu poin respons output dan mengabaikan tambahan satu poin respons inflasi.",
+      "Tanpa respons output, 4+2+1=7,0%; kesenjangan negatif pada soal harus ikut dihitung.",
+      "Pilihan ini menjumlahkan r*=2 dengan respons inflasi +1, tetapi mengabaikan inflasi aktual dan kesenjangan output.",
+    ]),
+    q("eko2-b08-q09", "Kasus • Kerugian kredit bank", "Bank memiliki kredit 800 dan modal awal 100 seperti neraca contoh. Jika kerugian kredit 12,5%, apa dampaknya pada modal dan solvabilitas?", [
+      "Kerugian 100 menghabiskan modal sehingga bank tak solven",
+      "Kerugian 12,5 menyisakan modal 87,5 jika persentase diterapkan pada modal",
+      "Kerugian 100 menurunkan modal menjadi nol tetapi bank tetap solven",
+      "Modal tetap 100 karena kerugian belum mengubah nilai kewajiban simpanan",
+    ], 0, "Kerugian=12,5%×800=100; modal tersisa=100−100=0, sehingga bank tak solven menurut kriteria modal harus positif.", [
+      "Kerugian 12,5 adalah 12,5% dari modal 100, bukan 12,5% dari kredit 800.",
+      "Modal nol berarti bantalan modal habis dan bank tidak lagi solven menurut definisi yang dipakai.",
+      "Rugi kredit mengurangi nilai aset dan modal walaupun kewajiban simpanan tidak berubah.",
+    ]),
+    q("eko2-b08-q10", "Kasus • Pinjaman DeFi dan LTV", "Pinjaman DeFi 100 dijamin agunan yang turun dari 150 menjadi 120. Jika batas likuidasi LTV 80%, apa yang terjadi?", [
+      "LTV 66,7%, posisi aman karena dihitung dari agunan awal 150",
+      "LTV 80,0%, posisi tepat pada batas tanpa pemicu likuidasi",
+      "LTV 83,3%, tetapi posisi aman jika ambang likuidasi dianggap 85%",
+      "LTV 83,3%, melampaui batas sehingga posisi dilikuidasi",
+    ], 3, "LTV=100/120×100=83,3%, melebihi ambang 80%, sehingga posisi memasuki likuidasi.", [
+      "Agunan saat ini 120, bukan 150; rasio 100/120 lebih tinggi dari 66,7%.",
+      "Batas 80% akan tercapai pada agunan 125; nilai 120 membuat LTV melampaui batas.",
+      "Perhitungan 100/120 memang 83,3%, tetapi ambang pada soal adalah 80%, bukan 85%.",
+    ]),
+  ],
 };
 
 const rubric = "Nilai 0–5 pada ketepatan konsep, kualitas alasan, penerapan pada kasus, dan kejelasan. Tiap kriteria bernilai 0 (tidak ada/relevansi tidak tampak) hingga 5 (tepat, lengkap, dan dijelaskan).";
@@ -774,6 +876,10 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
   "eko2-b07": [
     { id: "eko2-b07-e01", prompt: "Gunakan contoh pertumbuhan 2% dan 4% selama 30 tahun, fungsi produksi, serta akuntansi pertumbuhan pada Bab 7 untuk menghitung keluaran dan menjelaskan sumber perbedaan produktivitas. Bahas bagaimana modal, tenaga kerja, teknologi, dan modal manusia berkontribusi tanpa menganggap residu sebagai teknologi murni.", rubric, reviewPoints: ["Menghitung hasil majemuk 1.811,36 dan 3.243,40", "Menerapkan fungsi produksi dan produk marjinal modal dengan benar", "Menghitung kontribusi modal 2,0, tenaga kerja 0,6, dan produktivitas 1,0 poin", "Menjelaskan residu Solow serta keterbatasan pengukuran"] },
     { id: "eko2-b07-e02", prompt: "Bandingkan lintasan dua perekonomian dalam model Solow pada Bab 7 bagian 3 dan 5. Hitung keadaan mapan untuk tingkat tabungan yang diberikan, jelaskan kaidah emas dan konvergensi bersyarat, lalu evaluasi peran institusi, insentif, serta pertukaran konsumsi sekarang dengan kapasitas masa depan.", rubric, reviewPoints: ["Menghitung k*=(s/δ)² dan keluaran mapan", "Membandingkan konsumsi mapan serta kaidah emas", "Menjelaskan bahwa konvergensi memerlukan parameter dasar sebanding", "Membahas institusi atau kebijakan sebagai pembentuk insentif, bukan resep tunggal"] },
+  ],
+  "eko2-b08": [
+    { id: "eko2-b08-e01", prompt: "Jelaskan tiga fungsi uang dan bandingkan secara konseptual dengan aset kripto serta stablecoin. Lalu analisis neraca bank pada Bab 8 bagian 2: hitung modal setelah rugi kredit 5%, ambang kerugian yang menghabiskan modal, dan dampak penarikan simpanan 10%, 20%, serta 30%. Jelaskan bank run, likuiditas, solvabilitas, dan perbedaan risiko pinjaman DeFi beragunan.", rubric, reviewPoints: ["Menjelaskan alat tukar, satuan hitung, dan penyimpan nilai beserta barter", "Menghitung modal menjadi 60 setelah kerugian 40 dan batas 12,5% dari kredit", "Membedakan penarikan yang tertutup cadangan, memerlukan penjualan surat berharga, atau melebihi aset likuid", "Membandingkan secara konseptual likuidasi agunan otomatis dengan intermediasi dan risiko bank"] },
+    { id: "eko2-b08-e02", prompt: "Jelaskan penciptaan uang melalui rantai simpanan dengan r=10%, hitung pengganda setelah kebocoran c=0,2, lalu gunakan MV=PY untuk membahas perubahan harga saat uang, kecepatan, atau keluaran berubah. Terakhir, hitung aturan Taylor untuk π=4%, kesenjangan output −2%, π*=2%, dan r*=2%; bahas asumsi dan batas kebijakan.", rubric, reviewPoints: ["Menghitung lima putaran berjumlah 4.095,1 dan total sederhana 10.000", "Menghitung pengganda kebocoran 4,0 dan uang beredar 4.000 untuk basis 1.000", "Menjelaskan identitas kuantitas serta asumsi V dan Y", "Menghitung rekomendasi Taylor 6,0% dan suku bunga riil sederhana 2%", "Membahas ekspektasi, batas bawah nol, serta sifat pedoman ilustratif"] },
   ],
 };
 

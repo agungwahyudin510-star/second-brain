@@ -517,3 +517,116 @@ export function growthAccounting(
     solowResidual: outputGrowth - capitalContribution - laborContribution,
   };
 }
+
+export function relativePrices(goods: number) {
+  const count = Math.max(2, Math.floor(goods));
+  return {
+    goods: count,
+    barterPrices: count * (count - 1) / 2,
+    moneyPrices: count - 1,
+  };
+}
+
+export function bankBalance(creditLossPercent: number, withdrawalPercent: number) {
+  const reserves = 100;
+  const loans = 800;
+  const securities = 100;
+  const deposits = 900;
+  const initialCapital = 100;
+  const creditLoss = loans * creditLossPercent / 100;
+  const capital = initialCapital - creditLoss;
+  const withdrawal = deposits * withdrawalPercent / 100;
+  const liquidAssets = reserves + securities;
+  const liquidityStatus = withdrawal <= reserves
+    ? "covered-by-reserves"
+    : withdrawal <= liquidAssets
+      ? "sell-securities"
+      : "illiquid";
+  return {
+    reserves,
+    loans,
+    securities,
+    deposits,
+    initialCapital,
+    creditLossPercent,
+    creditLoss,
+    capital,
+    assetsAfterLoss: reserves + loans - creditLoss + securities,
+    capitalRatio: (reserves + loans - creditLoss + securities) > 0
+      ? capital / (reserves + loans - creditLoss + securities) * 100
+      : 0,
+    leverage: capital > 0 ? (reserves + loans - creditLoss + securities) / capital : null,
+    solvent: capital > 0,
+    withdrawalPercent,
+    withdrawal,
+    liquidAssets,
+    liquidityStatus,
+  };
+}
+
+export function depositChain(initialDeposit: number, reserveRatio: number, rounds: number) {
+  const reserveRate = Math.min(1, Math.max(0, reserveRatio));
+  const count = Math.max(1, Math.floor(rounds));
+  const deposits = [initialDeposit];
+  for (let round = 1; round < count; round += 1) {
+    deposits.push(deposits[round - 1] * (1 - reserveRate));
+  }
+  return {
+    initialDeposit,
+    reserveRatio: reserveRate,
+    rounds: count,
+    deposits,
+    cumulative: deposits.reduce((sum, deposit) => sum + deposit, 0),
+    simpleMultiplier: reserveRate > 0 ? 1 / reserveRate : null,
+    simpleTotal: reserveRate > 0 ? initialDeposit / reserveRate : null,
+  };
+}
+
+export function moneyMultiplier(reserveRatio: number, cashRatio: number) {
+  const reserveRate = Math.max(0, reserveRatio);
+  const cashRate = Math.max(0, cashRatio);
+  const denominator = cashRate + reserveRate;
+  return {
+    reserveRatio: reserveRate,
+    cashRatio: cashRate,
+    multiplier: denominator > 0 ? (1 + cashRate) / denominator : null,
+  };
+}
+
+export function quantityTheory(money: number, velocity: number, output: number) {
+  const price = output > 0 ? money * velocity / output : null;
+  const baselinePrice = 400 * 5 / 1000;
+  return {
+    money,
+    velocity,
+    output,
+    price,
+    baselinePrice,
+    changePercent: price === null ? null : (price / baselinePrice - 1) * 100,
+  };
+}
+
+export function taylorRate(
+  inflation: number,
+  outputGap: number,
+  inflationTarget = 2,
+  neutralRealRate = 2
+) {
+  const baseline = inflation + neutralRealRate;
+  const inflationResponse = 0.5 * (inflation - inflationTarget);
+  const outputResponse = 0.5 * outputGap;
+  const unconstrainedRate = baseline + inflationResponse + outputResponse;
+  return {
+    inflation,
+    outputGap,
+    inflationTarget,
+    neutralRealRate,
+    baseline,
+    inflationResponse,
+    outputResponse,
+    unconstrainedRate,
+    rate: Math.max(0, unconstrainedRate),
+    lowerBoundApplied: unconstrainedRate < 0,
+    realRate: Math.max(0, unconstrainedRate) - inflation,
+  };
+}
