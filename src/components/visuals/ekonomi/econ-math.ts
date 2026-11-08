@@ -181,3 +181,122 @@ export function prisonersPayoff(a: "Tinggi" | "Rendah", b: "Tinggi" | "Rendah"):
   if (a === "Rendah" && b === "Tinggi") return [70, 20];
   return [30, 30];
 }
+
+export function valueAdded(wheatPrice = 30, flourPrice = 50, breadPrice = 100) {
+  const stages = [
+    { producer: "Petani", sales: wheatPrice, intermediateCost: 0 },
+    { producer: "Penggiling", sales: flourPrice, intermediateCost: wheatPrice },
+    { producer: "Tukang roti", sales: breadPrice, intermediateCost: flourPrice },
+  ].map((stage) => ({ ...stage, valueAdded: stage.sales - stage.intermediateCost }));
+  return {
+    stages,
+    totalSales: stages.reduce((sum, stage) => sum + stage.sales, 0),
+    totalValueAdded: stages.reduce((sum, stage) => sum + stage.valueAdded, 0),
+    finalGood: breadPrice,
+  };
+}
+
+export function gdpExpenditure(
+  consumption: number,
+  investment: number,
+  government: number,
+  exports: number,
+  imports: number,
+  mode: "expenditure" | "income" = "expenditure"
+) {
+  const netExports = exports - imports;
+  const expenditureTotal = consumption + investment + government + netExports;
+  const incomeComponents = [
+    { label: "Upah", value: 520 },
+    { label: "Sewa", value: 50 },
+    { label: "Bunga", value: 40 },
+    { label: "Laba", value: 140 },
+    { label: "Pajak tak langsung neto", value: 80 },
+    { label: "Penyusutan", value: 100 },
+  ];
+  const incomeTotal = incomeComponents.reduce((sum, item) => sum + item.value, 0);
+  return {
+    consumption,
+    investment,
+    government,
+    exports,
+    imports,
+    netExports,
+    expenditureTotal,
+    incomeComponents,
+    incomeTotal,
+    selectedTotal: mode === "income" ? incomeTotal : expenditureTotal,
+  };
+}
+
+export function nominalReal(
+  priceA: number,
+  priceB: number,
+  quantityA: number,
+  quantityB: number
+) {
+  const nominalBase = 10 * 50 + 20 * 25;
+  const nominal = priceA * quantityA + priceB * quantityB;
+  const real = 10 * quantityA + 20 * quantityB;
+  const deflator = nominal / real * 100;
+  return {
+    nominalBase,
+    nominal,
+    real,
+    deflator,
+    nominalGrowth: (nominal / nominalBase - 1) * 100,
+    realGrowth: (real / nominalBase - 1) * 100,
+    priceGrowth: deflator - 100,
+  };
+}
+
+export function perCapitaGrowth(
+  realGrowthPercent: number,
+  populationGrowthPercent: number,
+  gdp = 930,
+  receivedFromAbroad = 30,
+  paidAbroad = 50,
+  measure: "PDB" | "GNI" = "PDB"
+) {
+  const gni = gdp + receivedFromAbroad - paidAbroad;
+  const output = measure === "GNI" ? gni : gdp;
+  return {
+    gni,
+    output,
+    realGrowthPercent,
+    populationGrowthPercent,
+    perCapitaGrowth: ((1 + realGrowthPercent / 100) / (1 + populationGrowthPercent / 100) - 1) * 100,
+  };
+}
+
+export function cycleStats(
+  quarterlyGdp: number[],
+  actualOutput = 950,
+  potentialOutput = 1000
+) {
+  const changes = quarterlyGdp.map((value, index) => index === 0
+    ? null
+    : (value / quarterlyGdp[index - 1] - 1) * 100);
+  const peakIndex = quarterlyGdp.indexOf(Math.max(...quarterlyGdp));
+  const troughIndex = quarterlyGdp.indexOf(Math.min(...quarterlyGdp));
+  const decliningIndices = changes
+    .map((change, index) => change !== null && change < 0 ? index : -1)
+    .filter((index) => index >= 0);
+  let longestDecline = 0;
+  let currentDecline = 0;
+  for (const change of changes) {
+    currentDecline = change !== null && change < 0 ? currentDecline + 1 : 0;
+    longestDecline = Math.max(longestDecline, currentDecline);
+  }
+  return {
+    changes,
+    peakIndex,
+    troughIndex,
+    decliningIndices,
+    longestDecline,
+    technicalRecession: longestDecline >= 2,
+    actualOutput,
+    potentialOutput,
+    outputGap: (actualOutput - potentialOutput) / potentialOutput * 100,
+  };
+}

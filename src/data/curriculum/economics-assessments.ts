@@ -435,6 +435,108 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Barang publik tidak otomatis harus dibiayai pemerintah, meski sering membutuhkan penyediaan kolektif.",
     ]),
   ],
+  "eko2-b05": [
+    q("eko2-b05-q01", "Konsep • Definisi PDB", "Mengapa PDB menghitung barang akhir atau nilai tambah, bukan menjumlahkan semua penjualan di setiap tahap produksi?", [
+      "Agar nilai ekspor dipisahkan dari nilai impor dalam semua transaksi",
+      "Agar barang rumah tangga yang dibuat sendiri dicatat sebagai keluaran pasar",
+      "Agar bahan antara tidak dihitung kembali setelah nilainya masuk ke barang akhir",
+      "Agar transaksi keuangan dapat dijumlahkan bersama barang yang diproduksi",
+    ], 2, "Barang antara sudah terkandung dalam nilai keluaran tahap berikutnya; menghitung penjualan setiap tahap menggandakan nilai yang sama.", [
+      "Perlakuan ekspor dan impor ditangani lewat komponen perdagangan, bukan alasan mengeluarkan barang antara.",
+      "Produksi rumah tangga tanpa transaksi pasar justru umumnya tidak tercatat dalam PDB.",
+      "Transaksi keuangan murni tidak menjadi produksi barang akhir dalam PDB.",
+    ]),
+    q("eko2-b05-q02", "Konsep • Cakupan PDB", "Transaksi manakah yang tidak dihitung sebagai produksi baru pada periode berjalan dalam PDB?", [
+      "Jual beli mobil bekas antarwarga atau pembayaran transfer tunai",
+      "Pembelian roti baru dari toko oleh sebuah rumah tangga",
+      "Pembangunan rumah baru oleh perusahaan konstruksi domestik",
+      "Layanan potong rambut yang diberikan dan dibayar pada periode itu",
+    ], 0, "Mobil bekas sudah dihitung ketika baru diproduksi dan transfer bukan pembelian keluaran baru; keduanya tidak menambah produksi berjalan.", [
+      "Roti baru adalah barang akhir yang diproduksi dan dibeli pada periode berjalan.",
+      "Rumah baru merupakan pembentukan modal dan bagian produksi domestik periode itu.",
+      "Jasa potong rambut adalah layanan akhir yang diproduksi pada periode tersebut.",
+    ]),
+    q("eko2-b05-q03", "Konsep • Nominal dan riil", "Perbedaan utama PDB nominal dan PDB riil adalah...", [
+      "PDB nominal menghitung ekspor, sedangkan PDB riil hanya menghitung konsumsi",
+      "PDB nominal mengurangi impor, sedangkan PDB riil mengabaikan barang akhir",
+      "PDB nominal memakai harga tahun dasar, sedangkan PDB riil memakai harga berjalan",
+      "PDB nominal memakai harga periode berjalan, sedangkan PDB riil memakai harga tahun dasar",
+    ], 3, "PDB nominal menilai keluaran memakai harga periode itu; PDB riil memakai harga tahun dasar untuk memisahkan perubahan volume dari harga.", [
+      "Keduanya dapat mencakup produksi domestik yang sama; pembeda pokoknya bukan ekspor versus konsumsi.",
+      "Perlakuan impor berasal dari pendekatan pengeluaran dan tidak membedakan nominal dari riil.",
+      "Pernyataan ini membalik definisi nominal dan riil.",
+    ]),
+    q("eko2-b05-q04", "Konsep • PDB dan GNI", "Apa yang membedakan PDB dari pendapatan nasional bruto (GNI/PNB)?", [
+      "PDB memasukkan transfer rumah tangga, sedangkan GNI mengeluarkan konsumsi",
+      "GNI menambahkan pendapatan faktor neto dari luar negeri pada PDB",
+      "PDB menghitung produksi warga di luar negeri, sedangkan GNI mengabaikannya",
+      "GNI selalu sama dengan ekspor neto ditambah pengeluaran pemerintah",
+    ], 1, "GNI diperoleh dari PDB ditambah pendapatan faktor yang diterima dari luar negeri dikurangi yang dibayar ke luar negeri.", [
+      "Transfer bukan produksi yang dihitung sebagai bagian PDB dan bukan pembeda inti GNI.",
+      "Pernyataan itu membalik fokus wilayah PDB dan pendapatan faktor penduduk.",
+      "Ekspor neto dan pengeluaran pemerintah adalah komponen pengeluaran, bukan definisi GNI.",
+    ]),
+    q("eko2-b05-q05", "Hitungan • Pendekatan pengeluaran", "Jika C=600, I=150, G=200, X=100, dan M=120, berapakah PDB menurut pendekatan pengeluaran?", [
+      "910, karena pendapatan faktor neto harus dikurangkan dari konsumsi",
+      "970, karena impor ditambahkan ke ekspor neto sebelum dijumlah",
+      "930, karena ekspor neto −20 dan C+I+G+(X−M)=930",
+      "1.050, karena ekspor dan impor keduanya ditambahkan pada belanja",
+    ], 2, "X−M=100−120=−20; maka PDB=600+150+200−20=930.", [
+      "Pendapatan faktor luar negeri bukan komponen rumus pengeluaran yang diberikan.",
+      "Ekspor neto adalah selisih X dikurangi M, bukan angka yang menghasilkan tambahan 40.",
+      "Impor dikurangkan agar produksi luar negeri tidak dihitung sebagai produksi domestik.",
+    ]),
+    q("eko2-b05-q06", "Hitungan • Nilai tambah", "Tukang roti menjual roti senilai 100 setelah membeli tepung senilai 50. Berapa nilai tambah tahap tukang roti?", [
+      "50, yaitu penjualan roti 100 dikurangi biaya tepung 50",
+      "100, yaitu seluruh penjualan roti tanpa mengurangi biaya bahan",
+      "150, yaitu nilai roti ditambah harga tepung yang dibeli sebelumnya",
+      "30, yaitu nilai gandum yang dijual petani kepada penggiling",
+    ], 0, "Nilai tambah tahap tukang roti=100−50=50.", [
+      "Angka 100 adalah penjualan bruto; nilai tepung yang telah dihitung harus dikurangkan.",
+      "Menambahkan tepung justru menghitung bahan antara dua kali.",
+      "Nilai gandum adalah kontribusi petani, bukan nilai tambah tukang roti.",
+    ]),
+    q("eko2-b05-q07", "Hitungan • Deflator PDB", "Jika PDB nominal 2025 sebesar 1.118 dan PDB riil sebesar 1.040, berapakah deflator PDB?", [
+      "96,4, dari 1.040 dibagi 1.118 lalu dikali 100",
+      "107,5, dari 1.118 dibagi 1.040 lalu dikali 100",
+      "11,8, dari selisih nominal dengan riil dibagi tahun dasar",
+      "4,0, dari pertumbuhan riil dibandingkan pertumbuhan nominal",
+    ], 1, "Deflator=(1.118/1.040)×100=107,5.", [
+      "Rasio terbalik bukan rumus deflator PDB.",
+      "Selisih nominal dan riil bukan nilai indeks deflator.",
+      "Empat persen adalah pertumbuhan riil pada data contoh, bukan deflator.",
+    ]),
+    q("eko2-b05-q08", "Kasus • Pertumbuhan nominal", "PDB nominal tumbuh 11,8%, sedangkan PDB riil tumbuh 4%. Kesimpulan yang paling tepat adalah...", [
+      "Jumlah barang pasti naik 11,8% karena harga tidak masuk dalam PDB nominal",
+      "Harga pasti turun 7,8% karena pertumbuhan riil lebih rendah daripada nominal",
+      "Produksi riil turun karena pertumbuhan nominal lebih tinggi dari pertumbuhan riil",
+      "Kenaikan nominal mencakup perubahan harga; ukuran riil menunjukkan pertumbuhan volume lebih rendah",
+    ], 3, "PDB nominal mencerminkan harga dan jumlah; pertumbuhan riil 4% memisahkan perubahan volume dari pengaruh harga.", [
+      "PDB nominal memakai harga berjalan, sehingga harga ikut memengaruhi nilainya.",
+      "Selisih laju tidak berarti harga turun; contoh deflator justru menunjukkan tingkat harga meningkat.",
+      "Pertumbuhan riil 4% tetap berarti keluaran riil meningkat, bukan turun.",
+    ]),
+    q("eko2-b05-q09", "Kasus • Pertumbuhan per kapita", "PDB riil tumbuh 4% dan jumlah penduduk tumbuh 1%. Berapa kira-kira pertumbuhan PDB riil per kapita?", [
+      "5,00%, karena pertumbuhan PDB dan penduduk dijumlahkan",
+      "4,00%, karena penduduk tidak memengaruhi keluaran rata-rata per orang",
+      "2,97%, dari 1,04 dibagi 1,01 lalu dikurangi satu",
+      "3,00%, karena pertumbuhan penduduk selalu dikurangkan secara tepat",
+    ], 2, "Pertumbuhan per kapita=(1+0,04)/(1+0,01)−1≈0,0297 atau 2,97%.", [
+      "Pertumbuhan penduduk bukan tambahan terhadap keluaran per kapita.",
+      "Jumlah penduduk mengubah pembagi PDB per kapita.",
+      "Pengurangan sederhana hanya pendekatan; rumus rasio memberi sekitar 2,97%.",
+    ]),
+    q("eko2-b05-q10", "Kasus • Siklus bisnis", "Indeks PDB riil kuartalan berurutan adalah 100, 102, 103, 101, 99, 98, 100, 103. Apa kesimpulan yang tepat?", [
+      "Tidak ada penurunan beruntun karena indeks kemudian pulih setelah K6",
+      "K4–K6 turun tiga kuartal berturut-turut, memenuhi kaidah teknis; lembah seri ada di K6",
+      "Puncak berada di K6 karena indeks K6 lebih rendah dari kuartal sebelumnya",
+      "Resesi resmi pasti terjadi karena dua kuartal penurunan mendefinisikannya secara universal",
+    ], 1, "Indeks turun dari K3 ke K4, K5, dan K6; titik terendah adalah K6. Rangkaian memenuhi kaidah praktis dua kuartal turun.", [
+      "Pemulihan sesudah K6 tidak menghapus penurunan beruntun sebelumnya.",
+      "Puncak adalah titik tertinggi sebelum kontraksi, yaitu K3 pada seri ini.",
+      "Dua kuartal turun adalah kaidah praktis, bukan definisi resmi universal; data ini juga menunjukkan tiga kuartal turun.",
+    ]),
+  ],
 };
 
 const rubric = "Nilai 0–5 pada ketepatan konsep, kualitas alasan, penerapan pada kasus, dan kejelasan. Tiap kriteria bernilai 0 (tidak ada/relevansi tidak tampak) hingga 5 (tepat, lengkap, dan dijelaskan).";
@@ -456,6 +558,10 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
     { id: "eko2-b04-e01", prompt: "Bandingkan perusahaan dalam pasar persaingan sempurna dan monopoli dengan fungsi biaya yang sama. Jelaskan aturan produksi, laba, dan deadweight loss; kaitkan hasilnya dengan keputusan masuk-keluar pasar dan efisiensi sosial.", rubric, reviewPoints: ["Membedakan P = MC dan MR = MC", "Menghitung dan menjelaskan laba serta DWL", "Mengaitkan insentif masuk-keluar pasar dengan laba ekonomi", "Membahas efisiensi sosial secara jelas"] },
     { id: "eko2-b04-e02", prompt: "Analisis pasar oligopoli dan persaingan monopolistik. Gunakan HHI atau CR2, salah satu matriks permainan sederhana, dan perbedaan produk untuk menjelaskan mengapa hasil pasar mungkin tidak efisien dan mengapa kolusi mudah pecah.", rubric, reviewPoints: ["Memasukkan konsentrasi pasar dan pengukuran yang relevan", "Menggunakan matriks permainan atau strategi dominan dengan benar", "Membedakan oligopoli dari persaingan monopolistik", "Menjelaskan godaan curang dan efek pada kesejahteraan"] },
     { id: "eko2-b04-e03", prompt: "Jelaskan eksternalitas negatif dan positif, analisis optimum sosial, serta kebijakan yang sesuai seperti pajak Pigouvian, subsidi, atau pengaturan sumber daya bersama. Gunakan contoh protokol open-source, ruang blok, atau token proyek untuk memperkuat argumen.", rubric, reviewPoints: ["Menjelaskan biaya sosial versus biaya privat", "Mengidentifikasi titik optimum sosial dan konsekuensi over/underproduction", "Menghubungkan kebijakan dengan insentif", "Menggunakan contoh Web3 yang konkret dan netral"] },
+  ],
+  "eko2-b05": [
+    { id: "eko2-b05-e01", prompt: "Hitung dan bandingkan PDB dengan pendekatan pengeluaran dan pendapatan menggunakan C=600, I=150, G=200, X=100, M=120 dan pendapatan faktor yang diberikan dalam Bab 5. Jelaskan mengapa pertumbuhan nominal 11,8% tidak boleh dipakai sendirian untuk menyimpulkan pertumbuhan produksi.", rubric, reviewPoints: ["Menghitung ekspor neto dan PDB pengeluaran sebesar 930", "Menjumlahkan upah, sewa, bunga, laba, pajak tak langsung neto, dan penyusutan menjadi 930", "Menjelaskan harga berjalan dan harga tahun dasar", "Membedakan pertumbuhan nominal 11,8% dari pertumbuhan riil 4%"] },
+    { id: "eko2-b05-e02", prompt: "Evaluasi PDB sebagai ukuran kesejahteraan dengan memakai contoh GNI, PDB riil per kapita, dan keterbatasan distribusi pada Bab 5 bagian 4 serta perubahan siklus dan kesenjangan output pada bagian 5. Jelaskan indikator tambahan yang perlu diperiksa sebelum mengambil kesimpulan.", rubric, reviewPoints: ["Membedakan produksi domestik dari pendapatan faktor nasional", "Menghitung atau menafsirkan pertumbuhan per kapita 2,97%", "Menjelaskan keterbatasan PDB dan distribusi", "Menafsirkan kesenjangan output −5% serta sifat estimasi PDB potensial", "Membedakan indikator siklus dari ramalan pasti"] },
   ],
 };
 
