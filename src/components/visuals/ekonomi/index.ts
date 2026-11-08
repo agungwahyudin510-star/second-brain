@@ -23,6 +23,11 @@ import EkoGdpExpenditure from "./eko-gdp-expenditure";
 import EkoNominalReal from "./eko-nominal-real";
 import EkoGdpPerCapita from "./eko-gdp-per-capita";
 import EkoBusinessCycle from "./eko-business-cycle";
+import EkoCpiBasket from "./eko-cpi-basket";
+import EkoRealInterest from "./eko-real-interest";
+import EkoUnemployment from "./eko-unemployment";
+import EkoOkun from "./eko-okun";
+import EkoPhillips from "./eko-phillips";
 
 export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-ppf": EkoPpf,
@@ -49,4 +54,9 @@ export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-nominal-real": EkoNominalReal,
   "eko-gdp-per-capita": EkoGdpPerCapita,
   "eko-business-cycle": EkoBusinessCycle,
+  "eko-cpi-basket": EkoCpiBasket,
+  "eko-real-interest": EkoRealInterest,
+  "eko-unemployment": EkoUnemployment,
+  "eko-okun": EkoOkun,
+  "eko-phillips": EkoPhillips,
 };

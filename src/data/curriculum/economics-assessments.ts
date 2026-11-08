@@ -497,7 +497,7 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Nilai gandum adalah kontribusi petani, bukan nilai tambah tukang roti.",
     ]),
     q("eko2-b05-q07", "Hitungan • Deflator PDB", "Jika PDB nominal 2025 sebesar 1.118 dan PDB riil sebesar 1.040, berapakah deflator PDB?", [
-      "96,4, dari 1.040 dibagi 1.118 lalu dikali 100",
+      "93,0, dari 1.040 dibagi 1.118 lalu dikali 100",
       "107,5, dari 1.118 dibagi 1.040 lalu dikali 100",
       "11,8, dari selisih nominal dengan riil dibagi tahun dasar",
       "4,0, dari pertumbuhan riil dibandingkan pertumbuhan nominal",
@@ -528,13 +528,115 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
     ]),
     q("eko2-b05-q10", "Kasus • Siklus bisnis", "Indeks PDB riil kuartalan berurutan adalah 100, 102, 103, 101, 99, 98, 100, 103. Apa kesimpulan yang tepat?", [
       "Tidak ada penurunan beruntun karena indeks kemudian pulih setelah K6",
-      "K4–K6 turun tiga kuartal berturut-turut, memenuhi kaidah teknis; lembah seri ada di K6",
+      "K4–K6 turun tiga kuartal berturut-turut, memenuhi kaidah teknis; lembah pada seri ini ada di K6",
       "Puncak berada di K6 karena indeks K6 lebih rendah dari kuartal sebelumnya",
       "Resesi resmi pasti terjadi karena dua kuartal penurunan mendefinisikannya secara universal",
     ], 1, "Indeks turun dari K3 ke K4, K5, dan K6; titik terendah adalah K6. Rangkaian memenuhi kaidah praktis dua kuartal turun.", [
       "Pemulihan sesudah K6 tidak menghapus penurunan beruntun sebelumnya.",
       "Puncak adalah titik tertinggi sebelum kontraksi, yaitu K3 pada seri ini.",
       "Dua kuartal turun adalah kaidah praktis, bukan definisi resmi universal; data ini juga menunjukkan tiga kuartal turun.",
+    ]),
+  ],
+  "eko2-b06": [
+    q("eko2-b06-q01", "Konsep • Indeks harga konsumen", "Bagaimana indeks harga konsumen (IHK) untuk suatu periode dihitung?", [
+      "Perubahan harga satu barang dibandingkan dengan upah rata-rata tahun berjalan",
+      "Biaya barang yang dijual dibagi jumlah pekerja lalu dikalikan seratus",
+      "Biaya seluruh produksi domestik dibagi pendapatan rumah tangga tahun dasar",
+      "Biaya keranjang tetap pada harga kini dibagi biayanya pada tahun dasar, lalu dikali seratus",
+    ], 3, "IHK membandingkan biaya keranjang konsumsi yang sama pada harga periode berjalan dengan biaya tahun dasar dikali 100.", [
+      "Harga satu barang dan upah tidak membentuk indeks keranjang konsumsi.",
+      "Jumlah pekerja bukan penyebut untuk menghitung indeks harga konsumen.",
+      "Biaya seluruh produksi domestik lebih dekat dengan deflator PDB, bukan IHK.",
+    ]),
+    q("eko2-b06-q02", "Konsep • Bunga riil", "Mengapa suku bunga riil lebih relevan daripada bunga nominal saat menilai daya beli simpanan?", [
+      "Bunga nominal telah mengurangi inflasi sehingga selalu menunjukkan daya beli bersih",
+      "Bunga riil menyesuaikan pertambahan uang dengan perubahan harga barang dan jasa",
+      "Bunga riil menunjukkan nilai rupiah tanpa memperhitungkan perubahan tingkat harga",
+      "Bunga nominal hanya digunakan untuk menghitung harga barang impor dan ekspor",
+    ], 1, "Bunga riil memperhitungkan inflasi sehingga menunjukkan perubahan kemampuan membeli, bukan hanya pertambahan saldo uang.", [
+      "Bunga nominal belum dikurangi inflasi dan tidak selalu menunjukkan pertambahan daya beli.",
+      "Mengabaikan perubahan harga justru menggambarkan bunga nominal, bukan riil.",
+      "Klasifikasi bunga nominal dan riil tidak ditentukan oleh perdagangan luar negeri.",
+    ]),
+    q("eko2-b06-q03", "Konsep • Jenis pengangguran", "Pernyataan mana yang membedakan pengangguran siklis dari pengangguran struktural?", [
+      "Pengangguran siklis meningkat saat resesi dan dapat mereda ketika kegiatan ekonomi pulih",
+      "Pengangguran siklis muncul hanya ketika keterampilan pekerja tidak sesuai dengan lowongan",
+      "Pengangguran siklis mencakup semua orang yang tidak mencari pekerjaan karena sekolah",
+      "Pengangguran siklis terjadi saat pekerja berpindah kerja meskipun ekonomi tumbuh stabil",
+    ], 0, "Pengangguran siklis berhubungan dengan naik-turunnya kegiatan agregat dan melemah saat ekonomi pulih.", [
+      "Ketidakcocokan keterampilan adalah sumber pengangguran struktural.",
+      "Orang yang tidak mencari kerja umumnya berada di luar angkatan kerja, bukan penganggur siklis.",
+      "Perpindahan dan pencarian kerja merupakan sumber pengangguran friksional.",
+    ]),
+    q("eko2-b06-q04", "Konsep • Kurva Phillips", "Dalam model kurva Phillips jangka panjang, hubungan pengangguran dan inflasi digambarkan sebagai...", [
+      "Kurva menurun permanen sehingga inflasi lebih tinggi selalu menurunkan pengangguran",
+      "Kurva mendatar pada inflasi nol untuk seluruh tingkat pengangguran",
+      "Garis vertikal pada tingkat pengangguran alamiah ketika ekspektasi telah menyesuaikan",
+      "Garis vertikal pada pengangguran nol karena semua pencari kerja memperoleh pekerjaan",
+    ], 2, "Dalam jangka panjang pengangguran kembali ke tingkat alamiah u*, sementara inflasi dapat berada pada tingkat yang berbeda.", [
+      "Pertukaran jangka pendek tidak menjadi hubungan permanen setelah ekspektasi menyesuaikan.",
+      "Inflasi jangka panjang tidak harus nol, dan kurva tidak mendatar pada satu tingkat harga.",
+      "Tingkat alamiah bukan nol; pencarian dan ketidakcocokan tetap ada.",
+    ]),
+    q("eko2-b06-q05", "Hitungan • IHK", "Keranjang tetap berbiaya 900 pada 2024 dan 950 pada 2025. Berapakah IHK 2025 dengan tahun dasar 2024?", [
+      "94,74, dari 900 dibagi 950 lalu dikali seratus",
+      "50,00, dari selisih biaya keranjang dibagi biaya tahun dasar",
+      "105,56, dari 950 dibagi 900 lalu dikali seratus",
+      "5,56, dari biaya tahun berjalan dikurangi biaya tahun dasar",
+    ], 2, "IHK 2025=950/900×100=105,56 dengan IHK tahun dasar sama dengan 100.", [
+      "Rasio terbalik memberi indeks di bawah 100 dan bukan rumus IHK 2025.",
+      "Selisih biaya bukan indeks; hasilnya adalah proporsi kenaikan sebelum dikali 100.",
+      "Selisih 950−900=50 adalah kenaikan biaya, bukan angka indeks.",
+    ]),
+    q("eko2-b06-q06", "Hitungan • Suku bunga riil", "Bunga nominal 8% dan inflasi 5%. Berapakah bunga riil eksak menurut persamaan Fisher?", [
+      "3,00%, dari selisih bunga nominal dan inflasi",
+      "2,86%, dari 1,08 dibagi 1,05 lalu dikurangi satu",
+      "13,00%, dari penjumlahan bunga nominal dan inflasi",
+      "−2,86%, karena inflasi lebih rendah daripada bunga nominal",
+    ], 1, "Bunga riil eksak=(1+0,08)/(1+0,05)−1≈0,02857 atau 2,86%.", [
+      "Tiga persen adalah pendekatan selisih, bukan hasil eksak.",
+      "Menjumlahkan bunga dan inflasi bukan persamaan Fisher.",
+      "Bunga riil positif karena bunga nominal lebih tinggi daripada inflasi.",
+    ]),
+    q("eko2-b06-q07", "Hitungan • TPT", "Jika terdapat 120 orang bekerja dan 10 orang menganggur dalam angkatan kerja, berapakah tingkat pengangguran terbuka?", [
+      "5,00%, dari 10 dibagi 200 penduduk usia kerja",
+      "8,33%, dari 10 dibagi 120 orang bekerja",
+      "60,00%, dari 120 orang bekerja dibagi 200 penduduk usia kerja",
+      "7,69%, dari 10 dibagi 130 orang dalam angkatan kerja",
+    ], 3, "Angkatan kerja=120+10=130; TPT=10/130×100=7,69%.", [
+      "Penyebut 200 adalah seluruh penduduk usia kerja, bukan angkatan kerja untuk TPT.",
+      "Penganggur dibagi jumlah bekerja saja tidak menjadi definisi TPT.",
+      "60% adalah rasio kerja-penduduk jika penduduk usia kerja 200.",
+    ]),
+    q("eko2-b06-q08", "Kasus • Pekerja putus asa", "Lima dari 10 penganggur berhenti mencari kerja. TPT turun dari 7,69% menjadi 4,00%, sementara jumlah bekerja tetap 120. Kesimpulan yang tepat adalah...", [
+      "TPT turun karena lima orang keluar dari angkatan kerja; lapangan kerja tidak bertambah",
+      "TPT turun karena lima penganggur langsung memperoleh pekerjaan baru",
+      "TPT tetap karena jumlah penduduk usia kerja tidak berubah",
+      "TPT naik karena angkatan kerja berkurang sementara pengangguran bertambah",
+    ], 0, "Penganggur yang berhenti mencari tidak lagi tercatat dalam angkatan kerja; penganggur menjadi 5 dari angkatan kerja 125, dan jumlah bekerja tetap 120.", [
+      "Data menyatakan mereka berhenti mencari, bukan memperoleh pekerjaan.",
+      "TPT berubah walaupun jumlah penduduk usia kerja tidak berubah karena penyebutnya angkatan kerja.",
+      "Jumlah penganggur tercatat turun menjadi 5, bukan bertambah.",
+    ]),
+    q("eko2-b06-q09", "Kasus • Hukum Okun", "Tingkat pengangguran 7%, tingkat alamiah 5%, dan PDB potensial 1.000. Dengan kesenjangan output≈−2×(u−u*), berapa kesenjangan dan PDB aktual?", [
+      "Kesenjangan −2%; PDB aktual 980",
+      "Kesenjangan −4%; PDB aktual 960",
+      "Kesenjangan +4%; PDB aktual 1.040",
+      "Kesenjangan −7%; PDB aktual 930",
+    ], 1, "Pengangguran siklis=7−5=2 poin; kesenjangan=−2×2=−4%; PDB aktual=1.000×0,96=960.", [
+      "Perhitungan mengalikan koefisien −2 dengan selisih 2 poin, bukan 1 poin.",
+      "Tanda kesenjangan negatif karena pengangguran aktual di atas alamiah.",
+      "Tujuh persen adalah tingkat pengangguran, bukan kesenjangan output.",
+    ]),
+    q("eko2-b06-q10", "Kasus • Ekspektasi inflasi", "Pengangguran ditahan pada 3% dengan u*=5%. Jika ekspektasi inflasi berurutan 3%, 4%, lalu 5%, berapakah inflasi menurut π=πe−0,5×(u−u*)?", [
+      "3%, lalu 3%, lalu 3% karena pengangguran tetap",
+      "2%, lalu 3%, lalu 4% karena pengangguran berada di bawah tingkat alamiah",
+      "4%, lalu 4%, lalu 4% karena inflasi menyamai ekspektasi sejak awal",
+      "4%, lalu 5%, lalu 6% karena ekspektasi menyesuaikan saat u tetap di bawah u*",
+    ], 3, "Karena u−u*=3−5=−2, inflasi=πe−0,5×(−2)=πe+1; hasilnya 4%, 5%, lalu 6%.", [
+      "Inflasi tidak tetap sama dengan ekspektasi saat pengangguran di bawah alamiah.",
+      "Tanda penyesuaiannya terbalik; pengangguran di bawah alamiah menambah satu poin pada ekspektasi.",
+      "Inflasi sama dengan ekspektasi hanya saat u=u*, bukan saat u=3%.",
     ]),
   ],
 };
@@ -562,6 +664,10 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
   "eko2-b05": [
     { id: "eko2-b05-e01", prompt: "Hitung dan bandingkan PDB dengan pendekatan pengeluaran dan pendapatan menggunakan C=600, I=150, G=200, X=100, M=120 dan pendapatan faktor yang diberikan dalam Bab 5. Jelaskan mengapa pertumbuhan nominal 11,8% tidak boleh dipakai sendirian untuk menyimpulkan pertumbuhan produksi.", rubric, reviewPoints: ["Menghitung ekspor neto dan PDB pengeluaran sebesar 930", "Menjumlahkan upah, sewa, bunga, laba, pajak tak langsung neto, dan penyusutan menjadi 930", "Menjelaskan harga berjalan dan harga tahun dasar", "Membedakan pertumbuhan nominal 11,8% dari pertumbuhan riil 4%"] },
     { id: "eko2-b05-e02", prompt: "Evaluasi PDB sebagai ukuran kesejahteraan dengan memakai contoh GNI, PDB riil per kapita, dan keterbatasan distribusi pada Bab 5 bagian 4 serta perubahan siklus dan kesenjangan output pada bagian 5. Jelaskan indikator tambahan yang perlu diperiksa sebelum mengambil kesimpulan.", rubric, reviewPoints: ["Membedakan produksi domestik dari pendapatan faktor nasional", "Menghitung atau menafsirkan pertumbuhan per kapita 2,97%", "Menjelaskan keterbatasan PDB dan distribusi", "Menafsirkan kesenjangan output −5% serta sifat estimasi PDB potensial", "Membedakan indikator siklus dari ramalan pasti"] },
+  ],
+  "eko2-b06": [
+    { id: "eko2-b06-e01", prompt: "Hitung IHK dan inflasi dari keranjang tetap pada Bab 6 bagian 1, jelaskan bias pengukuran melalui substitusi, lalu bandingkan bunga riil pendekatan dan eksak untuk i=8%, π=5%.", rubric, reviewPoints: ["Menghitung biaya keranjang 2024=900 dan 2025=950", "Menghitung IHK=105,56 dan inflasi=5,56%", "Menjelaskan substitusi, mutu, atau barang baru sebagai keterbatasan pengukuran", "Menghitung bunga riil pendekatan 3% dan eksak 2,86%"] },
+    { id: "eko2-b06-e02", prompt: "Jelaskan pengangguran friksional, struktural, dan siklis; hitung hukum Okun saat u=7%, u*=5%, dan PDB potensial 1.000; lalu gunakan model Phillips untuk membahas ekspektasi inflasi saat u=3% dan πe meningkat dari 3% menjadi 4% dan 5%.", rubric, reviewPoints: ["Membedakan tiga jenis pengangguran", "Menghitung kesenjangan output −4% dan PDB aktual 960", "Menghitung inflasi Phillips 4%, 5%, dan 6%", "Menjelaskan penyesuaian ekspektasi serta sifat ilustratif model"] },
   ],
 };
 

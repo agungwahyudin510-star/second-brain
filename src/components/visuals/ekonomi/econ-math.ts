@@ -300,3 +300,121 @@ export function cycleStats(
     outputGap: (actualOutput - potentialOutput) / potentialOutput * 100,
   };
 }
+
+export function cpiBasket(ricePrice = 10.5, eggPrice = 16, transportPrice = 21) {
+  const fixedBasket = [
+    { name: "Beras", quantity: 40, basePrice: 10, currentPrice: ricePrice },
+    { name: "Telur", quantity: 20, basePrice: 15, currentPrice: eggPrice },
+    { name: "Transportasi", quantity: 10, basePrice: 20, currentPrice: transportPrice },
+  ].map((item) => ({
+    ...item,
+    baseCost: item.quantity * item.basePrice,
+    currentCost: item.quantity * item.currentPrice,
+  }));
+  const substitutionBasket = [
+    { name: "Beras", quantity: 45, basePrice: 10, currentPrice: ricePrice },
+    { name: "Telur", quantity: 15, basePrice: 15, currentPrice: eggPrice },
+    { name: "Transportasi", quantity: 10, basePrice: 20, currentPrice: transportPrice },
+  ].map((item) => ({
+    ...item,
+    baseCost: item.quantity * item.basePrice,
+    currentCost: item.quantity * item.currentPrice,
+  }));
+  const fixedBaseCost = fixedBasket.reduce((sum, item) => sum + item.baseCost, 0);
+  const fixedCurrentCost = fixedBasket.reduce((sum, item) => sum + item.currentCost, 0);
+  const substitutionBaseCost = substitutionBasket.reduce((sum, item) => sum + item.baseCost, 0);
+  const substitutionCurrentCost = substitutionBasket.reduce((sum, item) => sum + item.currentCost, 0);
+  const fixedIndex = fixedCurrentCost / fixedBaseCost * 100;
+  const substitutionIndex = substitutionCurrentCost / substitutionBaseCost * 100;
+  return {
+    fixedBasket,
+    substitutionBasket,
+    fixedBaseCost,
+    fixedCurrentCost,
+    substitutionBaseCost,
+    substitutionCurrentCost,
+    fixedIndex,
+    substitutionIndex,
+    inflation: fixedIndex - 100,
+    substitutionInflation: substitutionIndex - 100,
+    indexDifference: fixedIndex - substitutionIndex,
+  };
+}
+
+export function realInterest(nominalRatePercent: number, inflationPercent: number, years: number) {
+  const nominalRate = nominalRatePercent / 100;
+  const inflation = inflationPercent / 100;
+  return {
+    approximateRate: nominalRatePercent - inflationPercent,
+    exactRate: ((1 + nominalRate) / (1 + inflation) - 1) * 100,
+    purchasingPower: 100 / (1 + inflation) ** years,
+    doublingYears: inflationPercent > 0 ? 70 / inflationPercent : null,
+  };
+}
+
+export function laborStats(
+  employed: number,
+  unemployed: number,
+  notInLaborForce: number,
+  discouraged = 0
+) {
+  const workingAgePopulation = employed + unemployed + notInLaborForce;
+  const laborForce = employed + unemployed;
+  const adjustedUnemployed = Math.max(0, unemployed - discouraged);
+  const adjustedLaborForce = employed + adjustedUnemployed;
+  const adjustedNotInLaborForce = notInLaborForce + discouraged;
+  return {
+    workingAgePopulation,
+    laborForce,
+    employed,
+    unemployed,
+    notInLaborForce,
+    unemploymentRate: laborForce ? unemployed / laborForce * 100 : 0,
+    participationRate: workingAgePopulation ? laborForce / workingAgePopulation * 100 : 0,
+    employmentPopulationRatio: workingAgePopulation ? employed / workingAgePopulation * 100 : 0,
+    discouraged,
+    adjustedUnemployed,
+    adjustedLaborForce,
+    adjustedNotInLaborForce,
+    adjustedUnemploymentRate: adjustedLaborForce ? adjustedUnemployed / adjustedLaborForce * 100 : 0,
+    adjustedParticipationRate: workingAgePopulation
+      ? adjustedLaborForce / workingAgePopulation * 100
+      : 0,
+    adjustedEmploymentPopulationRatio: workingAgePopulation
+      ? employed / workingAgePopulation * 100
+      : 0,
+  };
+}
+
+export function okunGap(unemploymentRate: number, naturalRate: number, potentialOutput = 1000) {
+  const cyclicalUnemployment = unemploymentRate - naturalRate;
+  const outputGapPercent = -2 * cyclicalUnemployment;
+  const actualOutput = potentialOutput * (1 + outputGapPercent / 100);
+  return {
+    unemploymentRate,
+    naturalRate,
+    cyclicalUnemployment,
+    outputGapPercent,
+    potentialOutput,
+    actualOutput,
+    outputDifference: actualOutput - potentialOutput,
+  };
+}
+
+export function phillipsInflation(unemploymentRate: number, expectedInflation: number, naturalRate = 5) {
+  const inflation = expectedInflation - 0.5 * (unemploymentRate - naturalRate);
+  const curve = Array.from({ length: 11 }, (_, index) => {
+    const unemployment = 3 + index * 0.5;
+    return {
+      unemployment,
+      inflation: expectedInflation - 0.5 * (unemployment - naturalRate),
+    };
+  });
+  return {
+    unemploymentRate,
+    expectedInflation,
+    naturalRate,
+    inflation,
+    curve,
+  };
+}
