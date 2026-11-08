@@ -630,3 +630,111 @@ export function taylorRate(
     realRate: Math.max(0, unconstrainedRate) - inflation,
   };
 }
+
+export function aggregateDemand(shift: number, price: number) {
+  return {
+    shift,
+    price,
+    output: 1400 + shift - 200 * price,
+    baseOutput: 1400 - 200 * price,
+  };
+}
+
+export function adasEquilibrium(demandShift: number, supplyShift: number) {
+  const price = (600 + demandShift - supplyShift) / 300;
+  const output = 800 + supplyShift + 100 * price;
+  const outputGap = output - 1000;
+  const basePrice = 2;
+  const label = outputGap > 0 && price > basePrice
+    ? "Kesenjangan inflasi"
+    : outputGap < 0 && price > basePrice
+      ? "Stagflasi"
+      : outputGap < 0
+        ? "Kesenjangan resesi"
+        : outputGap > 0 && price < basePrice
+          ? "Pemulihan penawaran"
+          : "Pada potensi";
+  const longRunPrice = (1400 + demandShift - 1000) / 200;
+  return {
+    demandShift,
+    supplyShift,
+    price,
+    output,
+    potentialOutput: 1000,
+    outputGap,
+    label,
+    longRunPrice,
+    longRunOutput: 1000,
+  };
+}
+
+export function fiscalMultipliers(mpc: number, changeGovernment = 0, changeTax = 0) {
+  const propensity = Math.min(0.99, Math.max(0, mpc));
+  const governmentMultiplier = 1 / (1 - propensity);
+  const taxMultiplier = -propensity / (1 - propensity);
+  const balancedBudgetMultiplier = governmentMultiplier + taxMultiplier;
+  return {
+    mpc: propensity,
+    changeGovernment,
+    changeTax,
+    governmentMultiplier,
+    taxMultiplier,
+    balancedBudgetMultiplier,
+    outputChange: governmentMultiplier * changeGovernment + taxMultiplier * changeTax,
+  };
+}
+
+export function debtPath(
+  initialDebtRatio: number,
+  interestRatePercent: number,
+  growthRatePercent: number,
+  primaryBalancePercent: number,
+  years: number
+) {
+  const interestRate = interestRatePercent / 100;
+  const growthRate = growthRatePercent / 100;
+  const path = [{ year: 0, debtRatio: initialDebtRatio }];
+  for (let year = 1; year <= years; year += 1) {
+    const previous = path[year - 1].debtRatio;
+    const debtRatio = previous * (1 + interestRate) / (1 + growthRate) - primaryBalancePercent;
+    path.push({ year, debtRatio });
+  }
+  const stabilizingPrimaryBalance = initialDebtRatio
+    * (interestRate - growthRate) / (1 + growthRate);
+  return {
+    initialDebtRatio,
+    interestRatePercent,
+    growthRatePercent,
+    primaryBalancePercent,
+    years,
+    path,
+    finalDebtRatio: path[path.length - 1].debtRatio,
+    stabilizingPrimaryBalance,
+  };
+}
+
+export function stabilizationNeeds(
+  actualOutput: number,
+  potentialOutput = 1000,
+  mpc = 0.8,
+  effectivenessPercent = 100
+) {
+  const fiscal = fiscalMultipliers(mpc);
+  const gap = potentialOutput - actualOutput;
+  const effectiveness = Math.max(0.01, effectivenessPercent / 100);
+  const spendingChange = gap / (fiscal.governmentMultiplier * effectiveness);
+  const taxChange = gap / (fiscal.taxMultiplier * effectiveness);
+  return {
+    actualOutput,
+    potentialOutput,
+    gap,
+    mpc: fiscal.mpc,
+    effectivenessPercent,
+    governmentMultiplier: fiscal.governmentMultiplier,
+    taxMultiplier: fiscal.taxMultiplier,
+    spendingChange,
+    taxChange,
+    taxCut: Math.max(0, -taxChange),
+    tighteningRequired: gap < 0,
+  };
+}

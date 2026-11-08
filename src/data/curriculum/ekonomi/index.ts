@@ -6,5 +6,6 @@ import { BAB_05 } from "./bab-05";
 import { BAB_06 } from "./bab-06";
 import { BAB_07 } from "./bab-07";
 import { BAB_08 } from "./bab-08";
+import { BAB_09 } from "./bab-09";
 
-export const EKONOMI = [BAB_01, BAB_02, BAB_03, BAB_04, BAB_05, BAB_06, BAB_07, BAB_08];
+export const EKONOMI = [BAB_01, BAB_02, BAB_03, BAB_04, BAB_05, BAB_06, BAB_07, BAB_08, BAB_09];

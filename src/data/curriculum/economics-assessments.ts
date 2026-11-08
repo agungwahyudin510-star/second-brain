@@ -843,6 +843,108 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Perhitungan 100/120 memang 83,3%, tetapi ambang pada soal adalah 80%, bukan 85%.",
     ]),
   ],
+  "eko2-b09": [
+    q("eko2-b09-q01", "Konsep • Permintaan agregat", "Mengapa kurva permintaan agregat biasanya miring turun terhadap tingkat harga?", [
+      "Harga lebih tinggi selalu menaikkan kekayaan riil dan konsumsi rumah tangga",
+      "Harga lebih tinggi menambah ekspor neto melalui apresiasi mata uang",
+      "Harga lebih rendah dapat menaikkan kekayaan riil, menurunkan bunga, dan mendukung ekspor neto",
+      "Harga lebih rendah mengurangi daya beli uang dan menghambat seluruh investasi",
+    ], 2, "Efek kekayaan, suku bunga, dan nilai tukar dapat membuat pengeluaran agregat yang diminta meningkat saat tingkat harga turun.", [
+      "Harga lebih tinggi mengurangi daya beli saldo nominal, bukan menaikkannya.",
+      "Mata uang yang menguat cenderung menekan ekspor neto, bukan menaikkannya.",
+      "Harga lebih rendah dapat meningkatkan daya beli saldo; tiga saluran itu menjelaskan kemiringan AD.",
+    ]),
+    q("eko2-b09-q02", "Konsep • SRAS dan LRAS", "Pernyataan mana yang tepat tentang penawaran agregat jangka pendek dan jangka panjang?", [
+      "SRAS dapat miring naik karena biaya kaku; LRAS tegak pada keluaran potensial",
+      "SRAS selalu tegak pada keluaran potensial; LRAS miring turun karena efek kekayaan",
+      "SRAS dan LRAS sama-sama tegak karena harga tidak memengaruhi produksi",
+      "SRAS miring turun karena upah kaku; LRAS mendatar pada setiap tingkat harga",
+    ], 0, "Kekakuan sebagian upah dan harga membuat SRAS miring naik; LRAS menunjukkan kapasitas potensial yang tidak ditentukan tingkat harga.", [
+      "Pilihan ini menukar ciri jangka pendek dan jangka panjang.",
+      "Kekakuan biaya membuat produksi merespons harga jangka pendek dalam model, bukan membuat kedua kurva tegak.",
+      "SRAS dalam model ini miring naik, sedangkan LRAS tegak pada potensi.",
+    ]),
+    q("eko2-b09-q03", "Konsep • Pengganda fiskal", "Mengapa pengganda belanja pemerintah dapat lebih besar dari satu dalam model Keynesian sederhana?", [
+      "Seluruh belanja pemerintah langsung menjadi tabungan sehingga pendapatan berlipat",
+      "Pajak selalu turun sebesar belanja pemerintah dan menambah konsumsi satu banding satu",
+      "Belanja awal hanya memengaruhi harga sehingga tidak mengubah pendapatan penerima",
+      "Sebagian pendapatan tambahan dibelanjakan lagi dan menjadi pendapatan pihak berikutnya",
+    ], 3, "Dengan MPC positif, putaran konsumsi berulang menambah keluaran di atas belanja awal; pengganda 1/(1−MPC) melebihi satu.", [
+      "Tabungan adalah kebocoran dari putaran belanja, bukan sumber penggandaan pendapatan.",
+      "Penurunan pajak bukan mekanisme otomatis yang mendefinisikan pengganda belanja.",
+      "Belanja menciptakan permintaan dan pendapatan dalam model, bukan hanya mengubah harga.",
+    ]),
+    q("eko2-b09-q04", "Konsep • Penstabil otomatis", "Apa contoh penstabil otomatis yang meredam siklus tanpa keputusan kebijakan baru?", [
+      "Parlemen mengesahkan proyek infrastruktur tambahan setiap kali keluaran turun",
+      "Pajak progresif dan tunjangan pengangguran berubah mengikuti pendapatan atau kondisi kerja",
+      "Bank sentral mengubah suku bunga acuan melalui rapat kebijakan terjadwal",
+      "Pemerintah mengubah sasaran inflasi setelah setiap perubahan harga bulanan",
+    ], 1, "Pajak progresif dan tunjangan berubah bersama pendapatan atau pengangguran tanpa undang-undang stimulus baru.", [
+      "Proyek tambahan yang disahkan khusus merupakan kebijakan diskresioner dan memerlukan keputusan.",
+      "Pajak progresif dan tunjangan otomatis menahan perubahan pendapatan disposabel saat siklus berubah.",
+      "Perubahan suku bunga adalah kebijakan moneter aktif, bukan penstabil fiskal otomatis.",
+    ]),
+    q("eko2-b09-q05", "Hitungan • Pengganda belanja", "Jika MPC=0,8 dan belanja pemerintah naik 20, berapa perubahan keluaran dalam model sederhana?", [
+      "Naik 100, karena pengganda belanja 1/(1−0,8)=5",
+      "Naik 80, karena pengganda belanja sama dengan MPC dikali perubahan G",
+      "Turun 100, karena pengganda belanja bertanda negatif terhadap keluaran",
+      "Naik 20, karena perubahan keluaran selalu sama dengan perubahan belanja",
+    ], 0, "Pengganda belanja=1/(1−0,8)=5; ΔY=5×20=+100.", [
+      "Hasil 80 memakai MPC×ΔG dan melewatkan putaran konsumsi tambahan.",
+      "Pengganda belanja positif; kenaikan belanja tidak menurunkan keluaran dalam model.",
+      "Perubahan keluaran sama dengan belanja awal hanya jika penggandanya satu.",
+    ]),
+    q("eko2-b09-q06", "Hitungan • Pengganda pajak", "Jika MPC=0,8 dan pajak turun 20, berapa perubahan keluaran dalam model pajak sederhana?", [
+      "Turun 80, karena pajak yang lebih rendah mengurangi pendapatan disposabel",
+      "Naik 20, karena perubahan pajak diteruskan satu banding satu ke keluaran",
+      "Naik 80, karena pengganda pajak −0,8/(1−0,8)=−4 dikali perubahan pajak −20",
+      "Turun 100, karena pajak memakai pengganda belanja sebesar lima",
+    ], 2, "Pengganda pajak=−0,8/(1−0,8)=−4; ΔT=−20 sehingga ΔY=(−4)×(−20)=+80.", [
+      "Pajak turun menambah pendapatan disposabel; tanda hasilnya positif, bukan negatif.",
+      "Perubahan keluaran tidak satu banding satu karena pajak memiliki pengganda −4.",
+      "Pengganda belanja lima bukan pengganda pajak; rumus pajak memberi kenaikan 80.",
+    ]),
+    q("eko2-b09-q07", "Hitungan • Dinamika utang", "Rasio utang awal 60% PDB, r=5%, g=3%, dan saldo primer nol. Berapa rasio utang pada tahun berikutnya?", [
+      "60,00%, karena saldo primer nol membuat rasio tetap",
+      "61,17%, dari 60×1,05/1,03",
+      "63,00%, dari menambahkan selisih r−g sebesar dua pada rasio awal",
+      "58,83%, dari 60×1,03/1,05",
+    ], 1, "d(1)=60×(1+0,05)/(1+0,03)=61,17% PDB.", [
+      "Walau saldo primer nol, r lebih besar daripada g sehingga rasio naik dalam rumus.",
+      "Perhitungan 60×1,05/1,03 menghasilkan 61,165..., dibulatkan menjadi 61,17%.",
+      "Selisih r−g tidak ditambahkan sebagai dua poin langsung; dinamika memakai rasio 1,05/1,03.",
+    ]),
+    q("eko2-b09-q08", "Kasus • Guncangan permintaan", "Pada AD: Y=1.400+a−200P dan SRAS: Y=800+100P, AD naik 100 dari keseimbangan dasar. Apa hasil keseimbangan baru?", [
+      "P=1,667 dan Y=966,7, yaitu kesenjangan resesi",
+      "P=2,000 dan Y=1.000, karena perubahan AD tidak menggeser keseimbangan",
+      "P=2,333 dan Y=933,3, yaitu stagflasi akibat biaya produksi",
+      "P=2,333 dan Y=1.033,3, yaitu keluaran di atas potensi",
+    ], 3, "P=(600+100)/300=2,333; Y=800+100×2,333=1.033,3, di atas potensi 1.000.", [
+      "Hasil ini cocok dengan AD turun 100, bukan naik 100.",
+      "Keseimbangan dasar berlaku saat pergeseran AD nol.",
+      "Keluaran 933,3 muncul saat SRAS turun 100, bukan saat AD naik.",
+    ]),
+    q("eko2-b09-q09", "Kasus • Guncangan penawaran", "Biaya energi naik sehingga SRAS bergeser s=−100. Dengan AD tetap pada a=0, apa hasil keseimbangan?", [
+      "P=2,333 dan Y=933,3, harga naik saat keluaran turun",
+      "P=1,667 dan Y=1.066,7, harga turun saat keluaran naik",
+      "P=2,000 dan Y=1.000, karena biaya hanya mengubah tingkat harga",
+      "P=1,667 dan Y=966,7, yaitu kesenjangan resesi karena AD turun",
+    ], 0, "P=(600−(−100))/300=2,333; Y=800−100+100×2,333=933,3; ini stagflasi pada ilustrasi.", [
+      "Hasil ini berlawanan dengan guncangan biaya negatif yang menggeser SRAS ke kiri.",
+      "P=1,667 dan Y=1.066,7 terjadi saat SRAS naik 100, yaitu biaya turun.",
+      "Guncangan SRAS mengubah keseimbangan harga dan keluaran dari titik dasar.",
+    ]),
+    q("eko2-b09-q10", "Kasus • Efektivitas stimulus", "Keluaran aktual 960, potensi 1.000, MPC=0,8, dan efektivitas kebijakan 60%. Berapa tambahan belanja yang diperlukan menurut model?", [
+      "8,00, karena kesenjangan 40 dibagi pengganda belanja 5",
+      "10,00, karena kesenjangan 40 dibagi besar pengganda pajak 4",
+      "13,33, karena kesenjangan 40 dibagi efektivitas 0,6 saja",
+      "13,33, karena 40 dibagi pengganda belanja 5 lalu dibagi 0,6",
+    ], 3, "ΔG=40/(5×0,6)=13,33; efektivitas kurang dari penuh menaikkan kebutuhan stimulus dibanding 8,00.", [
+      "8,00 adalah kebutuhan bila efektivitas 100%, bukan 60%.",
+      "10,00 adalah kebutuhan pemotongan pajak pada efektivitas penuh, bukan tambahan belanja.",
+      "40/0,6=66,67; pengganda belanja lima juga harus dimasukkan.",
+    ]),
+  ],
 };
 
 const rubric = "Nilai 0–5 pada ketepatan konsep, kualitas alasan, penerapan pada kasus, dan kejelasan. Tiap kriteria bernilai 0 (tidak ada/relevansi tidak tampak) hingga 5 (tepat, lengkap, dan dijelaskan).";
@@ -880,6 +982,10 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
   "eko2-b08": [
     { id: "eko2-b08-e01", prompt: "Jelaskan tiga fungsi uang dan bandingkan secara konseptual dengan aset kripto serta stablecoin. Lalu analisis neraca bank pada Bab 8 bagian 2: hitung modal setelah rugi kredit 5%, ambang kerugian yang menghabiskan modal, dan dampak penarikan simpanan 10%, 20%, serta 30%. Jelaskan bank run, likuiditas, solvabilitas, dan perbedaan risiko pinjaman DeFi beragunan.", rubric, reviewPoints: ["Menjelaskan alat tukar, satuan hitung, dan penyimpan nilai beserta barter", "Menghitung modal menjadi 60 setelah kerugian 40 dan batas 12,5% dari kredit", "Membedakan penarikan yang tertutup cadangan, memerlukan penjualan surat berharga, atau melebihi aset likuid", "Membandingkan secara konseptual likuidasi agunan otomatis dengan intermediasi dan risiko bank"] },
     { id: "eko2-b08-e02", prompt: "Jelaskan penciptaan uang melalui rantai simpanan dengan r=10%, hitung pengganda setelah kebocoran c=0,2, lalu gunakan MV=PY untuk membahas perubahan harga saat uang, kecepatan, atau keluaran berubah. Terakhir, hitung aturan Taylor untuk π=4%, kesenjangan output −2%, π*=2%, dan r*=2%; bahas asumsi dan batas kebijakan.", rubric, reviewPoints: ["Menghitung lima putaran berjumlah 4.095,1 dan total sederhana 10.000", "Menghitung pengganda kebocoran 4,0 dan uang beredar 4.000 untuk basis 1.000", "Menjelaskan identitas kuantitas serta asumsi V dan Y", "Menghitung rekomendasi Taylor 6,0% dan suku bunga riil sederhana 2%", "Membahas ekspektasi, batas bawah nol, serta sifat pedoman ilustratif"] },
+  ],
+  "eko2-b09": [
+    { id: "eko2-b09-e01", prompt: "Gunakan model AD-AS Bab 9 untuk membandingkan keseimbangan dasar, AD yang naik 100, dan SRAS yang turun 100. Hitung P dan Y pada tiap kasus, jelaskan kesenjangan atau stagflasi, lalu bandingkan bagaimana respons kebijakan fiskal dapat membantu tanpa mengabaikan jeda dan biaya.", rubric, reviewPoints: ["Menghitung keseimbangan dasar P=2,000 dan Y=1.000", "Menghitung AD naik: P=2,333 dan Y=1.033,3", "Menghitung SRAS turun: P=2,333 dan Y=933,3 serta menamai stagflasi", "Membedakan guncangan permintaan dan penawaran", "Membahas keterbatasan respons fiskal dan penyesuaian jangka panjang"] },
+    { id: "eko2-b09-e02", prompt: "Hitung pengganda fiskal untuk MPC=0,8 dan gunakan dinamika utang d(t+1)=d(t)(1+r)/(1+g)−pb pada data Bab 9. Terakhir, jelaskan kebutuhan stimulus saat Y=960 dengan efektivitas 60%, serta bagaimana jeda kebijakan, crowding out, dan ketidakpastian PDB potensial membatasi kesimpulan.", rubric, reviewPoints: ["Menghitung pengganda G=5, pajak=−4, dan anggaran berimbang=1", "Menghitung rasio utang 61,17% setelah satu tahun serta surplus primer penstabil 1,17% PDB", "Menghitung ΔG=13,33 dan pemotongan pajak=16,67 pada efektivitas 60%", "Menjelaskan jeda dan efek mengeluarkan secara kualitatif", "Menyatakan bahwa estimasi PDB potensial dan pengganda tidak pasti"] },
   ],
 };
 

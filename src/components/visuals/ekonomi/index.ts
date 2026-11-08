@@ -38,6 +38,11 @@ import EkoBankBalance from "./eko-bank-balance";
 import EkoMoneyMultiplier from "./eko-money-multiplier";
 import EkoQuantityTheory from "./eko-quantity-theory";
 import EkoTaylorRule from "./eko-taylor-rule";
+import EkoAdCurve from "./eko-ad-curve";
+import EkoAdasEquilibrium from "./eko-adas-equilibrium";
+import EkoKeynesianMultiplier from "./eko-keynesian-multiplier";
+import EkoDebtDynamics from "./eko-debt-dynamics";
+import EkoStabilizationMix from "./eko-stabilization-mix";
 
 export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-ppf": EkoPpf,
@@ -79,4 +84,9 @@ export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-money-multiplier": EkoMoneyMultiplier,
   "eko-quantity-theory": EkoQuantityTheory,
   "eko-taylor-rule": EkoTaylorRule,
+  "eko-ad-curve": EkoAdCurve,
+  "eko-adas-equilibrium": EkoAdasEquilibrium,
+  "eko-keynesian-multiplier": EkoKeynesianMultiplier,
+  "eko-debt-dynamics": EkoDebtDynamics,
+  "eko-stabilization-mix": EkoStabilizationMix,
 };
