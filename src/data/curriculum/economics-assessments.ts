@@ -1264,7 +1264,7 @@ export const FINAL_EXAM_QUESTIONS: AssessmentQuestion[] = [
   ], 0, "Angkatan kerja = 10+120=130; tingkat pengangguran = 10/130×100 ≈ 7,69%.", [
     "8,33% membagi pengangguran dengan jumlah bekerja saja, bukan seluruh angkatan kerja.",
     "10% menggunakan pembagi 100, bukan angkatan kerja 130.",
-    "12% membagi jumlah bekerja dengan jumlah penganggur, bukan menghitung penganggur sebagai bagian angkatan kerja.",
+    "12 berasal dari rasio bekerja terhadap penganggur (120/10), bukan persentase penganggur dalam angkatan kerja.",
   ]),
   q("eko2-final-q18", "Kasus • Kurva Phillips", "Gunakan π=πe−0,5(u−5). Jika pengangguran u=7 dan ekspektasi inflasi πe=4, berapa inflasi π?", [
     "5",
@@ -1274,7 +1274,7 @@ export const FINAL_EXAM_QUESTIONS: AssessmentQuestion[] = [
   ], 2, "π=4−0,5(7−5)=4−1=3.", [
     "5 menambahkan selisih pengangguran, padahal rumus menguranginya.",
     "4 mengabaikan suku 0,5(u−5) yang bernilai 1.",
-    "2 mengurangkan seluruh selisih pengangguran dua kali, bukan mengalikannya dengan 0,5.",
+    "2 mengurangkan 2 penuh (selisih u−5) tanpa mengalikannya dengan 0,5, padahal pengurangnya 1.",
   ]),
   q("eko2-final-q19", "Konsep • Model Solow", "Dalam model Solow dasar, apa dampak kenaikan tingkat tabungan?", [
     "Menaikkan laju pertumbuhan jangka panjang secara permanen",
@@ -1287,24 +1287,24 @@ export const FINAL_EXAM_QUESTIONS: AssessmentQuestion[] = [
     "Tingkat tabungan memengaruhi investasi dan lintasan modal dalam model Solow.",
   ]),
   q("eko2-final-q20", "Hitungan • Pertumbuhan majemuk", "Berapa nilai 1.000 setelah tumbuh 4% per tahun selama 30 tahun?", [
-    "2.400,00",
+    "2.200,00",
     "3.243,40",
     "1.200,00",
     "4.000,00",
   ], 1, "Nilai akhir = 1.000×(1,04)^30 ≈ 3.243,40.", [
-    "2.400 menambahkan pertumbuhan sederhana 4%×30=120% dan mengabaikan pemajemukan.",
-    "1.200 hanya menambahkan pertumbuhan 20% dan tidak memakai periode 30 tahun dengan benar.",
-    "4.000 menggandakan nilai awal secara keliru; pemajemukan 4% selama 30 tahun menghasilkan sekitar 3.243,40.",
+    "2.200 memakai pertumbuhan sederhana 4%×30=120% tanpa pemajemukan.",
+    "1.200 hanya mencerminkan total pertumbuhan 20%, bukan pemajemukan 4% selama 30 tahun.",
+    "4.000 mengalikan nilai awal dengan 4 tanpa dasar pemajemukan; (1,04)^30 ≈ 3,24.",
   ]),
   q("eko2-final-q21", "Kasus • Akuntansi pertumbuhan", "Jika Y=A·K^0,3·L^0,7, gY=3%, gK=4%, dan gL=2%, berapa pertumbuhan A (TFP)?", [
-    "1,4%",
-    "0,6%",
+    "1,8%",
+    "1,6%",
     "0,4%",
-    "2,2%",
+    "−0,4%",
   ], 2, "gA=gY−0,3gK−0,7gL=3−1,2−1,4=0,4%.", [
-    "1,4% menjumlahkan 3% dengan kontribusi modal 1,2% tanpa mengurangkan kontribusi tenaga kerja.",
-    "0,6% mengurangkan kontribusi modal saja dan melupakan kontribusi tenaga kerja.",
-    "2,2% mengurangkan kontribusi tenaga kerja tetapi tidak mengurangkan kontribusi modal.",
+    "1,8% hanya mengurangkan kontribusi modal 1,2% dan lupa kontribusi tenaga kerja 1,4%.",
+    "1,6% hanya mengurangkan kontribusi tenaga kerja 1,4% dan lupa kontribusi modal 1,2%.",
+    "−0,4% menukar bobot (0,7 untuk modal dan 0,3 untuk tenaga kerja): 3−2,8−0,6.",
   ]),
   q("eko2-final-q22", "Konsep • Likuiditas dan solvabilitas bank", "Bank memiliki cadangan 100, kredit 900, simpanan 900, dan modal 100. Apa dampak penarikan 15% simpanan sekaligus?", [
     "Bank langsung tidak solven karena penarikan 135 menghabiskan modal 100",
@@ -1380,11 +1380,11 @@ export const FINAL_EXAM_QUESTIONS: AssessmentQuestion[] = [
     "20",
     "40",
     "80",
-    "5",
+    "160",
   ], 1, "Penerimaan tarif = tarif per unit × impor = 2×20=40.", [
     "20 adalah volume impor, bukan penerimaan; penerimaan mengalikan jumlah itu dengan tarif 2.",
-    "80 mengalikan harga dunia 8 dengan impor dan mengabaikan tarif per unit.",
-    "5 adalah deadweight loss untuk t=1 pada ilustrasi, bukan penerimaan saat t=2.",
+    "80 memakai impor sebelum tarif (40 unit) dikali tarif 2, padahal impor setelah tarif 20 unit.",
+    "160 mengalikan harga dunia 8 dengan impor 20 dan mengabaikan tarif per unit.",
   ]),
   q("eko2-final-q30", "Kasus • Neraca pembayaran", "Jika transaksi berjalan −30, bagaimana pencatatan transaksi finansial yang menyeimbangkan neraca pembayaran tanpa kesalahan statistik?", [
     "Transaksi finansial −30, sehingga kedua defisit saling meniadakan",
