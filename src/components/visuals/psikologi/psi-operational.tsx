@@ -31,25 +31,25 @@ export default function PsiOperational() {
 
   return (
     <VisualCard title="Dari konstruk ke ukuran" caption="Ukuran adalah pilihan operasional, bukan definisi lengkap dari konstruk psikologis." howToRead="Ubah konstruk atau ukuran untuk melihat aspek yang ditangkap dan yang mungkin terlewat. Slider kesepakatan memakai 50 pengamatan hipotetis." >
-      <label className="block text-sm text-zinc-300">Konstruk
-        <select aria-label="Pilih konstruk psikologi" value={construct} onChange={(event) => { setConstruct(event.target.value as keyof typeof measures); setMeasureIndex(0); }} className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2">
+      <label className="block min-w-0 break-words text-sm text-zinc-300">Konstruk
+        <select aria-label="Pilih konstruk psikologi" value={construct} onChange={(event) => { setConstruct(event.target.value as keyof typeof measures); setMeasureIndex(0); }} className="mt-2 block min-h-10 min-w-0 max-w-full w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2">
           {Object.keys(measures).map((item) => <option key={item}>{item}</option>)}
         </select>
       </label>
-      <label className="block text-sm text-zinc-300">Ukuran operasional
-        <select aria-label="Pilih ukuran operasional" value={measureIndex} onChange={(event) => setMeasureIndex(Number(event.target.value))} className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2">
+      <label className="block min-w-0 break-words text-sm text-zinc-300">Ukuran operasional
+        <select aria-label="Pilih ukuran operasional" value={measureIndex} onChange={(event) => setMeasureIndex(Number(event.target.value))} className="mt-2 block min-h-10 min-w-0 max-w-full w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2">
           {options.map(([name], index) => <option key={name} value={index}>{name}</option>)}
         </select>
       </label>
-      <div className="grid gap-2 sm:grid-cols-2">
-        <p className="rounded-lg bg-zinc-950 p-3 text-sm"><strong className="text-emerald-200">Ditangkap:</strong> {captured}</p>
-        <p className="rounded-lg bg-zinc-950 p-3 text-sm"><strong className="text-amber-200">Terlewat:</strong> {missed}</p>
+      <div className="grid min-w-0 grid-cols-1 gap-2 sm:grid-cols-2">
+        <p className="min-w-0 break-words rounded-lg bg-zinc-950 p-3 text-sm"><strong className="text-emerald-200">Ditangkap:</strong> {captured}</p>
+        <p className="min-w-0 break-words rounded-lg bg-zinc-950 p-3 text-sm"><strong className="text-amber-200">Terlewat:</strong> {missed}</p>
       </div>
-      <div className="rounded-lg border border-zinc-800 p-3">
-        <label className="block text-sm text-zinc-300">Kesepakatan dua pengamat: {agreements}/50
-          <input aria-label="Jumlah kesepakatan dua pengamat dari 50 pengamatan" type="range" min="0" max="50" value={agreements} onChange={(event) => setAgreements(Number(event.target.value))} className="mt-2 block min-h-8 w-full accent-emerald-400" />
+      <div className="min-w-0 rounded-lg border border-zinc-800 p-3">
+        <label className="block min-w-0 break-words text-sm text-zinc-300">Kesepakatan dua pengamat: {agreements}/50
+          <input aria-label="Jumlah kesepakatan dua pengamat dari 50 pengamatan" type="range" min="0" max="50" value={agreements} onChange={(event) => setAgreements(Number(event.target.value))} className="mt-2 block min-h-8 min-w-0 w-full max-w-full accent-emerald-400" />
         </label>
-        <p aria-live="polite" className="mt-2 text-sm text-sky-200">Kesepakatan: {agreementPercent(agreements).toFixed(0)}% ({agreements} dari 50)</p>
+        <p aria-live="polite" className="mt-2 min-w-0 break-words text-sm text-sky-200">Kesepakatan: {agreementPercent(agreements).toFixed(0)}% ({agreements} dari 50)</p>
       </div>
     </VisualCard>
   );
