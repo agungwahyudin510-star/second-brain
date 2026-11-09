@@ -1095,5 +1095,335 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
   ],
 };
 
-export const FINAL_EXAM_QUESTIONS: AssessmentQuestion[] = [];
-export const FINAL_EXAM_ESSAYS: EssayPrompt[] = [];
+export const FINAL_EXAM_QUESTIONS: AssessmentQuestion[] = [
+  q("eko2-final-q01", "Konsep • Biaya peluang", "Apa yang dimaksud dengan biaya peluang suatu pilihan?", [
+    "Jumlah uang yang dibayarkan untuk menjalankan pilihan tersebut",
+    "Nilai alternatif terbaik yang dikorbankan saat memilih",
+    "Jumlah seluruh alternatif yang tidak dipilih",
+    "Manfaat total yang diperoleh dari pilihan tersebut",
+  ], 1, "Biaya peluang adalah nilai alternatif terbaik yang dilepas karena sumber daya dipakai untuk pilihan lain.", [
+    "Pembayaran uang dapat menjadi biaya eksplisit, tetapi tidak selalu sama dengan nilai alternatif terbaik yang dikorbankan.",
+    "Biaya peluang hanya menghitung alternatif terbaik yang dilepas, bukan menjumlah semua alternatif yang tidak dipilih.",
+    "Manfaat pilihan bukan nilai kesempatan yang dikorbankan untuk memperolehnya.",
+  ]),
+  q("eko2-final-q02", "Hitungan • Biaya peluang", "Rina dapat membuat 6 kue atau 3 roti per jam. Berapa biaya peluang untuk membuat 1 roti?", [
+    "0,5 kue",
+    "1 kue",
+    "3 kue",
+    "2 kue",
+  ], 3, "Dalam satu jam, 3 roti menggantikan 6 kue; biaya peluang 1 roti adalah 6/3 = 2 kue.", [
+    "0,5 adalah rasio terbalik, yaitu jumlah roti per kue.",
+    "Satu jam menghasilkan 6 kue atau 3 roti, bukan 1 kue untuk setiap roti.",
+    "3 adalah jumlah roti per jam, bukan jumlah kue yang dikorbankan untuk satu roti.",
+  ]),
+  q("eko2-final-q03", "Kasus • Keputusan marginal", "Manfaat marginal suatu unit adalah 12 dan biaya marginalnya 15. Apa keputusan yang sesuai aturan marginal?", [
+    "Jangan menambah unit karena biaya marginal lebih besar",
+    "Tambah unit karena manfaat marginalnya positif",
+    "Tambah unit karena biaya total masa lalu sudah dibayar",
+    "Abaikan biaya marginal dan bandingkan manfaat total saja",
+  ], 0, "Unit tambahan tidak layak karena manfaat marginal 12 lebih kecil daripada biaya marginal 15.", [
+    "Manfaat positif saja belum cukup; manfaat marginal harus setidaknya sebesar biaya marginal.",
+    "Biaya masa lalu yang sudah dibayar adalah biaya tertanam dan tidak membenarkan unit yang manfaat marginalnya lebih kecil.",
+    "Keputusan unit berikutnya membandingkan manfaat marginal dengan biaya marginal, bukan hanya manfaat total.",
+  ]),
+  q("eko2-final-q04", "Konsep • Permintaan dan barang substitusi", "Jika harga barang substitusi naik, bagaimana kurva permintaan barang ini berubah?", [
+    "Bergerak ke kiri sepanjang kurva penawaran",
+    "Bergerak ke atas sepanjang kurva permintaan yang sama",
+    "Bergeser ke kanan karena permintaan meningkat",
+    "Bergeser ke kiri karena kedua barang saling menggantikan",
+  ], 2, "Kenaikan harga barang substitusi membuat sebagian konsumen beralih ke barang ini, sehingga permintaannya bergeser ke kanan.", [
+    "Perubahan harga barang substitusi mengubah permintaan, bukan menggerakkan titik pada kurva penawaran.",
+    "Perubahan harga barang lain menggeser kurva permintaan; gerak sepanjang kurva terjadi saat harga barang ini berubah.",
+    "Untuk barang substitusi, kenaikan harga barang lain mendorong peralihan ke barang ini, bukan menjauhinya.",
+  ]),
+  q("eko2-final-q05", "Hitungan • Elastisitas harga", "Harga naik 20% dan kuantitas yang diminta turun 10%. Berapa elastisitas harga permintaan dalam nilai absolut?", [
+    "0,5, sehingga permintaan inelastis",
+    "2, sehingga permintaan elastis",
+    "10, karena kuantitas turun sepuluh persen",
+    "0,1, karena perubahan kuantitas dibagi harga",
+  ], 0, "Elastisitas = |−10%/20%| = 0,5; karena nilainya di bawah satu, permintaan inelastis.", [
+    "Nilai 2 membalik pembagian dan menunjukkan elastisitas yang keliru.",
+    "Angka 10 adalah perubahan persentase kuantitas, bukan rasio persentase kuantitas terhadap harga.",
+    "Pembagian yang benar adalah 10% dibagi 20%, bukan 1/10.",
+  ]),
+  q("eko2-final-q06", "Kasus • Keseimbangan pasar", "Jika Qd=120−3P dan Qs=20+2P, berapakah harga dan kuantitas keseimbangan?", [
+    "P=10 dan Q=90",
+    "P=25 dan Q=45",
+    "P=20 dan Q=50",
+    "P=20 dan Q=60",
+  ], 3, "Samakan 120−3P=20+2P sehingga 100=5P, P=20, dan Q=60.", [
+    "Pada P=10, Qd=90 tetapi Qs=40, sehingga pasar belum seimbang.",
+    "Pada P=25, Qd=45 tetapi Qs=70; selain itu kuantitas yang dicantumkan tidak cocok dengan kedua kurva.",
+    "P=20 benar, tetapi Q harus 120−3×20=60, bukan 50.",
+  ]),
+  q("eko2-final-q07", "Konsep • Insiden pajak", "Sisi pasar mana yang biasanya menanggung beban pajak lebih besar?", [
+    "Sisi yang lebih elastis karena lebih mudah mengubah jumlah transaksi",
+    "Sisi yang lebih inelastis karena lebih sulit menghindari pajak",
+    "Pembeli selalu menanggung seluruh pajak tanpa dipengaruhi elastisitas",
+    "Penjual selalu menanggung seluruh pajak karena menerima pembayaran",
+  ], 1, "Sisi yang lebih inelastis memiliki respons kuantitas lebih kecil dan biasanya menanggung bagian beban pajak lebih besar.", [
+    "Sisi yang lebih elastis lebih mudah mengurangi transaksi, sehingga beban relatifnya cenderung lebih kecil.",
+    "Pembagian beban bergantung pada elastisitas relatif, bukan selalu seluruhnya jatuh kepada pembeli.",
+    "Penerimaan pembayaran tidak menentukan insiden; elastisitas kedua sisi yang menentukan pembagian beban.",
+  ]),
+  q("eko2-final-q08", "Hitungan • Surplus konsumen", "Pada Qd=100−2P, harga ekuilibrium 20 dan kuantitas 60. Berapa surplus konsumen?", [
+    "600",
+    "1.200",
+    "900",
+    "1.800",
+  ], 2, "Harga pencegah permintaan adalah 50; surplus konsumen = ½×60×(50−20) = 900.", [
+    "600 menggunakan selisih harga 20, bukan 50−20=30.",
+    "1.200 mengalikan 60×20 tanpa menghitung luas segitiga yang benar.",
+    "1.800 menggandakan luas segitiga dengan memakai seluruh alas dan tinggi sebagai persegi panjang.",
+  ]),
+  q("eko2-final-q09", "Kasus • Pagu harga", "Pada Qd=100−2P dan Qs=20+2P, apa dampak pagu harga P=10?", [
+    "Qd=80, Qs=40, sehingga terjadi kelangkaan 40",
+    "Qd=40, Qs=80, sehingga terjadi surplus 40",
+    "Qd=80, Qs=40, sehingga terjadi surplus 40",
+    "Qd=60, Qs=40, sehingga terjadi kelangkaan 20",
+  ], 0, "Pada P=10, Qd=80 dan Qs=40; kekurangan atau kelangkaan adalah 80−40=40.", [
+    "Nilai Qd dan Qs tertukar; pada harga rendah pembeli meminta lebih banyak daripada yang ditawarkan.",
+    "Jumlah Qd=80 dan Qs=40 benar, tetapi selisihnya adalah kekurangan, bukan surplus.",
+    "Qd adalah 100−2×10=80, bukan 60; karena itu kelangkaannya bukan 20.",
+  ]),
+  q("eko2-final-q10", "Konsep • Eksternalitas negatif", "Apa dampak eksternalitas negatif produksi dan peran pajak Pigou?", [
+    "Pasar berproduksi terlalu sedikit; pajak menaikkan produksi ke tingkat pasar",
+    "Pasar mencapai optimum sosial; pajak hanya memindahkan surplus",
+    "Pasar berproduksi berlebih; subsidi memperbesar selisih biaya sosial",
+    "Pasar berproduksi berlebih; pajak Pigou dapat mendekatkan produksi ke optimum sosial",
+  ], 3, "Biaya eksternal membuat biaya sosial melebihi biaya privat sehingga pasar berproduksi berlebih; pajak Pigou dapat menyelaraskan insentif privat dan sosial.", [
+    "Eksternalitas negatif mendorong produksi berlebih, bukan terlalu sedikit.",
+    "Pasar tanpa koreksi tidak otomatis mencapai optimum sosial ketika biaya eksternal diabaikan.",
+    "Subsidi cenderung mendorong produksi lebih jauh, bukan mengoreksi biaya eksternal negatif.",
+  ]),
+  q("eko2-final-q11", "Hitungan • Monopoli", "Untuk monopoli dengan P=100−Q dan MC=20, berapakah keluaran dan harga monopoli?", [
+    "Q=40 dan P=60; persaingan menghasilkan Q=80 dan P=20",
+    "Q=80 dan P=20; monopoli menyamakan harga dengan biaya marginal",
+    "Q=40 dan P=20; harga monopoli sama dengan biaya marginal",
+    "Q=60 dan P=40; monopoli menetapkan harga pada titik tengah",
+  ], 0, "MR=100−2Q; MR=MC memberi Q=40 dan P=100−40=60. Persaingan menghasilkan Q=80, P=20, dan DWL=800.", [
+    "Q=80 dan P=20 adalah hasil kompetitif, bukan hasil pilihan monopoli berdasarkan MR=MC.",
+    "Pada Q=40, kurva permintaan memberi P=60, bukan P=20.",
+    "Titik tengah bukan aturan penetapan keluaran monopoli; gunakan MR=MC untuk memperoleh Q=40.",
+  ]),
+  q("eko2-final-q12", "Kasus • Dilema tahanan", "Dua perusahaan masing-masing dapat menahan diri atau curang. Hasilnya (10,10) jika sama-sama menahan diri, (15,2) jika satu curang, dan (5,5) jika sama-sama curang. Apa hasil strategi dominan?", [
+    "Keduanya menahan diri dan memperoleh (10,10)",
+    "Satu menahan diri dan satu curang pada (15,2)",
+    "Keduanya curang; keseimbangan Nash adalah (5,5)",
+    "Hasil tidak dapat ditentukan tanpa mengetahui biaya produksi",
+  ], 2, "Bagi tiap perusahaan, curang memberi hasil lebih tinggi terhadap pilihan lawan; keduanya memilih curang dan mencapai keseimbangan Nash (5,5).", [
+    "Menahan diri memberi hasil lebih rendah daripada curang ketika perusahaan lain menahan diri.",
+    "Pilihan curang menguntungkan pelaku secara sepihak, sehingga hasil asimetris bukan keseimbangan strategi dominan.",
+    "Pembayaran yang diberikan sudah cukup untuk membandingkan hasil tiap pilihan; biaya tambahan tidak diperlukan.",
+  ]),
+  q("eko2-final-q13", "Konsep • Pengukuran PDB", "Bagaimana PDB memperlakukan barang antara dalam pengukuran produksi?", [
+    "Menjumlahkan semua penjualan barang antara dan barang akhir",
+    "Menghitung barang antara sebagai impor meskipun diproduksi di dalam negeri",
+    "Menghitung nilai bahan baku berulang kali pada setiap tahap produksi",
+    "Menghitung barang akhir atau nilai tambah tanpa hitung ganda",
+  ], 3, "PDB mengukur barang akhir atau menjumlah nilai tambah pada tiap tahap, sehingga nilai barang antara tidak dihitung berulang.", [
+    "Menjumlahkan seluruh penjualan antara barang akhir akan menghitung sebagian nilai produksi lebih dari sekali.",
+    "Status barang antara tidak otomatis menjadikannya impor; asal produksi dan penggunaannya adalah hal berbeda.",
+    "Penghitungan berulang atas bahan baku adalah hitung ganda yang dihindari dalam PDB.",
+  ]),
+  q("eko2-final-q14", "Hitungan • Deflator PDB", "Jika PDB nominal 1.118 dan PDB riil 1.040, berapakah deflator PDB?", [
+    "92,5",
+    "107,5",
+    "78",
+    "1.075",
+  ], 1, "Deflator PDB = (1.118/1.040)×100 = 107,5.", [
+    "92,5 membalik pembilang dan penyebut, yaitu memakai PDB riil dibagi nominal.",
+    "78 adalah selisih nominal dan riil, bukan indeks harga dengan tahun dasar 100.",
+    "1.075 menggeser koma satu tempat; hasil rasio dikali 100 adalah 107,5.",
+  ]),
+  q("eko2-final-q15", "Kasus • PDB per kapita", "PDB tumbuh 5% dan penduduk tumbuh 2%. Berapa kira-kira pertumbuhan PDB per kapita?", [
+    "2,94%",
+    "3,00%",
+    "7,00%",
+    "10,00%",
+  ], 0, "Pertumbuhan per kapita = 1,05/1,02−1 ≈ 2,94%.", [
+    "3,00% adalah pendekatan selisih sederhana; perhitungan rasio tepatnya sekitar 2,94%.",
+    "7,00% menjumlahkan pertumbuhan PDB dan penduduk, bukan membaginya.",
+    "10,00% tidak mengikuti rasio PDB terhadap penduduk.",
+  ]),
+  q("eko2-final-q16", "Konsep • Inflasi tak terduga", "Siapa yang diuntungkan ketika inflasi aktual lebih tinggi daripada perkiraan pada pinjaman berbunga tetap?", [
+    "Pemberi pinjaman karena nilai riil pembayaran kembali meningkat",
+    "Peminjam karena bunga riil ex-post turun",
+    "Keduanya selalu sama-sama untung karena suku bunga nominal tetap",
+    "Tidak ada pihak yang terpengaruh oleh perubahan inflasi",
+  ], 1, "Inflasi yang lebih tinggi menurunkan nilai riil pembayaran tetap sehingga bunga riil ex-post yang ditanggung peminjam lebih rendah.", [
+    "Nilai riil pembayaran tetap turun, bukan meningkat, ketika inflasi tak terduga lebih tinggi.",
+    "Bunga nominal tetap tidak membuat hasil riil kedua pihak selalu sama saat inflasi berubah.",
+    "Perubahan inflasi mengubah nilai riil pembayaran dan karena itu dapat memindahkan manfaat antara peminjam dan pemberi pinjaman.",
+  ]),
+  q("eko2-final-q17", "Hitungan • Pengangguran", "Jika ada 10 orang menganggur dan 120 orang bekerja, berapakah tingkat pengangguran?", [
+    "7,69%",
+    "8,33%",
+    "10,00%",
+    "12,00%",
+  ], 0, "Angkatan kerja = 10+120=130; tingkat pengangguran = 10/130×100 ≈ 7,69%.", [
+    "8,33% membagi pengangguran dengan jumlah bekerja saja, bukan seluruh angkatan kerja.",
+    "10% menggunakan pembagi 100, bukan angkatan kerja 130.",
+    "12% membagi jumlah bekerja dengan jumlah penganggur, bukan menghitung penganggur sebagai bagian angkatan kerja.",
+  ]),
+  q("eko2-final-q18", "Kasus • Kurva Phillips", "Gunakan π=πe−0,5(u−5). Jika pengangguran u=7 dan ekspektasi inflasi πe=4, berapa inflasi π?", [
+    "5",
+    "4",
+    "3",
+    "2",
+  ], 2, "π=4−0,5(7−5)=4−1=3.", [
+    "5 menambahkan selisih pengangguran, padahal rumus menguranginya.",
+    "4 mengabaikan suku 0,5(u−5) yang bernilai 1.",
+    "2 mengurangkan seluruh selisih pengangguran dua kali, bukan mengalikannya dengan 0,5.",
+  ]),
+  q("eko2-final-q19", "Konsep • Model Solow", "Dalam model Solow dasar, apa dampak kenaikan tingkat tabungan?", [
+    "Menaikkan laju pertumbuhan jangka panjang secara permanen",
+    "Menurunkan output steady-state karena konsumsi awal berkurang",
+    "Tidak memengaruhi output steady-state maupun investasi",
+    "Menaikkan tingkat output steady-state, bukan laju pertumbuhan jangka panjang",
+  ], 3, "Tingkat tabungan yang lebih tinggi menaikkan modal dan output steady-state, tetapi tidak dengan sendirinya mengubah laju pertumbuhan jangka panjang dalam model dasar.", [
+    "Kenaikan tabungan tidak menaikkan laju pertumbuhan jangka panjang secara permanen tanpa perubahan pertumbuhan teknologi.",
+    "Tabungan yang lebih tinggi mendorong akumulasi modal dan menaikkan, bukan menurunkan, output steady-state.",
+    "Tingkat tabungan memengaruhi investasi dan lintasan modal dalam model Solow.",
+  ]),
+  q("eko2-final-q20", "Hitungan • Pertumbuhan majemuk", "Berapa nilai 1.000 setelah tumbuh 4% per tahun selama 30 tahun?", [
+    "2.400,00",
+    "3.243,40",
+    "1.200,00",
+    "4.000,00",
+  ], 1, "Nilai akhir = 1.000×(1,04)^30 ≈ 3.243,40.", [
+    "2.400 menambahkan pertumbuhan sederhana 4%×30=120% dan mengabaikan pemajemukan.",
+    "1.200 hanya menambahkan pertumbuhan 20% dan tidak memakai periode 30 tahun dengan benar.",
+    "4.000 menggandakan nilai awal secara keliru; pemajemukan 4% selama 30 tahun menghasilkan sekitar 3.243,40.",
+  ]),
+  q("eko2-final-q21", "Kasus • Akuntansi pertumbuhan", "Jika Y=A·K^0,3·L^0,7, gY=3%, gK=4%, dan gL=2%, berapa pertumbuhan A (TFP)?", [
+    "1,4%",
+    "0,6%",
+    "0,4%",
+    "2,2%",
+  ], 2, "gA=gY−0,3gK−0,7gL=3−1,2−1,4=0,4%.", [
+    "1,4% menjumlahkan 3% dengan kontribusi modal 1,2% tanpa mengurangkan kontribusi tenaga kerja.",
+    "0,6% mengurangkan kontribusi modal saja dan melupakan kontribusi tenaga kerja.",
+    "2,2% mengurangkan kontribusi tenaga kerja tetapi tidak mengurangkan kontribusi modal.",
+  ]),
+  q("eko2-final-q22", "Konsep • Likuiditas dan solvabilitas bank", "Bank memiliki cadangan 100, kredit 900, simpanan 900, dan modal 100. Apa dampak penarikan 15% simpanan sekaligus?", [
+    "Bank langsung tidak solven karena penarikan 135 menghabiskan modal 100",
+    "Bank tetap likuid karena cadangan 100 melebihi penarikan 15",
+    "Bank dapat membayar seluruh penarikan tanpa memakai aset lain",
+    "Likuiditas terganggu: 135 melebihi cadangan 100, tetapi modal 100 menjaga solvabilitas",
+  ], 3, "Penarikan adalah 0,15×900=135, melebihi cadangan 100; aset 1.000 tetap melebihi simpanan 900 sehingga modal positif dan bank masih solven.", [
+    "Aset 1.000 melebihi simpanan 900 sebesar 100, sehingga bank tidak langsung menjadi insolven.",
+    "Penarikan 135 lebih besar, bukan lebih kecil, daripada cadangan 100.",
+    "Cadangan hanya menutup 100 dari penarikan 135; bank harus mencari likuiditas tambahan.",
+  ]),
+  q("eko2-final-q23", "Hitungan • Pengganda uang", "Jika rasio cadangan 25% dan setoran awal 1.000, berapa total simpanan maksimum dalam model pengganda sederhana?", [
+    "250",
+    "4.000",
+    "1.250",
+    "1.000",
+  ], 1, "Pengganda sederhana = 1/0,25=4; total simpanan = 4×1.000=4.000.", [
+    "250 adalah 25% dari setoran, yaitu cadangan awal, bukan total simpanan.",
+    "1.250 hanya menambahkan cadangan 250 kepada setoran awal dan mengabaikan rangkaian penciptaan simpanan.",
+    "1.000 adalah setoran awal saja, bukan total maksimum pada model pengganda.",
+  ]),
+  q("eko2-final-q24", "Kasus • Teori kuantitas uang", "Jika kecepatan uang tetap, jumlah uang naik 10% dan output naik 3%. Berapa kira-kira inflasi?", [
+    "13%",
+    "3%",
+    "10%",
+    "7%",
+  ], 3, "Dari MV=PY dan V tetap, pertumbuhan harga kira-kira pertumbuhan uang dikurangi pertumbuhan output: 10%−3%=7%.", [
+    "13% menjumlahkan pertumbuhan uang dan output, bukan mengurangkan pertumbuhan output.",
+    "3% menyamakan inflasi dengan pertumbuhan output dan mengabaikan perubahan uang.",
+    "10% menganggap output tidak berubah, padahal output tumbuh 3%.",
+  ]),
+  q("eko2-final-q25", "Konsep • Guncangan penawaran", "Apa pola keluaran dan harga yang biasanya timbul dari guncangan penawaran negatif dalam model AD-AS?", [
+    "Output turun dan harga naik, suatu keadaan stagflasi",
+    "Output dan harga sama-sama naik karena biaya produksi bertambah",
+    "Output naik dan harga turun karena penawaran menyusut",
+    "Output tetap dan harga turun karena permintaan meningkat",
+  ], 0, "Guncangan penawaran negatif menggeser SRAS ke kiri, sehingga harga naik sementara output turun; pola ini disebut stagflasi.", [
+    "Kenaikan biaya tidak mendorong output dan harga bersama-sama naik dalam model dasar.",
+    "Penawaran yang menyusut menurunkan output dan menaikkan harga, bukan kebalikannya.",
+    "Pernyataan ini mencampur guncangan penawaran negatif dengan kenaikan permintaan.",
+  ]),
+  q("eko2-final-q26", "Hitungan • Pengganda fiskal", "Jika MPC=0,8, berapakah pengganda belanja pemerintah sederhana?", [
+    "4",
+    "0,8",
+    "5",
+    "−4",
+  ], 2, "Pengganda belanja = 1/(1−MPC)=1/0,2=5; pengganda pajak adalah −4.", [
+    "4 adalah besar pengganda pajak, bukan pengganda belanja.",
+    "0,8 adalah MPC, bukan pengganda belanja.",
+    "−4 adalah pengganda pajak bertanda; pengganda belanja bernilai positif 5.",
+  ]),
+  q("eko2-final-q27", "Kasus • Kebutuhan stimulus", "Celah output adalah −40, pengganda belanja 5, dan efektivitas kebijakan 60%. Berapa tambahan belanja yang diperlukan?", [
+    "8,00",
+    "10,00",
+    "66,67",
+    "13,33",
+  ], 3, "Kebutuhan belanja = 40/(5×0,60)=13,33; efektivitas yang lebih rendah memperbesar kebutuhan nominal.", [
+    "8,00 adalah kebutuhan jika efektivitas penuh 100%, bukan 60%.",
+    "10,00 membagi celah dengan besar pengganda pajak 4 dan tidak menghitung efektivitas belanja.",
+    "66,67 adalah 40/0,60 dan mengabaikan pengganda belanja 5.",
+  ]),
+  q("eko2-final-q28", "Konsep • Keunggulan komparatif", "Apa dasar keunggulan komparatif dan bagaimana perdagangan dapat menguntungkan kedua pihak?", [
+    "Spesialisasi pada biaya peluang terendah dapat menguntungkan kedua pihak",
+    "Setiap negara harus lebih produktif secara absolut dalam barang yang diperdagangkan",
+    "Negara dengan biaya peluang lebih tinggi selalu memperoleh seluruh surplus perdagangan",
+    "Perdagangan menguntungkan kedua pihak hanya jika produktivitas mereka sama",
+  ], 0, "Spesialisasi menurut biaya peluang relatif memungkinkan kedua pihak memperoleh barang dengan biaya peluang lebih rendah melalui pertukaran.", [
+    "Keunggulan komparatif berkenaan dengan biaya peluang, bukan keharusan unggul secara absolut.",
+    "Biaya peluang lebih tinggi menunjukkan kerugian komparatif, bukan dasar untuk memperoleh seluruh surplus.",
+    "Produktivitas yang sama tidak diperlukan; perbedaan biaya peluang dapat menjadi sumber keuntungan perdagangan.",
+  ]),
+  q("eko2-final-q29", "Hitungan • Penerimaan tarif", "Pada harga dunia 8 dengan tarif t=2, berapa penerimaan tarif jika impor menjadi 20 unit?", [
+    "20",
+    "40",
+    "80",
+    "5",
+  ], 1, "Penerimaan tarif = tarif per unit × impor = 2×20=40.", [
+    "20 adalah volume impor, bukan penerimaan; penerimaan mengalikan jumlah itu dengan tarif 2.",
+    "80 mengalikan harga dunia 8 dengan impor dan mengabaikan tarif per unit.",
+    "5 adalah deadweight loss untuk t=1 pada ilustrasi, bukan penerimaan saat t=2.",
+  ]),
+  q("eko2-final-q30", "Kasus • Neraca pembayaran", "Jika transaksi berjalan −30, bagaimana pencatatan transaksi finansial yang menyeimbangkan neraca pembayaran tanpa kesalahan statistik?", [
+    "Transaksi finansial −30, sehingga kedua defisit saling meniadakan",
+    "Transaksi finansial 0 karena arus perdagangan tidak terkait pembiayaan",
+    "Transaksi finansial +30 menyeimbangkan defisit; cadangan turun juga dapat membiayainya",
+    "Transaksi finansial +60 karena kedua saldo harus dijumlahkan agar neraca pembayaran seimbang",
+  ], 2, "Dengan konvensi transaksi finansial positif untuk arus modal masuk, transaksi berjalan −30 diimbangi transaksi finansial +30; penurunan cadangan juga dapat menjadi sumber pembiayaan sesuai konvensi pencatatan.", [
+    "Transaksi finansial −30 akan menambah defisit menjadi −60, bukan menyeimbangkannya.",
+    "Defisit transaksi berjalan harus memiliki pencatatan pembiayaan yang mengimbanginya, bukan diabaikan.",
+    "+60 membuat jumlah transaksi berjalan dan finansial menjadi +30, bukan nol.",
+  ]),
+].map((question, index) => ({
+  ...question,
+  chapterId: `eko2-b${String(Math.floor(index / 3) + 1).padStart(2, "0")}`,
+}));
+
+export const FINAL_EXAM_ESSAYS: EssayPrompt[] = [
+  {
+    id: "eko2-final-e01",
+    prompt: "Sebuah perekonomian mengalami resesi dengan celah output −5% dan inflasi rendah. Bandingkan respons fiskal menggunakan pengganda belanja 5, kebutuhan ΔG, dan implikasi utang dengan respons moneter menggunakan aturan Taylor dan suku bunga riil. Evaluasi batas kedua respons, termasuk jeda kebijakan, crowding out, dan ketidakpastian PDB potensial.",
+    rubric,
+    reviewPoints: [
+      "Menafsirkan celah output −5% dan membedakan nilai aktual dari estimasi PDB potensial.",
+      "Menggunakan pengganda belanja 5 untuk menghitung kebutuhan ΔG dengan asumsi yang dinyatakan.",
+      "Membahas dampak pembiayaan stimulus fiskal terhadap defisit atau utang tanpa menganggapnya otomatis tidak berkelanjutan.",
+      "Menjelaskan bagaimana aturan Taylor dan inflasi rendah memengaruhi suku bunga nominal serta riil.",
+      "Mengevaluasi jeda kebijakan, crowding out, transmisi moneter, dan ketidakpastian estimasi output potensial.",
+    ],
+  },
+  {
+    id: "eko2-final-e02",
+    prompt: "Sebuah ekonomi kecil terbuka mengalami defisit transaksi berjalan 30. Jelaskan identitas neraca pembayaran, kaitannya dengan kurs riil dan trilema kebijakan, serta bagaimana cadangan devisa dengan runway enam bulan membatasi respons. Bahas risiko ketergantungan pembiayaan eksternal dan hubungkan analisis dengan keputusan investasi serta pengelolaan risiko pribadi.",
+    rubric,
+    reviewPoints: [
+      "Menjelaskan bahwa defisit transaksi berjalan 30 diimbangi arus modal masuk neto atau perubahan cadangan sesuai konvensi tanda.",
+      "Menguraikan bagaimana perubahan kurs riil dapat memengaruhi harga relatif dan ekspor neto tanpa menyatakan dampak yang pasti.",
+      "Menerapkan trilema pada pilihan kurs tetap, mobilitas modal, dan kebijakan moneter mandiri.",
+      "Menafsirkan runway cadangan enam bulan sebagai ilustrasi dengan asumsi tekanan dan laju intervensi tetap.",
+      "Menilai risiko pembiayaan eksternal dan menghubungkannya dengan diversifikasi, eksposur kurs, likuiditas, atau toleransi risiko pribadi.",
+    ],
+  },
+];
