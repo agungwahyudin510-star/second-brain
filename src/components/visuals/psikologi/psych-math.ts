@@ -92,3 +92,41 @@ export function suppressionOutcome(felt: number, suppressPct: number) {
 export function criticismIntensity(importance: number, threat: number) {
   return appraisalIntensity(importance, threat);
 }
+
+export function acquisition(trials: number, alpha: number, lambda: number, v0: number) {
+  let value = v0;
+  const values = [value];
+  for (let trial = 0; trial < trials; trial += 1) {
+    value += alpha * (lambda - value);
+    values.push(value);
+  }
+  return values;
+}
+
+export function extinction(v0: number, trials: number, alpha: number) {
+  return v0 * (1 - alpha) ** trials;
+}
+
+export function ratioReinforcements(responses: number, ratio: number) {
+  return ratio <= 0 ? 0 : responses / ratio;
+}
+
+export function requiredPace(target: number, done: number, daysLeft: number) {
+  return daysLeft <= 0 ? 0 : Math.max(0, target - done) / daysLeft;
+}
+
+export function frictionCompletion(fGoal: number, fTemptation: number) {
+  return Math.max(0, Math.min(100, 60 + 5 * (fTemptation - fGoal)));
+}
+
+export function motivationProfile(autonomy: number, competence: number, relatedness: number) {
+  const needs = [
+    { name: "Otonomi", score: autonomy },
+    { name: "Kompetensi", score: competence },
+    { name: "Keterkaitan", score: relatedness },
+  ];
+  return {
+    average: needs.reduce((sum, need) => sum + need.score, 0) / needs.length,
+    lowest: needs.reduce((lowest, need) => need.score < lowest.score ? need : lowest, needs[0]),
+  };
+}

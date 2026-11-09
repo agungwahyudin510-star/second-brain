@@ -307,14 +307,14 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "6,00",
       "4,00",
       "3,38",
-      "4,5",
+      "4,50",
     ], 3, "A(2)=8×0,75²=4,50.", [
       "6,00 adalah nilai setelah satu jam.",
       "4,00 mengurangi 25% nilai awal secara linear dua kali.",
       "3,38 adalah nilai model setelah tiga jam.",
     ]),
     qv2("psi2-b03-q07", "Hitungan • Suppression", "Jika perasaan 4,0 dan ekspresi ditekan 70%, berapa nilai perasaan dalam model?", [
-      "4",
+      "4,0",
       "1,2",
       "2,8",
       "0,0",
@@ -324,14 +324,14 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Model tidak menyatakan perasaan hilang seluruhnya.",
     ]),
     qv2("psi2-b03-q08", "Kasus • Aturan jeda", "Arousal model mulai dari 8 dan aturan jeda menunggu sampai ≤4. Dengan peluruhan 25% per jam, kapan ambang pertama tercapai?", [
-      "1,0",
-      "3",
-      "2,0",
-      "4,0",
-    ], 1, "Pada dua jam nilainya 4,50; pada tiga jam 3,375 sehingga ambang ≤4 tercapai.", [
-      "Setelah satu jam nilai model masih 6,00.",
-      "Dua jam menghasilkan 4,50, masih di atas ambang.",
-      "Empat jam melewati ambang lebih lambat daripada waktu pertama.",
+      "1 jam",
+      "2 jam",
+      "3 jam",
+      "4 jam",
+    ], 2, "Pada 3 jam nilai 3,375 ≤ 4 sehingga ambang pertama tercapai.", [
+      "Setelah 1 jam nilai model masih 6,00, di atas ambang.",
+      "Setelah 2 jam nilai model 4,50, masih di atas ambang.",
+      "Setelah 4 jam nilainya 2,53, sudah di bawah ambang tetapi ambang pertama tercapai lebih awal pada 3 jam.",
     ]),
     qv2("psi2-b03-q09", "Kasus • Kritik", "Kritik terasa seperti serangan pribadi. Respons awal yang paling membantu untuk memahami situasi adalah...", [
       "Membalas segera agar maksud diri tidak diragukan",
@@ -352,6 +352,108 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Menunggu emosi hilang sepenuhnya dapat memperpanjang penghindaran.",
       "Menyalahkan diri tidak memberi langkah penyelesaian yang konkret.",
       "Menghapus tujuan tidak menyelesaikan tuntutan tugas yang masih ada.",
+    ]),
+  ],
+  "psi2-b04": [
+    qv2("psi2-b04-q01", "Konsep • Conditioning", "Pernyataan yang paling tepat membedakan classical dan operant conditioning adalah...", [
+      "Classical: asosiasi stimulus; operant: tindakan dan konsekuensi",
+      "Classical mengubah tujuan; operant hanya mengukur perasaan subjektif",
+      "Classical memakai hadiah; operant memasangkan dua stimulus",
+      "Classical dan operant menjelaskan pembelajaran tanpa perbedaan penting",
+    ], 0, "Classical menelaah asosiasi ant stimulus, sedangkan operant menelaah perilaku dan konsekuensi.", [
+      "Perubahan tujuan bukan pembeda utama kedua kerangka.",
+      "Pemasangan stimulus lebih sesuai dengan classical; hadiah bukan definisi operant saja.",
+      "Keduanya menelaah pembelajaran dengan hubungan yang berbeda.",
+    ]),
+    qv2("psi2-b04-q02", "Konsep • Penguatan negatif", "Penguatan negatif terjadi ketika...", [
+      "Konsekuensi menyenangkan ditambahkan dan perilaku meningkat",
+      "Sesuatu yang disukai dihapus dan perilaku kemudian menurun",
+      "Stimulus tak menyenangkan dihapus dan perilaku meningkat",
+      "Konsekuensi tak menyenangkan ditambahkan dan perilaku menurun",
+    ], 2, "Penguatan negatif menghilangkan stimulus tidak menyenangkan dan meningkatkan kemungkinan perilaku.", [
+      "Penambahan yang meningkatkan perilaku lebih sesuai dengan penguatan positif.",
+      "Penghilangan yang menurunkan perilaku lebih sesuai dengan hukuman negatif.",
+      "Penambahan yang menurunkan perilaku lebih sesuai dengan hukuman positif.",
+    ]),
+    qv2("psi2-b04-q03", "Konsep • Motivasi", "Menurut kerangka determinasi diri, dukungan motivasi dapat mencakup...", [
+      "Hadiah besar, kompetisi, dan pengawasan ketat",
+      "Dukungan otonomi, kompetensi, serta keterkaitan",
+      "Kecepatan, kepatuhan, dan hasil yang sama bagi semua",
+      "Penghapusan pilihan agar tujuan lebih mudah dicapai semua",
+    ], 1, "Teori determinasi diri secara pengantar membahas otonomi, kompetensi, dan keterkaitan.", [
+      "Hadiah atau kompetisi bukan tiga kebutuhan yang disebut kerangka ini.",
+      "Kebutuhan tidak menuntut hasil atau pengalaman yang sama bagi semua.",
+      "Menghapus pilihan tidak sama dengan mendukung otonomi.",
+    ]),
+    qv2("psi2-b04-q04", "Konsep • Kebiasaan dan friction", "Kebiasaan paling tepat dipahami sebagai pola yang melibatkan...", [
+      "Kepribadian tetap yang tidak dipengaruhi lingkungan",
+      "Hadiah yang selalu diberikan sesudah setiap tindakan",
+      "Tindakan acak tanpa pemicu atau konsekuensi",
+      "Pemicu, tindakan, konsekuensi, friction, dan konteks",
+    ], 3, "Peta pemicu–tindakan–konsekuensi membantu menganalisis kebiasaan; friction dan konteks memengaruhi tindakan.", [
+      "Pola kebiasaan dapat dipengaruhi lingkungan dan tidak menetapkan sifat tetap.",
+      "Konsekuensi tidak harus berupa hadiah atau hadir setiap kali.",
+      "Peta kebiasaan mempertimbangkan isyarat dan hasil, bukan tindakan tanpa konteks.",
+    ]),
+    qv2("psi2-b04-q05", "Hitungan • Akuisisi", "Model ΔV=0,2(1−V) dimulai dari V₀=0. Berapa V setelah tiga percobaan?", [
+      "0,600",
+      "0,360",
+      "0,488",
+      "0,200",
+    ], 2, "V₁=0,200, V₂=0,360, lalu V₃=0,488.", [
+      "0,600 memakai kenaikan linear 0,2 tiap percobaan.",
+      "0,360 adalah nilai setelah dua percobaan.",
+      "0,200 adalah nilai setelah satu percobaan.",
+    ]),
+    qv2("psi2-b04-q06", "Hitungan • Goal pace", "Target 300 halaman dalam 30 hari; setelah 12 hari selesai 96 halaman. Laju untuk sisa target per hari adalah...", [
+      "11,33 halaman/hari",
+      "10,00 halaman/hari",
+      "8,00 halaman/hari",
+      "17,00 halaman/hari",
+    ], 0, "Sisa 204 halaman dibagi 18 hari = 11,33 halaman/hari.", [
+      "10,00 adalah laju rencana awal, bukan laju sisa target.",
+      "8,00 adalah laju aktual selama 12 hari pertama.",
+      "17,00 memakai 204 halaman dibagi 12 hari, bukan 18 hari tersisa.",
+    ]),
+    qv2("psi2-b04-q07", "Hitungan • Jadwal rasio", "Dengan 100 respons pada jadwal rasio tetap 5, berapa jumlah penguatan?", [
+      "5",
+      "95",
+      "500",
+      "20",
+    ], 3, "Jumlah penguatan = 100÷5=20.", [
+      "5 adalah rasio respons per penguatan, bukan jumlah penguatan.",
+      "95 tidak mengikuti pembagian respons dengan rasio.",
+      "500 mengalikan respons dengan rasio, bukan membaginya.",
+    ]),
+    qv2("psi2-b04-q08", "Kasus • Friction", "Media sosial mengganggu sesi belajar. Perubahan lingkungan yang masuk akal adalah...", [
+      "Mengandalkan kemauan tanpa mengubah akses ponsel",
+      "Tambah hambatan godaan, mudahkan langkah awal belajar",
+      "Menambah notifikasi agar kebiasaan belajar lebih konsisten",
+      "Menghapus semua jeda dan menambah lama sesi belajar",
+    ], 1, "Menjauhkan ponsel dapat menaikkan friction godaan, sementara menyiapkan bahan dapat memudahkan mulai belajar.", [
+      "Tidak mengubah akses membiarkan friction godaan tetap rendah.",
+      "Notifikasi tambahan dapat meningkatkan gangguan, bukan mengurangi friction godaan.",
+      "Menghapus jeda bukan cara yang diperlukan untuk mengubah lingkungan.",
+    ]),
+    qv2("psi2-b04-q09", "Kasus • Overjustification", "Anak yang suka menggambar diberi hadiah besar tiap gambar lalu minatnya turun. Kesimpulan awal yang hati-hati adalah...", [
+      "Hadiah mungkin menggeser minat; periksa konteks dan data",
+      "Hadiah selalu menghilangkan motivasi intrinsik pada semua anak",
+      "Penurunan minat membuktikan anak tidak menyukai gambar",
+      "Hadiah tidak mungkin berkaitan dengan perubahan minat",
+    ], 0, "Overjustification adalah kemungkinan yang bergantung konteks; dugaan perlu diuji dengan data.", [
+      "Efek hadiah tidak selalu sama pada semua orang atau kegiatan.",
+      "Perubahan minat tidak membuktikan bahwa minat awal tidak ada.",
+      "Hadiah mungkin berkaitan, tetapi tidak dapat dikesampingkan tanpa pemeriksaan.",
+    ]),
+    qv2("psi2-b04-q10", "Kasus • Hukuman dan perilaku alternatif", "Seseorang hanya menghukum perilaku yang tidak diinginkan tanpa mengajarkan pengganti. Langkah yang lebih lengkap adalah...", [
+      "Memperberat hukuman sampai perilaku berhenti",
+      "Mengabaikan semua konsekuensi dan tidak memberi umpan balik",
+      "Ajarkan perilaku alternatif dan kuatkan saat dilakukan",
+      "Menganggap perilaku buruk sebagai sifat tetap seseorang",
+    ], 2, "Mengajarkan serta menguatkan perilaku alternatif memberi tindakan yang dapat menggantikan pola yang tidak diinginkan.", [
+      "Hukuman lebih berat dapat menambah efek samping tanpa mengajarkan alternatif.",
+      "Umpan balik dan konsekuensi yang relevan dapat memberi informasi.",
+      "Perilaku tidak cukup untuk menyimpulkan sifat tetap.",
     ]),
   ],
 };
@@ -402,6 +504,28 @@ export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
         "Jelaskan kapan keputusan dapat ditinjau dan tujuan yang dijaga.",
         "Pertimbangkan situasi mendesak atau keselamatan saat jeda tidak sesuai.",
         "Nyatakan bahwa aturan bukan jaminan hasil finansial.",
+      ],
+    },
+  ],
+  "psi2-b04": [
+    {
+      ...essay("psi2-b04-e01", "Rancang sistem belajar tiga minggu memakai tujuan spesifik, umpan balik, dan pengaturan friction. Jelaskan cara mengevaluasi hasil dan menyatakan batas kesimpulan."),
+      reviewPoints: [
+        "Tetapkan tujuan belajar dan indikator kemajuan yang spesifik.",
+        "Jelaskan bagaimana umpan balik mendukung langkah berikutnya.",
+        "Rancang perubahan friction atau lingkungan yang dapat diuji.",
+        "Nyatakan cara meninjau dan menyesuaikan rencana.",
+        "Sebutkan faktor konteks dan batas generalisasi.",
+      ],
+    },
+    {
+      ...essay("psi2-b04-e02", "Bedakan classical dan operant conditioning melalui kasus notifikasi aplikasi atau keputusan trading berulang. Jelaskan bagaimana jadwal penguatan variabel dapat berkaitan dengan pengecekan berulang dan apa batas kesimpulannya."),
+      reviewPoints: [
+        "Bedakan asosiasi stimulus dari hubungan tindakan dan konsekuensi.",
+        "Terapkan kedua kerangka pada contoh yang jelas.",
+        "Jelaskan rasio variabel sebagai rata-rata dengan waktu penguatan tak terduga.",
+        "Sebutkan penjelasan alternatif dan faktor konteks.",
+        "Hindari klaim bahwa jadwal tertentu selalu menghasilkan perilaku sama.",
       ],
     },
   ],

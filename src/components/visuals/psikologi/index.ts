@@ -14,6 +14,11 @@ import PsiAppraisalMap from "./psi-appraisal-map";
 import PsiArousalDecay from "./psi-arousal-decay";
 import PsiRegulationPaths from "./psi-regulation-paths";
 import PsiCriticismCase from "./psi-criticism-case";
+import PsiConditioning from "./psi-conditioning";
+import PsiReinforcement from "./psi-reinforcement";
+import PsiMotivationNeeds from "./psi-motivation-needs";
+import PsiGoalPace from "./psi-goal-pace";
+import PsiHabitFriction from "./psi-habit-friction";
 
 export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-levels": PsiLevels,
@@ -31,4 +36,9 @@ export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-arousal-decay": PsiArousalDecay,
   "psi-regulation-paths": PsiRegulationPaths,
   "psi-criticism-case": PsiCriticismCase,
+  "psi-conditioning": PsiConditioning,
+  "psi-reinforcement": PsiReinforcement,
+  "psi-motivation-needs": PsiMotivationNeeds,
+  "psi-goal-pace": PsiGoalPace,
+  "psi-habit-friction": PsiHabitFriction,
 };
