@@ -245,7 +245,7 @@ Sekalipun kurs nominal jelas, pengaruhnya pada ekspor neto tidak otomatis langsu
 - e_r = 10 × 12 / 100 = 1,2
 - e_PPP = P/P* = 100/12 = 8,33
 
-Bila kurs nominal naik dari 10 menjadi 12 sementara P dan P* tetap, kurs riil juga naik. Produk domestik menjadi relatif lebih mahal di luar negeri dan lebih murah di dalam negeri. Efeknya pada ekspor neto bervariasi menurut elastisitas permintaan dan persepsi pasar.
+Bila kurs nominal naik dari 10 menjadi 12 sementara P dan P* tetap, kurs riil naik dari 1,2 menjadi 12 × 12/100 = 1,44. Produk domestik menjadi relatif lebih mahal di luar negeri dan lebih murah di dalam negeri. Efeknya pada ekspor neto bervariasi menurut elastisitas permintaan dan persepsi pasar.
 
 | Skema | Rumus | Penjelasan |
 |---|---|---|
@@ -253,6 +253,8 @@ Bila kurs nominal naik dari 10 menjadi 12 sementara P dan P* tetap, kurs riil ju
 | Kurs riil | e × P*/P | Harga barang relatif | 
 | PPP | P/P* | Nilai tukar keseimbangan berdasarkan harga |
 | UIP | e_expected = e × (1+i)/(1+i*) | Perbedaan bunga berdampak pada ekspektasi kurs |
+
+Contoh UIP: dengan e = 10, bunga domestik i = 6%, dan bunga asing i* = 2%, kurs yang diharapkan setahun lagi = 10 × 1,06/1,02 = 10,392. Mata uang domestik diperkirakan terdepresiasi sekitar 3,92%, yang mengimbangi selisih bunga 4 poin. Kurs PPP 8,33 lebih rendah dari e aktual 10, sehingga mata uang domestik tergolong bernilai rendah menurut PPP, tetapi PPP hanya titik pembanding.
 
 Contoh Indonesia: jika rupiah melemah, barang ekspor Indonesia menjadi lebih terjangkau di pasar global, tetapi impor kapital dan bahan baku menjadi mahal. Contoh global: biaya transfer lintas negara dapat menciptakan insentif untuk memakai stablecoin jika pasar kredit bank atau transfer antarnegara terhambat. Dalam konteks Web3, stablecoin berfungsi seperti alat pembayaran antarnegara, tetapi pergerakan kurs tetap relevan bagi investor yang memakai aset berbasis mata uang atau membandingkan imbal hasil dalam berbagai unit akun.
 
@@ -311,6 +313,8 @@ Cadangan devisa dapat dipandang sebagai buffer terhadap tekanan. Jika bank sentr
 | Mengambang | Nilai tukar ditentukan pasar | Rendah | Volatilitas tinggi |
 | Tetap | Nilai tukar dijaga | Tinggi | Cadangan terkuras |
 | Terkendali | Intervensi selektif | Sedang | Kebijakan bisa kurang jelas |
+
+Contoh umur cadangan: cadangan devisa 60 dan intervensi 10 per bulan untuk menahan kurs tetap bertahan 60/10 = 6 bulan bila tekanan terus berlangsung. Cadangan 120 dengan intervensi yang sama bertahan 12 bulan, tetapi tekanan yang membesar menghabiskannya jauh lebih cepat.
 
 Contoh Indonesia: ketika arus modal keluar tajam, rupiah dapat terdepresiasi dan menyebabkan tekanan pada harga impor, utang luar negeri, serta daya beli rumah tangga. Contoh global: negara dengan cadangan besar dapat lebih tahan terhadap gegar pasar, tetapi tetap tak kebal terhadap perubahan sentimen. Dalam ekosistem Web3, peg stablecoin yang didukung cadangan dapat menghadapi serangan spekulatif jika pengguna khawatir terhadap risiko penyetoran, likuiditas, atau kepercayaan penerbit.
 
