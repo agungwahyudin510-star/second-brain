@@ -738,3 +738,94 @@ export function stabilizationNeeds(
     tighteningRequired: gap < 0,
   };
 }
+
+export function tradeGains(worldPrice: number, demandIntercept = 100, supplyIntercept = -20, demandSlope = 5, supplySlope = 5) {
+  const qd = demandIntercept - demandSlope * worldPrice;
+  const qs = supplyIntercept + supplySlope * worldPrice;
+  const importVolume = Math.max(0, qd - qs);
+  const exportVolume = Math.max(0, qs - qd);
+  const autarkyPrice = 12;
+  const autarkyQuantity = 40;
+  const consumerSurplus = 0.5 * qd * (demandIntercept / demandSlope - worldPrice);
+  const producerSurplus = 0.5 * qs * (worldPrice - (supplyIntercept * -1 / supplySlope));
+  const autarkyConsumer = 0.5 * autarkyQuantity * (demandIntercept / demandSlope - autarkyPrice);
+  const autarkyProducer = 0.5 * autarkyQuantity * (autarkyPrice - 4);
+  const totalSurplus = consumerSurplus + producerSurplus;
+  const netGain = totalSurplus - (autarkyConsumer + autarkyProducer);
+  return {
+    qd,
+    qs,
+    importVolume,
+    exportVolume,
+    consumerSurplus,
+    producerSurplus,
+    totalSurplus,
+    autarkyConsumer,
+    autarkyProducer,
+    autarkyTotal: autarkyConsumer + autarkyProducer,
+    netGain,
+  };
+}
+
+export function tariffOutcome(worldPrice: number, tariff: number) {
+  const domesticPrice = worldPrice + tariff;
+  const qd = 100 - 5 * domesticPrice;
+  const qs = -20 + 5 * domesticPrice;
+  const importVolume = Math.max(0, qd - qs);
+  const revenue = tariff * importVolume;
+  const consumerSurplus = 0.5 * qd * (20 - domesticPrice);
+  const producerSurplus = 0.5 * qs * (domesticPrice - 4);
+  const autarkyTotal = 320;
+  const total = consumerSurplus + producerSurplus + revenue;
+  const deadweightLoss = autarkyTotal - total;
+  return {
+    domesticPrice,
+    qd,
+    qs,
+    importVolume,
+    revenue,
+    consumerSurplus,
+    producerSurplus,
+    total,
+    deadweightLoss,
+  };
+}
+
+export function bopIdentity(currentAccount: number, financialAccount: number, statisticalDiscrepancy = 0) {
+  const balance = currentAccount + financialAccount + statisticalDiscrepancy;
+  return {
+    currentAccount,
+    financialAccount,
+    statisticalDiscrepancy,
+    balance,
+    residual: -balance,
+  };
+}
+
+export function exchangeRateReal(nominalRate: number, domesticPrice: number, foreignPrice: number) {
+  const realRate = (nominalRate * foreignPrice) / domesticPrice;
+  const pppLevel = domesticPrice / foreignPrice;
+  return {
+    nominalRate,
+    domesticPrice,
+    foreignPrice,
+    realRate,
+    pppLevel,
+    undervalued: nominalRate < pppLevel,
+    overvalued: nominalRate > pppLevel,
+  };
+}
+
+export function currencyRegime(regime: "floating" | "fixed" | "managed", reserves: number, capitalFlow: number, pressure: number) {
+  const intervention = pressure * (regime === "fixed" ? 1 : regime === "managed" ? 0.5 : 0);
+  const exchangeRateChange = pressure + capitalFlow * (regime === "floating" ? 0.9 : regime === "managed" ? 0.5 : 0.1) - reserves * 0.01;
+  return {
+    regime,
+    reserves,
+    capitalFlow,
+    pressure,
+    intervention,
+    exchangeRateChange,
+    reserveCoverage: reserves / Math.max(1, Math.abs(capitalFlow) + 1),
+  };
+}

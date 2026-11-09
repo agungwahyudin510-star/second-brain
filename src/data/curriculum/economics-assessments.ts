@@ -881,8 +881,8 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Pemerintah mengubah sasaran inflasi setelah setiap perubahan harga bulanan",
     ], 1, "Pajak progresif dan tunjangan berubah bersama pendapatan atau pengangguran tanpa undang-undang stimulus baru.", [
       "Proyek tambahan yang disahkan khusus merupakan kebijakan diskresioner dan memerlukan keputusan.",
-      "Pajak progresif dan tunjangan otomatis menahan perubahan pendapatan disposabel saat siklus berubah.",
-      "Perubahan suku bunga adalah kebijakan moneter aktif, bukan penstabil fiskal otomatis.",
+      "Perubahan suku bunga acuan adalah kebijakan moneter aktif lewat keputusan rapat, bukan penstabil fiskal otomatis.",
+      "Mengubah sasaran inflasi adalah keputusan kebijakan, bukan mekanisme yang bekerja otomatis mengikuti pendapatan.",
     ]),
     q("eko2-b09-q05", "Hitungan • Pengganda belanja", "Jika MPC=0,8 dan belanja pemerintah naik 20, berapa perubahan keluaran dalam model sederhana?", [
       "Naik 100, karena pengganda belanja 1/(1−0,8)=5",
@@ -908,11 +908,11 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "60,00%, karena saldo primer nol membuat rasio tetap",
       "61,17%, dari 60×1,05/1,03",
       "63,00%, dari menambahkan selisih r−g sebesar dua pada rasio awal",
-      "58,83%, dari 60×1,03/1,05",
+      "58,86%, dari 60×1,03/1,05",
     ], 1, "d(1)=60×(1+0,05)/(1+0,03)=61,17% PDB.", [
       "Walau saldo primer nol, r lebih besar daripada g sehingga rasio naik dalam rumus.",
-      "Perhitungan 60×1,05/1,03 menghasilkan 61,165..., dibulatkan menjadi 61,17%.",
-      "Selisih r−g tidak ditambahkan sebagai dua poin langsung; dinamika memakai rasio 1,05/1,03.",
+      "63,00% menambahkan r−g sebesar dua poin langsung; dinamika memakai rasio (1+r)/(1+g)=1,05/1,03.",
+      "Membalik pembilang dan penyebut (1,03/1,05) menurunkan rasio, padahal r lebih besar dari g membuat rasio naik.",
     ]),
     q("eko2-b09-q08", "Kasus • Guncangan permintaan", "Pada AD: Y=1.400+a−200P dan SRAS: Y=800+100P, AD naik 100 dari keseimbangan dasar. Apa hasil keseimbangan baru?", [
       "P=1,667 dan Y=966,7, yaitu kesenjangan resesi",
@@ -930,19 +930,121 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "P=2,000 dan Y=1.000, karena biaya hanya mengubah tingkat harga",
       "P=1,667 dan Y=966,7, yaitu kesenjangan resesi karena AD turun",
     ], 0, "P=(600−(−100))/300=2,333; Y=800−100+100×2,333=933,3; ini stagflasi pada ilustrasi.", [
-      "Hasil ini berlawanan dengan guncangan biaya negatif yang menggeser SRAS ke kiri.",
-      "P=1,667 dan Y=1.066,7 terjadi saat SRAS naik 100, yaitu biaya turun.",
-      "Guncangan SRAS mengubah keseimbangan harga dan keluaran dari titik dasar.",
+      "Itu hasil SRAS naik 100 (biaya turun), berlawanan dengan guncangan biaya naik.",
+      "Guncangan SRAS menggeser keseimbangan harga dan keluaran dari titik dasar; P tidak tetap 2,000.",
+      "P=1,667 dan Y=966,7 terjadi saat AD turun 100, bukan karena SRAS bergeser ke kiri.",
     ]),
     q("eko2-b09-q10", "Kasus • Efektivitas stimulus", "Keluaran aktual 960, potensi 1.000, MPC=0,8, dan efektivitas kebijakan 60%. Berapa tambahan belanja yang diperlukan menurut model?", [
       "8,00, karena kesenjangan 40 dibagi pengganda belanja 5",
       "10,00, karena kesenjangan 40 dibagi besar pengganda pajak 4",
-      "13,33, karena kesenjangan 40 dibagi efektivitas 0,6 saja",
+      "66,67, karena kesenjangan 40 dibagi efektivitas 0,6 saja",
       "13,33, karena 40 dibagi pengganda belanja 5 lalu dibagi 0,6",
     ], 3, "ΔG=40/(5×0,6)=13,33; efektivitas kurang dari penuh menaikkan kebutuhan stimulus dibanding 8,00.", [
       "8,00 adalah kebutuhan bila efektivitas 100%, bukan 60%.",
       "10,00 adalah kebutuhan pemotongan pajak pada efektivitas penuh, bukan tambahan belanja.",
       "40/0,6=66,67; pengganda belanja lima juga harus dimasukkan.",
+    ]),
+  ],
+  "eko2-b10": [
+    q("eko2-b10-q01", "Konsep • Keunggulan komparatif", "Dalam ekonomi kecil terbuka, apa yang paling tepat tentang harga dunia dan keputusan negara?", [
+      "Negara itu bisa membentuk harga dunia karena skala produksinya besar",
+      "Negara penerima harga dunia tidak dapat memengaruhi harga internasional lewat keputusan domestik",
+      "Negara pengimpor selalu memperoleh seluruh keuntungan perdagangan karena harga turun",
+      "Harga dunia hanya relevan ketika kedua negara memiliki kurva permintaan sama",
+    ], 1, "Ekonomi kecil terbuka mengambil harga dunia sebagai parameter luar negeri; ia tidak punya kapasitas memengaruhi harga dunia secara signifikan.", [
+      "Skala kecil memang mengurangi kemampuan memengaruhi harga global.",
+      "Negara pengimpor pun bisa menikmati surplus konsumen, tetapi bukan seluruh manfaat secara otomatis dan distribusinya tidak setara.",
+      "Harga dunia berlaku tanpa syarat sama kurva permintaan; itu mengandaikan pasar yang sangat terbuka dan kecil.",
+    ]),
+    q("eko2-b10-q02", "Konsep • Keuntungan perdagangan", "Jika harga dunia P_w=8 di bawah harga domestik ekuilibrium 12, apa dampak utama pada surplus?", [
+      "Surplus produsen naik, surplus konsumen turun, dan total surplus menurun",
+      "Surplus konsumen naik, surplus produsen turun, dan total surplus naik sebesar 80",
+      "Seluruh surplus berubah menjadi keuntungan pemerintah melalui impor",
+      "Surplus konsumen dan produsen keduanya turun karena kurva domestik tidak relevan",
+    ], 1, "Pada harga dunia di bawah ekuilibrium, impor menurunkan harga domestik dan meningkatkan konsumsi; perubahan neto total adalah +80 pada ilustrasi model." , [
+      "Harga dunia di bawah ekuilibrium menaikkan surplus konsumen, bukan menurunkannya.",
+      "Pemerintah tidak secara otomatis memperoleh surplus dari impor; pendapatan tarif baru adalah bagian lain dari model.",
+      "Kedua surplus tidak turun secara bersamaan ketika harga dunia lebih rendah dari ekuilibrium.",
+    ]),
+    q("eko2-b10-q03", "Hitungan • Tarif", "Dengan Qd=100−5P dan Qs=−20+5P, bila P_w=8 dan tarif t=2, apa harga domestik, impor, dan penerimaan tarif?", [
+      "Harga domestik 10; impor 20; penerimaan 40",
+      "Harga domestik 8; impor 30; penerimaan 20",
+      "Harga domestik 12; impor 20; penerimaan 20",
+      "Harga domestik 10; impor 30; penerimaan 30",
+    ], 0, "Harga domestik = 8 + 2 = 10; Qd=50, Qs=30, impor=20; penerimaan=2×20=40.", [
+      "Ini tepat dengan D=50 dan S=30, sehingga impor 20 dan penerimaan 40.",
+      "Harga domestik tidak tetap 8 ketika tarif diberlakukan; ia naik ke 10.",
+      "Impor bukan 30 karena Qd−Qs=50−30=20.",
+    ]),
+    q("eko2-b10-q04", "Konsep • Tarif dan deadweight loss", "Mengapa tarif membuat deadweight loss walaupun penerimaan pemerintah meningkat?", [
+      "Karena konsumen membeli lebih banyak saat harga turun dan pembeli tidak memerlukan insentif",
+      "Karena tarif menimbulkan pengurangan konsumsi dan produksi yang tidak efisien di samping transfer kepada pemerintah",
+      "Karena tarif selalu mengubah harga dunia menjadi lebih tinggi dari biaya produksi marginal",
+      "Karena ekspor neto selalu turun ketika pemerintah membatasi impor",
+    ], 1, "Tarif menciptakan dua sumber kerugian: konsumsi berkurang di unit yang semula bermanfaat dan produksi domestik yang tidak efisien naik di unit yang seharusnya diimpor.", [
+      "Tarif biasanya menaikkan harga domestik, bukan menurunkannya.",
+      "Tarif dapat mengubah harga dunia hanya untuk negara kecil jika harga dunia berubah, bukan intrinsik dari tarif.",
+      "Ekspor neto tidak selalu turun; efeknya tergantung pada kondisi perdagangan dan respons pasar.",
+    ]),
+    q("eko2-b10-q05", "Konsep • Neraca pembayaran", "Identitas neraca pembayaran yang benar pada konvensi tanda baku adalah?", [
+      "Transaksi berjalan + transaksi finansial + selisih statistik = 0",
+      "Neraca pembayaran = ekspor + impor − transfer neto",
+      "Transaksi berjalan + transaksi finansial = surplus nominal tanpa syarat",
+      "Neraca pembayaran selalu positif bila utang luar negeri turun",
+    ], 0, "Dalam konvensi umum, transaksi berjalan, transaksi finansial, dan selisih statistik harus menyeimbangkan nol, dengan arus modal mengimbangi defisit atau surplus transaksi berjalan.", [
+      "Yang benar adalah ada tambahan selisih statistik pada identitas, bukan hanya ekspor dan impor kasar.",
+      "Ekspansi arus modal bukan selalu netral tanpa syarat; keseimbangan total mensyaratkan jumlah nol.",
+      "Utang luar negeri turun tidak otomatis menunjukkan neraca pembayaran positif karena semua komponen harus dihitung.",
+    ]),
+    q("eko2-b10-q06", "Hitungan • Identitas tabungan-investasi", "Jika PDB=930, C=600, G=200, I=150, dan NX=−20, berapa tabungan nasional?", [
+      "130",
+      "110",
+      "150",
+      "−20",
+    ], 0, "Tabungan nasional S = Y − C − G = 930 − 600 − 200 = 130; identitas S−I = NX = 130−150 = −20.", [
+      "130 adalah benar untuk tabungan nasional, bukan nilai pengeluaran investasi.",
+      "110 salah karena mengurangi 20 dari nilai benar tanpa dasar identitas.",
+      "−20 adalah NX, bukan tabungan nasional.",
+    ]),
+    q("eko2-b10-q07", "Konsep • Kurs nominal dan riil", "Rumus kurs riil yang benar adalah?", [
+      "e_r = e × P/P*",
+      "e_r = e × P*/P",
+      "e_r = P × P* / e",
+      "e_r = e/P* + P",
+    ], 1, "Kurs riil = e × P*/P; itu mengukur harga barang luar negeri dalam satuan barang domestik atau sebaliknya secara konsisten.", [
+      "Rumus e × P/P* menilai nilai nominal berlawanan dengan definisi riil.",
+      "Membagi dengan e mengubah skala kurs dan bias interpretasi.",
+      "Penambahan P tidak sesuai dengan definisi real exchange rate.",
+    ]),
+    q("eko2-b10-q08", "Hitungan • PPP", "Jika P=100, P*=12, dan e=10 MD per MA, berapa kurs riil dan bagaimana interpretasinya?", [
+      "1,2; barang luar negeri 20% lebih mahal dibanding domestik",
+      "0,83; mata uang domestik lebih mahal secara riil",
+      "1,0; PPP terpenuhi sepenuhnya",
+      "1,5; domestik berada di posisi undervalued",
+    ], 0, "e_r = 10×12/100 = 1,2; berarti satu unit barang luar negeri setara 20% lebih mahal dibanding barang domestik pada satuan yang sama.", [
+      "0,83 membalik hubungan tidak sesuai dengan rumus.",
+      "PPP tidak terpenuhi pada e=10 ketika e_PPP=100/12=8,33.",
+      "1,5 tidak sesuai dengan 10×12/100.",
+    ]),
+    q("eko2-b10-q09", "Konsep • UIP dan kurs", "Pernyataan yang paling tepat tentang paritas suku bunga tak tertutup (UIP) adalah?", [
+      "e yang diharapkan naik bila selisih suku bunga domestik dan asing positif",
+      "Currenlly, e yang diharapkan = e × (1+i)/(1+i*) dan perubahan nilai mata uang mengkompensasi perbedaan bunga",
+      "Kurs nominal selalu tetap saat suku bunga berbeda karena sekali diikat nampaknya tidak berubah",
+      "UIP menyatakan dari sisi barang, bukan sisi aset, bahwa pasar modal sepenuhnya tidak relevan",
+    ], 1, "UIP menyatakan kurs yang diharapkan bergerak sesuai selisih bunga: mata uang domestik cenderung terdepresiasi jika i > i* dalam ukuran tertentu, dengan pengembalian yang disesuaikan.", [
+      "Jika i > i* dan mata uang domestik terdepresiasi, kurs yang diharapkan naik, bukan turun, pada satuan tertentu.",
+      "Kurs nominal tidak tetap otomatis; ia bisa bergerak saat bunga berbeda.",
+      "UIP sangat relevan untuk aset dan pasar modal, bukan hanya barang.",
+    ]),
+    q("eko2-b10-q10", "Konsep • Rezim kurs", "Manakah pilihan yang paling tepat mengenai trilema kebijakan?", [
+      "Semua negara dapat sekaligus memiliki kurs tetap, mobilitas modal bebas, dan kebijakan moneter mandiri",
+      "Negara hanya dapat memilih dua dari tiga: kurs tetap, mobilitas modal bebas, dan kebijakan moneter mandiri",
+      "Kurs mengambang menolak intervensi bank sentral kapan pun",
+      "Cadangan devisa selalu membatasi perdagangan agar kuota tetap efektif",
+    ], 1, "Trilema kebijakan menyatakan hanya dua dari tiga tujuan yang bisa dipilih secara bersamaan: kurs tetap, mobilitas modal, dan moneter mandiri.", [
+      "Semua tiga tidak bisa dipilih secara bersamaan karena ada trade-off yang melekat.",
+      "Kurs mengambang tidak menolak intervensi; bank sentral dapat berperan di pasar valuta.",
+      "Cadangan devisa bukan pembatas perdagangan; cadangan lebih terkait intervensi dan kepercayaan.",
     ]),
   ],
 };
@@ -986,6 +1088,10 @@ export const ECONOMICS_ESSAYS: Record<string, EssayPrompt[]> = {
   "eko2-b09": [
     { id: "eko2-b09-e01", prompt: "Gunakan model AD-AS Bab 9 untuk membandingkan keseimbangan dasar, AD yang naik 100, dan SRAS yang turun 100. Hitung P dan Y pada tiap kasus, jelaskan kesenjangan atau stagflasi, lalu bandingkan bagaimana respons kebijakan fiskal dapat membantu tanpa mengabaikan jeda dan biaya.", rubric, reviewPoints: ["Menghitung keseimbangan dasar P=2,000 dan Y=1.000", "Menghitung AD naik: P=2,333 dan Y=1.033,3", "Menghitung SRAS turun: P=2,333 dan Y=933,3 serta menamai stagflasi", "Membedakan guncangan permintaan dan penawaran", "Membahas keterbatasan respons fiskal dan penyesuaian jangka panjang"] },
     { id: "eko2-b09-e02", prompt: "Hitung pengganda fiskal untuk MPC=0,8 dan gunakan dinamika utang d(t+1)=d(t)(1+r)/(1+g)−pb pada data Bab 9. Terakhir, jelaskan kebutuhan stimulus saat Y=960 dengan efektivitas 60%, serta bagaimana jeda kebijakan, crowding out, dan ketidakpastian PDB potensial membatasi kesimpulan.", rubric, reviewPoints: ["Menghitung pengganda G=5, pajak=−4, dan anggaran berimbang=1", "Menghitung rasio utang 61,17% setelah satu tahun serta surplus primer penstabil 1,17% PDB", "Menghitung ΔG=13,33 dan pemotongan pajak=16,67 pada efektivitas 60%", "Menjelaskan jeda dan efek mengeluarkan secara kualitatif", "Menyatakan bahwa estimasi PDB potensial dan pengganda tidak pasti"] },
+  ],
+  "eko2-b10": [
+    { id: "eko2-b10-e01", prompt: "Gunakan model perdagangan internasional untuk membandingkan keunggulan komparatif, harga dunia, dan distribusi surplus antara konsumen dan produsen. Jelaskan kapan negara menjadi importir atau eksportir, bagaimana perubahan harga dunia memengaruhi surplus, dan mengapa ada pihak yang rugi meski total surplus naik.", rubric, reviewPoints: ["Merinci bila harga dunia di bawah atau di atas ekuilibrium domestik", "Menghitung perubahan surplus konsumen dan produsen dengan benar", "Menjelaskan distribusi manfaat dan biaya", "Membedakan hasil total dari distribusi serta efek pada kelompok yang kalah"] },
+    { id: "eko2-b10-e02", prompt: "Analisis dampak tarif, neraca pembayaran, serta kurs pada perekonomian terbuka. Hitung hasil sederhana untuk impor, penerimaan tarif, transaksi berjalan, dan identitas S−I = NX, lalu jelaskan bagaimana kurs dan arus modal memengaruhi ekspor neto serta ketergantungan pada pembiayaan luar negeri.", rubric, reviewPoints: ["Menghitung import, tax revenue, dan deadweight loss dalam data sederhana", "Menjelaskan transaksi berjalan, finansial, dan identitas neraca pembayaran", "Menghubungkan kurs riil dengan daya saing ekspor", "Membahas risiko ketergantungan pembiayaan eksternal dan perubahan arus modal"] },
   ],
 };
 

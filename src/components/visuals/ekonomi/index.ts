@@ -43,6 +43,11 @@ import EkoAdasEquilibrium from "./eko-adas-equilibrium";
 import EkoKeynesianMultiplier from "./eko-keynesian-multiplier";
 import EkoDebtDynamics from "./eko-debt-dynamics";
 import EkoStabilizationMix from "./eko-stabilization-mix";
+import EkoTradeGains from "./eko-trade-gains";
+import EkoTariffEffects from "./eko-tariff-effects";
+import EkoBopIdentity from "./eko-bop-identity";
+import EkoExchangeRate from "./eko-exchange-rate";
+import EkoCurrencyRegimes from "./eko-currency-regimes";
 
 export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-ppf": EkoPpf,
@@ -89,4 +94,9 @@ export const ECONOMICS_VISUALS: Record<string, ComponentType | undefined> = {
   "eko-keynesian-multiplier": EkoKeynesianMultiplier,
   "eko-debt-dynamics": EkoDebtDynamics,
   "eko-stabilization-mix": EkoStabilizationMix,
+  "eko-trade-gains": EkoTradeGains,
+  "eko-tariff-effects": EkoTariffEffects,
+  "eko-bop-identity": EkoBopIdentity,
+  "eko-exchange-rate": EkoExchangeRate,
+  "eko-currency-regimes": EkoCurrencyRegimes,
 };
