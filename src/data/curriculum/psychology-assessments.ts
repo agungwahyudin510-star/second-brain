@@ -202,20 +202,20 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "36 mengalikan jumlah digit dengan ukuran chunk, bukan membaginya.",
     ]),
     qv2("psi2-b02-q06", "Hitungan • Model retensi", "Dengan S awal 2 hari, dua tinjauan menggandakan S, lalu uji 7 hari kemudian. Berapa retensi model?", [
-      "41,7% (dua tinjauan; S=8)",
-      "17,4% (satu tinjauan; S=4)",
-      "64,6% (tiga tinjauan; S=16)",
-      "3,0% (tanpa tinjauan; S=2)",
+      "41,7%",
+      "17,4%",
+      "64,6%",
+      "3,0%",
     ], 0, "Dua tinjauan memberi S=2×2²=8; exp(−7/8)≈41,7%.", [
       "17,4% memakai satu tinjauan, sehingga S=4.",
       "64,6% memakai tiga tinjauan, sehingga S=16.",
       "3,0% adalah hasil tanpa tinjauan, sehingga S=2.",
     ]),
     qv2("psi2-b02-q07", "Hitungan • Base rate", "Dari 1.000 transaksi, 1% penipuan, sensitivitas 90%, dan salah-tandai 10%. Berapa peluang peringatan benar?", [
-      "90% (sensitivitas dari kasus penipuan)",
-      "9,09% (9/99 tanpa TP dalam penyebut)",
-      "10% (tingkat salah-tandai kasus nonpenipuan)",
-      "8,33% (9 dari 108 seluruh peringatan)",
+      "90%",
+      "9,09%",
+      "10%",
+      "8,33%",
     ], 3, "TP=9 dan FP=99, jadi peluang peringatan benar = 9/(9+99)=9/108≈8,33%.", [
       "90% adalah sensitivitas, bukan peluang benar di antara semua peringatan.",
       "9/99 mengabaikan sembilan peringatan benar dari penyebut total.",
@@ -252,6 +252,108 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Mudah diingat tidak membuktikan bahwa kejadian paling umum.",
     ]),
   ],
+  "psi2-b03": [
+    qv2("psi2-b03-q01", "Konsep • Komponen emosi", "Pernyataan yang paling tepat tentang emosi adalah...", [
+      "Emosi hanya perasaan sadar tanpa tubuh, penilaian, atau dorongan",
+      "Emosi dapat mencakup rasa, tubuh, tafsir, ekspresi, dan dorongan",
+      "Emosi selalu memberi respons tubuh yang seragam bagi semua orang",
+      "Emosi hanya suasana hati panjang tanpa pemicu yang dapat dikenali",
+    ], 1, "Emosi dapat mencakup pengalaman, tubuh, penilaian, ekspresi, serta kecenderungan bertindak.", [
+      "Emosi dapat melibatkan respons tubuh dan dorongan, bukan hanya rasa sadar.",
+      "Respons emosi tidak selalu sama bagi setiap orang.",
+      "Emosi dan suasana hati berhubungan tetapi tidak identik.",
+    ]),
+    qv2("psi2-b03-q02", "Konsep • Suasana hati", "Suasana hati biasanya berbeda dari emosi karena cenderung...", [
+      "Selalu lebih kuat dan terkait satu pemicu yang diketahui",
+      "Hanya terdiri atas sensasi tubuh tanpa pengalaman subjektif",
+      "Berlangsung tepat satu jam lalu berubah menjadi emosi",
+      "Lebih menyebar, tanpa satu pemicu yang jelas",
+    ], 3, "Suasana hati cenderung lebih menyebar dan tidak selalu memiliki pemicu tunggal yang jelas.", [
+      "Emosi tidak selalu lebih lemah, dan suasana hati tidak selalu terkait satu pemicu.",
+      "Suasana hati bukan hanya sensasi tubuh tanpa pengalaman.",
+      "Tidak ada durasi tetap yang otomatis mengubah suasana hati menjadi emosi.",
+    ]),
+    qv2("psi2-b03-q03", "Konsep • Appraisal", "Appraisal dalam peta emosi merujuk pada...", [
+      "Penilaian makna situasi terhadap tujuan seseorang",
+      "Rangsangan indera yang diterima sebelum sempat dimaknai",
+      "Ekspresi wajah yang sama pada semua orang di tiap keadaan",
+      "Tindakan otomatis yang tidak dipengaruhi konteks sekitar",
+    ], 0, "Appraisal adalah penilaian makna situasi terhadap tujuan, kebutuhan, atau keselamatan.", [
+      "Penerimaan rangsangan indera lebih dekat dengan sensasi.",
+      "Ekspresi dapat berbeda dan tidak selalu menunjukkan satu makna.",
+      "Tindakan dapat dipengaruhi interpretasi dan konteks.",
+    ]),
+    qv2("psi2-b03-q04", "Konsep • Emosi dan keputusan", "Cara paling cermat menggunakan emosi saat mengambil keputusan adalah...", [
+      "Mengikuti emosi karena selalu menunjukkan hasil paling aman",
+      "Mengabaikan emosi karena tidak pernah memberi informasi",
+      "Jadikan emosi petunjuk; periksa tujuan dan bukti",
+      "Memutuskan segera agar arousal tidak memengaruhi pilihan",
+    ], 2, "Emosi dapat memberi informasi, tetapi arousal tinggi dapat mendorong keputusan tergesa; periksa tujuan serta bukti.", [
+      "Emosi bukan jaminan bahwa hasil tertentu paling aman.",
+      "Emosi dapat menandai nilai atau risiko yang dirasakan.",
+      "Keputusan segera tidak selalu mengurangi pengaruh arousal.",
+    ]),
+    qv2("psi2-b03-q05", "Hitungan • Intensitas appraisal", "Pentingnya tujuan 8 dan ancaman dinilai 5. Menurut model intensitas ilustratif, hasilnya...", [
+      "40,0",
+      "4,0",
+      "13,0",
+      "3,0",
+    ], 1, "Intensitas = 8×5÷10=4,0.", [
+      "40,0 mengalikan kedua nilai tanpa membagi 10.",
+      "13,0 menjumlahkan nilai lalu menambahkan skala.",
+      "3,0 tidak mengikuti hasil perkalian dan pembagian model.",
+    ]),
+    qv2("psi2-b03-q06", "Hitungan • Arousal", "Arousal awal 8 turun 25% tiap jam. Berapa nilai model setelah dua jam?", [
+      "6,00",
+      "4,00",
+      "3,38",
+      "4,5",
+    ], 3, "A(2)=8×0,75²=4,50.", [
+      "6,00 adalah nilai setelah satu jam.",
+      "4,00 mengurangi 25% nilai awal secara linear dua kali.",
+      "3,38 adalah nilai model setelah tiga jam.",
+    ]),
+    qv2("psi2-b03-q07", "Hitungan • Suppression", "Jika perasaan 4,0 dan ekspresi ditekan 70%, berapa nilai perasaan dalam model?", [
+      "4",
+      "1,2",
+      "2,8",
+      "0,0",
+    ], 0, "Suppression dalam model mengubah ekspresi yang tampak, sedangkan perasaan tetap 4,0.", [
+      "1,2 adalah nilai ekspresi yang tampak setelah penekanan.",
+      "2,8 adalah bagian ekspresi yang ditekan, bukan perasaan.",
+      "Model tidak menyatakan perasaan hilang seluruhnya.",
+    ]),
+    qv2("psi2-b03-q08", "Kasus • Aturan jeda", "Arousal model mulai dari 8 dan aturan jeda menunggu sampai ≤4. Dengan peluruhan 25% per jam, kapan ambang pertama tercapai?", [
+      "1,0",
+      "3",
+      "2,0",
+      "4,0",
+    ], 1, "Pada dua jam nilainya 4,50; pada tiga jam 3,375 sehingga ambang ≤4 tercapai.", [
+      "Setelah satu jam nilai model masih 6,00.",
+      "Dua jam menghasilkan 4,50, masih di atas ambang.",
+      "Empat jam melewati ambang lebih lambat daripada waktu pertama.",
+    ]),
+    qv2("psi2-b03-q09", "Kasus • Kritik", "Kritik terasa seperti serangan pribadi. Respons awal yang paling membantu untuk memahami situasi adalah...", [
+      "Membalas segera agar maksud diri tidak diragukan",
+      "Menganggap tafsir pertama pasti benar tanpa pemeriksaan",
+      "Menghindari semua umpan balik berikutnya",
+      "Jeda, cek fakta, tinjau tafsir, lalu klarifikasi",
+    ], 3, "Jeda, pemeriksaan fakta, reappraisal, dan klarifikasi dapat membantu membedakan maksud serta interpretasi.", [
+      "Balasan segera dapat memperbesar konflik sebelum fakta diperiksa.",
+      "Tafsir awal adalah hipotesis, bukan kepastian tentang maksud pemberi kritik.",
+      "Menghindari semua umpan balik dapat menutup informasi yang berguna.",
+    ]),
+    qv2("psi2-b03-q10", "Kasus • Avoidance", "Seseorang menghindari tugas yang memicu cemas dan merasa lega sesaat, tetapi tenggat tetap ada. Langkah yang sesuai adalah...", [
+      "Pecah tugas menjadi langkah kecil dan hadapi bertahap",
+      "Tunda seluruh tugas sampai rasa cemas hilang sepenuhnya",
+      "Salahkan diri karena belum menyelesaikannya dengan cepat",
+      "Hapus tujuan agar tidak perlu memikirkan tugas",
+    ], 0, "Langkah kecil dapat mengurangi hambatan sambil menangani tugas; strategi tetap bergantung pada keamanan dan konteks.", [
+      "Menunggu emosi hilang sepenuhnya dapat memperpanjang penghindaran.",
+      "Menyalahkan diri tidak memberi langkah penyelesaian yang konkret.",
+      "Menghapus tujuan tidak menyelesaikan tuntutan tugas yang masih ada.",
+    ]),
+  ],
 };
 
 export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
@@ -278,6 +380,28 @@ export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
         "Tunjukkan cara menghitung true positive dan false positive.",
         "Hubungkan penalaran dengan contoh klaim investasi atau keamanan.",
         "Nyatakan batas penggunaan angka dan konteks alat.",
+      ],
+    },
+  ],
+  "psi2-b03": [
+    {
+      ...essay("psi2-b03-e01", "Jelaskan peta pemicu–interpretasi–respons pada kasus menerima kritik. Bandingkan reappraisal, suppression, dan avoidance, lalu nyatakan batas kesimpulan yang dapat dibuat."),
+      reviewPoints: [
+        "Pisahkan pemicu, interpretasi, respons tubuh, dan tindakan.",
+        "Bandingkan cara kerja reappraisal, suppression, dan avoidance.",
+        "Gunakan contoh konkret dan pertimbangkan konteks serta tujuan.",
+        "Nyatakan hipotesis alternatif atau batas bukti.",
+        "Hindari mendiagnosis atau memberi label dari satu kejadian.",
+      ],
+    },
+    {
+      ...essay("psi2-b03-e02", "Rancang aturan jeda pribadi untuk keputusan finansial saat emosi tinggi, misalnya ketika harga turun tajam. Jelaskan bukti yang akan diperiksa, kapan aturan tidak sesuai, dan batasnya."),
+      reviewPoints: [
+        "Tentukan tanda atau kondisi yang memicu jeda.",
+        "Sebutkan bukti dan sumber yang diperiksa sebelum keputusan.",
+        "Jelaskan kapan keputusan dapat ditinjau dan tujuan yang dijaga.",
+        "Pertimbangkan situasi mendesak atau keselamatan saat jeda tidak sesuai.",
+        "Nyatakan bahwa aturan bukan jaminan hasil finansial.",
       ],
     },
   ],

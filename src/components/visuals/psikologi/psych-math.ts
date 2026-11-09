@@ -66,3 +66,29 @@ export function baseRate(
     trueAlertPct: alerts === 0 ? 0 : (truePositives / alerts) * 100,
   };
 }
+
+export function appraisalIntensity(importance: number, threat: number) {
+  return importance * threat / 10;
+}
+
+export function arousalAfter(initial: number, decayPct: number, hours: number) {
+  return initial * (1 - decayPct / 100) ** hours;
+}
+
+export function hoursToThreshold(initial: number, decayPct: number, threshold: number) {
+  if (initial <= threshold) return 0;
+  if (decayPct <= 0) return Number.POSITIVE_INFINITY;
+  return Math.ceil(Math.log(threshold / initial) / Math.log(1 - decayPct / 100));
+}
+
+export function suppressionOutcome(felt: number, suppressPct: number) {
+  return {
+    felt,
+    visible: felt * (1 - suppressPct / 100),
+    suppressed: felt * suppressPct / 100,
+  };
+}
+
+export function criticismIntensity(importance: number, threat: number) {
+  return appraisalIntensity(importance, threat);
+}

@@ -9,6 +9,11 @@ import PsiChunking from "./psi-chunking";
 import PsiForgetting from "./psi-forgetting";
 import PsiCalibration from "./psi-calibration";
 import PsiBaseRate from "./psi-base-rate";
+import PsiEmotionComponents from "./psi-emotion-components";
+import PsiAppraisalMap from "./psi-appraisal-map";
+import PsiArousalDecay from "./psi-arousal-decay";
+import PsiRegulationPaths from "./psi-regulation-paths";
+import PsiCriticismCase from "./psi-criticism-case";
 
 export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-levels": PsiLevels,
@@ -21,4 +26,9 @@ export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-forgetting": PsiForgetting,
   "psi-calibration": PsiCalibration,
   "psi-base-rate": PsiBaseRate,
+  "psi-emotion-components": PsiEmotionComponents,
+  "psi-appraisal-map": PsiAppraisalMap,
+  "psi-arousal-decay": PsiArousalDecay,
+  "psi-regulation-paths": PsiRegulationPaths,
+  "psi-criticism-case": PsiCriticismCase,
 };
