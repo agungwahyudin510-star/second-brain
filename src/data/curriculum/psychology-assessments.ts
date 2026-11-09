@@ -456,6 +456,108 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Perilaku tidak cukup untuk menyimpulkan sifat tetap.",
     ]),
   ],
+  "psi2-b05": [
+    qv2("psi2-b05-q01", "Konsep • Rasionalitas terbatas", "Rasionalitas terbatas paling tepat menggambarkan keputusan ketika...", [
+      "Pilihan terbaik selalu ditemukan jika pencarian terus diperluas",
+      "Semua informasi dan akibat diketahui dengan pasti",
+      "Kapasitas pemrosesan cukup untuk seluruh alternatif",
+      "Batas informasi dan waktu mendorong pilihan cukup baik",
+    ], 3, "Informasi, waktu, dan kapasitas pemrosesan yang terbatas mendorong penggunaan strategi praktis seperti satisficing.", [
+      "Pencarian tanpa batas tidak selalu mungkin atau bermanfaat.",
+      "Rasionalitas terbatas justru tidak mengandaikan semua informasi diketahui.",
+      "Kapasitas pemrosesan dapat membatasi jumlah alternatif yang ditinjau.",
+    ]),
+    qv2("psi2-b05-q02", "Konsep • Efek jangkar", "Efek jangkar terjadi ketika...", [
+      "Angka awal menghapus dampak pengalaman sebelumnya",
+      "Angka awal dapat menarik estimasi berikutnya",
+      "Perkiraan akhir selalu sama dengan titik tengah",
+      "Angka acak tidak pernah mengubah penilaian yang terukur",
+    ], 1, "Jangkar adalah informasi awal yang dapat memengaruhi estimasi berikutnya.", [
+      "Jangkar dapat memengaruhi penilaian, tetapi tidak menghapus semua pengalaman.",
+      "Estimasi tidak selalu sama dengan titik tengah.",
+      "Informasi awal dapat memengaruhi estimasi meski tidak relevan.",
+    ]),
+    qv2("psi2-b05-q03", "Konsep • Aversi kerugian", "Pernyataan yang paling hati-hati mengenai aversi kerugian adalah...", [
+      "Kerugian dapat terasa lebih berat dari keuntungan setara",
+      "Kerugian selalu terasa dua kali lipat pada semua orang",
+      "Titik acuan tidak pernah memengaruhi penilaian suatu hasil",
+      "Semua orang merasakan kerugian dengan cara yang sama persis",
+    ], 0, "Kerugian dapat terasa lebih berat daripada keuntungan setara dalam banyak konteks, bergantung pada titik acuan dan keadaan.", [
+      "Efeknya tidak selalu tepat dua kali lipat atau sama bagi semua orang.",
+      "Titik acuan dapat memengaruhi cara perubahan dinilai.",
+      "Respons terhadap kehilangan berbeda antarorang dan konteks.",
+    ]),
+    qv2("psi2-b05-q04", "Konsep • Biaya tertanam", "Untuk keputusan marjinal apakah proyek perlu dilanjutkan, prinsip yang tepat adalah...", [
+      "Pengeluaran masa lalu harus pulih sebelum memilih",
+      "Hitung biaya lama sebagai manfaat untuk keputusan ke depan",
+      "Abaikan biaya tertanam; nilai biaya dan manfaat berikutnya",
+      "Kerugian lampau membuat lanjut selalu paling tepat ke depan",
+    ], 2, "Biaya yang tak dapat dipulihkan tidak berubah oleh pilihan kini; bandingkan biaya dan manfaat tambahan.", [
+      "Pilihan tidak dapat menjamin bahwa biaya lampau akan pulih.",
+      "Biaya lampau bukan manfaat tambahan di masa depan.",
+      "Kerugian lampau saja tidak membenarkan biaya lanjutan.",
+    ]),
+    qv2("psi2-b05-q05", "Hitungan • Satisficing", "Dengan ambang 75 dan biaya 2 per pemeriksaan, berapa nilai bersih satisficer yang berhenti pada opsi keempat bernilai 80?", [
+      "72 poin",
+      "80 poin",
+      "69 poin",
+      "85 poin",
+    ], 0, "Empat pemeriksaan berbiaya 4×2=8; nilai bersih 80−8=72 poin.", [
+      "80 poin adalah nilai opsi sebelum biaya pencarian.",
+      "69 poin adalah nilai bersih maximizer yang memeriksa delapan opsi.",
+      "85 poin adalah nilai opsi tertinggi sebelum biaya pencarian.",
+    ]),
+    qv2("psi2-b05-q06", "Hitungan • Nilai subjektif", "Taruhan 50% menang 120 dan 50% rugi 100 memakai λ=2. Berapa nilai subjektif model?", [
+      "+10",
+      "+60",
+      "−100",
+      "−40",
+    ], 3, "0,5×120−0,5×2×100=60−100=−40.", [
+      "+10 adalah nilai harapan aritmetis.",
+      "+60 adalah kontribusi kemenangan sebelum kontribusi kerugian.",
+      "−100 tidak memasukkan peluang dan λ pada kerugian.",
+    ]),
+    qv2("psi2-b05-q07", "Hitungan • Present bias", "Dengan β=0,7 dan δ=1, berapa nilai sekarang dari 120 yang diterima bulan depan?", [
+      "120",
+      "84",
+      "70",
+      "100",
+    ], 1, "Nilai sekarang model=0,7×120=84.", [
+      "120 adalah jumlah nominal, belum dikalikan bobot β.",
+      "70 adalah nilai model untuk 100 pada bulan keenam.",
+      "100 adalah jumlah pembanding yang tersedia sekarang.",
+    ]),
+    qv2("psi2-b05-q08", "Kasus • Biaya tertanam", "Sudah dikeluarkan 500; tambahan 100 memberi hasil harapan 80. Apa keputusan marjinal yang sesuai model?", [
+      "Lanjutkan karena 500 telah dibayar dan harus kembali",
+      "Tambah 100 sebab hasil harapan 80 menghapus biaya lama",
+      "Berhenti; hasil tambahan bersih −20 dan abaikan 500",
+      "Masukkan kembali 500 sebagai manfaat proyek berikutnya",
+    ], 2, "Tambahan bersih 80−100=−20; 500 merupakan sunk cost dan tidak dipulihkan oleh pilihan kini.", [
+      "Biaya lampau tidak menjadi alasan untuk menambah biaya yang diperkirakan merugikan.",
+      "Hasil 80 lebih kecil daripada tambahan biaya 100.",
+      "Biaya tertanam tidak menjadi manfaat masa depan.",
+    ]),
+    qv2("psi2-b05-q09", "Kasus • Kaskade informasi", "Sinyal privat A,A,B,B,B tetapi keputusan terlihat semuanya A. Penjelasan model yang mungkin adalah...", [
+      "Kaskade menyamakan keputusan, meski sinyal privat berbeda",
+      "Keputusan bersama membuktikan semua sinyal privat sama",
+      "Mayoritas mengungkap sinyal privat setiap anggota",
+      "Keputusan pertama pasti memastikan hasil kelompok selalu benar",
+    ], 0, "Dalam model kaskade, keputusan sebelumnya yang terlihat dapat membuat sinyal privat berikutnya tidak diikuti.", [
+      "Keputusan yang sama tidak membuktikan sinyal privat setiap orang sama.",
+      "Tindakan terlihat tidak mengungkap seluruh informasi privat.",
+      "Keputusan pertama tidak memastikan hasil kelompok benar.",
+    ]),
+    qv2("psi2-b05-q10", "Kasus • Efek bingkai", "Dua klaim program untuk 600 orang menyebut “200 diselamatkan” dan “400 meninggal”. Cara menilainya adalah...", [
+      "Bingkai berbeda berarti hasil matematis program juga berbeda",
+      "Peluang berubah ketika kalimat memakai kata yang berbeda",
+      "Bias konfirmasi memilih bukti yang mendukung keyakinan",
+      "Efek bingkai; samakan ukuran dan periksa ekuivalensi",
+    ], 3, "Jika hasilnya saling melengkapi, 200 diselamatkan setara dengan 400 meninggal; ubah ke penyebut bersama.", [
+      "Dengan asumsi kategori lengkap, kedua klaim dapat menyatakan hasil yang sama.",
+      "Perubahan kata tidak otomatis mengubah peluang atau jumlah orang.",
+      "Contoh ini membahas bingkai, bukan pencarian bukti sesuai keyakinan.",
+    ]),
+  ],
 };
 
 export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
@@ -526,6 +628,28 @@ export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
         "Jelaskan rasio variabel sebagai rata-rata dengan waktu penguatan tak terduga.",
         "Sebutkan penjelasan alternatif dan faktor konteks.",
         "Hindari klaim bahwa jadwal tertentu selalu menghasilkan perilaku sama.",
+      ],
+    },
+  ],
+  "psi2-b05": [
+    {
+      ...essay("psi2-b05-e01", "Rancang aturan keputusan—misalnya jeda, daftar kriteria, dan pre-commitment—untuk menghadapi FOMO atau keinginan menahan aset yang merugi. Hubungkan dengan sunk cost, loss aversion, dan kaskade sosial; jelaskan batas aturan serta nyatakan bahwa ini bukan rekomendasi transaksi."),
+      reviewPoints: [
+        "Jelaskan bagaimana jeda dan kriteria mengurangi keputusan reaktif.",
+        "Hubungkan titik acuan/loss aversion dan sunk cost secara tepat.",
+        "Bedakan bukti sosial independen dari pengulangan atau kaskade.",
+        "Tentukan kondisi untuk meninjau ulang aturan dan risiko batasnya.",
+        "Hindari menjadikan kerangka psikologi sebagai saran transaksi.",
+      ],
+    },
+    {
+      ...essay("psi2-b05-e02", "Bandingkan satisficing dan maximizing dengan biaya pencarian. Gunakan contoh keputusan yang mudah dibalik dan keputusan yang lebih sulit dibalik; jelaskan kapan tiap strategi masuk akal serta batas modelnya."),
+      reviewPoints: [
+        "Definisikan satisficing dan maximizing dengan akurat.",
+        "Tunjukkan bagaimana biaya pencarian memengaruhi nilai bersih.",
+        "Gunakan contoh konkret dan bandingkan dampak keterbalikan keputusan.",
+        "Jelaskan keterbatasan informasi, urutan opsi, atau kriteria model.",
+        "Hindari klaim bahwa satu strategi selalu unggul.",
       ],
     },
   ],

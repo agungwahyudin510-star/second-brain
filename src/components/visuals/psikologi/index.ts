@@ -19,6 +19,11 @@ import PsiReinforcement from "./psi-reinforcement";
 import PsiMotivationNeeds from "./psi-motivation-needs";
 import PsiGoalPace from "./psi-goal-pace";
 import PsiHabitFriction from "./psi-habit-friction";
+import PsiBoundedSearch from "./psi-bounded-search";
+import PsiAnchorFrame from "./psi-anchor-frame";
+import PsiProspectGamble from "./psi-prospect-gamble";
+import PsiPresentBias from "./psi-present-bias";
+import PsiHerdCascade from "./psi-herd-cascade";
 
 export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-levels": PsiLevels,
@@ -41,4 +46,9 @@ export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-motivation-needs": PsiMotivationNeeds,
   "psi-goal-pace": PsiGoalPace,
   "psi-habit-friction": PsiHabitFriction,
+  "psi-bounded-search": PsiBoundedSearch,
+  "psi-anchor-frame": PsiAnchorFrame,
+  "psi-prospect-gamble": PsiProspectGamble,
+  "psi-present-bias": PsiPresentBias,
+  "psi-herd-cascade": PsiHerdCascade,
 };

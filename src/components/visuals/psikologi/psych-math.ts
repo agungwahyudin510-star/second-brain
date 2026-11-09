@@ -130,3 +130,73 @@ export function motivationProfile(autonomy: number, competence: number, relatedn
     lowest: needs.reduce((lowest, need) => need.score < lowest.score ? need : lowest, needs[0]),
   };
 }
+
+export function satisficeOutcome(values: number[], threshold: number, costPer: number) {
+  const foundIndex = values.findIndex((value) => value >= threshold);
+  const checked = foundIndex === -1 ? values.length : foundIndex + 1;
+  const selectedIndex = foundIndex;
+  const selectedValue = foundIndex === -1 ? null : values[selectedIndex];
+  const cost = checked * costPer;
+  return {
+    selectedIndex: values.length === 0 ? -1 : selectedIndex,
+    selectedValue,
+    checked,
+    cost,
+    net: selectedValue === null ? null : selectedValue - cost,
+  };
+}
+
+export function maximizeOutcome(values: number[], costPer: number) {
+  const selectedIndex = values.reduce((bestIndex, value, index) => value > values[bestIndex] ? index : bestIndex, 0);
+  const selectedValue = values.length === 0 ? null : values[selectedIndex];
+  const checked = values.length;
+  const cost = checked * costPer;
+  return {
+    selectedIndex: values.length === 0 ? -1 : selectedIndex,
+    selectedValue,
+    checked,
+    cost,
+    net: selectedValue === null ? null : selectedValue - cost,
+  };
+}
+
+export function anchoredEstimate(own: number, anchor: number, weight: number) {
+  return own + weight * (anchor - own);
+}
+
+export function gambleValue(win: number, loss: number, pWin: number, lambda: number) {
+  return pWin * win - (1 - pWin) * lambda * loss;
+}
+
+export function breakEvenGain(loss: number, lambda: number, pWin: number) {
+  return pWin <= 0 ? Number.POSITIVE_INFINITY : (1 - pWin) * lambda * loss / pWin;
+}
+
+export function presentValueBetaDelta(amount: number, delayMonths: number, beta: number, delta: number) {
+  return amount * (delayMonths <= 0 ? 1 : beta * delta ** delayMonths);
+}
+
+export function cascade(signals: ("A" | "B")[]) {
+  const decisions: ("A" | "B")[] = [];
+  const ignored: boolean[] = [];
+  let ignoredSignals = 0;
+
+  signals.forEach((signal) => {
+    const countA = decisions.filter((decision) => decision === "A").length;
+    const countB = decisions.length - countA;
+    if (countA >= 2 && countA > countB) {
+      decisions.push("A");
+      ignored.push(true);
+      ignoredSignals += 1;
+    } else if (countB >= 2 && countB > countA) {
+      decisions.push("B");
+      ignored.push(true);
+      ignoredSignals += 1;
+    } else {
+      decisions.push(signal);
+      ignored.push(false);
+    }
+  });
+
+  return { decisions, ignored, ignoredSignals };
+}
