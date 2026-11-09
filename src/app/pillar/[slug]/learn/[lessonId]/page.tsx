@@ -11,6 +11,8 @@ import { isChapterUnlocked } from "@/lib/economics-progress";
 import { ENGLISH_PROGRESS_KEY, PSYCHOLOGY_PROGRESS_KEY, WEB3_PROGRESS_KEY } from "@/lib/economics-progress";
 import EconomicsContent from "@/components/visuals/ekonomi/EconomicsContent";
 import EconomicsChapterResources from "@/components/visuals/ekonomi/EconomicsChapterResources";
+import PsychologyContent from "@/components/visuals/psikologi/PsychologyContent";
+import PsychologyChapterResources from "@/components/visuals/psikologi/PsychologyChapterResources";
 import PsychologyVisual from "@/components/PsychologyVisual";
 import EnglishSpeechPractice from "@/components/EnglishSpeechPractice";
 import Web3LearningVisual from "@/components/Web3LearningVisual";
@@ -76,13 +78,18 @@ export default function LessonPage() {
       <h1 className="text-2xl font-bold">{lesson.title}</h1>
       {slug === "ekonomi"
         ? <EconomicsContent content={lessonContent} />
-        : <MarkdownView content={lessonContent} />}
+        : slug === "psikologi"
+          ? <PsychologyContent content={lessonContent} />
+          : <MarkdownView content={lessonContent} />}
 
-      {slug === "psikologi" && <PsychologyVisual moduleId={lesson.moduleId} />}
+      {slug === "psikologi" && !lessonModule?.chapterResources && <PsychologyVisual moduleId={lesson.moduleId} />}
       {slug === "inggris" && lesson.speechText && <EnglishSpeechPractice text={lesson.speechText} listening={lesson.listening} />}
       {slug === "web3" && <Web3LearningVisual lesson={lesson} />}
       {slug === "ekonomi" && lesson.id === lessonModule?.lessons.at(-1)?.id && (
         <EconomicsChapterResources module={lessonModule} />
+      )}
+      {slug === "psikologi" && lesson.id === lessonModule?.lessons.at(-1)?.id && lessonModule?.chapterResources && (
+        <PsychologyChapterResources module={lessonModule} />
       )}
 
       <div className="flex flex-wrap gap-2 border-t border-zinc-800 pt-5">

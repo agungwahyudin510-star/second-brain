@@ -21,6 +21,35 @@ const essay = (id: string, prompt: string): EssayPrompt => ({
   ],
 });
 
+export const qv2 = (
+  id: string,
+  concept: string,
+  prompt: string,
+  options: string[],
+  answerIndex: number,
+  correctReason: string,
+  distractorReasons: string[]
+): AssessmentQuestion => {
+  let distractorIndex = 0;
+  const wrong = options
+    .map((_, index) => index === answerIndex
+      ? null
+      : `${String.fromCharCode(65 + index)}. ${distractorReasons[distractorIndex++]}`)
+    .filter(Boolean)
+    .join(" ");
+  return {
+    id,
+    concept,
+    prompt,
+    options,
+    answer: answerIndex,
+    explanation: `Jawaban benar: ${options[answerIndex]}. ${correctReason} Pengecoh: ${wrong}`,
+  };
+};
+
+export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {};
+export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {};
+
 export const PSYCHOLOGY_QUIZZES: Record<string, AssessmentQuestion[]> = {
   "psi-bab-1": [
     q("p1q1", "Ruang lingkup", "Pernyataan yang paling sesuai tentang psikologi adalah...", ["Membaca pikiran tanpa data", "Kajian ilmiah perilaku dan proses mental", "Kumpulan tips motivasi", "Diagnosis semua perilaku tidak biasa"], 1, "Psikologi menggunakan metode empiris untuk memahami perilaku dan proses mental."),
