@@ -58,24 +58,6 @@ export default function PsychologyVisual({ moduleId }: { moduleId: string }) {
     return { x, spaced, massed };
   }), [schedule]);
 
-  if (moduleId === "psi-bab-1") {
-    return (
-      <Card className="space-y-5 border-sky-500/20">
-        <div><h2 className="font-semibold">Peta ruang lingkup psikologi</h2><p className="text-xs text-zinc-500">Diagram konsep, bukan daftar lengkap cabang.</p></div>
-        <div className="grid gap-3 sm:grid-cols-3">
-          {[
-            ["Perilaku", "Tindakan yang dapat diamati"],
-            ["Proses mental", "Perhatian, ingatan, persepsi, penalaran"],
-            ["Konteks", "Biologi, pengalaman, relasi, budaya"],
-          ].map(([heading, text]) => <div key={heading} className="rounded-lg border border-zinc-800 bg-zinc-950 p-3"><p className="font-medium">{heading}</p><p className="mt-1 text-xs text-zinc-500">{text}</p></div>)}
-        </div>
-        <div><p className="mb-2 text-xs text-zinc-500">Nature dan nurture berinteraksi — diagram konseptual, bukan proporsi kuantitatif.</p><div className="grid gap-2 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center"><div className="rounded-lg bg-violet-500/10 p-3 text-center text-sm">Biologi &amp; predisposisi</div><span className="text-center text-sky-400">↔</span><div className="rounded-lg bg-emerald-500/10 p-3 text-center text-sm">Pengalaman &amp; lingkungan</div><span className="text-center text-sky-400">→</span><div className="rounded-lg bg-sky-500/10 p-3 text-center text-sm">Pola berkembang dalam konteks</div></div></div>
-        <div><p className="mb-2 text-xs text-zinc-500">Siklus penelitian</p><Flow steps={["Observasi", "Pertanyaan", "Hipotesis", "Uji & ukur", "Evaluasi"]} /></div>
-        <p className="text-xs text-zinc-500">Korelasi dapat muncul dari A → B, B → A, atau faktor C yang memengaruhi keduanya; observasi hubungan saja belum memastikan sebab.</p>
-      </Card>
-    );
-  }
-
   if (moduleId === "psi-bab-2") {
     return (
       <Card className="space-y-4 border-sky-500/20">

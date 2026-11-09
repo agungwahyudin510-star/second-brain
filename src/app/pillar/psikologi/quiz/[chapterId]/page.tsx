@@ -4,11 +4,19 @@ import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
 import AssessmentRunner from "@/components/AssessmentRunner";
 import { Card, btnCls } from "@/components/ui";
-import { PSYCHOLOGY_ESSAYS, PSYCHOLOGY_QUIZZES } from "@/data/curriculum/psychology-assessments";
+import {
+  PSYCHOLOGY_ESSAYS,
+  PSYCHOLOGY_QUIZZES,
+  PSYCHOLOGY_V2_ESSAYS,
+  PSYCHOLOGY_V2_QUIZZES,
+} from "@/data/curriculum/psychology-assessments";
 import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { getModules } from "@/lib/curriculum";
 import { isChapterUnlocked, PSYCHOLOGY_PROGRESS_KEY } from "@/lib/economics-progress";
+
+const quizzes = { ...PSYCHOLOGY_QUIZZES, ...PSYCHOLOGY_V2_QUIZZES };
+const essays = { ...PSYCHOLOGY_ESSAYS, ...PSYCHOLOGY_V2_ESSAYS };
 
 export default function PsychologyQuizPage() {
   const { chapterId } = useParams<{ chapterId: string }>();
@@ -18,7 +26,7 @@ export default function PsychologyQuizPage() {
   const [done] = useLocalStorage<string[]>("sb-lesson-done", []);
   const { progress } = useCourseProgress(PSYCHOLOGY_PROGRESS_KEY, "Psikologi");
 
-  if (!chapter || !PSYCHOLOGY_QUIZZES[chapterId]) return notFound();
+  if (!chapter || !quizzes[chapterId]) return notFound();
   const unlocked = isChapterUnlocked(modules, chapterIndex, progress.attempts);
   const completedLessons = chapter.lessons.every((lesson) => done.includes(lesson.id));
   if (!unlocked || !completedLessons) {
@@ -35,8 +43,8 @@ export default function PsychologyQuizPage() {
     <AssessmentRunner
       moduleId={chapter.id}
       title={`${chapter.title} — Kuis`}
-      questions={PSYCHOLOGY_QUIZZES[chapter.id]}
-      essays={PSYCHOLOGY_ESSAYS[chapter.id]}
+      questions={quizzes[chapter.id]}
+      essays={essays[chapter.id]}
       returnHref="/pillar/psikologi/curriculum"
       progressStorageKey={PSYCHOLOGY_PROGRESS_KEY}
     />

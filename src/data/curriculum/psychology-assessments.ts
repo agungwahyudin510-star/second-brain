@@ -47,20 +47,119 @@ export const qv2 = (
   };
 };
 
-export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {};
-export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {};
+export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
+  "psi2-b01": [
+    qv2("psi2-b01-q01", "Konsep • Ruang lingkup", "Psikologi paling tepat didefinisikan sebagai...", [
+      "Kumpulan nasihat untuk mengubah kebiasaan seseorang",
+      "Kajian tentang cara memberi label pada perilaku yang berbeda",
+      "Penjelasan tentang proses mental tanpa menguji bukti",
+      "Kajian ilmiah perilaku dan proses mental",
+    ], 3, "Psikologi menggunakan cara ilmiah untuk mengkaji tindakan dan proses mental.", [
+      "Nasihat dapat berguna, tetapi tidak mencakup keseluruhan bidang psikologi ilmiah.",
+      "Memberi label tidak sama dengan menyelidiki perilaku secara sistematis.",
+      "Proses mental dikaji dengan bukti dan indikator, bukan penjelasan tanpa pengujian.",
+    ]),
+    qv2("psi2-b01-q02", "Konsep • Pengukuran", "Manakah contoh definisi operasional untuk fokus dalam sesi belajar?", [
+      "Jumlah jawaban tepat dari sepuluh soal pada sesi yang ditentukan",
+      "Seberapa besar seseorang menghargai pendidikan",
+      "Tingkat kecerdasan yang tampak dari kesan pengamat",
+      "Kemampuan untuk selalu berkonsentrasi dalam semua keadaan",
+    ], 0, "Definisi ini menetapkan ukuran yang spesifik dan dapat diamati dalam konteks tertentu.", [
+      "Nilai pendidikan adalah sikap, bukan ukuran fokus pada sesi tertentu.",
+      "Kesan umum tidak menetapkan prosedur pengukuran yang jelas.",
+      "Klaim selalu dan semua keadaan tidak memberi ukuran operasional yang dapat diperiksa.",
+    ]),
+    qv2("psi2-b01-q03", "Konsep • Nature dan nurture", "Pernyataan yang paling tepat tentang perilaku dan faktor biologis-lingkungan adalah...", [
+      "Biologi menjelaskan perilaku secara tunggal jika faktor bawaan diketahui",
+      "Pengalaman lingkungan selalu menghapus pengaruh biologis",
+      "Perilaku dapat berkembang melalui interaksi faktor biologis dan lingkungan",
+      "Faktor biologis dan lingkungan bekerja terpisah pada setiap orang",
+    ], 2, "Banyak penjelasan mempertimbangkan bagaimana kondisi biologis dan pengalaman saling terkait.", [
+      "Mengetahui satu faktor tidak membuktikan bahwa faktor itu penyebab tunggal.",
+      "Lingkungan tidak selalu menghapus variasi biologis atau pengalaman lain.",
+      "Pemisahan mutlak mengabaikan kemungkinan interaksi dan konteks.",
+    ]),
+    qv2("psi2-b01-q04", "Konsep • Kausalitas", "Dua variabel berkorelasi dalam suatu pengamatan. Kesimpulan yang tepat adalah...", [
+      "Variabel pertama pasti menyebabkan perubahan pada variabel kedua",
+      "Keduanya berkaitan dalam data, tetapi sebab-akibat belum dipastikan",
+      "Variabel kedua pasti menyebabkan perubahan pada variabel pertama",
+      "Faktor lain tidak mungkin menjelaskan hubungan yang teramati",
+    ], 1, "Korelasi menggambarkan keterkaitan, tetapi tidak menetapkan arah sebab atau menyingkirkan faktor lain.", [
+      "Korelasi saja tidak membuktikan arah kausal yang tertentu.",
+      "Arah sebaliknya juga tidak dapat dipastikan dari korelasi saja.",
+      "Confounder atau penjelasan alternatif masih mungkin ada.",
+    ]),
+    qv2("psi2-b01-q05", "Hitungan • Selisih rerata", "Rerata kontrol 60 dan rerata perlakuan 66. Berapa selisih rerata perlakuan dikurangi kontrol?", [
+      "6 poin",
+      "12 poin",
+      "60 poin",
+      "66 poin",
+    ], 0, "Selisihnya 66−60=6 poin.", [
+      "12 menjumlahkan kedua rerata, bukan mengurangkan kontrol dari perlakuan.",
+      "60 adalah rerata kontrol, bukan selisih kedua kelompok.",
+      "66 adalah rerata perlakuan, bukan selisih rerata.",
+    ]),
+    qv2("psi2-b01-q06", "Hitungan • Poin persentase", "Perbaikan terjadi pada 40 dari 50 orang di A dan 25 dari 50 orang di B. Berapa selisih tingkat perbaikan dalam poin persentase?", [
+      "60%",
+      "1,6 kali",
+      "15 poin persentase",
+      "30 poin persentase",
+    ], 3, "A=80% dan B=50%, sehingga selisihnya 30 poin persentase.", [
+      "60% adalah peningkatan relatif terhadap B, bukan selisih poin persentase.",
+      "1,6 adalah rasio 80% terhadap 50%, bukan selisih.",
+      "15 adalah selisih jumlah orang, bukan selisih persentase.",
+    ]),
+    qv2("psi2-b01-q07", "Hitungan • Bias seleksi", "Model ilustratif menyatakan teramati = efek + bias. Jika selisih teramati 8 dan efek 5, berapa bias seleksi dalam model?", [
+      "13",
+      "3",
+      "5",
+      "8",
+    ], 1, "Bias = 8−5=3.", [
+      "13 menjumlahkan selisih teramati dan efek, bukan mencari komponen sisanya.",
+      "5 adalah efek yang diasumsikan, bukan bias.",
+      "8 adalah selisih teramati yang terdiri dari efek dan bias.",
+    ]),
+    qv2("psi2-b01-q08", "Kasus • Kebiasaan belajar", "Seorang siswa sering menunda belajar. Langkah awal yang paling tepat adalah...", [
+      "Memberinya label kurang disiplin dari perilaku yang tampak",
+      "Menganggap penyebabnya pasti penggunaan ponsel",
+      "Mengumpulkan data konteks seperti tidur, beban tugas, kebiasaan, dan lingkungan",
+      "Menyimpulkan adanya gangguan tanpa penilaian profesional",
+    ], 2, "Data dari beberapa konteks membantu membangun hipotesis tanpa melompat pada label atau diagnosis.", [
+      "Satu pola perilaku tidak cukup untuk menyimpulkan sifat tetap.",
+      "Ponsel adalah satu kemungkinan, tetapi belum tentu penyebabnya.",
+      "Diagnosis tidak dapat disimpulkan dari contoh singkat dan bukan tujuan pembelajaran ini.",
+    ]),
+    qv2("psi2-b01-q09", "Kasus • Self-selection", "Aplikasi viral mengklaim bahwa penggunanya lebih bahagia. Apa langkah evaluasi yang paling kuat?", [
+      "Menganggap aplikasi menyebabkan kebahagiaan karena banyak dipakai",
+      "Membandingkan unggahan paling positif dari pengguna aplikasi",
+      "Mengabaikan semua laporan pengguna sebagai tidak berguna",
+      "Mempertimbangkan pemilihan diri dan confounder, lalu menguji dengan rancangan acak yang sesuai",
+    ], 3, "Pengguna yang memilih aplikasi mungkin berbeda sejak awal; rancangan acak yang tepat dapat membantu menguji efeknya.", [
+      "Popularitas tidak menunjukkan bahwa aplikasi menyebabkan kebahagiaan.",
+      "Unggahan terpilih dapat bias dan tidak menjadi kelompok pembanding yang setara.",
+      "Laporan dapat memberi petunjuk, tetapi tetap perlu ditafsirkan dengan hati-hati.",
+    ]),
+    qv2("psi2-b01-q10", "Kasus • Hipotesis kompetitif", "Dua siswa merespons kritik dengan cara berbeda. Cara menyelidiki yang paling tepat adalah...", [
+      "Menyimpulkan satu siswa lebih tangguh berdasarkan respons pertama",
+      "Menyusun beberapa hipotesis dan mengumpulkan data tentang interpretasi serta konteks",
+      "Menganggap komentar yang sama pasti memiliki makna sama bagi keduanya",
+      "Memakai satu pengamatan untuk memprediksi respons mereka berikutnya",
+    ], 1, "Hipotesis kompetitif dan data konteks membantu membedakan penjelasan tanpa memberi label prematur.", [
+      "Respons pertama tidak cukup untuk menyimpulkan sifat tetap atau ketangguhan.",
+      "Komentar yang sama dapat ditafsirkan berbeda oleh orang berbeda.",
+      "Satu pengamatan tidak memastikan perilaku selanjutnya.",
+    ]),
+  ],
+};
+
+export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
+  "psi2-b01": [
+    essay("psi2-b01-e01", "Rancang penelitian kecil tentang kebiasaan belajar. Tetapkan definisi operasional, kelompok pembanding yang sesuai, satu confounder yang perlu dipertimbangkan, dan batas kesimpulan yang mungkin dibuat."),
+    essay("psi2-b01-e02", "Jelaskan mengapa klaim “gen menentukan perilaku” dan “lingkungan menentukan segalanya” sama-sama terlalu sederhana. Gunakan model interaksi hipotetis, lalu hubungkan cara berpikir tersebut dengan penilaian klaim dalam keputusan sehari-hari."),
+  ],
+};
 
 export const PSYCHOLOGY_QUIZZES: Record<string, AssessmentQuestion[]> = {
-  "psi-bab-1": [
-    q("p1q1", "Ruang lingkup", "Pernyataan yang paling sesuai tentang psikologi adalah...", ["Membaca pikiran tanpa data", "Kajian ilmiah perilaku dan proses mental", "Kumpulan tips motivasi", "Diagnosis semua perilaku tidak biasa"], 1, "Psikologi menggunakan metode empiris untuk memahami perilaku dan proses mental."),
-    q("p1q2", "Metode empiris", "Peneliti ingin mengukur fokus belajar. Langkah awal yang membantu adalah...", ["Menganggap fokus sama dengan lama duduk", "Menetapkan ukuran operasional seperti ketepatan tugas dan menjelaskan batasnya", "Mewawancarai satu teman lalu menggeneralisasi", "Menyimpulkan fokus dari kepribadian"], 1, "Konstruk abstrak perlu diterjemahkan ke ukuran yang jelas, dengan keterbatasan disebutkan."),
-    q("p1q3", "Proses mental", "“Ia membuka ponsel tiga kali” merupakan ___, sedangkan “ia bosan” merupakan ___", ["Interpretasi; observasi", "Observasi; hipotesis/interpretasi", "Diagnosis; fakta", "Emosi; perilaku"], 1, "Tindakan dapat diamati; penjelasan tentang bosan membutuhkan bukti tambahan."),
-    q("p1q4", "Nature-nurture", "Kesimpulan yang paling tepat tentang nature dan nurture adalah...", ["Gen menentukan perilaku secara tunggal", "Lingkungan selalu mengalahkan biologi", "Banyak perilaku mencerminkan interaksi faktor biologis dan pengalaman", "Keduanya dapat dipisahkan sempurna"], 2, "Kedua kelompok faktor dapat saling berinteraksi; tidak ada dikotomi sederhana."),
-    q("p1q5", "Pendekatan", "Untuk memahami pengaruh notifikasi pada perhatian belajar, peneliti kognitif terutama bertanya tentang...", ["Pemrosesan informasi dan pembagian perhatian", "Bentuk kepribadian permanen", "Kebijakan perpajakan", "Diagnosis klinis"], 0, "Pendekatan kognitif meneliti perhatian dan pemrosesan informasi."),
-    q("p1q6", "Eksperimen", "Apa manfaat kelompok pembanding dalam eksperimen?", ["Memastikan semua peserta sama", "Membantu menilai apakah perubahan berkaitan dengan intervensi dibanding kondisi pembanding", "Menghapus seluruh bias", "Menjamin hasil berlaku bagi semua"], 1, "Pembanding memperkuat interpretasi, namun tidak menghapus semua keterbatasan."),
-    q("p1q7", "Korelasi dan kausalitas", "Survei menemukan hubungan antara stres dan tidur pendek. Kesimpulan yang aman adalah...", ["Stres pasti menyebabkan tidur pendek", "Tidur pendek pasti menyebabkan stres", "Keduanya berkaitan dalam data; faktor ketiga atau arah sebab belum dipastikan", "Survei membuktikan intervensi"], 2, "Korelasi saja tidak menetapkan arah kausal atau menyingkirkan faktor lain."),
-    q("p1q8", "Penerapan", "Dua siswa merespons kritik berbeda. Pendekatan awal yang paling ilmiah adalah...", ["Memberi label sifat tetap", "Mengamati respons dan mengumpulkan konteks serta interpretasi masing-masing", "Menganggap salah satu tidak rasional", "Mendiagnosis berdasarkan satu kejadian"], 1, "Kesimpulan perlu mempertimbangkan beberapa faktor dan menghindari label tanpa bukti."),
-  ],
   "psi-bab-2": [
     q("p2q1", "Psikologi kognitif", "Psikologi kognitif terutama mempelajari...", ["Pajak dan inflasi", "Perhatian, persepsi, memori, dan penalaran", "Hanya perilaku yang diwariskan", "Hanya ekspresi wajah"], 1, "Bidang kognitif meneliti pemrosesan informasi."),
     q("p2q2", "Persepsi", "Dua orang memahami nada pesan yang sama secara berbeda. Penjelasan masuk akal adalah...", ["Persepsi dipengaruhi konteks dan pengetahuan sebelumnya", "Salah satu pasti berbohong", "Sensasi selalu identik dengan interpretasi", "Bahasa tidak memiliki konteks"], 0, "Interpretasi dipengaruhi konteks, harapan, dan pengetahuan."),
@@ -134,10 +233,6 @@ export const PSYCHOLOGY_QUIZZES: Record<string, AssessmentQuestion[]> = {
 };
 
 export const PSYCHOLOGY_ESSAYS: Record<string, EssayPrompt[]> = {
-  "psi-bab-1": [
-    essay("p1e1", "Rancang pertanyaan empiris untuk memahami kebiasaan menunda belajar. Definisikan perilaku yang diamati, satu hipotesis, ukuran, dan setidaknya dua batas kesimpulan."),
-    essay("p1e2", "Jelaskan bagaimana nature dan nurture dapat berinteraksi pada satu kemampuan. Berikan analogi, contoh tandingan, serta alasan tidak membuat kesimpulan dari satu orang."),
-  ],
   "psi-bab-2": [
     essay("p2e1", "Rancang sesi belajar untuk materi sulit dengan retrieval practice, spaced practice, dan elaboration. Jelaskan bagaimana mengevaluasi pemahaman tanpa menyamakan familiaritas dengan penguasaan."),
     essay("p2e2", "Jelaskan mengapa perhatian dan memori kerja terbatas dapat mengganggu belajar saat ada notifikasi, lalu usulkan satu perubahan lingkungan dan batasnya."),
