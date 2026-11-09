@@ -101,15 +101,15 @@ export default function LessonPage() {
         </Link>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {prev ? (
-          <Link href={`/pillar/${slug}/learn/${prev.id}`} className={btnCls("ghost", "justify-start")}>
-            <ArrowLeft className="h-4 w-4 shrink-0" /> <span className="truncate">{prev.title}</span>
+          <Link href={`/pillar/${slug}/learn/${prev.id}`} className={btnCls("ghost", "min-w-0 justify-start")}>
+            <ArrowLeft className="h-4 w-4 shrink-0" /> <span className="min-w-0 truncate">{prev.title}</span>
           </Link>
         ) : <span />}
         {next && (
-          <Link href={`/pillar/${slug}/learn/${next.id}`} className={btnCls("ghost", "justify-end")}>
-            <span className="truncate">{next.title}</span> <ArrowRight className="h-4 w-4 shrink-0" />
+          <Link href={`/pillar/${slug}/learn/${next.id}`} className={btnCls("ghost", "min-w-0 justify-end")}>
+            <span className="min-w-0 truncate">{next.title}</span> <ArrowRight className="h-4 w-4 shrink-0" />
           </Link>
         )}
       </div>
