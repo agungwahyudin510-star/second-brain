@@ -228,3 +228,48 @@ export function echoShare(initial: number, rate: number, rounds: number) {
 export function obedienceIndex(legitimacy: number, distance: number, dissenters: number) {
   return Math.max(0, Math.min(100, 30 + 8 * legitimacy + 4 * distance - 10 * dissenters));
 }
+
+export function rowMeans(matrix: number[][]) {
+  return matrix.map((row) => row.length === 0 ? 0 : row.reduce((sum, value) => sum + value, 0) / row.length);
+}
+
+export function colMeans(matrix: number[][]) {
+  const columnCount = Math.max(0, ...matrix.map((row) => row.length));
+  return Array.from({ length: columnCount }, (_, column) => {
+    const values = matrix.flatMap((row) => column < row.length ? [row[column]] : []);
+    return values.length === 0 ? 0 : values.reduce((sum, value) => sum + value, 0) / values.length;
+  });
+}
+
+export function normalCdf(z: number) {
+  const sign = z < 0 ? -1 : 1;
+  const x = Math.abs(z) / Math.sqrt(2);
+  const t = 1 / (1 + 0.3275911 * x);
+  const erf = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+  return 0.5 * (1 + sign * erf);
+}
+
+export function zToPercentile(z: number) {
+  return normalCdf(z) * 100;
+}
+
+export function pearson(x: number[], y: number[]) {
+  const length = Math.min(x.length, y.length);
+  if (length < 2) return 0;
+  const meanX = x.slice(0, length).reduce((sum, value) => sum + value, 0) / length;
+  const meanY = y.slice(0, length).reduce((sum, value) => sum + value, 0) / length;
+  const covariance = x.slice(0, length).reduce((sum, value, index) => sum + (value - meanX) * (y[index] - meanY), 0);
+  const varianceX = x.slice(0, length).reduce((sum, value) => sum + (value - meanX) ** 2, 0);
+  const varianceY = y.slice(0, length).reduce((sum, value) => sum + (value - meanY) ** 2, 0);
+  const denominator = Math.sqrt(varianceX * varianceY);
+  return denominator === 0 ? 0 : covariance / denominator;
+}
+
+export function standardErrorOfMeasurement(sd: number, reliability: number) {
+  return sd * Math.sqrt(1 - Math.max(0, Math.min(1, reliability)));
+}
+
+export function flipBandShare(sd: number, sem: number) {
+  if (sd <= 0 || sem < 0) return 0;
+  return normalCdf(sem / sd) - normalCdf(-sem / sd);
+}

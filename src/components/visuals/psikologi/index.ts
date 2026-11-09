@@ -29,6 +29,11 @@ import PsiAuthorityGradient from "./psi-authority-gradient";
 import PsiSocialProof from "./psi-social-proof";
 import PsiAttributionEvidence from "./psi-attribution-evidence";
 import PsiEchoFeed from "./psi-echo-feed";
+import PsiTraitSituation from "./psi-trait-situation";
+import PsiBigFiveProfile from "./psi-big-five-profile";
+import PsiStabilityChange from "./psi-stability-change";
+import PsiTestReliability from "./psi-test-reliability";
+import PsiLabelFlip from "./psi-label-flip";
 
 export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-levels": PsiLevels,
@@ -61,4 +66,9 @@ export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-social-proof": PsiSocialProof,
   "psi-attribution-evidence": PsiAttributionEvidence,
   "psi-echo-feed": PsiEchoFeed,
+  "psi-trait-situation": PsiTraitSituation,
+  "psi-big-five-profile": PsiBigFiveProfile,
+  "psi-stability-change": PsiStabilityChange,
+  "psi-test-reliability": PsiTestReliability,
+  "psi-label-flip": PsiLabelFlip,
 };

@@ -660,6 +660,108 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Popularitas tidak menghilangkan kemungkinan konflik kepentingan.",
     ]),
   ],
+  "psi2-b07": [
+    qv2("psi2-b07-q01", "Konsep • Kepribadian", "Kepribadian paling tepat dipahami sebagai...", [
+      "Sifat bawaan tetap selalu menentukan perilaku di semua situasi",
+      "Pola relatif stabil dalam berpikir, merasa, dan berperilaku",
+      "Kumpulan preferensi yang tidak dipengaruhi pengalaman",
+      "Label klinis yang merangkum seluruh diri seseorang",
+    ], 1, "Kepribadian merujuk pada pola relatif stabil, tetapi biologi, pengalaman, dan konteks turut berperan.", [
+      "Perilaku tetap dipengaruhi situasi dan tidak ditentukan sifat saja.",
+      "Pengalaman dan konteks ikut berkontribusi pada perkembangan kepribadian.",
+      "Kepribadian bukan diagnosis atau ringkasan klinis seseorang.",
+    ]),
+    qv2("psi2-b07-q02", "Konsep • Big Five", "Big Five paling tepat menggambarkan...", [
+      "Lima tipe biner yang menetapkan cara kerja seseorang",
+      "Urutan lima sifat sama bagi seluruh orang",
+      "Lima kategori tetap untuk memilih rekan kerja",
+      "Lima dimensi berkelanjutan, bukan tipe kepribadian",
+    ], 3, "Big Five adalah model deskriptif lima dimensi spektrum, bukan klasifikasi tipe yang kaku.", [
+      "Model ini bukan kategori biner yang menentukan perilaku.",
+      "Dimensi tidak menyatakan semua orang memiliki urutan skor sama.",
+      "Skor bukan alat tunggal untuk memilih atau menilai pekerja.",
+    ]),
+    qv2("psi2-b07-q03", "Konsep • Reliabilitas dan validitas", "Pernyataan yang tepat tentang kualitas pengukuran adalah...", [
+      "Reliabilitas konsisten; validitas sesuai tujuan ukur",
+      "Reliabilitas tinggi selalu membuktikan alat mengukur tujuan tepat",
+      "Validitas berarti hasil tes tetap sama pada tiap pengukuran",
+      "Keduanya dapat dinilai tanpa melihat tujuan penggunaan tes",
+    ], 0, "Reliabilitas berkaitan dengan konsistensi, sedangkan validitas menyangkut dukungan bahwa interpretasi sesuai tujuan ukur.", [
+      "Pengukuran konsisten dapat tetap mengukur hal yang keliru.",
+      "Konsistensi hasil lebih dekat dengan reliabilitas.",
+      "Tujuan penggunaan penting untuk menilai validitas.",
+    ]),
+    qv2("psi2-b07-q04", "Konsep • Sifat dan situasi", "Penjelasan perilaku yang paling seimbang adalah...", [
+      "Sifat pribadi selalu lebih penting daripada situasi",
+      "Situasi menjelaskan semua tindakan tanpa pengecualian",
+      "Perilaku dapat muncul dari interaksi sifat dan situasi",
+      "Perbedaan individu tidak relevan untuk memahami tindakan",
+    ], 2, "Perilaku dapat mencerminkan kecenderungan individu sekaligus tuntutan dan peluang situasional.", [
+      "Sifat tidak menentukan perilaku sendirian pada semua konteks.",
+      "Situasi penting, tetapi tidak meniadakan perbedaan individu.",
+      "Perbedaan individu dapat relevan bersama faktor situasi.",
+    ]),
+    qv2("psi2-b07-q05", "Hitungan • Persentil", "Dalam model normal, skor-z +1 berada kira-kira pada persentil berapa?", [
+      "16%",
+      "68%",
+      "50%",
+      "84%",
+    ], 3, "z=+1 berkaitan dengan persentil sekitar 84% dalam distribusi normal.", [
+      "16% adalah kira-kira bagian di atas z=+1, bukan di bawahnya.",
+      "68% adalah perkiraan bagian dalam satu simpangan baku dari rerata.",
+      "50% adalah persentil skor tepat pada rerata z=0.",
+    ]),
+    qv2("psi2-b07-q06", "Hitungan • SEM", "SD=15 dan reliabilitas 0,91. Berapa kesalahan pengukuran standar (SEM)?", [
+      "4,5 poin",
+      "1,4 poin",
+      "13,7 poin",
+      "15,0 poin",
+    ], 0, "SEM=15×√(1−0,91)=15×0,30=4,5 poin.", [
+      "1,4 poin memakai 15×(1−0,91), tanpa akar kuadrat.",
+      "13,7 poin memakai 15×reliabilitas, bukan rumus SEM.",
+      "15,0 poin memakai SD langsung dan mengabaikan reliabilitas.",
+    ]),
+    qv2("psi2-b07-q07", "Hitungan • Rerata", "Skor A adalah 8, 9, dan 2 pada tiga situasi. Berapa rerata A?", [
+      "4,0",
+      "6,5",
+      "6,3",
+      "19,0",
+    ], 2, "(8+9+2)/3=19/3≈6,3.", [
+      "4,0 adalah rerata orang B pada contoh matriks.",
+      "6,5 adalah rerata situasi rapat, bukan rerata orang A.",
+      "19,0 adalah jumlah skor A sebelum dibagi tiga.",
+    ]),
+    qv2("psi2-b07-q08", "Hitungan • Label biner", "Jika sekitar 35% berada dalam ±1 SEM dari cutoff, berapa bagian yang berpotensi berganti label pada model ilustratif?", [
+      "5%",
+      "35%",
+      "50%",
+      "68%",
+    ], 1, "Model normal ilustratif memberi sekitar 34,7%, dibulatkan menjadi 35%.", [
+      "5% tidak sesuai proporsi normal dalam pita ±1 SEM yang diberikan.",
+      "50% adalah setengah populasi, bukan proporsi pita pada contoh.",
+      "68% kira-kira mencakup ±1 SD, bukan pita ±1 SEM sebesar 0,45 SD.",
+    ]),
+    qv2("psi2-b07-q09", "Kasus • Konsistensi dan situasi", "A lebih ekstrovert dari B di semua situasi, tetapi keduanya lebih rendah saat belajar sendiri. Kesimpulan yang tepat adalah...", [
+      "Situasi tidak berhubungan dengan tingkat perilaku",
+      "Skor A membuktikan kepribadian tidak pernah berubah",
+      "B lebih ekstrovert karena belajar sendiri lebih tenang",
+      "Urutan tetap; situasi mengubah tingkat perilaku",
+    ], 3, "A tetap di atas B pada tiap situasi, sementara kedua skor turun ketika belajar sendiri.", [
+      "Keduanya menunjukkan perubahan antar situasi dalam contoh.",
+      "Satu pola tidak membuktikan kepribadian tidak pernah berubah.",
+      "Ketenangan situasi tidak membalikkan urutan A dan B.",
+    ]),
+    qv2("psi2-b07-q10", "Kasus • Penggunaan tes", "Perusahaan memakai label kepribadian sebagai satu-satunya filter kandidat. Langkah yang lebih tepat adalah...", [
+      "Gunakan kriteria kerja dan bukti perilaku relevan",
+      "Pilih kandidat dengan label yang paling sesuai stereotip",
+      "Anggap skor tetap dan dapat menggantikan wawancara terstruktur",
+      "Pilih tipe biner supaya penilaian tampak lebih objektif",
+    ], 0, "Keputusan perlu kriteria relevan dan bukti validitas; skor kepribadian tidak seharusnya menjadi satu-satunya filter atau saran rekrutmen otomatis.", [
+      "Stereotip bukan kriteria kompetensi dan dapat memunculkan bias.",
+      "Skor tidak menggantikan bukti perilaku relevan atau proses yang adil.",
+      "Tipe biner tidak otomatis membuat keputusan objektif.",
+    ]),
+  ],
 };
 
 export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
@@ -774,6 +876,28 @@ export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
         "Bedakan popularitas yang terlihat dari bukti independen.",
         "Sebutkan alternatif penjelasan atau faktor algoritmik dan sosial.",
         "Jelaskan batas kesimpulan dari kedua model.",
+      ],
+    },
+  ],
+  "psi2-b07": [
+    {
+      ...essay("psi2-b07-e01", "Jelaskan mengapa tipe kepribadian biner dapat menyesatkan dibanding skor kontinu. Gunakan SEM dan pita di sekitar batas untuk menunjukkan ketidakpastian, serta jelaskan apa yang masih dapat dipelajari dari skor."),
+      reviewPoints: [
+        "Bandingkan klasifikasi biner dengan informasi skor kontinu.",
+        "Jelaskan SEM dan interpretasi pita di sekitar cutoff.",
+        "Gunakan angka hipotetis tanpa mengklaim berlaku untuk tes nyata.",
+        "Nyatakan keterbatasan reliabilitas, validitas, dan konteks penggunaan.",
+        "Hindari diagnosis atau penggunaan skor sebagai label tetap.",
+      ],
+    },
+    {
+      ...essay("psi2-b07-e02", "Rancang cara memakai skor kepribadian sebagai hipotesis tentang gaya bekerja tim. Sebutkan data tambahan, konteks, dan umpan balik yang diperlukan, serta batas bukti dan risiko label."),
+      reviewPoints: [
+        "Gunakan skor sebagai hipotesis, bukan kesimpulan final tentang seseorang.",
+        "Sebutkan bukti perilaku atau data tambahan yang relevan.",
+        "Pertimbangkan konteks, preferensi, kemampuan, dan nilai secara terpisah.",
+        "Jelaskan risiko bias, label, atau penggunaan tidak sesuai tujuan.",
+        "Nyatakan batas reliabilitas dan validitas pengukuran.",
       ],
     },
   ],
