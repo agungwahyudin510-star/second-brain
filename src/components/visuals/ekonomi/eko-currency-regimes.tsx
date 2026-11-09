@@ -2,49 +2,63 @@
 
 import { useState } from "react";
 import VisualCard from "./VisualCard";
-import { currencyRegime } from "./econ-math";
+import { reserveRunway, trilemmaOutcome, type TrilemmaGoal } from "./econ-math";
+
+const GOALS: { id: TrilemmaGoal; label: string }[] = [
+  { id: "fixed", label: "Kurs tetap" },
+  { id: "capital", label: "Modal bebas" },
+  { id: "monetary", label: "Moneter mandiri" },
+];
 
 export default function EkoCurrencyRegimes() {
-  const [regime, setRegime] = useState<"floating" | "fixed" | "managed">("managed");
+  const [active, setActive] = useState<TrilemmaGoal[]>(["fixed", "capital"]);
   const [reserves, setReserves] = useState(60);
-  const [capitalFlow, setCapitalFlow] = useState(20);
-  const [pressure, setPressure] = useState(30);
-  const result = currencyRegime(regime, reserves, capitalFlow, pressure);
+  const [outflow, setOutflow] = useState(10);
+  const result = trilemmaOutcome(active);
+  const months = reserveRunway(reserves, outflow);
+
+  function toggle(goal: TrilemmaGoal) {
+    setActive((current) => {
+      if (current.includes(goal)) return current.filter((g) => g !== goal);
+      const next = [...current, goal];
+      return next.length > 2 ? next.slice(1) : next;
+    });
+  }
 
   return (
     <VisualCard
-      title="Rezim kurs dan intervensi"
-      caption="Dalam rezim mengambang, pasar valuta menyerap tekanan; dalam kurs tetap, bank sentral bisa melakukan intervensi ketika modal bergerak ekstrem."
-      howToRead="Pilih rezim dan geser tekanan arus modal serta cadangan. Intervensi dan perubahan kurs menggambarkan kompromi trilema kebijakan."
+      title="Trilema kebijakan dan umur cadangan"
+      caption="Pilih dua dari tiga tujuan; yang ketiga otomatis tidak dapat dipenuhi. Angka cadangan ilustratif."
+      howToRead="Tombol yang menyala adalah tujuan yang dipilih (maksimum dua). Slider di bawah menghitung berapa bulan cadangan bertahan bila bank sentral menjual devisa tiap bulan untuk menahan kurs tetap."
     >
-      <div className="grid gap-2 sm:grid-cols-3">
-        <button type="button" onClick={() => setRegime("floating")} className={`min-h-10 rounded-lg border px-2 text-sm ${regime === "floating" ? "border-sky-400 text-sky-200" : "border-zinc-700 text-zinc-300"}`}>Mengambang</button>
-        <button type="button" onClick={() => setRegime("fixed")} className={`min-h-10 rounded-lg border px-2 text-sm ${regime === "fixed" ? "border-sky-400 text-sky-200" : "border-zinc-700 text-zinc-300"}`}>Tetap</button>
-        <button type="button" onClick={() => setRegime("managed")} className={`min-h-10 rounded-lg border px-2 text-sm ${regime === "managed" ? "border-sky-400 text-sky-200" : "border-zinc-700 text-zinc-300"}`}>Terkendali</button>
+      <div className="grid gap-2 sm:grid-cols-3" role="group" aria-label="Pilih dua tujuan kebijakan">
+        {GOALS.map((g) => (
+          <button key={g.id} type="button" aria-pressed={active.includes(g.id)} onClick={() => toggle(g.id)} className={`min-h-10 rounded-lg border px-3 text-sm ${active.includes(g.id) ? "border-emerald-400 bg-emerald-500/15 text-emerald-100" : "border-zinc-700 text-zinc-300"}`}>{g.label}</button>
+        ))}
       </div>
-      <div className="grid gap-3 sm:grid-cols-3">
-        <label className="text-sm text-zinc-300">Cadangan: {reserves}
-          <input type="range" min="20" max="100" step="10" value={reserves} onChange={(event) => setReserves(Number(event.target.value))} className="mt-2 block min-h-8 w-full touch-pan-x accent-sky-400" />
-        </label>
-        <label className="text-sm text-zinc-300">Arus modal: {capitalFlow}
-          <input type="range" min="-30" max="60" step="10" value={capitalFlow} onChange={(event) => setCapitalFlow(Number(event.target.value))} className="mt-2 block min-h-8 w-full touch-pan-x accent-emerald-400" />
-        </label>
-        <label className="text-sm text-zinc-300">Tekanan: {pressure}
-          <input type="range" min="0" max="60" step="10" value={pressure} onChange={(event) => setPressure(Number(event.target.value))} className="mt-2 block min-h-8 w-full touch-pan-x accent-amber-400" />
-        </label>
-      </div>
-      <svg viewBox="0 0 240 120" role="img" aria-label={`Rezim ${regime}, intervensi ${result.intervention.toFixed(1)}, perubahan kurs ${result.exchangeRateChange.toFixed(1)}.`} className="h-44 w-full rounded-lg bg-zinc-950 p-2">
-        <rect x="30" y="40" width="60" height="40" fill="#38bdf8" opacity="0.7" />
-        <rect x="110" y="55" width="60" height="25" fill="#34d399" opacity="0.7" />
-        <rect x="190" y="30" width="20" height="55" fill="#fbbf24" opacity="0.7" />
-        <text x="42" y="33" fill="#d4d4d8" fontSize="8">Cadangan</text>
-        <text x="116" y="48" fill="#d4d4d8" fontSize="8">Arus</text>
-        <text x="188" y="23" fill="#d4d4d8" fontSize="8">Kurs</text>
+      <svg viewBox="0 0 220 110" role="img" aria-label={`Trilema: tujuan yang tidak terpenuhi ${result.lost ?? "tidak ada"}.`} className="h-40 w-full rounded-lg bg-zinc-950 p-2">
+        <polygon points="110,12 30,98 190,98" fill="none" stroke="#71717a" />
+        {GOALS.map((g, idx) => {
+          const pos = [[110, 12], [30, 98], [190, 98]][idx];
+          const on = active.includes(g.id);
+          return (
+            <g key={g.id}>
+              <circle cx={pos[0]} cy={pos[1]} r="7" fill={on ? "#34d399" : "#f87171"} />
+              <text x={pos[0] - 26} y={pos[1] + (idx === 0 ? -10 : 18)} fill="#d4d4d8" fontSize="8">{g.label}</text>
+            </g>
+          );
+        })}
       </svg>
-      <div className="grid gap-2 text-sm md:grid-cols-2">
-        <p className="rounded bg-zinc-950 p-3">Intervensi: <strong>{result.intervention.toFixed(1)}</strong>.</p>
-        <p className="rounded bg-zinc-950 p-3">Perubahan kurs: <strong>{result.exchangeRateChange.toFixed(1)}</strong>.</p>
+      <p aria-live="polite" className="rounded bg-zinc-950 p-3 text-sm text-zinc-200">{result.text}</p>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label className="text-sm text-zinc-300">Cadangan devisa: {reserves}
+          <input aria-label="Cadangan devisa" type="range" min="20" max="120" step="10" value={reserves} onChange={(e) => setReserves(Number(e.target.value))} className="mt-2 block min-h-8 w-full touch-pan-x accent-sky-400" />
+        </label>
+        <label className="text-sm text-zinc-300">Intervensi per bulan: {outflow}
+          <input aria-label="Intervensi per bulan" type="range" min="5" max="30" step="5" value={outflow} onChange={(e) => setOutflow(Number(e.target.value))} className="mt-2 block min-h-8 w-full touch-pan-x accent-amber-400" />
+        </label>
       </div>
+      <p aria-live="polite" className="rounded bg-zinc-950 p-3 text-sm text-zinc-200">Cadangan bertahan: {reserves}/{outflow} = <strong>{months === null ? "—" : months.toFixed(1)} bulan</strong> bila tekanan terus berlangsung.</p>
     </VisualCard>
   );
 }

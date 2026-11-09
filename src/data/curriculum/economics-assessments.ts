@@ -946,105 +946,105 @@ export const ECONOMICS_QUIZZES: Record<string, AssessmentQuestion[]> = {
     ]),
   ],
   "eko2-b10": [
-    q("eko2-b10-q01", "Konsep • Keunggulan komparatif", "Dalam ekonomi kecil terbuka, apa yang paling tepat tentang harga dunia dan keputusan negara?", [
-      "Negara itu bisa membentuk harga dunia karena skala produksinya besar",
-      "Negara penerima harga dunia tidak dapat memengaruhi harga internasional lewat keputusan domestik",
-      "Negara pengimpor selalu memperoleh seluruh keuntungan perdagangan karena harga turun",
-      "Harga dunia hanya relevan ketika kedua negara memiliki kurva permintaan sama",
-    ], 1, "Ekonomi kecil terbuka mengambil harga dunia sebagai parameter luar negeri; ia tidak punya kapasitas memengaruhi harga dunia secara signifikan.", [
-      "Skala kecil memang mengurangi kemampuan memengaruhi harga global.",
-      "Negara pengimpor pun bisa menikmati surplus konsumen, tetapi bukan seluruh manfaat secara otomatis dan distribusinya tidak setara.",
-      "Harga dunia berlaku tanpa syarat sama kurva permintaan; itu mengandaikan pasar yang sangat terbuka dan kecil.",
+    q("eko2-b10-q01", "Konsep • Keunggulan komparatif", "Negara A lebih produktif daripada negara B dalam kain maupun pangan. Mengapa perdagangan tetap dapat menguntungkan keduanya?", [
+      "Karena perdagangan hanya menguntungkan negara yang lebih produktif dalam semua barang",
+      "Karena tiap negara berspesialisasi pada barang berbiaya peluang lebih rendah lalu menukarnya",
+      "Karena negara kurang produktif otomatis unggul komparatif dalam semua barang",
+      "Karena keunggulan komparatif ditentukan oleh jumlah jam kerja, bukan biaya peluang",
+    ], 1, "Keuntungan perdagangan bersumber dari perbedaan biaya peluang, bukan produktivitas absolut. Tiap negara memiliki barang dengan biaya peluang lebih rendah.", [
+      "Keuntungan berasal dari perbedaan biaya peluang, jadi negara yang kurang produktif pun ikut untung.",
+      "Biaya peluang saling berkebalikan, sehingga satu negara tidak bisa unggul komparatif dalam kedua barang sekaligus.",
+      "Keunggulan komparatif ditentukan oleh barang lain yang dikorbankan (biaya peluang), bukan jam kerja absolut.",
     ]),
-    q("eko2-b10-q02", "Konsep • Keuntungan perdagangan", "Jika harga dunia P_w=8 di bawah harga domestik ekuilibrium 12, apa dampak utama pada surplus?", [
-      "Surplus produsen naik, surplus konsumen turun, dan total surplus menurun",
-      "Surplus konsumen naik, surplus produsen turun, dan total surplus naik sebesar 80",
-      "Seluruh surplus berubah menjadi keuntungan pemerintah melalui impor",
-      "Surplus konsumen dan produsen keduanya turun karena kurva domestik tidak relevan",
-    ], 1, "Pada harga dunia di bawah ekuilibrium, impor menurunkan harga domestik dan meningkatkan konsumsi; perubahan neto total adalah +80 pada ilustrasi model." , [
-      "Harga dunia di bawah ekuilibrium menaikkan surplus konsumen, bukan menurunkannya.",
-      "Pemerintah tidak secara otomatis memperoleh surplus dari impor; pendapatan tarif baru adalah bagian lain dari model.",
-      "Kedua surplus tidak turun secara bersamaan ketika harga dunia lebih rendah dari ekuilibrium.",
+    q("eko2-b10-q02", "Konsep • Tarif", "Bagaimana dampak tarif pada ekonomi kecil terbuka yang mengimpor barang?", [
+      "Konsumen untung karena harga domestik turun, sedangkan produsen rugi",
+      "Konsumen dan produsen sama-sama untung, sedangkan pemerintah rugi",
+      "Total surplus tidak berubah karena transfer saling menghapus",
+      "Konsumen rugi, produsen dan pemerintah untung, tetapi ada kerugian neto",
+    ], 3, "Tarif menaikkan harga domestik: konsumen rugi, produsen untung, pemerintah menerima penerimaan tarif. Jumlahnya lebih kecil dari kerugian konsumen; selisihnya deadweight loss.", [
+      "Tarif menaikkan harga domestik, bukan menurunkannya, sehingga konsumen rugi.",
+      "Konsumen justru rugi karena harga naik, dan pemerintah menerima penerimaan tarif.",
+      "Keuntungan produsen dan penerimaan pemerintah tidak menutup kerugian konsumen; selisihnya DWL (20 pada t=2).",
     ]),
-    q("eko2-b10-q03", "Hitungan • Tarif", "Dengan Qd=100−5P dan Qs=−20+5P, bila P_w=8 dan tarif t=2, apa harga domestik, impor, dan penerimaan tarif?", [
-      "Harga domestik 10; impor 20; penerimaan 40",
-      "Harga domestik 8; impor 30; penerimaan 20",
-      "Harga domestik 12; impor 20; penerimaan 20",
-      "Harga domestik 10; impor 30; penerimaan 30",
-    ], 0, "Harga domestik = 8 + 2 = 10; Qd=50, Qs=30, impor=20; penerimaan=2×20=40.", [
-      "Ini tepat dengan D=50 dan S=30, sehingga impor 20 dan penerimaan 40.",
-      "Harga domestik tidak tetap 8 ketika tarif diberlakukan; ia naik ke 10.",
-      "Impor bukan 30 karena Qd−Qs=50−30=20.",
+    q("eko2-b10-q03", "Konsep • Neraca pembayaran", "Bagaimana defisit transaksi berjalan dibiayai menurut identitas neraca pembayaran?", [
+      "Oleh arus modal masuk neto pada transaksi finansial",
+      "Defisit itu menandakan ekonomi pasti sedang menyusut",
+      "Oleh defisit transaksi finansial dengan tanda yang sama",
+      "Defisit itu hanya muncul bila pemerintah defisit anggaran",
+    ], 0, "Transaksi berjalan + transaksi finansial (arus modal masuk neto) + selisih = 0, sehingga defisit berjalan dicerminkan arus modal masuk.", [
+      "Defisit berjalan tidak otomatis berarti ekonomi menyusut; ia dapat muncul saat investasi tinggi dan dibiayai modal luar.",
+      "Tandanya berlawanan: defisit berjalan dicerminkan arus modal masuk, sehingga jumlah keduanya nol.",
+      "Defisit berjalan juga bisa muncul karena tabungan swasta lebih kecil dari investasi tanpa defisit anggaran (S − I = NX).",
     ]),
-    q("eko2-b10-q04", "Konsep • Tarif dan deadweight loss", "Mengapa tarif membuat deadweight loss walaupun penerimaan pemerintah meningkat?", [
-      "Karena konsumen membeli lebih banyak saat harga turun dan pembeli tidak memerlukan insentif",
-      "Karena tarif menimbulkan pengurangan konsumsi dan produksi yang tidak efisien di samping transfer kepada pemerintah",
-      "Karena tarif selalu mengubah harga dunia menjadi lebih tinggi dari biaya produksi marginal",
-      "Karena ekspor neto selalu turun ketika pemerintah membatasi impor",
-    ], 1, "Tarif menciptakan dua sumber kerugian: konsumsi berkurang di unit yang semula bermanfaat dan produksi domestik yang tidak efisien naik di unit yang seharusnya diimpor.", [
-      "Tarif biasanya menaikkan harga domestik, bukan menurunkannya.",
-      "Tarif dapat mengubah harga dunia hanya untuk negara kecil jika harga dunia berubah, bukan intrinsik dari tarif.",
-      "Ekspor neto tidak selalu turun; efeknya tergantung pada kondisi perdagangan dan respons pasar.",
+    q("eko2-b10-q04", "Konsep • Kurs nominal dan riil", "Apa perbedaan kurs nominal dan kurs riil?", [
+      "Kurs nominal memperhitungkan perbedaan tingkat harga, kurs riil tidak",
+      "Kurs riil hanya untuk barang impor, kurs nominal hanya untuk ekspor",
+      "Kurs nominal adalah harga satu mata uang dalam mata uang lain; kurs riil menyesuaikannya dengan tingkat harga",
+      "Kurs nominal dan kurs riil selalu sama dalam jangka pendek maupun panjang",
+    ], 2, "Kurs nominal e adalah harga mata uang; kurs riil e×P*/P membandingkan harga barang luar negeri dengan barang domestik.", [
+      "Terbalik: kurs riil yang menyesuaikan perbedaan tingkat harga.",
+      "Keduanya tidak dibatasi pada impor atau ekspor saja.",
+      "Keduanya bisa berbeda arah karena tingkat harga berubah; misalnya e tetap tetapi P naik menurunkan kurs riil.",
     ]),
-    q("eko2-b10-q05", "Konsep • Neraca pembayaran", "Identitas neraca pembayaran yang benar pada konvensi tanda baku adalah?", [
-      "Transaksi berjalan + transaksi finansial + selisih statistik = 0",
-      "Neraca pembayaran = ekspor + impor − transfer neto",
-      "Transaksi berjalan + transaksi finansial = surplus nominal tanpa syarat",
-      "Neraca pembayaran selalu positif bila utang luar negeri turun",
-    ], 0, "Dalam konvensi umum, transaksi berjalan, transaksi finansial, dan selisih statistik harus menyeimbangkan nol, dengan arus modal mengimbangi defisit atau surplus transaksi berjalan.", [
-      "Yang benar adalah ada tambahan selisih statistik pada identitas, bukan hanya ekspor dan impor kasar.",
-      "Ekspansi arus modal bukan selalu netral tanpa syarat; keseimbangan total mensyaratkan jumlah nol.",
-      "Utang luar negeri turun tidak otomatis menunjukkan neraca pembayaran positif karena semua komponen harus dihitung.",
+    q("eko2-b10-q05", "Hitungan • Impor ekonomi terbuka", "Dengan Qd=100−5P dan Qs=−20+5P serta harga dunia 8, berapa jumlah impor?", [
+      "20, dari jumlah produksi domestik pada harga 8",
+      "60, dari jumlah permintaan domestik pada harga 8",
+      "40, dari permintaan 60 dikurangi produksi domestik 20",
+      "80, dari penjumlahan permintaan 60 dan produksi 20",
+    ], 2, "Pada P=8: Qd=100−40=60 dan Qs=−20+40=20, sehingga impor = 60 − 20 = 40.", [
+      "20 adalah Qs pada harga 8, bukan impor.",
+      "60 adalah Qd pada harga 8; impor adalah Qd dikurangi Qs.",
+      "80 menjumlahkan Qd dan Qs; impor adalah selisihnya, yaitu 40.",
     ]),
-    q("eko2-b10-q06", "Hitungan • Identitas tabungan-investasi", "Jika PDB=930, C=600, G=200, I=150, dan NX=−20, berapa tabungan nasional?", [
-      "130",
-      "110",
-      "150",
-      "−20",
-    ], 0, "Tabungan nasional S = Y − C − G = 930 − 600 − 200 = 130; identitas S−I = NX = 130−150 = −20.", [
-      "130 adalah benar untuk tabungan nasional, bukan nilai pengeluaran investasi.",
-      "110 salah karena mengurangi 20 dari nilai benar tanpa dasar identitas.",
-      "−20 adalah NX, bukan tabungan nasional.",
+    q("eko2-b10-q06", "Hitungan • Tarif", "Pada harga dunia 8 dengan tarif t=2, hasil yang benar adalah...", [
+      "Impor 20, penerimaan 40, DWL 20",
+      "Impor 40, penerimaan 80, DWL 20",
+      "Impor 20, penerimaan 40, DWL 40",
+      "Impor 30, penerimaan 30, DWL 5",
+    ], 0, "Harga domestik 10; Qd=50, Qs=30, impor 20; penerimaan 2×20=40; DWL = ½×2×(30−20)+½×2×(60−50) = 20.", [
+      "Impor 40 berlaku pada t=0; pada t=2 harga domestik 10 membuat impor 20 dan penerimaan 2×20=40.",
+      "DWL = 10 + 10 = 20, bukan 40.",
+      "Impor 30, penerimaan 30, dan DWL 5 berlaku untuk t=1, bukan t=2.",
     ]),
-    q("eko2-b10-q07", "Konsep • Kurs nominal dan riil", "Rumus kurs riil yang benar adalah?", [
-      "e_r = e × P/P*",
-      "e_r = e × P*/P",
-      "e_r = P × P* / e",
-      "e_r = e/P* + P",
-    ], 1, "Kurs riil = e × P*/P; itu mengukur harga barang luar negeri dalam satuan barang domestik atau sebaliknya secara konsisten.", [
-      "Rumus e × P/P* menilai nilai nominal berlawanan dengan definisi riil.",
-      "Membagi dengan e mengubah skala kurs dan bias interpretasi.",
-      "Penambahan P tidak sesuai dengan definisi real exchange rate.",
+    q("eko2-b10-q07", "Hitungan • Kurs riil", "Dengan e=10 MD per MA, P=100 MD, dan P*=12 MA, berapakah kurs riil e×P*/P?", [
+      "0,83, dari 100 dibagi hasil kali 10 dan 12",
+      "8,33, dari harga domestik dibagi harga luar negeri",
+      "120, dari kurs dikali harga luar negeri saja",
+      "1,20, dari 10×12 dibagi 100",
+    ], 3, "Kurs riil = 10×12/100 = 1,20: barang luar negeri 20% lebih mahal dibanding barang domestik.", [
+      "0,83 adalah kebalikan (100/120), bukan e×P*/P.",
+      "8,33 adalah P/P*, yaitu kurs PPP, bukan kurs riil.",
+      "120 adalah e×P* tanpa dibagi harga domestik P.",
     ]),
-    q("eko2-b10-q08", "Hitungan • PPP", "Jika P=100, P*=12, dan e=10 MD per MA, berapa kurs riil dan bagaimana interpretasinya?", [
-      "1,2; barang luar negeri 20% lebih mahal dibanding domestik",
-      "0,83; mata uang domestik lebih mahal secara riil",
-      "1,0; PPP terpenuhi sepenuhnya",
-      "1,5; domestik berada di posisi undervalued",
-    ], 0, "e_r = 10×12/100 = 1,2; berarti satu unit barang luar negeri setara 20% lebih mahal dibanding barang domestik pada satuan yang sama.", [
-      "0,83 membalik hubungan tidak sesuai dengan rumus.",
-      "PPP tidak terpenuhi pada e=10 ketika e_PPP=100/12=8,33.",
-      "1,5 tidak sesuai dengan 10×12/100.",
+    q("eko2-b10-q08", "Kasus • Transaksi berjalan", "Ekspor 100, impor 120, pendapatan primer neto −20, dan transfer neto +10. Berapa transaksi berjalan?", [
+      "−20, hanya dari ekspor neto",
+      "−30, dari −20 + (−20) + 10",
+      "+10, hanya dari transfer neto",
+      "−40, karena transfer dikurangkan",
+    ], 1, "Transaksi berjalan = ekspor neto (−20) + pendapatan primer neto (−20) + transfer (+10) = −30.", [
+      "−20 hanya ekspor neto; pendapatan primer dan transfer juga termasuk transaksi berjalan.",
+      "+10 hanya transfer neto dan mengabaikan ekspor neto serta pendapatan primer.",
+      "Transfer neto +10 menambah, bukan mengurangi: −20 − 20 + 10 = −30.",
     ]),
-    q("eko2-b10-q09", "Konsep • UIP dan kurs", "Pernyataan yang paling tepat tentang paritas suku bunga tak tertutup (UIP) adalah?", [
-      "e yang diharapkan naik bila selisih suku bunga domestik dan asing positif",
-      "Currenlly, e yang diharapkan = e × (1+i)/(1+i*) dan perubahan nilai mata uang mengkompensasi perbedaan bunga",
-      "Kurs nominal selalu tetap saat suku bunga berbeda karena sekali diikat nampaknya tidak berubah",
-      "UIP menyatakan dari sisi barang, bukan sisi aset, bahwa pasar modal sepenuhnya tidak relevan",
-    ], 1, "UIP menyatakan kurs yang diharapkan bergerak sesuai selisih bunga: mata uang domestik cenderung terdepresiasi jika i > i* dalam ukuran tertentu, dengan pengembalian yang disesuaikan.", [
-      "Jika i > i* dan mata uang domestik terdepresiasi, kurs yang diharapkan naik, bukan turun, pada satuan tertentu.",
-      "Kurs nominal tidak tetap otomatis; ia bisa bergerak saat bunga berbeda.",
-      "UIP sangat relevan untuk aset dan pasar modal, bukan hanya barang.",
+    q("eko2-b10-q09", "Kasus • UIP", "Kurs e=10, bunga domestik 6%, dan bunga asing 2%. Menurut UIP, apa kurs yang diharapkan setahun lagi?", [
+      "10,39, sehingga MD diperkirakan terdepresiasi sekitar 3,9%",
+      "9,62, sehingga MD diperkirakan terapresiasi sekitar 3,8%",
+      "10,00, karena bunga tidak memengaruhi kurs",
+      "10,60, karena kurs naik sebesar bunga domestik",
+    ], 0, "e diharapkan = 10×1,06/1,02 = 10,39, atau naik sekitar 3,92% (MD melemah).", [
+      "9,62 memakai arah terbalik (10×1,02/1,06); bunga domestik lebih tinggi membuat MD diperkirakan melemah.",
+      "UIP mengaitkan selisih bunga dengan perubahan kurs yang diharapkan, sehingga e tidak tetap.",
+      "10,60 hanya menambahkan 6% dan mengabaikan bunga asing; rumusnya e×(1+i)/(1+i*) = 10,39.",
     ]),
-    q("eko2-b10-q10", "Konsep • Rezim kurs", "Manakah pilihan yang paling tepat mengenai trilema kebijakan?", [
-      "Semua negara dapat sekaligus memiliki kurs tetap, mobilitas modal bebas, dan kebijakan moneter mandiri",
-      "Negara hanya dapat memilih dua dari tiga: kurs tetap, mobilitas modal bebas, dan kebijakan moneter mandiri",
-      "Kurs mengambang menolak intervensi bank sentral kapan pun",
-      "Cadangan devisa selalu membatasi perdagangan agar kuota tetap efektif",
-    ], 1, "Trilema kebijakan menyatakan hanya dua dari tiga tujuan yang bisa dipilih secara bersamaan: kurs tetap, mobilitas modal, dan moneter mandiri.", [
-      "Semua tiga tidak bisa dipilih secara bersamaan karena ada trade-off yang melekat.",
-      "Kurs mengambang tidak menolak intervensi; bank sentral dapat berperan di pasar valuta.",
-      "Cadangan devisa bukan pembatas perdagangan; cadangan lebih terkait intervensi dan kepercayaan.",
+    q("eko2-b10-q10", "Kasus • Trilema", "Sebuah negara memilih kurs tetap dan modal bebas, dengan cadangan 60 dan intervensi 10 per bulan. Kesimpulan yang tepat?", [
+      "Moneter mandiri tetap penuh dan cadangan bertahan 60 bulan",
+      "Kurs tetap akan bertahan selamanya karena modal bebas menambah cadangan",
+      "Kurs tetap hilang lebih dulu, sedangkan moneter mandiri tidak terpengaruh",
+      "Moneter mandiri hilang, dan cadangan bertahan sekitar 6 bulan",
+    ], 3, "Kurs tetap dengan modal bebas mengorbankan kebijakan moneter mandiri. Cadangan bertahan 60/10 = 6 bulan bila tekanan berlanjut.", [
+      "Pada kombinasi ini moneter mandiri hilang, dan 60/10 = 6 bulan, bukan 60.",
+      "Cadangan terbatas; intervensi 10 per bulan menguras cadangan dalam 6 bulan.",
+      "Yang dikorbankan kombinasi ini adalah moneter mandiri; kurs tetap baru jebol bila cadangan habis.",
     ]),
   ],
 };

@@ -829,3 +829,55 @@ export function currencyRegime(regime: "floating" | "fixed" | "managed", reserve
     reserveCoverage: reserves / Math.max(1, Math.abs(capitalFlow) + 1),
   };
 }
+
+export function balanceOfPaymentsFull(
+  exports: number,
+  imports: number,
+  incomeReceived: number,
+  incomePaid: number,
+  transfers: number,
+  capitalInflow: number
+) {
+  const netExports = exports - imports;
+  const netPrimaryIncome = incomeReceived - incomePaid;
+  const currentAccount = netExports + netPrimaryIncome + transfers;
+  const discrepancy = -(currentAccount + capitalInflow);
+  const consumption = 600;
+  const investment = 150;
+  const government = 200;
+  const gdp = consumption + investment + government + netExports;
+  const nationalSaving = gdp - consumption - government;
+  return {
+    netExports,
+    netPrimaryIncome,
+    currentAccount,
+    financialAccount: capitalInflow,
+    discrepancy,
+    gdp,
+    nationalSaving,
+    investment,
+    savingMinusInvestment: nationalSaving - investment,
+  };
+}
+
+export function uipExpected(rate: number, domesticRatePercent: number, foreignRatePercent: number) {
+  const expected = (rate * (1 + domesticRatePercent / 100)) / (1 + foreignRatePercent / 100);
+  return { expected, changePercent: (expected / rate - 1) * 100 };
+}
+
+export function reserveRunway(reserves: number, outflowPerMonth: number) {
+  return outflowPerMonth > 0 ? reserves / outflowPerMonth : null;
+}
+
+export type TrilemmaGoal = "fixed" | "capital" | "monetary";
+
+export function trilemmaOutcome(active: TrilemmaGoal[]) {
+  const all: TrilemmaGoal[] = ["fixed", "capital", "monetary"];
+  const lost = all.find((goal) => !active.includes(goal));
+  const text: Record<TrilemmaGoal, string> = {
+    monetary: "Kurs tetap dan modal bebas berjalan, tetapi kebijakan moneter mandiri hilang: suku bunga domestik harus mengikuti suku bunga luar negeri.",
+    capital: "Kurs tetap dan moneter mandiri berjalan, tetapi arus modal harus dikendalikan agar tekanan kurs tidak menguras cadangan.",
+    fixed: "Moneter mandiri dan modal bebas berjalan, tetapi kurs harus mengambang dan bergerak mengikuti pasar.",
+  };
+  return { lost: lost ?? null, text: lost ? text[lost] : "Ketiganya tidak dapat berjalan bersamaan." };
+}
