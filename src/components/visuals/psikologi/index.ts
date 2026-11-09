@@ -24,6 +24,11 @@ import PsiAnchorFrame from "./psi-anchor-frame";
 import PsiProspectGamble from "./psi-prospect-gamble";
 import PsiPresentBias from "./psi-present-bias";
 import PsiHerdCascade from "./psi-herd-cascade";
+import PsiConformityModel from "./psi-conformity-model";
+import PsiAuthorityGradient from "./psi-authority-gradient";
+import PsiSocialProof from "./psi-social-proof";
+import PsiAttributionEvidence from "./psi-attribution-evidence";
+import PsiEchoFeed from "./psi-echo-feed";
 
 export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-levels": PsiLevels,
@@ -51,4 +56,9 @@ export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-prospect-gamble": PsiProspectGamble,
   "psi-present-bias": PsiPresentBias,
   "psi-herd-cascade": PsiHerdCascade,
+  "psi-conformity-model": PsiConformityModel,
+  "psi-authority-gradient": PsiAuthorityGradient,
+  "psi-social-proof": PsiSocialProof,
+  "psi-attribution-evidence": PsiAttributionEvidence,
+  "psi-echo-feed": PsiEchoFeed,
 };

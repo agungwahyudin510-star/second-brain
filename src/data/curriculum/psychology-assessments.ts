@@ -558,6 +558,108 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Contoh ini membahas bingkai, bukan pencarian bukti sesuai keyakinan.",
     ]),
   ],
+  "psi2-b06": [
+    qv2("psi2-b06-q01", "Konsep • Pengaruh sosial", "Apa perbedaan pengaruh normatif dan informasional?", [
+      "Normatif mencari fakta; informasional ingin diterima",
+      "Keduanya selalu berarti tekanan untuk setuju",
+      "Normatif demi diterima; informasional mencari petunjuk",
+      "Keduanya tidak berubah menurut situasi sosial",
+    ], 2, "Pengaruh normatif berkaitan dengan penerimaan, sedangkan pengaruh informasional memakai kelompok sebagai petunjuk.", [
+      "Uraian ini membalik fungsi kedua jenis pengaruh.",
+      "Keduanya dapat muncul bersamaan, tetapi bukan proses yang sama.",
+      "Konteks sosial dapat memengaruhi kedua proses.",
+    ]),
+    qv2("psi2-b06-q02", "Konsep • Kepatuhan", "Kepatuhan paling tepat berarti...", [
+      "Mengikuti perintah dari otoritas yang diakui",
+      "Meniru pilihan teman agar diterima kelompok",
+      "Menyetujui norma tanpa memeriksa aturannya",
+      "Mengubah pendapat setelah bukti baru muncul",
+    ], 0, "Kepatuhan adalah mengikuti perintah dari figur yang dipandang berotoritas; legitimasi dan konteks tetap perlu dinilai.", [
+      "Meniru teman lebih dekat pada pengaruh kelompok, bukan definisi kepatuhan.",
+      "Persetujuan norma tidak selalu berasal dari sebuah perintah.",
+      "Informasi baru dapat mengubah penilaian tanpa otoritas memerintah.",
+    ]),
+    qv2("psi2-b06-q03", "Konsep • Social proof", "Penggunaan tindakan orang lain sebagai petunjuk disebut social proof. Kekuatan petunjuk itu bergantung pada...", [
+      "Banyaknya suara saja, tanpa melihat asalnya",
+      "Apakah semua penilai memakai skor maksimum",
+      "Kepastian bahwa tindakan mayoritas selalu tepat",
+      "Relevansi informasi dan independensi sumber",
+    ], 3, "Bukti sosial lebih informatif bila tindakan berkaitan dengan pertanyaan dan sumber tidak hanya mengulang bukti yang sama.", [
+      "Jumlah suara saja tidak menunjukkan mutu atau independensi.",
+      "Skor maksimum tidak membuktikan penilaian dapat dipercaya.",
+      "Mayoritas tidak selalu benar dalam setiap konteks.",
+    ]),
+    qv2("psi2-b06-q04", "Konsep • Atribusi", "Kesalahan atribusi mendasar merujuk pada kecenderungan...", [
+      "Menjelaskan tindakan lewat situasi saja",
+      "Terlalu menekankan sifat dan mengecilkan situasi",
+      "Menganggap perilaku seseorang selalu konsisten",
+      "Mengabaikan perbedaan antarindividu sepenuhnya",
+    ], 1, "Saat menjelaskan perilaku orang lain, disposisi dapat terlalu ditekankan sementara keadaan situasional kurang diperhatikan.", [
+      "Kecenderungan ini bukan hanya memakai faktor situasional.",
+      "Konsistensi adalah dimensi bukti, bukan definisi kesalahan atribusi.",
+      "Kesalahan atribusi tidak berarti setiap perbedaan individu diabaikan.",
+    ]),
+    qv2("psi2-b06-q05", "Hitungan • Konformitas", "Menurut model P(ikut)=min(60,10+12n), berapa hasil untuk n=4 tanpa sekutu?", [
+      "46%",
+      "48%",
+      "60%",
+      "58%",
+    ], 3, "10+12×4=58%, masih di bawah plafon 60%.", [
+      "46% adalah hasil untuk n=3.",
+      "48% mengalikan 12×4 tetapi melewatkan nilai awal 10%.",
+      "60% adalah plafon yang baru dicapai pada n=5 atau lebih.",
+    ]),
+    qv2("psi2-b06-q06", "Hitungan • Social proof", "Dengan prior 3,5 dan m=20, berapa skor terkoreksi item B dengan 200 rating dan rerata 4,5?", [
+      "4,50",
+      "4,41",
+      "3,76",
+      "4,80",
+    ], 1, "(200×4,5+20×3,5)/220=970/220≈4,41.", [
+      "4,50 adalah rerata mentah, belum digabungkan dengan prior.",
+      "3,76 adalah skor terkoreksi item A dengan 5 rating.",
+      "4,80 bukan rerata mentah atau skor terkoreksi item B.",
+    ]),
+    qv2("psi2-b06-q07", "Hitungan • Ruang gema", "Model s(t+1)=s(t)+0,2(1−s(t)) dimulai dari 0,5. Berapa bagian sepakat setelah 3 ronde?", [
+      "74,4%",
+      "68,0%",
+      "79,5%",
+      "60,0%",
+    ], 0, "Nilai berturut-turut 0,600; 0,680; 0,744, yaitu 74,4%.", [
+      "68,0% adalah nilai setelah dua ronde.",
+      "79,5% adalah nilai setelah empat ronde.",
+      "60,0% adalah nilai setelah satu ronde.",
+    ]),
+    qv2("psi2-b06-q08", "Hitungan • Sekutu", "Model memberi 58% pada n=4. Satu sekutu berbeda menurunkan hasil 25 poin. Berapa hasilnya?", [
+      "58%",
+      "25%",
+      "33%",
+      "46%",
+    ], 2, "58−25=33%.", [
+      "58% adalah nilai sebelum memperhitungkan sekutu.",
+      "25 poin adalah pengurang, bukan hasil akhir.",
+      "46% adalah nilai model pada n=3 tanpa sekutu.",
+    ]),
+    qv2("psi2-b06-q09", "Kasus • Konsensus", "Delapan dari sepuluh orang yang sama-sama terjebak macet juga terlambat. Penjelasan yang lebih didukung untuk diperiksa adalah...", [
+      "Ia malas karena terlambat menunjukkan sifat tetap",
+      "Faktor situasional; konsensus kelompok cukup tinggi",
+      "Sifat pribadi pasti satu-satunya sebab keterlambatan",
+      "Konsensus rendah; situasi tak perlu dipertimbangkan",
+    ], 1, "Konsensus 8/10=80% relatif tinggi, sehingga kondisi lalu lintas patut dipertimbangkan sebelum memberi label disposisional.", [
+      "Satu kejadian tidak cukup untuk menyimpulkan sifat tetap.",
+      "Penjelasan tunggal mengabaikan kondisi macet yang dialami bersama.",
+      "Delapan dari sepuluh menunjukkan konsensus tinggi, bukan rendah.",
+    ]),
+    qv2("psi2-b06-q10", "Kasus • Independensi sumber", "Sembilan dari sepuluh anggota grup chat menyarankan token X. Apa yang perlu diperiksa sebelum menganggapnya bukti kuat?", [
+      "Jumlah anggota cukup untuk memastikan mutu aset",
+      "Kesepakatan grup berarti tiap anggota meneliti sendiri",
+      "Popularitas menghilangkan kemungkinan promosi berbayar",
+      "Apakah rekomendasi berasal dari sumber independen",
+    ], 3, "Periksa apakah anggota memakai bukti independen atau mengulang satu klaim, serta pertimbangkan insentif dan verifikasi.", [
+      "Jumlah suara tidak memastikan mutu atau keamanan aset.",
+      "Anggota dapat menyalin klaim yang sama tanpa meneliti sendiri.",
+      "Popularitas tidak menghilangkan kemungkinan konflik kepentingan.",
+    ]),
+  ],
 };
 
 export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
@@ -650,6 +752,28 @@ export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
         "Gunakan contoh konkret dan bandingkan dampak keterbalikan keputusan.",
         "Jelaskan keterbatasan informasi, urutan opsi, atau kriteria model.",
         "Hindari klaim bahwa satu strategi selalu unggul.",
+      ],
+    },
+  ],
+  "psi2-b06": [
+    {
+      ...essay("psi2-b06-e01", "Jelaskan bagaimana tekanan kelompok dan otoritas dapat memengaruhi keputusan. Rancang tiga langkah praktis untuk mempertahankan penilaian independen dan jelaskan batas bukti dari contoh yang digunakan."),
+      reviewPoints: [
+        "Bedakan pengaruh normatif, informasional, dan kepatuhan.",
+        "Tunjukkan bagaimana legitimasi atau dinamika kelompok dapat berperan.",
+        "Rancang tiga langkah yang realistis dan aman untuk memeriksa keputusan.",
+        "Gunakan sumber atau bukti konkret tanpa menggeneralisasi studi klasik.",
+        "Nyatakan keterbatasan situasi dan bukti.",
+      ],
+    },
+    {
+      ...essay("psi2-b06-e02", "Analisis ruang gema dan social proof pada komunitas daring atau marketplace dengan model penyusutan rating dan model feed. Jelaskan kegunaan serta batas dari kedua model."),
+      reviewPoints: [
+        "Jelaskan pengaruh jumlah rating, rerata, prior, dan independensi sumber.",
+        "Terapkan model feed sebagai ilustrasi proses, bukan data platform.",
+        "Bedakan popularitas yang terlihat dari bukti independen.",
+        "Sebutkan alternatif penjelasan atau faktor algoritmik dan sosial.",
+        "Jelaskan batas kesimpulan dari kedua model.",
       ],
     },
   ],

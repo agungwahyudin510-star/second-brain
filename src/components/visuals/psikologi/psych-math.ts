@@ -200,3 +200,31 @@ export function cascade(signals: ("A" | "B")[]) {
 
   return { decisions, ignored, ignoredSignals };
 }
+
+export function conformityProbability(n: number, hasAlly: boolean) {
+  const baseline = Math.max(0, Math.min(60, 10 + 12 * n));
+  return Math.max(0, baseline - (hasAlly ? 25 : 0));
+}
+
+export function shrunkRating(n: number, mean: number, m: number, prior: number) {
+  const denominator = n + m;
+  return denominator <= 0 ? prior : (n * mean + m * prior) / denominator;
+}
+
+export function consensusPct(same: number, total: number) {
+  return total <= 0 ? 0 : (same / total) * 100;
+}
+
+export function echoShare(initial: number, rate: number, rounds: number) {
+  const shares = [initial];
+  let share = initial;
+  for (let round = 0; round < rounds; round += 1) {
+    share += rate * (1 - share);
+    shares.push(share);
+  }
+  return shares;
+}
+
+export function obedienceIndex(legitimacy: number, distance: number, dissenters: number) {
+  return Math.max(0, Math.min(100, 30 + 8 * legitimacy + 4 * distance - 10 * dissenters));
+}
