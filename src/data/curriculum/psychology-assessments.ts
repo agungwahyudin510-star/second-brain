@@ -150,12 +150,136 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Satu pengamatan tidak memastikan perilaku selanjutnya.",
     ]),
   ],
+  "psi2-b02": [
+    qv2("psi2-b02-q01", "Konsep • Persepsi", "Persepsi paling tepat merujuk pada proses...", [
+      "Menerima rangsangan melalui indera tanpa memberi makna",
+      "Mengingat semua informasi indera tanpa berubah",
+      "Mengolah dan memaknai informasi indera yang diterima",
+      "Mengubah rangsangan menjadi respons tubuh otomatis",
+    ], 2, "Persepsi mengorganisasi dan memberi makna pada informasi indera, berbeda dari penerimaan sensasi.", [
+      "Penerimaan rangsangan menggambarkan sensasi, belum proses pemaknaan.",
+      "Ingatan tidak menyimpan semua informasi indera secara sempurna.",
+      "Respons tubuh bukan definisi persepsi.",
+    ]),
+    qv2("psi2-b02-q02", "Konsep • Atensi", "Pernyataan yang paling tepat tentang perhatian dan perpindahan tugas adalah...", [
+      "Atensi selalu terbagi rata ketika beberapa tugas dilakukan",
+      "Atensi terbatas; berpindah tugas punya biaya",
+      "Notifikasi selalu membantu memahami bacaan yang sulit",
+      "Pergantian tugas menghapus biaya mengingat tujuan",
+    ], 1, "Perhatian terbatas dan kembali ke tujuan setelah berpindah dapat membutuhkan waktu atau usaha.", [
+      "Perhatian tidak selalu terbagi rata pada semua tugas.",
+      "Notifikasi dapat mengganggu, dan manfaatnya bergantung konteks.",
+      "Pergantian tidak menghapus kebutuhan memulihkan tujuan tugas.",
+    ]),
+    qv2("psi2-b02-q03", "Konsep • Sistem memori", "Perbedaan paling tepat antara memori kerja dan jangka panjang adalah...", [
+      "Memori sensori menyimpan semua pengalaman untuk waktu lama",
+      "Memori kerja hanya menyimpan informasi dan tidak mengolahnya",
+      "Memori jangka panjang hanya menahan bunyi sesaat",
+      "Memori kerja mengolah sementara; jangka panjang lebih lama",
+    ], 3, "Memori kerja menahan dan mengolah informasi sementara, sedangkan memori jangka panjang dapat mempertahankannya lebih lama.", [
+      "Jejak sensori singkat dan tidak menyimpan semua pengalaman lama.",
+      "Memori kerja terlibat dalam pengolahan, bukan hanya penyimpanan pasif.",
+      "Memori jangka panjang tidak terbatas pada bunyi sesaat.",
+    ]),
+    qv2("psi2-b02-q04", "Konsep • Strategi belajar", "Praktik yang paling langsung melatih pengambilan kembali informasi adalah...", [
+      "Uji diri tanpa catatan, lalu cek umpan balik",
+      "Membaca ulang bagian yang sama sampai terasa akrab",
+      "Menyorot semua paragraf untuk mengenali istilah penting",
+      "Menyalin catatan lengkap agar tampak tersimpan",
+    ], 0, "Retrieval practice meminta pelajar mengambil informasi dari ingatan; umpan balik membantu memeriksa jawaban.", [
+      "Membaca ulang melatih pengenalan, tetapi tidak selalu menguji pengambilan dari ingatan.",
+      "Menyorot dapat menandai teks tanpa meminta jawaban dari ingatan.",
+      "Menyalin catatan tidak dengan sendirinya menguji retrieval.",
+    ]),
+    qv2("psi2-b02-q05", "Hitungan • Chunking", "Dua belas digit dikelompokkan menjadi chunk berukuran tiga digit. Berapa jumlah bagian?", [
+      "12 bagian",
+      "3 bagian",
+      "4 bagian",
+      "36 bagian",
+    ], 2, "Jumlah bagian = ceil(12/3)=4.", [
+      "12 adalah jumlah digit sebelum pengelompokan.",
+      "3 adalah ukuran tiap kelompok, bukan jumlah kelompok.",
+      "36 mengalikan jumlah digit dengan ukuran chunk, bukan membaginya.",
+    ]),
+    qv2("psi2-b02-q06", "Hitungan • Model retensi", "Dengan S awal 2 hari, dua tinjauan menggandakan S, lalu uji 7 hari kemudian. Berapa retensi model?", [
+      "41,7% (dua tinjauan; S=8)",
+      "17,4% (satu tinjauan; S=4)",
+      "64,6% (tiga tinjauan; S=16)",
+      "3,0% (tanpa tinjauan; S=2)",
+    ], 0, "Dua tinjauan memberi S=2×2²=8; exp(−7/8)≈41,7%.", [
+      "17,4% memakai satu tinjauan, sehingga S=4.",
+      "64,6% memakai tiga tinjauan, sehingga S=16.",
+      "3,0% adalah hasil tanpa tinjauan, sehingga S=2.",
+    ]),
+    qv2("psi2-b02-q07", "Hitungan • Base rate", "Dari 1.000 transaksi, 1% penipuan, sensitivitas 90%, dan salah-tandai 10%. Berapa peluang peringatan benar?", [
+      "90% (sensitivitas dari kasus penipuan)",
+      "9,09% (9/99 tanpa TP dalam penyebut)",
+      "10% (tingkat salah-tandai kasus nonpenipuan)",
+      "8,33% (9 dari 108 seluruh peringatan)",
+    ], 3, "TP=9 dan FP=99, jadi peluang peringatan benar = 9/(9+99)=9/108≈8,33%.", [
+      "90% adalah sensitivitas, bukan peluang benar di antara semua peringatan.",
+      "9/99 mengabaikan sembilan peringatan benar dari penyebut total.",
+      "10% adalah tingkat salah-tandai, bukan proporsi peringatan benar.",
+    ]),
+    qv2("psi2-b02-q08", "Kasus • Kalibrasi", "Seseorang yakin 90% tetapi benar 6 dari 10 soal. Langkah belajar yang paling berguna adalah...", [
+      "Membaca ulang sampai materi terasa makin akrab",
+      "Uji diri tanpa catatan, lalu cek akurasi",
+      "Menganggap nilai rendah sebagai ukuran kemampuan tetap",
+      "Menaikkan keyakinan agar sesuai target yang diinginkan",
+    ], 1, "Uji diri menghasilkan bukti kinerja untuk dibandingkan dengan keyakinan; contoh ini berbeda 30 poin persentase.", [
+      "Rasa akrab setelah membaca ulang belum tentu mencerminkan retrieval.",
+      "Satu hasil tidak menetapkan kemampuan tetap seseorang.",
+      "Mengubah keyakinan tanpa bukti tidak memperbaiki kalibrasi.",
+    ]),
+    qv2("psi2-b02-q09", "Kasus • Biaya atensi", "Dalam blok 60 menit, 5 gangguan per jam masing-masing memerlukan pemulihan 3 menit. Respons yang sesuai adalah...", [
+      "Paksa fokus tanpa mengubah lingkungan atau gangguan",
+      "Anggap seluruh 60 menit tetap fokus karena blok belum selesai",
+      "Batasi gangguan; model memperkirakan fokus efektif 45 menit",
+      "Tambahkan lebih banyak tugas agar gangguan terasa biasa",
+    ], 2, "Model memberi 60−(5×3)=45 menit; mengurangi gangguan yang dapat diatur dapat membantu menjaga sesi.", [
+      "Memaksa diri tidak mengubah waktu pemulihan yang diasumsikan model.",
+      "Blok 60 menit tidak berarti seluruh waktunya fokus efektif.",
+      "Menambah tugas tidak mengurangi biaya gangguan dalam model.",
+    ]),
+    qv2("psi2-b02-q10", "Kasus • Availability heuristic", "Kecelakaan yang sedang viral terasa sangat sering. Cara memeriksa penilaian itu adalah...", [
+      "Cek base rate dan data pembanding yang sesuai",
+      "Simpulkan frekuensi dari banyaknya unggahan yang terlihat",
+      "Abaikan semua berita karena ingatan selalu menyesatkan",
+      "Anggap contoh yang mudah diingat pasti paling umum",
+    ], 0, "Availability heuristic memakai kemudahan mengingat; base rate dan data relevan membantu memeriksa frekuensi.", [
+      "Banyak unggahan bukan penyebut yang mewakili seluruh kejadian.",
+      "Berita dapat memberi petunjuk, tetapi perlu dinilai bersama data lain.",
+      "Mudah diingat tidak membuktikan bahwa kejadian paling umum.",
+    ]),
+  ],
 };
 
 export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
   "psi2-b01": [
     essay("psi2-b01-e01", "Rancang penelitian kecil tentang kebiasaan belajar. Tetapkan definisi operasional, kelompok pembanding yang sesuai, satu confounder yang perlu dipertimbangkan, dan batas kesimpulan yang mungkin dibuat."),
     essay("psi2-b01-e02", "Jelaskan mengapa klaim “gen menentukan perilaku” dan “lingkungan menentukan segalanya” sama-sama terlalu sederhana. Gunakan model interaksi hipotetis, lalu hubungkan cara berpikir tersebut dengan penilaian klaim dalam keputusan sehari-hari."),
+  ],
+  "psi2-b02": [
+    {
+      ...essay("psi2-b02-e01", "Rancang rencana belajar dua minggu yang memakai retrieval practice, spaced practice, dan kalibrasi. Jelaskan cara mengevaluasi hasil, menyesuaikan jadwal, dan menyatakan batas kesimpulan."),
+      reviewPoints: [
+        "Tetapkan tujuan belajar dan jadwal latihan tersebar yang realistis.",
+        "Rancang retrieval practice dengan pemeriksaan jawaban atau umpan balik.",
+        "Jelaskan cara membandingkan keyakinan dengan akurasi secara berkala.",
+        "Gunakan hasil evaluasi untuk menyesuaikan latihan tanpa mengklaim hasil universal.",
+        "Nyatakan faktor konteks atau keterbatasan rencana.",
+      ],
+    },
+    {
+      ...essay("psi2-b02-e02", "Jelaskan mengapa alat deteksi dengan sensitivitas “akurat 90%” masih dapat menghasilkan banyak peringatan palsu. Gunakan base rate dan penyebut yang tepat, lalu hubungkan dengan penilaian klaim investasi atau keamanan."),
+      reviewPoints: [
+        "Bedakan sensitivitas, false positive, dan peluang peringatan benar.",
+        "Jelaskan peran base rate dan jumlah kasus bukan positif.",
+        "Tunjukkan cara menghitung true positive dan false positive.",
+        "Hubungkan penalaran dengan contoh klaim investasi atau keamanan.",
+        "Nyatakan batas penggunaan angka dan konteks alat.",
+      ],
+    },
   ],
 };
 

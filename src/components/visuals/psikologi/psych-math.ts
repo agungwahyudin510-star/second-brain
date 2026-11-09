@@ -27,3 +27,42 @@ export function improvementRates(improved: number, total: number, comparisonImpr
     relativeIncrease: comparisonRate === 0 ? 0 : ((rate - comparisonRate) / comparisonRate) * 100,
   };
 }
+
+export function effectiveFocus(interruptionsPerHour: number, recoveryMinutes: number) {
+  return 60 - interruptionsPerHour * recoveryMinutes;
+}
+
+export function chunkCount(total: number, size: number) {
+  return size <= 0 ? 0 : Math.ceil(total / size);
+}
+
+export function retention(initialS: number, multiplier: number, reviews: number, days: number) {
+  const s = initialS * multiplier ** reviews;
+  return Math.exp(-days / s) * 100;
+}
+
+export function calibrationGap(confidencePct: number, correct: number, total: number) {
+  const accuracyPct = total === 0 ? 0 : (correct / total) * 100;
+  return confidencePct - accuracyPct;
+}
+
+export function baseRate(
+  prevalencePct: number,
+  sensitivityPct: number,
+  falsePositivePct: number,
+  population: number
+) {
+  const positiveCases = population * prevalencePct / 100;
+  const negativeCases = population - positiveCases;
+  const truePositives = positiveCases * sensitivityPct / 100;
+  const falsePositives = negativeCases * falsePositivePct / 100;
+  const alerts = truePositives + falsePositives;
+  return {
+    positiveCases,
+    negativeCases,
+    truePositives,
+    falsePositives,
+    alerts,
+    trueAlertPct: alerts === 0 ? 0 : (truePositives / alerts) * 100,
+  };
+}
