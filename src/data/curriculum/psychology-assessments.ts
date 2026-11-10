@@ -1132,17 +1132,347 @@ export const PSYCHOLOGY_ESSAYS: Record<string, EssayPrompt[]> = {
 };
 
 export const PSYCHOLOGY_FINAL_QUESTIONS: AssessmentQuestion[] = [
-  q("pfq1", "Metode dan kausalitas", "Tim menemukan peserta yang tidur lebih lama mendapat skor tes lebih tinggi. Apa kesimpulan paling hati-hati?", ["Tidur pasti satu-satunya penyebab", "Ada hubungan; faktor lain dan arah sebab masih perlu diuji", "Skor tes mengukur seluruh kecerdasan", "Data membuktikan treatment"], 1, "Hubungan observasional tidak cukup untuk menetapkan kausalitas."),
-  q("pfq2", "Kognisi", "Strategi mana yang paling langsung menguji retrieval, bukan sekadar pengenalan?", ["Membaca ulang sambil melihat teks", "Menjelaskan konsep dari ingatan lalu memeriksa", "Menyorot semua paragraf", "Menyimpan tautan"], 1, "Mengambil informasi tanpa melihat materi melatih retrieval."),
-  q("pfq3", "Regulasi emosi", "Seseorang meninjau ulang makna kritik tanpa menyangkal fakta. Strategi ini disebut...", ["Cognitive reappraisal", "Suppression", "Availability", "Punishment"], 0, "Reappraisal mengubah interpretasi, bukan fakta."),
-  q("pfq4", "Penguatan", "Perilaku belajar meningkat setelah notifikasi yang mengganggu dimatikan. Contoh paling sesuai...", ["Negative reinforcement", "Positive punishment", "Anchoring", "Encoding"], 0, "Menghilangkan stimulus aversif yang meningkatkan perilaku adalah negative reinforcement."),
-  q("pfq5", "Bias keputusan", "Seseorang hanya mengikuti berita yang mendukung pembelian asetnya. Bias yang paling relevan...", ["Confirmation bias", "Working memory", "Conformity", "Sensasi"], 0, "Ia menyaring bukti yang berlawanan dengan keyakinan awal."),
-  q("pfq6", "Pengaruh sosial", "Mayoritas komunitas menerima suatu klaim. Apa langkah terbaik?", ["Menerima tanpa verifikasi", "Periksa bukti independen dan sumber klaim", "Menganggap mayoritas selalu salah", "Menghapus ketidakpastian"], 1, "Popularitas tidak menggantikan mutu bukti."),
-  q("pfq7", "Kepribadian", "Kuis daring singkat memberi label kepribadian pasti. Respons ilmiah...", ["Gunakan untuk diagnosis", "Tanyakan validitas, reliabilitas, norma, dan tujuan instrumen", "Anggap label menentukan masa depan", "Gunakan untuk memilih teman"], 1, "Interpretasi skor memerlukan bukti dan batas penggunaan."),
-  q("pfq8", "Perubahan perilaku", "Strategi baru tidak mengurangi distraksi. Apa langkah evaluasi yang baik?", ["Menyalahkan karakter", "Tinjau ukuran, pelaksanaan, hambatan, dan penjelasan alternatif", "Mengklaim hasil sukses", "Menggeneralisasi pada semua orang"], 1, "Kegagalan memberi informasi untuk memperbaiki hipotesis atau rancangan."),
+  qv2("psi2-final-q01", "Bab 1 • Randomisasi", "Apa tujuan penugasan acak (randomisasi) ke kelompok dalam eksperimen?", [
+    "Membuat semua peserta menerima perlakuan sama",
+    "Menyeimbangkan faktor lain antar kelompok",
+    "Memastikan setiap hasil pasti signifikan",
+    "Menghapus seluruh perbedaan antar peserta",
+  ], 1, "Randomisasi membantu menyeimbangkan faktor lain antar kelompok sehingga selisih lebih dapat dikaitkan dengan perlakuan.", [
+    "Randomisasi membagi penugasan, bukan memberi perlakuan sama kepada semua kelompok.",
+    "Penugasan acak tidak menjamin hasil signifikan secara statistik.",
+    "Perbedaan individu tidak dihapus; pembagian acak membantu menyeimbangkannya.",
+  ]),
+  qv2("psi2-final-q02", "Bab 1 • Poin persentase", "Dalam model ilustratif, 45 dari 60 peserta membaik, dibanding 30 dari 60. Berapa selisih tingkat perbaikan?", [
+    "50 poin persentase",
+    "150 poin persentase",
+    "15 poin persentase",
+    "25 poin persentase",
+  ], 3, "45/60=75% dan 30/60=50%; selisihnya 25 poin persentase.", [
+    "50 poin persentase adalah tingkat kelompok pembanding, bukan selisih.",
+    "150% adalah rasio 75% terhadap 50% yang dinyatakan sebagai persen, bukan selisih poin.",
+    "15 tidak diperoleh dari selisih 75% dan 50%.",
+  ]),
+  qv2("psi2-final-q03", "Bab 1 • Bias seleksi", "Dalam kasus hipotetis, selisih kelompok yang memilih sendiri 11 poin dan efek sebenarnya 7 poin. Berapa bias seleksi?", [
+    "4 poin",
+    "18 poin",
+    "7 poin",
+    "11 poin",
+  ], 0, "Bias seleksi adalah selisih teramati dikurangi efek sebenarnya: 11−7=4 poin.", [
+    "18 menjumlahkan selisih teramati dan efek sebenarnya.",
+    "7 poin adalah efek sebenarnya, bukan komponen bias.",
+    "11 poin adalah selisih teramati yang mencakup efek dan bias.",
+  ]),
+  qv2("psi2-final-q04", "Bab 1 • Pengukuran", "Definisi operasional suatu konsep adalah...", [
+    "Penjelasan luas tanpa prosedur pengamatan",
+    "Label umum untuk menjelaskan perilaku seseorang",
+    "Prosedur spesifik untuk mengukur konsep",
+    "Tafsiran yang sama untuk setiap pengamat",
+  ], 2, "Definisi operasional menetapkan cara mengukur konsep dengan prosedur spesifik yang dapat diamati.", [
+    "Definisi operasional memerlukan cara pengamatan yang jelas, bukan uraian luas saja.",
+    "Label tidak menetapkan prosedur pengukuran yang teramati.",
+    "Kesamaan tafsir tidak menggantikan aturan pengukuran yang spesifik.",
+  ]),
+  qv2("psi2-final-q05", "Bab 2 • Pengelompokan informasi", "Dalam model ilustratif, 16 digit dikelompokkan menjadi bagian berukuran 4. Berapa bagian yang terbentuk?", [
+    "16 bagian",
+    "12 bagian",
+    "64 bagian",
+    "4 bagian",
+  ], 3, "Jumlah bagian adalah 16÷4=4 bagian.", [
+    "16 adalah jumlah digit, bukan jumlah kelompok berukuran empat.",
+    "12 adalah selisih 16 dan 4, bukan hasil pembagian.",
+    "64 mengalikan jumlah digit dengan ukuran kelompok.",
+  ]),
+  qv2("psi2-final-q06", "Bab 2 • Retensi", "Dalam model ilustratif R=exp(−Δ/S), S awal 3 hari digandakan setelah satu tinjauan. Berapa retensi setelah 7 hari?", [
+    "31,1%",
+    "9,7%",
+    "55,8%",
+    "12,5%",
+  ], 0, "S menjadi 6; exp(−7/6)≈0,311 atau 31,1%.", [
+    "9,7% adalah exp(−7/3), yaitu tanpa tinjauan yang menggandakan S.",
+    "55,8% memakai S=12, seolah tinjauan dilakukan dua kali.",
+    "12,5% bukan hasil substitusi S=6 dan Δ=7 pada model.",
+  ]),
+  qv2("psi2-final-q07", "Bab 2 • Base rate", "Dalam model ilustratif, 1.000 transaksi memiliki prevalensi 2%, sensitivitas 90%, dan salah-tandai 10%. Berapa peluang peringatan benar?", [
+    "90,0%",
+    "10,0%",
+    "15,5%",
+    "18,4%",
+  ], 2, "TP=20×90%=18 dan FP=980×10%=98; peluang peringatan benar=18/(18+98)=15,5%.", [
+    "90,0% adalah sensitivitas, bukan peluang bahwa peringatan benar.",
+    "10,0% adalah tingkat salah-tandai, bukan proporsi peringatan benar.",
+    "18,4% membagi TP dengan FP saja, bukan dengan seluruh peringatan.",
+  ]),
+  qv2("psi2-final-q08", "Bab 2 • Retrieval practice", "Pernyataan yang paling tepat tentang latihan mengambil kembali informasi adalah...", [
+    "Membaca ulang selalu memperkuat ingatan setiap orang",
+    "Mengingat tanpa melihat dapat mendukung retensi",
+    "Menyorot teks menguji pengambilan aktif tanpa petunjuk",
+    "Latihan mengingat menjamin seluruh materi dikuasai",
+  ], 1, "Retrieval practice dapat lebih bermanfaat bagi ingatan jangka panjang daripada hanya membaca ulang, dengan hasil bergantung konteks dan batas bukti.", [
+    "Membaca ulang saja tidak selalu menghasilkan ingatan lebih kuat.",
+    "Menjawab dari ingatan tanpa melihat materi melatih pengambilan kembali.",
+    "Menyorot teks tidak menjamin penguasaan seluruh materi.",
+  ]),
+  qv2("psi2-final-q09", "Bab 3 • Intensitas appraisal", "Dalam model ilustratif, intensitas=pentingnya×ancaman÷10. Jika pentingnya 9 dan ancaman 4, berapa intensitas?", [
+    "3,6 poin",
+    "36,0 poin",
+    "13,0 poin",
+    "5,0 poin",
+  ], 0, "9×4÷10=3,6 poin.", [
+    "36,0 mengalikan kedua nilai tetapi tidak membaginya dengan 10.",
+    "13,0 menjumlahkan kedua nilai lalu mengabaikan rumus model.",
+    "5,0 bukan hasil perkalian 9 dan 4 yang dibagi 10.",
+  ]),
+  qv2("psi2-final-q10", "Bab 3 • Peluruhan arousal", "Dalam model ilustratif, arousal awal 10 meluruh 25% tiap jam. Berapa nilainya setelah 2 jam?", [
+    "7,5 unit",
+    "5,0 unit",
+    "5,6 unit",
+    "4,2 unit",
+  ], 2, "10×0,75²=5,625, dibulatkan menjadi 5,6 unit.", [
+    "7,5 unit adalah nilai setelah satu jam, bukan dua jam.",
+    "5,0 unit mengurangi 25% dari nilai awal secara linear dua kali.",
+    "4,2 unit mendekati nilai model setelah tiga jam.",
+  ]),
+  qv2("psi2-final-q11", "Bab 3 • Suppression", "Dalam model ilustratif, suppression 60% diterapkan pada intensitas yang dirasakan 3,6. Berapa intensitas yang tampak?", [
+    "3,6 unit",
+    "1,4 unit",
+    "2,2 unit",
+    "0,0 unit",
+  ], 1, "Bagian yang tampak=3,6×(1−0,60)=1,44, dibulatkan menjadi 1,4 unit.", [
+    "3,6 unit adalah intensitas sebelum suppression.",
+    "2,2 unit adalah 60% dari 3,6, yaitu bagian yang ditekan, bukan yang tampak.",
+    "Suppression 60% tidak menghilangkan seluruh intensitas.",
+  ]),
+  qv2("psi2-final-q12", "Bab 3 • Regulasi emosi", "Cognitive reappraisal paling tepat berarti...", [
+    "Menyangkal fakta agar emosi menghilang",
+    "Menekan ekspresi tanpa meninjau makna",
+    "Menilai ulang makna situasi tanpa menyangkal fakta",
+    "Menghindari semua situasi pemicu emosi",
+  ], 3, "Reappraisal meninjau ulang makna situasi tanpa meniadakan fakta atau sekadar menekan ekspresi.", [
+    "Menyangkal fakta bukan penilaian ulang yang akurat.",
+    "Menekan ekspresi tidak sama dengan mengubah interpretasi situasi.",
+    "Menghindar tidak menjelaskan proses menilai ulang makna.",
+  ]),
+  qv2("psi2-final-q13", "Bab 4 • Akuisisi", "Dalam model ilustratif ΔV=0,2(1−V), V₀=0. Berapa V setelah 4 percobaan?", [
+    "0,800",
+    "0,488",
+    "0,590",
+    "0,672",
+  ], 2, "Pembaruan berulang memberi V₄=1−0,8⁴=0,5904, dibulatkan menjadi 0,590.", [
+    "0,800 memakai pertumbuhan linear 4×0,2 dan mengabaikan pembaruan bergantung V.",
+    "0,488 adalah hasil setelah 3 percobaan.",
+    "0,672 adalah hasil setelah 5 percobaan.",
+  ]),
+  qv2("psi2-final-q14", "Bab 4 • Pace tujuan", "Dalam model ilustratif, target membaca 240 halaman dalam 30 hari. Setelah 10 hari selesai 60 halaman. Berapa pace sisa?", [
+    "8,0 halaman/hari",
+    "9,0 halaman/hari",
+    "6,0 halaman/hari",
+    "18,0 halaman/hari",
+  ], 1, "Sisa 240−60=180 halaman dalam 30−10=20 hari; pace=180÷20=9,0 halaman/hari.", [
+    "8,0 tidak memakai sisa 180 halaman dan 20 hari secara tepat.",
+    "6,0 adalah laju berdasarkan 60 halaman selama 10 hari, bukan kebutuhan sisa.",
+    "18,0 membagi sisa halaman dengan 10, bukan 20 hari tersisa.",
+  ]),
+  qv2("psi2-final-q15", "Bab 4 • Penguatan rasio tetap", "Dalam model ilustratif, 150 respons mengikuti rasio tetap 10. Berapa penguatan yang diberikan?", [
+    "10 penguatan",
+    "140 penguatan",
+    "1.500 penguatan",
+    "15 penguatan",
+  ], 3, "Jumlah penguatan=150÷10=15.", [
+    "10 adalah ukuran rasio, bukan jumlah penguatan dari 150 respons.",
+    "140 mengurangi rasio dari jumlah respons, bukan membaginya.",
+    "1.500 mengalikan respons dengan rasio.",
+  ]),
+  qv2("psi2-final-q16", "Bab 4 • Penguatan negatif", "Penguatan negatif terjadi ketika...", [
+    "Stimulus tak menyenangkan dihapus dan perilaku meningkat",
+    "Stimulus menyenangkan ditambahkan dan perilaku meningkat",
+    "Stimulus tak menyenangkan ditambahkan agar perilaku turun",
+    "Stimulus menyenangkan dihapus agar perilaku turun",
+  ], 0, "Penguatan negatif menghilangkan stimulus tidak menyenangkan sehingga perilaku meningkat; ini berbeda dari hukuman.", [
+    "Menambahkan stimulus menyenangkan adalah penguatan positif.",
+    "Menambahkan stimulus tidak menyenangkan agar perilaku turun adalah hukuman positif.",
+    "Menghapus stimulus menyenangkan agar perilaku turun adalah hukuman negatif.",
+  ]),
+  qv2("psi2-final-q17", "Bab 5 • Satisficing", "Dalam model ilustratif, nilai opsi [55,68,74,81,77,90,66], ambang 80, biaya 4 per opsi. Berapa nilai bersih satisficer?", [
+    "62 poin",
+    "65 poin",
+    "81 poin",
+    "90 poin",
+  ], 1, "Satisficer berhenti di 81 pada opsi keempat; biaya 16, jadi nilai bersih=81−16=65 poin.", [
+    "62 poin adalah nilai bersih maximizer setelah memeriksa tujuh opsi.",
+    "81 poin adalah nilai opsi terpilih sebelum dikurangi biaya pencarian.",
+    "90 poin adalah opsi tertinggi sebelum biaya, bukan pilihan satisficer.",
+  ]),
+  qv2("psi2-final-q18", "Bab 5 • Nilai subjektif", "Dalam model ilustratif, peluang menang 50% memberi 150, peluang kalah 50% kehilangan 100, dan λ=2. Berapa nilai subjektif?", [
+    "−25 poin",
+    "+25 poin",
+    "+75 poin",
+    "−100 poin",
+  ], 0, "Nilai subjektif=0,5×150−0,5×2×100=75−100=−25 poin.", [
+    "+25 poin adalah nilai harapan tanpa mengalikan kerugian dengan λ=2.",
+    "+75 poin hanya menghitung komponen kemenangan yang diharapkan.",
+    "−100 poin mengabaikan peluang kalah 50% dan komponen kemenangan.",
+  ]),
+  qv2("psi2-final-q19", "Bab 5 • Nilai kini", "Dalam model ilustratif β=0,6 dan δ=1, berapa nilai sekarang dari 250 yang diterima bulan depan?", [
+    "250 unit",
+    "100 unit",
+    "200 unit",
+    "150 unit",
+  ], 3, "Nilai sekarang=250×β×δ=250×0,6×1=150 unit.", [
+    "250 unit adalah nilai masa depan sebelum diskonto.",
+    "100 unit bukan hasil perkalian 250 dengan β=0,6 dan δ=1.",
+    "200 unit memakai faktor 0,8, bukan β yang diberikan.",
+  ]),
+  qv2("psi2-final-q20", "Bab 5 • Kaskade informasi", "Dalam kasus hipotetis, sinyal privat lima orang berurutan adalah [A,A,B,B,B], tetapi semua memilih A. Apa konsep yang sesuai?", [
+    "Replikasi karena semua peserta memilih jawaban yang sama",
+    "Base rate karena pilihan A lebih sering terlihat",
+    "Kaskade: keputusan tampak mengalahkan sinyal privat",
+    "Randomisasi karena pilihan terjadi secara berurutan",
+  ], 2, "Kaskade informasi dapat terjadi ketika keputusan yang terlihat mengalahkan sinyal privat yang tidak diketahui orang lain.", [
+    "Pilihan seragam tidak dengan sendirinya merupakan replikasi penelitian.",
+    "Base rate adalah frekuensi dasar, bukan proses mengabaikan sinyal privat.",
+    "Urutan pilihan bukan bukti bahwa penugasan dilakukan secara acak.",
+  ]),
+  qv2("psi2-final-q21", "Bab 6 • Konformitas", "Dalam model ilustratif P=min(60,10+12n), berapa P ketika n=3?", [
+    "36%",
+    "58%",
+    "60%",
+    "46%",
+  ], 3, "10+12×3=46; hasilnya di bawah batas 60 sehingga P=46%.", [
+    "36% tidak sesuai substitusi n=3 pada rumus.",
+    "58% tidak diperoleh dari 10+12×3.",
+    "Batas 60% diterapkan hanya bila hasil rumus mencapai atau melampauinya.",
+  ]),
+  qv2("psi2-final-q22", "Bab 6 • Penyusutan rating", "Dalam model ilustratif (n×rerata+20×3,5)/(n+20), item B memiliki 100 rating dengan rerata 4,4. Berapa skor susutannya?", [
+    "4,40",
+    "3,97",
+    "4,25",
+    "4,70",
+  ], 2, "(100×4,4+20×3,5)/(100+20)=510/120=4,25.", [
+    "4,40 adalah rerata mentah sebelum penyusutan dengan prior.",
+    "3,97 tidak sesuai pembilang dan penyebut rumus yang diberikan.",
+    "4,70 tidak memakai bobot prior 20 dengan nilai 3,5 secara tepat.",
+  ]),
+  qv2("psi2-final-q23", "Bab 6 • Penyebaran informasi", "Dalam model ilustratif s(t+1)=s(t)+0,2×(1−s(t)), s₀=0,4. Berapa s setelah 2 ronde?", [
+    "61,6%",
+    "52,0%",
+    "60,0%",
+    "68,0%",
+  ], 0, "Ronde pertama 0,52; ronde kedua 0,52+0,2×0,48=0,616 atau 61,6%.", [
+    "52,0% adalah hasil setelah satu ronde saja.",
+    "60,0% bukan hasil pembaruan dua ronde dengan laju 0,2.",
+    "68,0% melebihi hasil setelah dua pembaruan pada model.",
+  ]),
+  qv2("psi2-final-q24", "Bab 6 • Social proof", "Kapan social proof lebih informatif sebagai bukti tentang suatu klaim?", [
+    "Saat banyak suara berasal dari sumber sama",
+    "Saat sumber independen dan sampel memadai",
+    "Saat jumlah suara menggantikan mutu bukti",
+    "Saat semua pilihan mayoritas dianggap benar",
+  ], 1, "Sumber independen dan jumlah sampel yang memadai lebih informatif; suara yang saling bergantung bukan bukti terpisah.", [
+    "Banyak suara dari sumber sama tidak memberi banyak bukti independen.",
+    "Jumlah suara tidak menggantikan pemeriksaan mutu bukti.",
+    "Mayoritas dapat keliru dan tetap perlu dievaluasi.",
+  ]),
+  qv2("psi2-final-q25", "Bab 7 • Persentil", "Dalam model ilustratif distribusi normal, z=+1,5 kira-kira berada pada persentil berapa?", [
+    "93%",
+    "7%",
+    "84%",
+    "98%",
+  ], 0, "Nilai z=+1,5 berada kira-kira pada persentil 93 dalam distribusi normal.", [
+    "7% kira-kira merupakan bagian ekor di atas z=+1,5, bukan persentil kumulatif.",
+    "84% lebih dekat dengan persentil untuk z=+1.",
+    "98% terlalu tinggi untuk z=+1,5 dalam model normal.",
+  ]),
+  qv2("psi2-final-q26", "Bab 7 • SEM", "Dalam model ilustratif, SD=12 dan reliabilitas=0,84. Berapa kesalahan pengukuran standar (SEM)?", [
+    "1,9",
+    "4,8",
+    "10,1",
+    "12,0",
+  ], 1, "SEM=12×√(1−0,84)=12×0,4=4,8.", [
+    "1,9 memakai 12×0,16 dan tidak mengambil akar dari 1−reliabilitas.",
+    "10,1 memakai 12×0,84, bukan rumus SEM.",
+    "12,0 memakai SD langsung tanpa faktor reliabilitas.",
+  ]),
+  qv2("psi2-final-q27", "Bab 7 • Ketidakpastian cutoff", "Dalam model ilustratif, SD=10, SEM=5, dan cutoff di rerata. Berapa proporsi dalam ±1 SEM dari cutoff?", [
+    "5%",
+    "19%",
+    "38%",
+    "68%",
+  ], 2, "SEM/SD=0,5; dalam model normal P(|z|<0,5)≈38%.", [
+    "5% bukan proporsi dalam pita ±0,5 SD di sekitar rerata.",
+    "19% tidak sesuai luas dua sisi antara z=−0,5 dan z=+0,5.",
+    "68% kira-kira mencakup ±1 SD, bukan ±0,5 SD.",
+  ]),
+  qv2("psi2-final-q28", "Bab 7 • Reliabilitas dan validitas", "Pernyataan yang tepat tentang reliabilitas dan validitas adalah...", [
+    "Reliabilitas berarti tes mengukur sasaran secara tepat",
+    "Tes reliabel tentu juga valid untuk setiap tujuan",
+    "Validitas berarti hasil tes selalu konsisten",
+    "Reliabel = konsisten; validitas menguji makna skor",
+  ], 3, "Reliabilitas berkaitan dengan konsistensi pengukuran; validitas menyangkut dukungan bagi interpretasi skor sesuai tujuan.", [
+    "Mengukur sasaran yang dimaksud berkaitan dengan validitas, bukan definisi reliabilitas.",
+    "Tes yang konsisten belum tentu mengukur konsep yang dimaksud.",
+    "Konsistensi adalah reliabilitas, bukan definisi validitas.",
+  ]),
+  qv2("psi2-final-q29", "Bab 8 • Margin proporsi", "Dalam model ilustratif p=0,5 dan n=100, berapa margin 1,96 galat baku proporsi?", [
+    "4,9 poin",
+    "19,6 poin",
+    "9,8 poin",
+    "5,0 poin",
+  ], 2, "SE=√(0,5×0,5/100)=0,05; 1,96×0,05=0,098 atau ±9,8 poin.", [
+    "4,9 poin membagi margin dengan dua, bukan mengalikan SE dengan 1,96.",
+    "19,6 poin memakai 1,96×0,10, bukan galat baku 0,05.",
+    "5,0 poin adalah galat baku dalam poin, bukan margin 1,96 kali SE.",
+  ]),
+  qv2("psi2-final-q30", "Bab 8 • Korelasi parsial", "Dalam model ilustratif r_xy=0,70, r_xz=0,80, r_yz=0,80. Berapa korelasi parsial r_xy·z?", [
+    "0,70",
+    "0,06",
+    "0,36",
+    "0,17",
+  ], 3, "(0,70−0,64)/(1−0,64)=0,06/0,36≈0,17.", [
+    "0,70 adalah korelasi sederhana sebelum mengontrol z.",
+    "0,06 adalah pembilang rumus, bukan hasil pembagian.",
+    "0,36 adalah penyebut rumus, bukan korelasi parsial.",
+  ]),
+  qv2("psi2-final-q31", "Bab 8 • Harga jangkar", "Dalam kasus hipotetis, harga normal 400 dan harga jual 320, tetapi iklan menyebut hemat 50% dari jangkar 640. Berapa diskon terhadap harga normal?", [
+    "25,0%",
+    "20,0%",
+    "80,0%",
+    "50,0%",
+  ], 1, "Diskon dari harga normal=(400−320)/400=80/400=20,0%; klaim 50% memakai jangkar 640, bukan harga normal 400.", [
+    "25,0% membagi selisih 80 dengan harga jual 320.",
+    "80,0% adalah selisih harga dalam unit, bukan persentase terhadap 400.",
+    "50,0% adalah klaim terhadap jangkar 640, bukan harga normal 400.",
+  ]),
+  qv2("psi2-final-q32", "Bab 8 • Falsifiability dan A–B–A", "Dalam kasus hipotetis, pernyataan mana yang tepat tentang klaim teruji dan desain A–B–A?", [
+    "Sebut hasil pembantah; A–B–A menguatkan dugaan, bukan bukti sebab",
+    "Klaim cocok dengan semua hasil; desain A–B–A membuktikan sebab secara pasti",
+    "Klaim tak perlu ukuran; kembali baseline pada A–B–A menjamin efeknya",
+    "Klaim benar bila populer; fase B memastikan sebab tanpa faktor lain",
+  ], 0, "Keterbantahan memerlukan hasil yang dapat melemahkan klaim; pola A–B–A dapat memperkuat dugaan tetapi tidak membuktikan kausalitas.", [
+    "Klaim yang cocok dengan semua hasil tidak dapat dibedakan oleh pengujian.",
+    "Klaim perlu hasil terukur dan kembali ke baseline tidak menjamin efek.",
+    "Popularitas bukan bukti; fase B saja tidak memastikan sebab.",
+  ]),
 ];
 
 export const PSYCHOLOGY_FINAL_ESSAYS: EssayPrompt[] = [
-  essay("pfe1", "Analisis kasus hipotetis siswa yang terdistraksi, merasa frustrasi, lalu mengikuti strategi kelompok yang belum teruji. Gunakan konsep kognitif, emosi, pembelajaran, dan pengaruh sosial."),
-  essay("pfe2", "Rancang sistem belajar yang mengurangi distraksi dan mengevaluasi hasilnya. Sertakan hipotesis yang dapat diuji, ukuran, strategi regulasi, konteks sosial, dan batas etis."),
+  {
+    ...essay("psi2-final-e01", "Seorang siswa terdistraksi ponsel saat belajar, sering frustrasi saat nilai turun, lalu mengikuti strategi populer di grup tanpa bukti. Analisis dengan konsep kognisi (atensi, memori, dan kalibrasi), regulasi emosi, kebiasaan/friction, dan bias keputusan; rancang eksperimen perilaku sederhana dengan hipotesis, ukuran, baseline, dan ancaman validitas, lalu jelaskan batas kesimpulannya."),
+    reviewPoints: [
+      "Hubungkan atensi, memori, dan kalibrasi dengan distraksi dan evaluasi hasil belajar.",
+      "Analisis frustrasi melalui regulasi emosi tanpa memberi diagnosis.",
+      "Jelaskan friction atau kebiasaan dan bias keputusan dalam mengikuti strategi grup.",
+      "Rancang hipotesis, ukuran hasil, baseline, dan pengamatan perilaku yang konsisten.",
+      "Bahas ancaman validitas serta batas kesimpulan eksperimen satu orang.",
+    ],
+  },
+  {
+    ...essay("psi2-final-e02", "Jelaskan mengapa mengikuti mayoritas atau label kepribadian dapat menyesatkan saat menilai klaim atau peluang. Gunakan konformitas, social proof, kaskade, label biner, dan dark patterns; susun daftar periksa lima langkah untuk menilai klaim secara independen yang mencakup bukti, ketidakpastian, base rate, dan batas kesimpulan."),
+    reviewPoints: [
+      "Bedakan konformitas, social proof, dan kaskade informasi secara tepat.",
+      "Jelaskan keterbatasan label kepribadian biner dan kemungkinan bias interpretasi.",
+      "Identifikasi dark patterns tanpa menganggap satu ciri otomatis membuktikan niat.",
+      "Susun lima langkah evaluasi yang mencakup sumber, sampel, pembanding, replikasi, dan kepentingan.",
+      "Pertimbangkan ketidakpastian, base rate, faktor alternatif, serta batas bukti.",
+    ],
+  },
 ];

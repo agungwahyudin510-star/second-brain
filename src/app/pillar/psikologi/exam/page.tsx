@@ -26,8 +26,8 @@ export default function PsychologyExamPage() {
 
   const questions = PSYCHOLOGY_FINAL_QUESTIONS.map((question, index) => ({
     ...question,
-    chapterId: modules[index].id,
-    chapterTitle: modules[index].title,
+    chapterId: modules[Math.floor(index * modules.length / PSYCHOLOGY_FINAL_QUESTIONS.length)].id,
+    chapterTitle: modules[Math.floor(index * modules.length / PSYCHOLOGY_FINAL_QUESTIONS.length)].title,
   }));
 
   return (
