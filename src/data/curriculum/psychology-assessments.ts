@@ -762,6 +762,108 @@ export const PSYCHOLOGY_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
       "Tipe biner tidak otomatis membuat keputusan objektif.",
     ]),
   ],
+  "psi2-b08": [
+    qv2("psi2-b08-q01", "Konsep • Fakta dan interpretasi", "Pernyataan yang paling tepat tentang fakta dan interpretasi adalah...", [
+      "Fakta dapat dicek; interpretasi memberi makna",
+      "Interpretasi adalah makna yang pasti benar",
+      "Fakta hanya menyatakan kesan tanpa pemeriksaan",
+      "Interpretasi selalu sama dengan fakta yang diamati",
+    ], 0, "Fakta dapat diperiksa, sedangkan interpretasi adalah makna yang kita berikan dan bisa keliru.", [
+      "Makna atau interpretasi tetap dapat keliru dan perlu diuji.",
+      "Fakta merujuk pada pernyataan yang dapat diperiksa, bukan sekadar kesan.",
+      "Fakta dan interpretasi merupakan jenis pernyataan yang berbeda.",
+    ]),
+    qv2("psi2-b08-q02", "Konsep • Falsifiability", "Klaim yang dapat diuji dengan baik seharusnya...", [
+      "Klaim harus cocok dengan hasil apa pun juga",
+      "Klaim benar bila banyak orang setuju",
+      "Klaim selalu sama walau bukti berubah",
+      "Sebut hasil yang dapat membantah klaim",
+    ], 3, "Keterbantahan memerlukan hasil yang, bila diamati, akan membuat klaim diragukan atau direvisi.", [
+      "Klaim yang cocok dengan semua kemungkinan hasil tidak membedakan prediksi.",
+      "Popularitas pendapat bukan tes yang menguji klaim.",
+      "Klaim perlu terbuka untuk direvisi saat bukti yang sesuai muncul.",
+    ]),
+    qv2("psi2-b08-q03", "Konsep • Variabel pengganggu", "Mengapa korelasi dua variabel belum membuktikan hubungan sebab?", [
+      "Korelasi selalu menunjukkan arah sebab yang benar",
+      "Variabel ketiga dapat memengaruhi x dan y",
+      "Sampel besar menghapus semua faktor pengganggu",
+      "Korelasi membuktikan x menyebabkan perubahan y",
+    ], 1, "Variabel ketiga dapat berkaitan dengan kedua variabel sehingga memberi penjelasan alternatif.", [
+      "Korelasi saja tidak menentukan arah atau memastikan hubungan sebab.",
+      "Ukuran sampel besar tidak otomatis menghapus confounder.",
+      "Keterkaitan yang teramati belum membuktikan bahwa x menyebabkan y.",
+    ]),
+    qv2("psi2-b08-q04", "Konsep • Dark pattern", "Dark pattern paling tepat berarti...", [
+      "Rancangan antarmuka yang memengaruhi pilihan",
+      "Informasi lengkap yang membantu memilih bebas",
+      "Desain yang menyesatkan atau menghambat pilihan",
+      "Tampilan netral yang hanya menyampaikan informasi",
+    ], 2, "Dark pattern mendorong pilihan tertentu melalui desain yang menyesatkan atau menghambat alternatif.", [
+      "Pengaruh antarmuka saja belum cukup; konteks menyesatkan atau hambatan pilihan penting.",
+      "Informasi transparan yang memudahkan pilihan bukan definisi dark pattern.",
+      "Tampilan netral dan informatif tidak menggambarkan manipulasi pilihan.",
+    ]),
+    qv2("psi2-b08-q05", "Hitungan • Margin proporsi", "Untuk p=0,6 dan n=50, berapa margin 1,96 galat baku proporsi?", [
+      "6,8 poin",
+      "13,6 poin",
+      "69,3 poin",
+      "27,2 poin",
+    ], 1, "SE=√(0,6×0,4/50)=0,0693; 1,96×0,0693=0,1358, atau ±13,6 poin.", [
+      "6,8 poin adalah margin ilustratif untuk n=200, bukan n=50.",
+      "69,3 adalah galat baku dalam poin, bukan margin 1,96 kali SE.",
+      "27,2 bukan hasil 1,96×0,0693.",
+    ]),
+    qv2("psi2-b08-q06", "Hitungan • Korelasi parsial", "Untuk r_xy=0,80, r_xz=0,90, dan r_yz=0,90, berapa r_xy·z?", [
+      "−0,05",
+      "0,80",
+      "−0,01",
+      "0,19",
+    ], 0, "(0,80−0,90×0,90)/(√0,19×√0,19)=−0,01/0,19=−0,05.", [
+      "0,80 adalah korelasi sederhana r_xy sebelum mengontrol z.",
+      "−0,01 adalah pembilang rumus, bukan hasil pembagian.",
+      "0,19 adalah penyebut rumus, bukan korelasi parsial.",
+    ]),
+    qv2("psi2-b08-q07", "Hitungan • Diskon nyata", "Harga normal 350 dan harga jual 300. Berapa diskon terhadap harga normal?", [
+      "40,0%",
+      "16,7%",
+      "50,0%",
+      "14,3%",
+    ], 3, "(350−300)/350=50/350=14,3% setelah pembulatan satu desimal.", [
+      "40,0% memakai jangkar 500, bukan harga normal 350.",
+      "16,7% berasal dari 50/300, bukan selisih dibagi harga normal.",
+      "50,0% memakai selisih sebagai persentase tanpa pembagi harga normal.",
+    ]),
+    qv2("psi2-b08-q08", "Kasus • Desain ABAB", "A1=30,0, B=43,7, dan A2=30,3 menit fokus. Interpretasi yang paling tepat adalah...", [
+      "A2 kembali dekat baseline, jadi tidak ada perubahan sama sekali",
+      "Selisih itu membuktikan intervensi pasti menjadi penyebab tunggal saja",
+      "Selisih 13,7; kembali baseline memperkuat dugaan, bukan kepastian",
+      "A2 kembali baseline sehingga hipotesis sudah terbukti benar",
+    ], 2, "Selisih B−A1 adalah 13,7 dan A2 mendekati baseline, yang memperkuat dugaan efek tanpa membuktikan sebab.", [
+      "Kenaikan pada B tetap terlihat; A2 yang kembali dekat tidak meniadakan perubahan tersebut.",
+      "Tren, kebetulan, ekspektasi, dan perubahan lain masih mungkin menjelaskan pola.",
+      "Kembali dekat baseline memperkuat dugaan, tetapi tidak membuktikan hipotesis.",
+    ]),
+    qv2("psi2-b08-q09", "Kasus • Evaluasi bukti", "Klaim suplemen fokus memakai n=12, tanpa kontrol, dari satu penjual. Kesimpulan terbaik adalah...", [
+      "Bukti belum memadai; skor latihan hanya 1/5",
+      "Bukti membuktikan suplemen efektif untuk semua orang",
+      "Klaim salah karena tidak ada kelompok kontrol",
+      "Penjual pasti berbohong karena menjual produk",
+    ], 0, "Pada skala latihan, hanya sumber yang dapat ditelusuri terpenuhi; kekurangan bukti tidak membuktikan klaim pasti salah.", [
+      "Sampel kecil tanpa pembanding tidak membuktikan efektivitas bagi semua orang.",
+      "Keterbatasan bukti membuat klaim belum cukup didukung, bukan otomatis salah.",
+      "Konflik kepentingan menuntut pemeriksaan, tetapi tidak membuktikan kebohongan.",
+    ]),
+    qv2("psi2-b08-q10", "Kasus • Eksperimen perilaku", "Untuk menguji ponsel di ruangan lain saat belajar, rancangan sederhana yang lebih baik adalah...", [
+      "Bandingkan hasil yang sama pada fase baseline dan intervensi",
+      "Ukur fokus dengan cara sama; catat faktor lain",
+      "Ubah ukuran tiap fase agar efek lebih terlihat",
+      "Catat hanya hari terbaik setelah ponsel dipindah",
+    ], 1, "Ukuran hasil yang konsisten dan pencatatan faktor lain membantu membandingkan baseline dengan intervensi.", [
+      "Pembandingan perlu ukuran konsisten dan memperhatikan faktor lain, bukan hanya nama fase.",
+      "Mengubah ukuran antar fase membuat hasil sulit dibandingkan dan mengundang bias.",
+      "Memilih hari terbaik mengabaikan variasi dan dapat membesar-besarkan efek.",
+    ]),
+  ],
 };
 
 export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
@@ -898,6 +1000,28 @@ export const PSYCHOLOGY_V2_ESSAYS: Record<string, EssayPrompt[]> = {
         "Pertimbangkan konteks, preferensi, kemampuan, dan nilai secara terpisah.",
         "Jelaskan risiko bias, label, atau penggunaan tidak sesuai tujuan.",
         "Nyatakan batas reliabilitas dan validitas pengukuran.",
+      ],
+    },
+  ],
+  "psi2-b08": [
+    {
+      ...essay("psi2-b08-e01", "Rancang eksperimen perilaku pribadi untuk mengurangi distraksi belajar. Nyatakan hipotesis, ukuran hasil, baseline, durasi, ancaman validitas, dan kriteria kesimpulan yang proporsional."),
+      reviewPoints: [
+        "Rumuskan hipotesis yang terukur dan hasil yang dapat melemahkannya.",
+        "Tetapkan ukuran hasil konsisten, baseline, durasi, dan perubahan yang diuji.",
+        "Bahas tren, kebetulan, ekspektasi, serta faktor lain sebagai ancaman validitas.",
+        "Tentukan kriteria kesimpulan yang tidak melebihi bukti satu orang.",
+        "Pastikan eksperimen rendah risiko dan bukan pengganti saran profesional.",
+      ],
+    },
+    {
+      ...essay("psi2-b08-e02", "Evaluasi satu klaim psikologi populer dan satu promosi ber-urgensi dengan kriteria bukti, ketidakpastian, confounder, serta dark patterns. Nyatakan langkah verifikasi dan batas kesimpulan."),
+      reviewPoints: [
+        "Periksa sumber, sampel, pembanding, replikasi, dan konflik kepentingan.",
+        "Bedakan fakta, interpretasi, asumsi, dan opini dalam kedua contoh.",
+        "Jelaskan ketidakpastian serta kemungkinan variabel pengganggu.",
+        "Identifikasi tekanan antarmuka dan konsekuensi pilihan promosi.",
+        "Nyatakan bukti tambahan yang diperlukan dan hindari kesimpulan berlebihan.",
       ],
     },
   ],

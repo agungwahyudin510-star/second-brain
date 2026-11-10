@@ -34,6 +34,11 @@ import PsiBigFiveProfile from "./psi-big-five-profile";
 import PsiStabilityChange from "./psi-stability-change";
 import PsiTestReliability from "./psi-test-reliability";
 import PsiLabelFlip from "./psi-label-flip";
+import PsiClaimCheck from "./psi-claim-check";
+import PsiUncertaintySample from "./psi-uncertainty-sample";
+import PsiSpuriousControl from "./psi-spurious-control";
+import PsiDarkPatterns from "./psi-dark-patterns";
+import PsiNOf1 from "./psi-n-of-1";
 
 export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-levels": PsiLevels,
@@ -71,4 +76,9 @@ export const PSYCHOLOGY_VISUALS: Record<string, ComponentType> = {
   "psi-stability-change": PsiStabilityChange,
   "psi-test-reliability": PsiTestReliability,
   "psi-label-flip": PsiLabelFlip,
+  "psi-claim-check": PsiClaimCheck,
+  "psi-uncertainty-sample": PsiUncertaintySample,
+  "psi-spurious-control": PsiSpuriousControl,
+  "psi-dark-patterns": PsiDarkPatterns,
+  "psi-n-of-1": PsiNOf1,
 };

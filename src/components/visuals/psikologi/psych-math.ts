@@ -273,3 +273,32 @@ export function flipBandShare(sd: number, sem: number) {
   if (sd <= 0 || sem < 0) return 0;
   return normalCdf(sem / sd) - normalCdf(-sem / sd);
 }
+
+export function proportionMargin(p: number, n: number) {
+  const standardError = n <= 0 ? 0 : Math.sqrt(p * (1 - p) / n);
+  const margin = 1.96 * standardError;
+  return {
+    standardError,
+    margin,
+    lower: p - margin,
+    upper: p + margin,
+  };
+}
+
+export function partialCorrelation(rxy: number, rxz: number, ryz: number) {
+  return (rxy - rxz * ryz) / (Math.sqrt(1 - rxz ** 2) * Math.sqrt(1 - ryz ** 2));
+}
+
+export function realDiscount(refPrice: number, salePrice: number) {
+  return refPrice <= 0 ? 0 : ((refPrice - salePrice) / refPrice) * 100;
+}
+
+export function phaseMeans(values: number[][]) {
+  return values.map((phase) =>
+    phase.length === 0 ? 0 : phase.reduce((sum, value) => sum + value, 0) / phase.length
+  );
+}
+
+export function claimScore(criteria: boolean[]) {
+  return criteria.filter(Boolean).length;
+}
