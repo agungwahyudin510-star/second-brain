@@ -92,7 +92,7 @@ Gunakan urutan latihan sederhana. Pertama, dengarkan satu kata tanpa melihat tek
 - “This is a cap. This is a cab.”
 - “I see a ship. I see a sheep.”
 - “It is a book. They are books.”
-- “The bit is small. The beat is loud.”
+- “I eat a bit of rice. I hear the beat of the music.”
 
 **Cek mandiri:**
 1. Apa perbedaan huruf vokal dan bunyi vokal?
