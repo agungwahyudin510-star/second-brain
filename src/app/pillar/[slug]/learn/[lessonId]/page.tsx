@@ -13,6 +13,8 @@ import EconomicsContent from "@/components/visuals/ekonomi/EconomicsContent";
 import EconomicsChapterResources from "@/components/visuals/ekonomi/EconomicsChapterResources";
 import PsychologyContent from "@/components/visuals/psikologi/PsychologyContent";
 import PsychologyChapterResources from "@/components/visuals/psikologi/PsychologyChapterResources";
+import EnglishContent from "@/components/visuals/inggris/EnglishContent";
+import EnglishChapterResources from "@/components/visuals/inggris/EnglishChapterResources";
 import PsychologyVisual from "@/components/PsychologyVisual";
 import EnglishSpeechPractice from "@/components/EnglishSpeechPractice";
 import Web3LearningVisual from "@/components/Web3LearningVisual";
@@ -80,6 +82,8 @@ export default function LessonPage() {
         ? <EconomicsContent content={lessonContent} />
         : slug === "psikologi"
           ? <PsychologyContent content={lessonContent} />
+          : slug === "inggris"
+            ? <EnglishContent content={lessonContent} />
           : <MarkdownView content={lessonContent} />}
 
       {slug === "psikologi" && !lessonModule?.chapterResources && <PsychologyVisual moduleId={lesson.moduleId} />}
@@ -90,6 +94,9 @@ export default function LessonPage() {
       )}
       {slug === "psikologi" && lesson.id === lessonModule?.lessons.at(-1)?.id && lessonModule?.chapterResources && (
         <PsychologyChapterResources module={lessonModule} />
+      )}
+      {slug === "inggris" && lesson.id === lessonModule?.lessons.at(-1)?.id && lessonModule?.chapterResources && (
+        <EnglishChapterResources module={lessonModule} />
       )}
 
       <div className="flex flex-wrap gap-2 border-t border-zinc-800 pt-5">

@@ -41,7 +41,7 @@ export default function EnglishChapterQuizPage() {
   return (
     <>
       <Card className="mb-5 border-sky-500/20 text-sm leading-relaxed text-zinc-300">
-        Kuis ini berisi 8 pilihan ganda dan 2 tugas menulis. Jawaban terbuka dinilai sendiri dengan rubrik khusus bahasa; tidak ada penilaian otomatis. Listening dan speaking tersedia sebagai latihan terpisah dan tidak masuk skor kuis.
+        Kuis ini berisi {questions.length} pilihan ganda dan {ENGLISH_A1_ESSAYS[chapterId].length} tugas menulis. Jawaban terbuka dinilai sendiri dengan rubrik khusus bahasa; tidak ada penilaian otomatis. Listening dan speaking tersedia sebagai latihan terpisah dan tidak masuk skor kuis.
       </Card>
       <AssessmentRunner
         moduleId={chapter.id}

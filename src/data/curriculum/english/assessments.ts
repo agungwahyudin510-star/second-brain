@@ -1,4 +1,5 @@
 import type { AssessmentQuestion, EssayPrompt } from "@/lib/types";
+import { ENGLISH_A1_V2_ESSAYS, ENGLISH_A1_V2_QUIZZES } from "./a1-v2/assessments";
 
 type QuestionDraft = [string, string, string[], number, string];
 type EssayDraft = [string, string[]];
@@ -125,7 +126,7 @@ const RUBRIC_GUIDES: Record<number, string> = {
   1: "Penilaian mandiri 0–5 per kriteria (maksimal 20): 0 = kosong/tidak relevan; 1 = sulit dipahami; 2 = sebagian sesuai; 3 = cukup tepat dengan beberapa kesalahan; 4 = jelas dan sebagian besar tepat; 5 = lengkap, tepat untuk level A1, dan mudah dipahami.",
 };
 
-export const ENGLISH_A1_QUIZZES: Record<string, AssessmentQuestion[]> = Object.fromEntries(
+const ENGLISH_A1_LEGACY_QUIZZES: Record<string, AssessmentQuestion[]> = Object.fromEntries(
   chapterQuestions.map((questions, chapterIndex) => {
     const chapterId = `eng-a1-${chapterIndex + 1}`;
     return [chapterId, questions.map(([concept, prompt, options, answer, explanation], questionIndex) => ({
@@ -139,7 +140,7 @@ export const ENGLISH_A1_QUIZZES: Record<string, AssessmentQuestion[]> = Object.f
   })
 );
 
-export const ENGLISH_A1_ESSAYS: Record<string, EssayPrompt[]> = Object.fromEntries(
+const ENGLISH_A1_LEGACY_ESSAYS: Record<string, EssayPrompt[]> = Object.fromEntries(
   essays.map((chapterEssays, chapterIndex) => {
     const chapterId = `eng-a1-${chapterIndex + 1}`;
     return [chapterId, chapterEssays.map(([prompt, reviewPoints], essayIndex) => ({
@@ -150,3 +151,13 @@ export const ENGLISH_A1_ESSAYS: Record<string, EssayPrompt[]> = Object.fromEntri
     }))];
   })
 );
+
+export const ENGLISH_A1_QUIZZES: Record<string, AssessmentQuestion[]> = {
+  ...ENGLISH_A1_LEGACY_QUIZZES,
+  ...ENGLISH_A1_V2_QUIZZES,
+};
+
+export const ENGLISH_A1_ESSAYS: Record<string, EssayPrompt[]> = {
+  ...ENGLISH_A1_LEGACY_ESSAYS,
+  ...ENGLISH_A1_V2_ESSAYS,
+};
