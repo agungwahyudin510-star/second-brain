@@ -2,7 +2,7 @@ import type { CurriculumModule } from "@/lib/types";
 
 export const ENGLISH_A1_BAB_05: CurriculumModule = {
   id: "eng-a1-5",
-  title: "Places & Directions",
+  title: "A1 • Bab 5: Places & Directions",
   summary: "Bab ini mengenalkan nama tempat di kota, cara menyatakan keberadaan benda atau tempat, preposisi lokasi, dan ungkapan sopan untuk meminta serta memberi petunjuk arah.",
   lessons: [
     {

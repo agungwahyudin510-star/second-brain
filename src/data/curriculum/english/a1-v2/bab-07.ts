@@ -2,7 +2,7 @@ import type { CurriculumModule } from "@/lib/types";
 
 export const ENGLISH_A1_BAB_07: CurriculumModule = {
   id: "eng-a1-7",
-  title: "Present Activities",
+  title: "A1 • Bab 7: Present Activities",
   summary: "Bab ini mengenalkan present continuous untuk kegiatan yang sedang berlangsung, bentuk negatif dan pertanyaan, perbedaannya dari simple present, kosakata pakaian, serta cara menggambarkan sebuah adegan.",
   lessons: [
     {

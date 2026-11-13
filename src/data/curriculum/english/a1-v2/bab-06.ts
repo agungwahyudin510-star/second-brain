@@ -2,7 +2,7 @@ import type { CurriculumModule } from "@/lib/types";
 
 export const ENGLISH_A1_BAB_06: CurriculumModule = {
   id: "eng-a1-6",
-  title: "Food, Shopping & Money",
+  title: "A1 • Bab 6: Food, Shopping & Money",
   summary: "Bab ini mengenalkan kosakata makanan dan minuman, kata benda yang dapat dan tidak dapat dihitung, ungkapan jumlah, harga, serta cara memesan dengan sopan.",
   lessons: [
     {

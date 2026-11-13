@@ -252,7 +252,7 @@ Gunakan **a/an** untuk satu benda terhitung yang belum spesifik: *a book*, *an a
 **Cek mandiri:** pilih tiga benda dekat dan jauh, lalu sebutkan dengan demonstrative, artikel, dan bentuk jumlah yang benar.`,
     },
   ]),
-  chapter(4, "Daily Routines", "Menceritakan kebiasaan menggunakan simple present, do/does, dan adverbs of frequency.", [
+  chapter(4, "A1 • Bab 4: Daily Routines", "Menceritakan kebiasaan menggunakan simple present, do/does, dan adverbs of frequency.", [
     {
       title: "Simple present for routines",
       minutes: 15,
@@ -315,7 +315,7 @@ Gunakan jam: *at six o’clock*, *at noon*. Kata *every* memberi frekuensi: *eve
 **Latihan mandiri:** tulis lima kalimat rutinitas dengan sedikitnya dua adverbia frekuensi dan satu waktu. Baca keras-keras dan cek posisi adverbia.`,
     },
   ]),
-  chapter(5, "Places & Directions", "Menanyakan lokasi, menyatakan keberadaan, dan memahami arah sederhana di sekitar kota.", [
+  chapter(5, "A1 • Bab 5: Places & Directions", "Menanyakan lokasi, menyatakan keberadaan, dan memahami arah sederhana di sekitar kota.", [
     {
       title: "There is/are and places around town",
       minutes: 15,
@@ -383,7 +383,7 @@ Kosakata: *turn left/right* (belok kiri/kanan), *go straight* (terus lurus), *cr
 **Latihan mandiri:** tulis tiga instruksi dari halte ke tempat umum imajiner. Periksa urutan langkahnya.`,
     },
   ]),
-  chapter(6, "Food, Shopping & Money", "Memesan makanan dan membeli barang dengan jumlah, harga, dan permintaan sopan.", [
+  chapter(6, "A1 • Bab 6: Food, Shopping & Money", "Memesan makanan dan membeli barang dengan jumlah, harga, dan permintaan sopan.", [
     {
       title: "Food words and countable or uncountable nouns",
       minutes: 15,
@@ -449,7 +449,7 @@ Tanyakan harga tunggal: **How much is this sandwich?** Untuk beberapa barang: **
 **Tugas mandiri:** tulis dialog 4 baris antara pembeli dan penjual dengan satu permintaan, satu pertanyaan harga, dan ucapan terima kasih.`,
     },
   ]),
-  chapter(7, "Present Activities", "Membedakan kegiatan yang berlangsung sekarang dengan rutinitas serta mendeskripsikan tindakan.", [
+  chapter(7, "A1 • Bab 7: Present Activities", "Membedakan kegiatan yang berlangsung sekarang dengan rutinitas serta mendeskripsikan tindakan.", [
     {
       title: "Present continuous for actions now",
       minutes: 15,
@@ -517,7 +517,7 @@ Gunakan present continuous untuk aksi pada gambar: “A man is carrying a bag.�
 **Review:** tandai mana kalimat rutinitas dan mana aksi sekarang. Periksa subjek *he/she* serta bentuk *be*.`,
     },
   ]),
-  chapter(8, "A1 Practical Communication", "Mengintegrasikan ungkapan dasar dalam perkenalan, bantuan, membaca pesan, dan menulis profil.", [
+  chapter(8, "A1 • Bab 8: A1 Practical Communication", "Mengintegrasikan ungkapan dasar dalam perkenalan, bantuan, membaca pesan, dan menulis profil.", [
     {
       title: "Introductions and asking for help",
       minutes: 15,

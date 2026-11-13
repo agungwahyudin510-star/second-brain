@@ -1166,7 +1166,7 @@ export const ENGLISH_A1_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
   ],
 };
 
-const A1_V2_ESSAY_RUBRIC = "Penilaian mandiri 0–5 per kriteria (maksimal 20): 0 = kosong/tidak relevan; 1 = sulit dipahami; 2 = sebagian sesuai; 3 = cukup tepat dengan beberapa kesalahan; 4 = jelas dan sebagian besar tepat; 5 = lengkap, tepat untuk level A1, dan mudah dipahami.";
+export const A1_V2_ESSAY_RUBRIC = "Penilaian mandiri 0–5 per kriteria (maksimal 20): 0 = kosong/tidak relevan; 1 = sulit dipahami; 2 = sebagian sesuai; 3 = cukup tepat dengan beberapa kesalahan; 4 = jelas dan sebagian besar tepat; 5 = lengkap, tepat untuk level A1, dan mudah dipahami.";
 
 export const ENGLISH_A1_V2_ESSAYS: Record<string, EssayPrompt[]> = {
   "eng-a1-1": [

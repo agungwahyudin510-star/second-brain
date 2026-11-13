@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Card, btnCls } from "@/components/ui";
 import AssessmentRunner from "@/components/AssessmentRunner";
-import { ENGLISH_A1_ESSAYS, ENGLISH_A1_QUIZZES } from "@/data/curriculum/english/assessments";
+import { ENGLISH_A1_FINAL_ESSAYS, ENGLISH_A1_FINAL_QUESTIONS } from "@/data/curriculum/english/a1-v2/final-exam";
 import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { getModules } from "@/lib/curriculum";
 import { ENGLISH_PROGRESS_KEY, hasPassedAttempt } from "@/lib/economics-progress";
@@ -26,28 +26,22 @@ export default function EnglishA1ExamPage() {
     );
   }
 
-  const questionIndexes = [1, 0, 0, 3, 6, 0, 0, 2];
-  const skills = ["Vocabulary", "Grammar", "Grammar", "Grammar", "Vocabulary", "Vocabulary", "Grammar", "Reading"];
-  const questions = modules.map((module, index) => {
-    const chapterQuestions = ENGLISH_A1_QUIZZES[module.id];
-    const question = chapterQuestions[questionIndexes[index]];
-    return { ...question, id: `english-a1-final-${index + 1}`, skill: skills[index], chapterId: module.id, chapterTitle: module.title };
+  const total = ENGLISH_A1_FINAL_QUESTIONS.length;
+  const questions = ENGLISH_A1_FINAL_QUESTIONS.map((question, index) => {
+    const chapterModule = modules[Math.floor(index * modules.length / total)];
+    return { ...question, chapterId: chapterModule.id, chapterTitle: chapterModule.title };
   });
-  const essays = [
-    { ...ENGLISH_A1_ESSAYS["eng-a1-8"][0], id: "english-a1-final-writing-profile" },
-    { ...ENGLISH_A1_ESSAYS["eng-a1-5"][0], id: "english-a1-final-writing-directions" },
-  ];
 
   return (
     <>
       <Card className="mb-5 border-sky-500/20 text-sm leading-relaxed text-zinc-300">
-        Final assessment A1 ini merupakan estimasi belajar, bukan sertifikasi CEFR. Skor mencakup pilihan ganda (grammar, vocabulary, dan pemahaman bacaan) serta dua tugas menulis yang dinilai mandiri. Listening dan speaking dipraktikkan di materi, tetapi belum dinilai dalam skor akhir.
+        Final assessment A1 ini merupakan estimasi belajar, bukan sertifikasi CEFR. Ujian terdiri dari 30 soal pilihan ganda (grammar, vocabulary, pemahaman bacaan) + 2 tugas menulis dinilai mandiri. Listening dan speaking dipraktikkan di materi, tetapi belum dinilai dalam skor akhir.
       </Card>
       <AssessmentRunner
         moduleId="english-a1-final"
         title="English A1 — Final assessment"
         questions={questions}
-        essays={essays}
+        essays={ENGLISH_A1_FINAL_ESSAYS}
         returnHref="/pillar/inggris/progress"
         isExam
         progressStorageKey={ENGLISH_PROGRESS_KEY}

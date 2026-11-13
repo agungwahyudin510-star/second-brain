@@ -2,7 +2,7 @@ import type { CurriculumModule } from "@/lib/types";
 
 export const ENGLISH_A1_BAB_04: CurriculumModule = {
   id: "eng-a1-4",
-  title: "Daily Routines",
+  title: "A1 • Bab 4: Daily Routines",
   summary: "Bab ini membantu pelajar berbicara dan menulis tentang rutinitas harian menggunakan simple present, kata kerja kegiatan sehari-hari, pertanyaan do/does, dan adverbs of frequency.",
   lessons: [
     {

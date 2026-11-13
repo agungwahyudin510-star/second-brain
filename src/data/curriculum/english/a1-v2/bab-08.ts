@@ -2,7 +2,7 @@ import type { CurriculumModule } from "@/lib/types";
 
 export const ENGLISH_A1_BAB_08: CurriculumModule = {
   id: "eng-a1-8",
-  title: "A1 Practical Communication",
+  title: "A1 • Bab 8: A1 Practical Communication",
   summary: "Bab penutup ini menggabungkan ungkapan perkenalan, meminta bantuan dan klarifikasi, pesan serta ajakan singkat, mini-dialog sehari-hari, dan penulisan profil pribadi.",
   lessons: [
     {
