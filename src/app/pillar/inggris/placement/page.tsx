@@ -5,30 +5,51 @@ import { useState } from "react";
 import { Card, Button, btnCls } from "@/components/ui";
 
 const QUESTIONS = [
-  { skill: "Grammar", level: "A1", prompt: "My brother ___ from Jakarta.", options: ["am", "is", "are", "be"], answer: 1, explanation: "Gunakan “is” dengan subjek orang ketiga tunggal." },
-  { skill: "Vocabulary", level: "A1", prompt: "A place where you can borrow books is a ___.", options: ["library", "pharmacy", "station", "market"], answer: 0, explanation: "A library is a place where people can read or borrow books." },
-  { skill: "Reading", level: "A1", text: "Rina works at a cafe. She starts at eight in the morning and takes the bus.", prompt: "How does Rina travel to work?", options: ["By bus", "By train", "On foot", "By car"], answer: 0, explanation: "The text says that she takes the bus." },
-  { skill: "Grammar", level: "A2", prompt: "We ___ the museum last Saturday.", options: ["visit", "visited", "have visit", "are visiting"], answer: 1, explanation: "“Last Saturday” is a finished past time, so simple past fits." },
-  { skill: "Vocabulary", level: "A2", prompt: "If a hotel room costs less than another, it is ___ than the other room.", options: ["cheap", "cheaper", "cheapest", "more cheap"], answer: 1, explanation: "Use a comparative adjective (“cheaper”) to compare two things." },
-  { skill: "Reading", level: "A2", text: "Mira planned to walk to work, but heavy rain started. She took a taxi because she did not want to arrive late.", prompt: "Why did Mira take a taxi?", options: ["Her office was closed.", "She wanted to avoid being late.", "She forgot her shoes.", "The bus was free."], answer: 1, explanation: "She took a taxi because she did not want to arrive late." },
-  { skill: "Grammar", level: "B1", prompt: "I ___ this book twice, so I know how it ends.", options: ["read", "have read", "am reading", "was read"], answer: 1, explanation: "Present perfect connects a past experience to the present; no finished past time is stated." },
-  { skill: "Vocabulary", level: "B1", prompt: "The meeting was ___ until Friday because two people were ill.", options: ["put off", "put on", "put up", "put in"], answer: 0, explanation: "“Put off” means postpone." },
-  { skill: "Reading", level: "B1", text: "The town opened a cycle lane last year. More people now cycle to work, although traffic data has not yet shown whether this reduced car use.", prompt: "What does the text say about the effect on car use?", options: ["It definitely fell.", "It definitely increased.", "The effect is not yet clear from the data.", "The cycle lane was closed."], answer: 2, explanation: "The text explicitly says the data has not shown whether car use fell." },
-  { skill: "Grammar", level: "B2", prompt: "If the team ___ the warning earlier, it might have avoided the delay.", options: ["noticed", "had noticed", "would notice", "has noticed"], answer: 1, explanation: "This is a past unreal condition; the if-clause uses past perfect." },
-  { skill: "Vocabulary", level: "B2", prompt: "Choose the most natural collocation: The report ___ serious concerns about safety.", options: ["raised", "lifted", "grew", "stood"], answer: 0, explanation: "“Raise concerns” is the natural collocation in this context." },
-  { skill: "Reading", level: "B2", text: "Although the pilot programme improved attendance, the evaluation relied on one school and a short observation period. The authors therefore recommend a wider trial before drawing firm conclusions.", prompt: "What is the authors' main qualification?", options: ["Attendance declined everywhere.", "The evidence is promising but limited.", "The programme should end immediately.", "The school refused to participate."], answer: 1, explanation: "The authors note limits in sample and duration, and recommend wider evaluation." },
+  { skill: "Grammar", level: "A1", prompt: "My sister ___ a nurse.", options: ["am", "is", "are", "be"], answer: 1, explanation: "Gunakan “is” untuk subjek orang ketiga tunggal." },
+  { skill: "Grammar", level: "A1", prompt: "How ___ apples do you want?", options: ["much", "more", "any", "many"], answer: 3, explanation: "“Apples” adalah kata benda yang dapat dihitung." },
+  { skill: "Vocabulary", level: "A1", prompt: "What is the opposite of “big”?", options: ["small", "long", "wide", "tall"], answer: 0, explanation: "“Small” adalah lawan kata “big”." },
+  { skill: "Reading", level: "A1", text: "Tom gets up at six. He has breakfast at seven. He goes to school at eight.", prompt: "When does Tom have breakfast?", options: ["At six", "At eight", "At seven", "At nine"], answer: 2, explanation: "Teks menyebutkan bahwa Tom sarapan pukul tujuh." },
+  { skill: "Grammar", level: "A1", prompt: "Look! The baby ___.", options: ["sleep", "is sleeping", "sleeps", "slept"], answer: 1, explanation: "Present continuous digunakan untuk kegiatan yang sedang terjadi." },
+  { skill: "Grammar", level: "A2", prompt: "Yesterday I ___ to the market.", options: ["go", "gone", "going", "went"], answer: 3, explanation: "“Yesterday” menandakan waktu lampau; bentuk lampau “go” adalah “went”." },
+  { skill: "Grammar", level: "A2", prompt: "This bag is ___ than that one.", options: ["cheaper", "cheap", "cheapest", "more cheap"], answer: 0, explanation: "Gunakan bentuk perbandingan “cheaper” untuk membandingkan dua benda." },
+  { skill: "Grammar", level: "A2", prompt: "You ___ see a doctor. You look ill.", options: ["could", "would", "should", "might"], answer: 2, explanation: "“Should” digunakan untuk memberi saran." },
+  { skill: "Reading", level: "A2", text: "Dewi has never traveled by plane. She is going to fly to Bali next month and feels excited but a little nervous.", prompt: "How does Dewi feel about her trip?", options: ["Tired and bored", "Excited and a little nervous", "Angry and worried", "Calm and sleepy"], answer: 1, explanation: "Teks menyebutkan bahwa Dewi merasa bersemangat tetapi sedikit gugup." },
+  { skill: "Vocabulary", level: "A2", prompt: "A ___ is a person who cooks in a restaurant.", options: ["waiter", "pilot", "farmer", "chef"], answer: 3, explanation: "A chef cooks food in a restaurant." },
+  { skill: "Grammar", level: "B1", prompt: "I ___ here since 2020.", options: ["have lived", "live", "am living", "lived"], answer: 0, explanation: "Present perfect digunakan dengan “since” untuk keadaan yang berlanjut hingga sekarang." },
+  { skill: "Grammar", level: "B1", prompt: "If it rains tomorrow, we ___ at home.", options: ["stayed", "would stays", "will stay", "staying"], answer: 2, explanation: "First conditional memakai present simple pada klausa if dan “will” pada hasilnya." },
+  { skill: "Vocabulary", level: "B1", prompt: "The meeting was ___ until next week.", options: ["taken off", "put off", "made up", "turned on"], answer: 1, explanation: "“Put off” berarti menunda." },
+  { skill: "Reading", level: "B1", text: "The library will close at 5 p.m. on Fridays from next month. Staff say fewer people visit in the evening, but students have asked the council to reconsider.", prompt: "What have the students done?", options: ["They have closed the library early.", "They have asked staff to visit in the evening.", "They have changed the library hours.", "They have asked the council to reconsider."], answer: 3, explanation: "Teks menyebutkan bahwa siswa meminta dewan untuk mempertimbangkan kembali." },
+  { skill: "Grammar", level: "B1", prompt: "The man ___ lives next door is a doctor.", options: ["whose", "which", "who", "what"], answer: 2, explanation: "“Who” digunakan untuk merujuk pada orang dalam relative clause." },
+  { skill: "Grammar", level: "B2", prompt: "If I ___ earlier, I would have caught the train.", options: ["left", "had left", "would leave", "have left"], answer: 1, explanation: "Third conditional memakai past perfect pada klausa if." },
+  { skill: "Grammar", level: "B2", prompt: "He insisted ___ paying for dinner.", options: ["in", "at", "for", "on"], answer: 3, explanation: "Kata kerja “insist” diikuti preposisi “on”." },
+  { skill: "Grammar", level: "B2", prompt: "By the time we arrived, the film ___.", options: ["had started", "starts", "has started", "was starting"], answer: 0, explanation: "Past perfect menunjukkan film mulai sebelum kami tiba." },
+  { skill: "Reading", level: "B2", text: "Although the new app saves time for most users, older users report that it is confusing. The developers say they will test simpler designs before the next update.", prompt: "What will the developers do?", options: ["Remove the app before the update.", "Ask older users to save time.", "Test simpler designs.", "Keep the current design unchanged."], answer: 2, explanation: "Pengembang mengatakan akan menguji desain yang lebih sederhana." },
+  { skill: "Vocabulary", level: "B2", prompt: "His argument was not ___; it contained several logical gaps.", options: ["ordinary", "convincing", "available", "patient"], answer: 1, explanation: "“Convincing” berarti meyakinkan, sesuai konteks argumen." },
 ];
 
 export default function EnglishPlacementPage() {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [submitted, setSubmitted] = useState(false);
   const score = QUESTIONS.filter((question, index) => answers[index] === question.answer).length;
-  const estimatedLevel = score >= 10 ? "B2" : score >= 7 ? "B1" : score >= 4 ? "A2" : "A1";
+  const levelScores = ["A1", "A2", "B1", "B2"].map((level) => ({
+    level,
+    score: QUESTIONS.reduce((total, question, index) => total + (question.level === level && answers[index] === question.answer ? 1 : 0), 0),
+  }));
+  const firstLevelScore = levelScores[0].score;
+  const estimatedLevel = (() => {
+    if (firstLevelScore < 3) return "Pra-A1";
+    let currentLevel = "A1";
+    for (const result of levelScores.slice(1)) {
+      if (result.score < 3) break;
+      currentLevel = result.level;
+    }
+    return currentLevel;
+  })();
 
   return (
     <div className="space-y-6">
       <div>
-        <p className="text-sm text-zinc-500">12 soal • grammar, vocabulary, reading</p>
+        <p className="text-sm text-zinc-500">20 soal • grammar, vocabulary, reading</p>
         <h1 className="mt-1 text-2xl font-bold">Perkiraan level awal</h1>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-400">Tes singkat ini memberi sinyal awal, bukan penempatan adaptif atau sertifikasi CEFR. Dengarkan, menulis, dan berbicara tidak diuji di sini. Kamu tetap boleh mulai dari A1 kapan pun dan materi dasar tidak dikunci permanen.</p>
       </div>
@@ -56,9 +77,11 @@ export default function EnglishPlacementPage() {
         <Card className="border-sky-500/20">
           <p className="text-sm text-zinc-500">Hasil estimasi awal</p>
           <h2 className="mt-1 text-2xl font-bold">{estimatedLevel} • {score}/{QUESTIONS.length}</h2>
+          <p className="mt-2 text-sm text-zinc-300">{levelScores.map(({ level, score: levelScore }) => `${level} ${levelScore}/5`).join(" • ")}</p>
           <p className="mt-2 text-sm leading-relaxed text-zinc-400">Estimasi ini berasal dari sampel kecil dan tidak mengukur semua keterampilan. Jika terasa terlalu sulit, mulai A1. Hasil tidak membatasi akses materi.</p>
+          {estimatedLevel !== "Pra-A1" && estimatedLevel !== "A1" && <p className="mt-2 text-sm text-amber-300">A2-B2 sedang disiapkan.</p>}
           <div className="mt-4 flex flex-wrap gap-2">
-            <Link href="/pillar/inggris/curriculum" className={btnCls("primary")}>Mulai kurikulum A1</Link>
+            <Link href="/pillar/inggris/curriculum" className={btnCls("primary")}>Buka kurikulum</Link>
             <Link href="/pillar/inggris/progress" className={btnCls("ghost")}>Lihat progres</Link>
           </div>
         </Card>
