@@ -5,6 +5,7 @@ import { ENGLISH_A1_BAB_03 } from "./bab-03";
 import { ENGLISH_A1_BAB_04 } from "./bab-04";
 import { ENGLISH_A1_BAB_05 } from "./bab-05";
 import { ENGLISH_A1_BAB_06 } from "./bab-06";
+import { ENGLISH_A1_BAB_07 } from "./bab-07";
 
 export const ENGLISH_A1_V2: Record<string, CurriculumModule> = {
   "eng-a1-1": ENGLISH_A1_BAB_01,
@@ -13,4 +14,5 @@ export const ENGLISH_A1_V2: Record<string, CurriculumModule> = {
   "eng-a1-4": ENGLISH_A1_BAB_04,
   "eng-a1-5": ENGLISH_A1_BAB_05,
   "eng-a1-6": ENGLISH_A1_BAB_06,
+  "eng-a1-7": ENGLISH_A1_BAB_07,
 };
