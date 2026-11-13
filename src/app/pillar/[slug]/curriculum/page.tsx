@@ -12,7 +12,7 @@ import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { ENGLISH_PROGRESS_KEY, getChapterStatus, getLatestAttempt, hasPassedAttempt, isChapterUnlocked, PSYCHOLOGY_PROGRESS_KEY, WEB3_PROGRESS_KEY } from "@/lib/economics-progress";
 import { Badge, Card, btnCls } from "@/components/ui";
 import { cn } from "@/lib/utils";
-import { ENGLISH_A1_QUIZZES } from "@/data/curriculum/english/assessments";
+import { ENGLISH_QUIZZES } from "@/data/curriculum/english/assessments";
 import { WEB3_QUIZZES } from "@/data/curriculum/web3/assessments";
 import { WEB3_PHASES } from "@/data/curriculum/web3/phases";
 import { FINAL_EXAM_QUESTIONS } from "@/data/curriculum/economics-assessments";
@@ -55,6 +55,7 @@ export default function CurriculumPage() {
   const courseBase = `/pillar/${slug}`;
   const attempts = courseProgress.attempts;
   const lessons = getLessons(slug);
+  const englishQuizCount = isEnglish ? modules.filter((module) => ENGLISH_QUIZZES[module.id]).length : 0;
   const activeLessons = isEnglish || isWeb3 ? modules.slice(0, 8).flatMap((module) => module.lessons) : lessons;
   const trackedLessons = activeLessons;
   const doneCount = trackedLessons.filter((lesson) => done.includes(lesson.id)).length;
@@ -69,7 +70,7 @@ export default function CurriculumPage() {
       </Link>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-sm text-zinc-500">{isEnglish ? "4 level • 32 bab terpetakan • A1 aktif dengan 8 kuis" : isWeb3 ? "8 fase • 64 bab terpetakan • Fase 1 aktif dengan 8 kuis" : `${modules.length} bab • ${lessons.length} sub-bagian • kuis + remedial`}</p>
+          <p className="text-sm text-zinc-500">{isEnglish ? `4 level • 32 bab terpetakan • ${englishQuizCount} bab aktif dengan kuis` : isWeb3 ? "8 fase • 64 bab terpetakan • Fase 1 aktif dengan 8 kuis" : `${modules.length} bab • ${lessons.length} sub-bagian • kuis + remedial`}</p>
           <h1 className="mt-1 text-2xl font-bold">Kurikulum {courseName}</h1>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -94,7 +95,7 @@ export default function CurriculumPage() {
         <div className="h-2 overflow-hidden rounded-full bg-zinc-800" role="progressbar" aria-label="Progres pelajaran" aria-valuenow={percentage} aria-valuemin={0} aria-valuemax={100}>
           <div className="h-full rounded-full bg-sky-500 transition-all" style={{ width: `${percentage}%` }} />
         </div>
-        <p className="mt-2 text-xs text-zinc-500">{isEnglish ? "Mode pengembangan: semua bab dengan materi tersedia dapat dibuka tanpa lulus kuis sebelumnya. A2–B2 saat ini adalah peta belajar, bukan materi lengkap. Hasil belajar merupakan estimasi, bukan sertifikasi CEFR." : isWeb3 ? "Mode pengembangan: semua bab Fase 1 dapat dibuka tanpa lulus kuis sebelumnya. Fase 2–8 saat ini berupa roadmap dan belum memiliki materi/kuis lengkap. Gunakan local chain/testnet; jangan gunakan private key atau dana sungguhan." : `Mode pengembangan: semua bab dengan materi tersedia dapat dibuka tanpa lulus kuis sebelumnya.${slug === "ekonomi" && FINAL_EXAM_QUESTIONS.length === 0 ? " Ujian akhir 30 soal lintas bab disiapkan pada tahap akhir kurikulum." : " Ujian akhir terbuka setelah semua bab lulus."}`} Durasi merupakan perkiraan.</p>
+        <p className="mt-2 text-xs text-zinc-500">{isEnglish ? "Mode pengembangan: semua bab dengan materi tersedia dapat dibuka tanpa lulus kuis sebelumnya. Bab bertanda Peta belajar belum berisi materi lengkap. Hasil belajar merupakan estimasi, bukan sertifikasi CEFR." : isWeb3 ? "Mode pengembangan: semua bab Fase 1 dapat dibuka tanpa lulus kuis sebelumnya. Fase 2–8 saat ini berupa roadmap dan belum memiliki materi/kuis lengkap. Gunakan local chain/testnet; jangan gunakan private key atau dana sungguhan." : `Mode pengembangan: semua bab dengan materi tersedia dapat dibuka tanpa lulus kuis sebelumnya.${slug === "ekonomi" && FINAL_EXAM_QUESTIONS.length === 0 ? " Ujian akhir 30 soal lintas bab disiapkan pada tahap akhir kurikulum." : " Ujian akhir terbuka setelah semua bab lulus."}`} Durasi merupakan perkiraan.</p>
       </Card>
 
       {courseError && <Card className="border-amber-500/30 text-sm text-amber-200">{courseError} Data lama tidak ditimpa.</Card>}
@@ -113,7 +114,7 @@ export default function CurriculumPage() {
         const latest = getLatestAttempt(attempts, module.id);
         const completed = module.lessons.filter((lesson) => done.includes(lesson.id)).length;
         const quizAvailable = isEnglish
-          ? Boolean(ENGLISH_A1_QUIZZES[module.id])
+          ? Boolean(ENGLISH_QUIZZES[module.id])
           : isWeb3
             ? Boolean(WEB3_QUIZZES[module.id])
             : true;
@@ -141,7 +142,7 @@ export default function CurriculumPage() {
                 <div className="flex flex-wrap items-center gap-2">
                   <h2 className="font-semibold">{module.title}</h2>
                   <Badge>{status}</Badge>
-                  {isEnglish && index >= 8 && <Badge className="border-amber-500/30 text-amber-300">Peta belajar • materi dikembangkan bertahap</Badge>}
+                  {isEnglish && !quizAvailable && <Badge className="border-amber-500/30 text-amber-300">Peta belajar • materi dikembangkan bertahap</Badge>}
                   {roadmapOnly && <Badge className="border-amber-500/30 text-amber-300">Roadmap • belum berupa materi lengkap</Badge>}
                 </div>
                 <p className="mt-1 text-sm text-zinc-500">{module.summary}</p>

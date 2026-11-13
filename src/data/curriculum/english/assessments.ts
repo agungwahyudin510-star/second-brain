@@ -1,5 +1,6 @@
 import type { AssessmentQuestion, EssayPrompt } from "@/lib/types";
 import { ENGLISH_A1_V2_ESSAYS, ENGLISH_A1_V2_QUIZZES } from "./a1-v2/assessments";
+import { ENGLISH_A2_V2_ESSAYS, ENGLISH_A2_V2_QUIZZES } from "./a2/assessments";
 
 type QuestionDraft = [string, string, string[], number, string];
 type EssayDraft = [string, string[]];
@@ -160,4 +161,14 @@ export const ENGLISH_A1_QUIZZES: Record<string, AssessmentQuestion[]> = {
 export const ENGLISH_A1_ESSAYS: Record<string, EssayPrompt[]> = {
   ...ENGLISH_A1_LEGACY_ESSAYS,
   ...ENGLISH_A1_V2_ESSAYS,
+};
+
+export const ENGLISH_QUIZZES: Record<string, AssessmentQuestion[]> = {
+  ...ENGLISH_A1_QUIZZES,
+  ...ENGLISH_A2_V2_QUIZZES,
+};
+
+export const ENGLISH_ESSAYS: Record<string, EssayPrompt[]> = {
+  ...ENGLISH_A1_ESSAYS,
+  ...ENGLISH_A2_V2_ESSAYS,
 };

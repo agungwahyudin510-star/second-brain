@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
 import AssessmentRunner from "@/components/AssessmentRunner";
 import { Card, btnCls } from "@/components/ui";
-import { ENGLISH_A1_ESSAYS, ENGLISH_A1_QUIZZES } from "@/data/curriculum/english/assessments";
+import { ENGLISH_ESSAYS, ENGLISH_QUIZZES } from "@/data/curriculum/english/assessments";
 import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { getModules } from "@/lib/curriculum";
@@ -19,10 +19,12 @@ export default function EnglishChapterQuizPage() {
   const chapter = modules[chapterIndex];
   const [done] = useLocalStorage<string[]>("sb-lesson-done", []);
   const { progress } = useCourseProgress(ENGLISH_PROGRESS_KEY, "Bahasa Inggris");
-  const questions = ENGLISH_A1_QUIZZES[chapterId];
+  const questions = ENGLISH_QUIZZES[chapterId];
+  const essays = ENGLISH_ESSAYS[chapterId];
   const returnHref = "/pillar/inggris/curriculum";
+  const level = chapterId.startsWith("eng-a2-") ? "A2" : "A1";
 
-  if (!chapter || !questions || !ENGLISH_A1_ESSAYS[chapterId]) return notFound();
+  if (!chapter || !questions || !essays) return notFound();
   const unlocked = isChapterUnlocked(modules, chapterIndex, progress.attempts);
   const allLessonsDone = chapter.lessons.every((lesson) => done.includes(lesson.id));
 
@@ -41,13 +43,13 @@ export default function EnglishChapterQuizPage() {
   return (
     <>
       <Card className="mb-5 border-sky-500/20 text-sm leading-relaxed text-zinc-300">
-        Kuis ini berisi {questions.length} pilihan ganda dan {ENGLISH_A1_ESSAYS[chapterId].length} tugas menulis. Jawaban terbuka dinilai sendiri dengan rubrik khusus bahasa; tidak ada penilaian otomatis. Listening dan speaking tersedia sebagai latihan terpisah dan tidak masuk skor kuis.
+        Kuis ini berisi {questions.length} pilihan ganda dan {essays.length} tugas menulis. Jawaban terbuka dinilai sendiri dengan rubrik khusus bahasa; tidak ada penilaian otomatis. Listening dan speaking tersedia sebagai latihan terpisah dan tidak masuk skor kuis.
       </Card>
       <AssessmentRunner
         moduleId={chapter.id}
-        title={`${chapter.title} — Kuis A1`}
+        title={`${chapter.title} — Kuis ${level}`}
         questions={questions}
-        essays={ENGLISH_A1_ESSAYS[chapterId]}
+        essays={essays}
         returnHref={returnHref}
         progressStorageKey={ENGLISH_PROGRESS_KEY}
         rubricLabels={WRITING_RUBRIC}

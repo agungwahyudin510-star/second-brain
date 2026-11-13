@@ -158,4 +158,10 @@ export const ENGLISH_A1_VOCABULARY: EnglishVocabularyItem[] = [
   { id: "rest", word: "rest", partOfSpeech: "verb/noun", meaning: "beristirahat/istirahat", example: "I rest after lunch.", collocation: "take a rest", topic: "Routines" },
   { id: "bus-stop", word: "bus stop", partOfSpeech: "noun", meaning: "halte bus", example: "The bus stop is near the park.", collocation: "wait at the bus stop", topic: "Places" },
   { id: "where", word: "where", partOfSpeech: "adverb", meaning: "di mana/ke mana", example: "Where is the market?", collocation: "ask where", topic: "Directions" },
+  { id: "conversation", word: "conversation", partOfSpeech: "noun", meaning: "percakapan", example: "We have a short conversation in English.", collocation: "have a conversation", topic: "Messages" },
+  { id: "send", word: "send", partOfSpeech: "verb", meaning: "mengirim", example: "I send a message to my friend.", collocation: "send a message", topic: "Messages" },
+  { id: "receive", word: "receive", partOfSpeech: "verb", meaning: "menerima", example: "I receive an email from my teacher.", collocation: "receive a message", topic: "Messages" },
+  { id: "call", word: "call", partOfSpeech: "verb/noun", meaning: "menelepon/panggilan", example: "I call my sister after school.", collocation: "call a friend", topic: "Messages" },
+  { id: "text", word: "text", partOfSpeech: "noun/verb", meaning: "pesan teks/mengirim pesan", example: "Please text me tonight.", collocation: "send a text", topic: "Messages" },
+  { id: "reply", word: "reply", partOfSpeech: "verb/noun", meaning: "membalas/balasan", example: "Please reply to my message.", collocation: "reply to a message", topic: "Messages" },
 ];
