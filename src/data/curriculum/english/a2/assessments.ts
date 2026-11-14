@@ -28,6 +28,30 @@ export const ENGLISH_A2_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
     qe("eng-a2-2-q09", "Be going to • Short answers", "“Are you going to study tonight?” — “___”", ["Yes, I am.", "Yes, I do.", "Yes, I will.", "Yes, I going."], 0, "Jawaban singkat untuk pertanyaan Are you…? memakai am.", ["Do menjawab pertanyaan simple present.", "Will tidak mengulang kata bantu pertanyaan.", "Jawaban ini tidak memiliki kata kerja bantu yang lengkap."]),
     qe("eng-a2-2-q10", "Will • Predictions", "I think it ___ be sunny tomorrow.", ["is", "did", "will", "are"], 2, "Will digunakan untuk prediksi yang dinyatakan sebagai pendapat.", ["Is menyatakan present dan tidak membentuk prediksi ini.", "Did menandai masa lampau.", "Are tidak cocok dengan subjek it."]),
   ],
+  "eng-a2-3": [
+    qe("eng-a2-3-q01", "Comparatives", "My house is ___ than your house.", ["big", "more big", "biggest", "bigger"], 3, "Big menggandakan konsonan akhir sebelum -er: bigger.", ["Big adalah bentuk dasar, bukan comparative.", "More big bukan bentuk comparative standar untuk big.", "Biggest adalah superlative, bukan perbandingan dua rumah."]),
+    qe("eng-a2-3-q02", "Superlatives • Irregular forms", "This is the ___ book I have ever read.", ["good", "best", "better", "well"], 1, "Bentuk superlative tidak beraturan dari good adalah best.", ["Good adalah bentuk dasar dan tidak melengkapi pola superlative setelah the.", "Better adalah comparative, bukan superlative.", "Well biasanya adverb dan tidak cocok sebagai superlative book."]),
+    qe("eng-a2-3-q03", "Equality", "Rina is as tall ___ Dewi.", ["as", "than", "more", "like"], 0, "Pola kesetaraan adalah as + adjective + as.", ["Than digunakan untuk comparative, bukan pola as…as.", "More tidak melengkapi pola kesetaraan ini.", "Like tidak digunakan sebagai pasangan kedua as pada pola ini."]),
+    qe("eng-a2-3-q04", "Comparatives • Longer adjectives", "Jakarta is ___ than Bandung.", ["crowdeder", "most crowded", "more crowded", "the crowded"], 2, "Crowded memakai more untuk comparative: more crowded than.", ["Crowdeder bukan bentuk comparative standar.", "Most crowded adalah superlative dan tidak cocok dengan than.", "The crowded tidak membentuk comparative."]),
+    qe("eng-a2-3-q05", "Adjective order", "Choose the natural adjective order.", ["a leather red small bag", "a small red leather bag", "a red leather small bag", "a bag small red leather"], 1, "Urutan panduan ini adalah ukuran, warna, bahan, lalu noun.", ["Bahan dan warna diletakkan sebelum ukuran dalam urutan ini.", "Ukuran biasanya mendahului warna dan bahan.", "Adjective dalam frasa ini harus mendahului noun bag."]),
+    qe("eng-a2-3-q06", "Superlatives • Spelling", "What is the superlative form of “happy”?", ["the happyest", "happyest", "the most happily", "the happiest"], 3, "Happy berubah menjadi happiest: y berubah menjadi i sebelum -est.", ["Bentuk tersebut mempertahankan y, bukan mengubahnya menjadi i.", "Bentuk tersebut tidak mengubah y menjadi i dan tidak memakai artikel.", "Happily adalah adverb, bukan adjective yang melengkapi pola ini."]),
+    qe("eng-a2-3-q07", "Comparatives • Longer adjectives", "Choose the comparative form of “beautiful.”", ["more beautiful", "beautifuller", "the most beautiful", "beautiful"], 0, "Adjective panjang memakai more untuk comparative: more beautiful.", ["Beautifuller bukan bentuk comparative standar.", "The most beautiful adalah superlative.", "Beautiful adalah bentuk dasar, bukan comparative."]),
+    qe("eng-a2-3-q08", "Comparatives • Irregular forms", "This phone is ___ than that one. (good)", ["best", "good", "better", "well"], 2, "Bentuk comparative tidak beraturan dari good adalah better.", ["Best adalah superlative.", "Good adalah bentuk dasar, bukan comparative.", "Well umumnya adverb dan tidak melengkapi comparative ini."]),
+    qe("eng-a2-3-q09", "Superlatives • -est", "Mount Everest is the ___ mountain in the world.", ["high", "higher", "most high", "highest"], 3, "Superlative dari high adalah highest.", ["High adalah bentuk dasar dan tidak memenuhi superlative.", "Higher adalah comparative untuk membandingkan dua hal.", "Most high bukan bentuk standar untuk adjective ini."]),
+    qe("eng-a2-3-q10", "Describing appearance", "Which sentence describes someone's appearance?", ["He is friendly and helpful.", "He is tall and has short black hair.", "He is the most interesting person.", "He is happier than yesterday."], 1, "Kalimat ini menyebut ciri penampilan yang terlihat: tinggi dan rambut.", ["Friendly and helpful menggambarkan sifat.", "Interesting person menilai karakter, bukan penampilan.", "Happier than yesterday membandingkan keadaan perasaan."]),
+  ],
+  "eng-a2-4": [
+    qe("eng-a2-4-q01", "Advice • Should", "Which form gives positive advice? “You ___ rest.”", ["should", "should to", "shoulds", "shouldn't"], 0, "Should + kata kerja dasar memberi saran positif.", ["Setelah should tidak digunakan to.", "Modal should tidak berubah menjadi shoulds.", "Shouldn't memberi saran untuk tidak beristirahat, berlawanan dengan maksud soal."]),
+    qe("eng-a2-4-q02", "Obligation • Mustn't", "You ___ drive without a license.", ["don't have to", "should", "mustn't", "have"], 2, "Mustn't menyatakan larangan mengemudi tanpa lisensi.", ["Don't have to berarti tidak wajib, bukan dilarang.", "Should memberi saran, bukan larangan tegas pada konteks ini.", "Have tidak membentuk larangan."]),
+    qe("eng-a2-4-q03", "Obligation • Have to", "I ___ go to work tomorrow; it's my job.", ["mustn't", "don't have to", "has to", "have to"], 3, "Have to menyatakan kewajiban dan cocok dengan subjek I.", ["Mustn't berarti dilarang pergi bekerja.", "Don't have to berarti tidak wajib pergi.", "Has to digunakan dengan he/she/it, bukan I."]),
+    qe("eng-a2-4-q04", "Health vocabulary", "Which sentence reports a sore throat?", ["I have a cough.", "I have a sore throat.", "I feel tired.", "I have a headache."], 1, "I have a sore throat menyebut keluhan yang diminta.", ["Cough berarti batuk, bukan sakit tenggorokan.", "Tired menjelaskan rasa lelah, bukan keluhan tenggorokan.", "Headache berarti sakit kepala."]),
+    qe("eng-a2-4-q05", "Body vocabulary", "You use your ___ to see.", ["eyes", "ears", "hands", "feet"], 0, "Eyes digunakan untuk melihat.", ["Ears digunakan untuk mendengar.", "Hands digunakan untuk memegang atau meraba.", "Feet digunakan untuk berdiri dan berjalan."]),
+    qe("eng-a2-4-q06", "Advice • Base verb", "“Why don't you ___ some water?”", ["drinks", "drank", "drinking", "drink"], 3, "Why don't you diikuti kata kerja dasar drink.", ["Drinks adalah bentuk present untuk he/she/it.", "Drank adalah bentuk lampau.", "Drinking memerlukan pola berbeda, bukan langsung setelah you."]),
+    qe("eng-a2-4-q07", "Past obligation", "She ___ see a doctor yesterday.", ["has to", "must", "had to", "have to"], 2, "Had to menyatakan kewajiban pada masa lampau.", ["Has to adalah present untuk he/she/it.", "Must tidak menunjukkan past time pada pola ini.", "Have to tidak cocok dengan she dan yesterday."]),
+    qe("eng-a2-4-q08", "Advice • Meaning", "Which sentence gives advice?", ["You mustn't sleep early.", "You should sleep early.", "You don't have to sleep early.", "You should to sleep early."], 1, "Should + kata kerja dasar menyampaikan saran.", ["Mustn't menyatakan larangan, bukan saran tidur.", "Don't have to berarti tidur tidak wajib.", "Setelah should tidak digunakan to."]),
+    qe("eng-a2-4-q09", "Places • Pharmacy", "Where can you buy medicine?", ["At a library", "At a station", "At a pharmacy", "At a park"], 2, "Pharmacy adalah tempat untuk layanan dan produk farmasi.", ["Library adalah tempat membaca atau meminjam buku.", "Station adalah tempat naik atau turun transportasi.", "Park adalah area untuk rekreasi luar ruang."]),
+    qe("eng-a2-4-q10", "Have to • Short answers", "“Do I have to wear a helmet?” — “Yes, you ___.”", ["do", "are", "did", "does"], 0, "Jawaban singkat untuk pertanyaan Do I have to…? memakai do.", ["Are menjawab pertanyaan be, bukan do.", "Did menyatakan waktu lampau, sedangkan pertanyaannya present.", "Does digunakan dengan he/she/it, bukan you."]),
+  ],
 };
 
 export const ENGLISH_A2_V2_ESSAYS: Record<string, EssayPrompt[]> = {
@@ -76,6 +100,54 @@ export const ENGLISH_A2_V2_ESSAYS: Record<string, EssayPrompt[]> = {
         "Balasan menerima atau menolak ajakan dengan sopan dan jelas.",
         "Cantumkan hari, waktu, atau usulan pengganti yang relevan.",
         "Periksa pola kata kerja, tanda baca, dan keterbacaan pesan.",
+      ],
+    },
+  ],
+  "eng-a2-3": [
+    {
+      id: "eng-a2-3-w1",
+      prompt: "Write five sentences comparing two cities or two phones. Include at least two comparative forms and one reason with because, but, or however.",
+      rubric: A1_V2_ESSAY_RUBRIC,
+      reviewPoints: [
+        "Bandingkan dua kota atau dua ponsel pada sifat yang relevan.",
+        "Gunakan sedikitnya dua comparative dengan ejaan yang tepat.",
+        "Sertakan alasan atau kontras dengan because, but, atau however.",
+        "Tulis lima kalimat yang runtut dan mudah dipahami.",
+      ],
+    },
+    {
+      id: "eng-a2-3-w2",
+      prompt: "Write five sentences describing a person or a place. Use adjectives in a natural order and include relevant details.",
+      rubric: A1_V2_ESSAY_RUBRIC,
+      reviewPoints: [
+        "Tulis lima kalimat tentang satu orang atau tempat.",
+        "Tempatkan adjective sebelum noun dan gunakan urutan yang alami.",
+        "Pilih deskripsi yang relevan dan hormat; jangan menyimpulkan sifat dari penampilan.",
+        "Periksa artikel, ejaan, tanda baca, dan keterbacaan.",
+      ],
+    },
+  ],
+  "eng-a2-4": [
+    {
+      id: "eng-a2-4-w1",
+      prompt: "Give simple advice for three everyday situations. Write one sentence for each situation and use should in every sentence.",
+      rubric: A1_V2_ESSAY_RUBRIC,
+      reviewPoints: [
+        "Berikan saran untuk tiga situasi yang berbeda.",
+        "Gunakan should + kata kerja dasar pada setiap kalimat.",
+        "Pilih saran umum yang relevan dan aman; untuk masalah kesehatan nyata, sarankan mencari bantuan yang tepat.",
+        "Periksa subjek, kata kerja, dan tanda baca.",
+      ],
+    },
+    {
+      id: "eng-a2-4-w2",
+      prompt: "Write a six-line dialogue at a doctor's office or pharmacy. Include a polite opening, a simple concern, and a request for clarification.",
+      rubric: A1_V2_ESSAY_RUBRIC,
+      reviewPoints: [
+        "Tulis enam baris percakapan dengan giliran yang jelas.",
+        "Gunakan ungkapan sopan untuk membuka percakapan dan meminta bantuan.",
+        "Sampaikan keluhan sederhana atau pertanyaan tanpa memberi diagnosis atau dosis.",
+        "Gunakan tanda baca dan bahasa yang jelas; ini latihan bahasa, bukan saran medis.",
       ],
     },
   ],
