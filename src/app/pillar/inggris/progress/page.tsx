@@ -12,29 +12,40 @@ import { cn } from "@/lib/utils";
 
 export default function EnglishProgressPage() {
   const modules = getModules("inggris").slice(0, 8);
+  const a2Modules = getModules("inggris").slice(8, 16);
   const [done, , doneHydrated] = useLocalStorage<string[]>("sb-lesson-done", []);
   const { progress, hydrated, storageError } = useCourseProgress(ENGLISH_PROGRESS_KEY, "Bahasa Inggris");
   const lessonList = useMemo(() => modules.flatMap((module) => module.lessons), [modules]);
   const completedLessons = lessonList.filter((lesson) => done.includes(lesson.id)).length;
   const passed = modules.filter((module) => getLatestAttempt(progress.attempts, module.id)?.passed).length;
   const nextModule = modules.find((module) => !getLatestAttempt(progress.attempts, module.id)?.passed);
-  const latestExam = progress.examAttempts.at(-1);
+  const latestA1Exam = progress.examAttempts
+    .filter((attempt) => attempt.moduleId === "english-a1-final")
+    .sort((a, b) => b.submittedAt.localeCompare(a.submittedAt))[0];
+  const latestA2Exam = progress.examAttempts
+    .filter((attempt) => attempt.moduleId === "english-a2-final")
+    .sort((a, b) => b.submittedAt.localeCompare(a.submittedAt))[0];
+  const passedA2 = a2Modules.filter((module) =>
+    progress.attempts.some((attempt) => attempt.moduleId === module.id && attempt.passed)
+  ).length;
 
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
-        <div><p className="text-sm text-zinc-500">Penyimpanan lokal browser • A1 aktif</p><h1 className="mt-1 text-2xl font-bold">English learning progress</h1></div>
+        <div><p className="text-sm text-zinc-500">Penyimpanan lokal browser • A1–A2 aktif</p><h1 className="mt-1 text-2xl font-bold">English learning progress</h1></div>
         <div className="flex gap-2">
           <Link href="/pillar/inggris/vocabulary" className={btnCls("ghost")}>Vocabulary review</Link>
           <Link href="/pillar/inggris/curriculum" className={btnCls("ghost")}>Kurikulum</Link>
         </div>
       </div>
 
-      <Card className="grid gap-4 sm:grid-cols-4">
+      <Card className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div><p className="text-sm text-zinc-500">Materi A1 selesai</p><p className="mt-1 text-2xl font-semibold">{doneHydrated ? completedLessons : "—"}/{lessonList.length}</p></div>
         <div><p className="text-sm text-zinc-500">Bab A1 lulus</p><p className="mt-1 text-2xl font-semibold">{hydrated ? passed : "—"}/8</p></div>
         <div><p className="text-sm text-zinc-500">Percobaan kuis</p><p className="mt-1 text-2xl font-semibold">{hydrated ? progress.attempts.length : "—"}</p></div>
-        <div><p className="text-sm text-zinc-500">Final assessment</p><p className="mt-1 text-lg font-semibold">{hydrated ? latestExam ? `${latestExam.score}/100` : "Belum dicoba" : "—"}</p></div>
+        <div><p className="text-sm text-zinc-500">Final assessment A1</p><p className="mt-1 text-lg font-semibold">{hydrated ? latestA1Exam ? `${latestA1Exam.score}/100` : "Belum dicoba" : "—"}</p></div>
+        <div><p className="text-sm text-zinc-500">Bab A2 lulus</p><p className="mt-1 text-2xl font-semibold">{hydrated ? passedA2 : "—"}/8</p></div>
+        <div><p className="text-sm text-zinc-500">Final assessment A2</p><p className="mt-1 text-lg font-semibold">{hydrated ? latestA2Exam ? `${latestA2Exam.score}/100` : "Belum dicoba" : "—"}</p></div>
       </Card>
 
       {storageError && <Card role="alert" className="border-amber-500/30 text-sm text-amber-200"><AlertTriangle className="mr-2 inline h-4 w-4" />{storageError} Data lama tidak ditimpa.</Card>}
@@ -77,11 +88,12 @@ export default function EnglishProgressPage() {
             <Link href="/pillar/inggris/exam" className={btnCls("ghost")}>Final assessment A1</Link>}
           <Link href="/pillar/inggris/vocabulary" className={btnCls("ghost")}>Review vocabulary</Link>
         </div>
-        {latestExam && <p className="mt-3 text-xs text-zinc-500">Percobaan final terakhir: {latestExam.score}/100 • {latestExam.passed ? "mencapai ambang 70" : "belum mencapai ambang 70"}.</p>}
+        {latestA1Exam && <p className="mt-3 text-xs text-zinc-500">Percobaan final A1 terakhir: {latestA1Exam.score}/100 • {latestA1Exam.passed ? "mencapai ambang 70" : "belum mencapai ambang 70"}.</p>}
+        {latestA2Exam && <p className="mt-1 text-xs text-zinc-500">Percobaan final A2 terakhir: {latestA2Exam.score}/100 • {latestA2Exam.passed ? "mencapai ambang 70" : "belum mencapai ambang 70"}.</p>}
       </Card>
 
       <Card className="text-sm leading-relaxed text-zinc-500">
-        Progres dan nilai tersimpan di localStorage browser/perangkat ini, bukan sinkronisasi cloud. Waktu belajar, streak, dan skor listening/speaking tidak ditampilkan karena belum dicatat atau dinilai. A2–B2 tersedia sebagai peta kurikulum, belum sebagai materi/asesmen lengkap.
+        Progres dan nilai tersimpan di localStorage browser/perangkat ini, bukan sinkronisasi cloud. Waktu belajar, streak, dan skor listening/speaking tidak ditampilkan karena belum dicatat atau dinilai. A2 aktif; B1–B2 masih berupa peta kurikulum, belum sebagai materi/asesmen lengkap.
       </Card>
     </div>
   );

@@ -62,6 +62,8 @@ export default function CurriculumPage() {
   const percentage = trackedLessons.length ? Math.round((doneCount / trackedLessons.length) * 100) : 0;
   const assessedModules = isEnglish || isWeb3 ? modules.slice(0, 8) : modules;
   const allChaptersPassed = assessedModules.every((module) => hasPassedAttempt(attempts, module.id));
+  const a2Modules = isEnglish ? modules.slice(8, 16) : [];
+  const allA2ChaptersPassed = a2Modules.length === 8 && a2Modules.every((module) => hasPassedAttempt(attempts, module.id));
 
   return (
     <div className="space-y-6">
@@ -86,6 +88,9 @@ export default function CurriculumPage() {
           {allChaptersPassed && (slug !== "ekonomi" || FINAL_EXAM_QUESTIONS.length > 0)
             ? <Link href={`${courseBase}/exam`} className={btnCls("primary")}>{isEnglish ? "Final assessment A1" : "Ujian akhir"}</Link>
             : <span aria-disabled="true" className={cn(btnCls("ghost"), "cursor-not-allowed opacity-50")}>{isEnglish ? "Final assessment A1 (terkunci)" : isWeb3 ? "Final assessment Fase 1 (terkunci)" : "Ujian akhir (terkunci)"}</span>}
+          {isEnglish && (allA2ChaptersPassed
+            ? <Link href="/pillar/inggris/exam/a2" className={btnCls("primary")}>Final assessment A2</Link>
+            : <span aria-disabled="true" className={cn(btnCls("ghost"), "cursor-not-allowed opacity-50")}>Final assessment A2 (terkunci)</span>)}
         </div>
       </div>
       <Card>
