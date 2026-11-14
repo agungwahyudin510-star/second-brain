@@ -52,6 +52,30 @@ export const ENGLISH_A2_V2_QUIZZES: Record<string, AssessmentQuestion[]> = {
     qe("eng-a2-4-q09", "Places • Pharmacy", "Where can you buy medicine?", ["At a library", "At a station", "At a pharmacy", "At a park"], 2, "Pharmacy adalah tempat untuk layanan dan produk farmasi.", ["Library adalah tempat membaca atau meminjam buku.", "Station adalah tempat naik atau turun transportasi.", "Park adalah area untuk rekreasi luar ruang."]),
     qe("eng-a2-4-q10", "Have to • Short answers", "“Do I have to wear a helmet?” — “Yes, you ___.”", ["do", "are", "did", "does"], 0, "Jawaban singkat untuk pertanyaan Do I have to…? memakai do.", ["Are menjawab pertanyaan be, bukan do.", "Did menyatakan waktu lampau, sedangkan pertanyaannya present.", "Does digunakan dengan he/she/it, bukan you."]),
   ],
+  "eng-a2-5": [
+    qe("eng-a2-5-q01", "Present perfect • Been", "I have ___ to Bali twice and returned home after each trip.", ["went", "been", "gone", "being"], 1, "Have been to menyatakan pengalaman berkunjung dan telah kembali.", ["Went adalah simple past dan tidak mengikuti have.", "Gone biasanya menyatakan orang pergi dan belum kembali.", "Being bukan past participle yang cocok pada pola ini."]),
+    qe("eng-a2-5-q02", "Present perfect • Past participles", "She has never ___ sushi.", ["eat", "ate", "eaten", "eating"], 2, "Past participle dari eat adalah eaten.", ["Eat adalah bentuk dasar.", "Ate adalah simple past, bukan past participle.", "Eating adalah bentuk -ing."]),
+    qe("eng-a2-5-q03", "Present perfect • Ever", "Have you ___ visited Japan in your life?", ["ever", "never", "already", "since"], 0, "Ever digunakan untuk menanyakan apakah pengalaman pernah terjadi.", ["Never berarti tidak pernah dan tidak cocok dengan pertanyaan pengalaman netral ini.", "Already berarti sudah dan tidak menanyakan pengalaman kapan pun.", "Since memerlukan titik awal waktu, bukan pola ini."]),
+    qe("eng-a2-5-q04", "Past simple • Finished time", "I ___ to Paris in 2019.", ["have been", "have gone", "go", "went"], 3, "In 2019 adalah waktu lampau selesai, sehingga gunakan past simple went.", ["Present perfect tidak dipakai dengan waktu selesai spesifik ini.", "Have gone juga present perfect dan tidak cocok dengan in 2019.", "Go adalah bentuk dasar/present."]),
+    qe("eng-a2-5-q05", "Travel vocabulary", "Where can you buy a train ticket from a staff member at a station?", ["At the station café", "At the ticket office", "On the platform", "In the luggage room"], 1, "Ticket office adalah loket untuk membeli tiket dari petugas.", ["Cafe adalah tempat membeli makanan atau minuman.", "Platform adalah area naik atau turun kereta.", "Luggage room berkaitan dengan barang bawaan, bukan loket tiket."]),
+    qe("eng-a2-5-q06", "Indirect questions", "Could you tell me where the station ___?", ["does", "are", "do", "is"], 3, "Setelah where pada indirect question gunakan urutan pernyataan: the station is.", ["Does tidak membentuk klausa lokasi ini.", "Are tidak sesuai dengan subjek tunggal the station.", "Do tidak membentuk klausa lokasi ini."]),
+    qe("eng-a2-5-q07", "Past participles", "What is the past participle of “see”?", ["see", "saw", "seen", "seeing"], 2, "Past participle dari see adalah seen.", ["See adalah bentuk dasar.", "Saw adalah simple past.", "Seeing adalah bentuk -ing."]),
+    qe("eng-a2-5-q08", "Present perfect • Yet", "I haven't finished my homework ___.", ["yet", "already", "ever", "just"], 0, "Yet umum diletakkan di akhir kalimat negatif present perfect untuk menyatakan belum.", ["Already berarti sudah.", "Ever lazim untuk menanyakan pengalaman.", "Just berarti baru saja dan biasanya berada setelah have/has."]),
+    qe("eng-a2-5-q09", "Present perfect • Has", "He ___ just arrived at the hotel; his room is ready now.", ["have", "has", "having", "will"], 1, "He menggunakan has dalam present perfect.", ["Have digunakan dengan I/you/we/they.", "Having adalah bentuk -ing.", "Will harus diikuti bentuk dasar, bukan past participle arrived."]),
+    qe("eng-a2-5-q10", "Been and gone", "Choose the present perfect form that means she is away now: Dewi ___ to the market.", ["has been", "have gone", "went", "has gone"], 3, "Has gone menunjukkan Dewi pergi dan belum kembali atau sedang di sana.", ["Has been to biasanya menyatakan pengalaman berkunjung dan telah kembali.", "Have tidak cocok dengan subjek Dewi/she.", "Went adalah past simple, bukan bentuk present perfect yang diminta."]),
+  ],
+  "eng-a2-6": [
+    qe("eng-a2-6-q01", "Reason • Because", "I stayed home ___ it was raining.", ["because", "so", "but", "although"], 0, "Because memperkenalkan alasan tetap di rumah.", ["So memperkenalkan akibat, bukan alasan setelah keputusan ini.", "But menunjukkan kontras.", "Although memperkenalkan kontras, bukan alasan langsung pada pola ini."]),
+    qe("eng-a2-6-q02", "Result • So", "It was raining, ___ I took an umbrella.", ["because", "but", "although", "so"], 3, "So memperkenalkan akibat dari hujan.", ["Because memperkenalkan alasan dan akan membalik hubungan makna.", "But menunjukkan kontras, bukan akibat.", "Although memperkenalkan kontras dan tidak cocok dalam susunan ini."]),
+    qe("eng-a2-6-q03", "Contrast • But", "I like tea, ___ my sister likes coffee.", ["because", "but", "however", "despite"], 1, "But menghubungkan dua klausa lengkap dalam satu kalimat.", ["Because menyatakan alasan, bukan preferensi yang kontras.", "However biasanya memerlukan tanda baca sebagai penghubung antarkalimat.", "Despite diikuti noun atau verb-ing, bukan klausa lengkap seperti ini."]),
+    qe("eng-a2-6-q04", "Contrast • Although", "___ it was cold, we went swimming.", ["But", "However", "Although", "So"], 2, "Although memperkenalkan klausa kontras di awal kalimat.", ["But tidak digunakan sebagai pengantar klausa subordinat pada posisi ini.", "However biasanya menghubungkan kalimat dan memerlukan tanda baca.", "So menyatakan akibat, bukan kontras."]),
+    qe("eng-a2-6-q05", "Adverbs • Well", "She speaks English ___. (good)", ["well", "good", "goodly", "gooder"], 0, "Well adalah adverb yang lazim menjadi bentuk untuk good.", ["Good biasanya adjective untuk menerangkan noun.", "Goodly bukan adverb standar untuk menerangkan speaks.", "Gooder bukan bentuk comparative standar."]),
+    qe("eng-a2-6-q06", "Adverbs • Carefully", "He drives very ___. (careful)", ["careful", "carefulness", "carefully", "carefuler"], 2, "Carefully adalah adverb cara yang dibentuk dari careful.", ["Careful adalah adjective.", "Carefulness adalah noun.", "Carefuler bukan bentuk adverb yang benar."]),
+    qe("eng-a2-6-q07", "Intensifiers • Too", "Choose the intensifier meaning “more than I can manage”: The bag is ___ heavy for me to carry.", ["very", "quite", "enough", "too"], 3, "Too heavy menunjukkan tingkat yang berlebihan untuk dapat dibawa.", ["Very berarti sangat, tetapi tidak menyatakan batas kemampuan secara khusus.", "Quite berarti cukup/lumayan dan tidak menandai kelebihan dengan sendirinya.", "Enough berarti cukup dan posisinya tidak cocok sebelum heavy."]),
+    qe("eng-a2-6-q08", "Time linkers • When", "I was sleeping ___ the phone rang.", ["before", "when", "after", "until"], 1, "When menghubungkan kegiatan yang sedang berlangsung dengan kejadian yang terjadi saat itu.", ["Before berarti sebelum dan mengubah urutan waktu.", "After berarti sesudah, bukan saat dering terjadi.", "Until berarti sampai suatu waktu, bukan penghubung peristiwa ini."]),
+    qe("eng-a2-6-q09", "Sequencing • Finally", "Which linker clearly marks the last step?", ["Finally", "First", "Next", "Before"], 0, "Finally menandai langkah atau kejadian terakhir.", ["First menandai langkah awal.", "Next menandai langkah berikutnya, bukan secara khusus langkah terakhir.", "Before menunjukkan urutan lebih awal."]),
+    qe("eng-a2-6-q10", "Adverbs • Hard", "Choose the adverb meaning “with a lot of effort”: She works ___.", ["hardly", "hardy", "harder", "hard"], 3, "Hard berarti bekerja dengan usaha besar.", ["Hardly biasanya berarti hampir tidak.", "Hardy adalah adjective yang berarti kuat/tahan.", "Harder adalah bentuk comparative, bukan makna dasar yang diminta."]),
+  ],
 };
 
 export const ENGLISH_A2_V2_ESSAYS: Record<string, EssayPrompt[]> = {
@@ -148,6 +172,54 @@ export const ENGLISH_A2_V2_ESSAYS: Record<string, EssayPrompt[]> = {
         "Gunakan ungkapan sopan untuk membuka percakapan dan meminta bantuan.",
         "Sampaikan keluhan sederhana atau pertanyaan tanpa memberi diagnosis atau dosis.",
         "Gunakan tanda baca dan bahasa yang jelas; ini latihan bahasa, bukan saran medis.",
+      ],
+    },
+  ],
+  "eng-a2-5": [
+    {
+      id: "eng-a2-5-w1",
+      prompt: "Write six sentences about a trip. Use present perfect for an experience without a specific finished time and past simple for one event with a finished time.",
+      rubric: A1_V2_ESSAY_RUBRIC,
+      reviewPoints: [
+        "Tulis enam kalimat yang menceritakan sebuah perjalanan.",
+        "Gunakan present perfect untuk pengalaman tanpa waktu selesai yang disebutkan.",
+        "Gunakan past simple untuk satu kejadian dengan waktu lampau yang jelas.",
+        "Periksa have/has, past participle, penanda waktu, dan urutan cerita.",
+      ],
+    },
+    {
+      id: "eng-a2-5-w2",
+      prompt: "Write a short five-sentence email to a hotel. Ask politely for information using “Could you tell me…?” and include a greeting and closing.",
+      rubric: A1_V2_ESSAY_RUBRIC,
+      reviewPoints: [
+        "Tulis lima kalimat dalam format email singkat dengan salam dan penutup.",
+        "Gunakan Could you tell me…? untuk meminta informasi dengan sopan.",
+        "Gunakan susunan pernyataan setelah kata tanya tidak langsung.",
+        "Periksa kapitalisasi, tanda baca, dan kejelasan permintaan.",
+      ],
+    },
+  ],
+  "eng-a2-6": [
+    {
+      id: "eng-a2-6-w1",
+      prompt: "Write a six-sentence paragraph about a day or an activity. Use because, but, and so to connect reasons, contrasts, and results.",
+      rubric: A1_V2_ESSAY_RUBRIC,
+      reviewPoints: [
+        "Tulis enam kalimat yang berfokus pada satu topik.",
+        "Gunakan because untuk alasan, but untuk kontras, dan so untuk akibat.",
+        "Periksa tanda baca di sekitar linker dan pastikan hubungan idenya logis.",
+        "Baca ulang untuk memeriksa urutan, tense, ejaan, dan kejelasan.",
+      ],
+    },
+    {
+      id: "eng-a2-6-w2",
+      prompt: "Write a short story using first, then, and finally. Include when and while to connect events in time.",
+      rubric: A1_V2_ESSAY_RUBRIC,
+      reviewPoints: [
+        "Susun cerita dalam urutan yang jelas dengan first, then, dan finally.",
+        "Gunakan when dan while untuk menunjukkan hubungan waktu.",
+        "Pastikan tense dan urutan kejadian mudah diikuti.",
+        "Periksa tanda baca, ejaan, dan keterbacaan cerita.",
       ],
     },
   ],
