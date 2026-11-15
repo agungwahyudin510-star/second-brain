@@ -21,6 +21,8 @@ import { EnglishB1Bab03Visuals } from "./b1-bab-03";
 import { EnglishB1Bab04Visuals } from "./b1-bab-04";
 import { EnglishB1Bab05Visuals } from "./b1-bab-05";
 import { EnglishB1Bab06Visuals } from "./b1-bab-06";
+import { EnglishB1Bab07Visuals } from "./b1-bab-07";
+import { EnglishB1Bab08Visuals } from "./b1-bab-08";
 
 export const ENGLISH_VISUALS: Record<string, React.ComponentType> = {
   ...EnglishA1Bab01Visuals,
@@ -45,6 +47,8 @@ export const ENGLISH_VISUALS: Record<string, React.ComponentType> = {
   ...EnglishB1Bab04Visuals,
   ...EnglishB1Bab05Visuals,
   ...EnglishB1Bab06Visuals,
+  ...EnglishB1Bab07Visuals,
+  ...EnglishB1Bab08Visuals,
 };
 
 export function makeVisual<Props extends object>(
