@@ -22,7 +22,7 @@ export default function EnglishChapterQuizPage() {
   const questions = ENGLISH_QUIZZES[chapterId];
   const essays = ENGLISH_ESSAYS[chapterId];
   const returnHref = "/pillar/inggris/curriculum";
-  const level = chapterId.startsWith("eng-a2-") ? "A2" : "A1";
+  const level = /^eng-(a1|a2|b1|b2)-/.exec(chapterId)?.[1].toUpperCase() ?? "A1";
 
   if (!chapter || !questions || !essays) return notFound();
   const unlocked = isChapterUnlocked(modules, chapterIndex, progress.attempts);
