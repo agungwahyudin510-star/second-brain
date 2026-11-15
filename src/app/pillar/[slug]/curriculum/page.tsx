@@ -64,6 +64,8 @@ export default function CurriculumPage() {
   const allChaptersPassed = assessedModules.every((module) => hasPassedAttempt(attempts, module.id));
   const a2Modules = isEnglish ? modules.slice(8, 16) : [];
   const allA2ChaptersPassed = a2Modules.length === 8 && a2Modules.every((module) => hasPassedAttempt(attempts, module.id));
+  const b1Modules = isEnglish ? modules.slice(16, 24) : [];
+  const allB1ChaptersPassed = b1Modules.length === 8 && b1Modules.every((module) => hasPassedAttempt(attempts, module.id));
 
   return (
     <div className="space-y-6">
@@ -91,6 +93,9 @@ export default function CurriculumPage() {
           {isEnglish && (allA2ChaptersPassed
             ? <Link href="/pillar/inggris/exam/a2" className={btnCls("primary")}>Final assessment A2</Link>
             : <span aria-disabled="true" className={cn(btnCls("ghost"), "cursor-not-allowed opacity-50")}>Final assessment A2 (terkunci)</span>)}
+          {isEnglish && (allB1ChaptersPassed
+            ? <Link href="/pillar/inggris/exam/b1" className={btnCls("primary")}>Final assessment B1</Link>
+            : <span aria-disabled="true" className={cn(btnCls("ghost"), "cursor-not-allowed opacity-50")}>Final assessment B1 (terkunci)</span>)}
         </div>
       </div>
       <Card>

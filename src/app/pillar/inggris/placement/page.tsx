@@ -79,7 +79,7 @@ export default function EnglishPlacementPage() {
           <h2 className="mt-1 text-2xl font-bold">{estimatedLevel} • {score}/{QUESTIONS.length}</h2>
           <p className="mt-2 text-sm text-zinc-300">{levelScores.map(({ level, score: levelScore }) => `${level} ${levelScore}/5`).join(" • ")}</p>
           <p className="mt-2 text-sm leading-relaxed text-zinc-400">Estimasi ini berasal dari sampel kecil dan tidak mengukur semua keterampilan. Jika terasa terlalu sulit, mulai A1. Hasil tidak membatasi akses materi.</p>
-          {estimatedLevel !== "Pra-A1" && estimatedLevel !== "A1" && <p className="mt-2 text-sm text-amber-300">A2-B2 sedang disiapkan.</p>}
+          {estimatedLevel !== "Pra-A1" && estimatedLevel !== "A1" && <p className="mt-2 text-sm text-amber-300">B2 sedang disiapkan.</p>}
           <div className="mt-4 flex flex-wrap gap-2">
             <Link href="/pillar/inggris/curriculum" className={btnCls("primary")}>Buka kurikulum</Link>
             <Link href="/pillar/inggris/progress" className={btnCls("ghost")}>Lihat progres</Link>
